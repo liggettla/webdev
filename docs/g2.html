@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Genetics and Genomics | On Matters Of Nature and Science</title>
+  <meta name="description" content="These are just some things.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Genetics and Genomics | On Matters Of Nature and Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are just some things." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Genetics and Genomics | On Matters Of Nature and Science" />
+  
+  <meta name="twitter:description" content="These are just some things." />
+  
+
+<meta name="author" content="L A Liggett">
+
+
+<meta name="date" content="2019-04-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="neurosci.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">On Matters Of Nature and Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="g2.html"><a href="g2.html"><i class="fa fa-check"></i><b>2</b> Genetics and Genomics</a><ul>
+<li class="chapter" data-level="2.1" data-path="g2.html"><a href="g2.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="g2.html"><a href="g2.html#subpoint"><i class="fa fa-check"></i><b>2.1.1</b> Subpoint</a></li>
+<li class="chapter" data-level="2.1.2" data-path="g2.html"><a href="g2.html#second-subpoint"><i class="fa fa-check"></i><b>2.1.2</b> Second subpoint</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="g2.html"><a href="g2.html#dna-replication"><i class="fa fa-check"></i><b>2.2</b> DNA Replication</a></li>
+<li class="chapter" data-level="2.3" data-path="g2.html"><a href="g2.html#mutation-rate"><i class="fa fa-check"></i><b>2.3</b> Mutation Rate</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="g2.html"><a href="g2.html#observed-mutation-rates"><i class="fa fa-check"></i><b>2.3.1</b> Observed Mutation Rates</a></li>
+<li class="chapter" data-level="2.3.2" data-path="g2.html"><a href="g2.html#mutation-rate-evolution"><i class="fa fa-check"></i><b>2.3.2</b> Mutation Rate Evolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="g2.html"><a href="g2.html#mutation-hotspots"><i class="fa fa-check"></i><b>2.4</b> Mutation Hotspots</a></li>
+<li class="chapter" data-level="2.5" data-path="g2.html"><a href="g2.html#mutation-detection"><i class="fa fa-check"></i><b>2.5</b> Mutation Detection</a></li>
+<li class="chapter" data-level="2.6" data-path="g2.html"><a href="g2.html#genetic-modifications"><i class="fa fa-check"></i><b>2.6</b> Genetic Modifications</a></li>
+<li class="chapter" data-level="2.7" data-path="g2.html"><a href="g2.html#sequencing-methods"><i class="fa fa-check"></i><b>2.7</b> Sequencing Methods</a></li>
+<li class="chapter" data-level="2.8" data-path="g2.html"><a href="g2.html#diagnostics"><i class="fa fa-check"></i><b>2.8</b> Diagnostics</a></li>
+<li class="chapter" data-level="2.9" data-path="g2.html"><a href="g2.html#detecting-common-diseases"><i class="fa fa-check"></i><b>2.9</b> Detecting Common Diseases</a></li>
+<li class="chapter" data-level="2.10" data-path="g2.html"><a href="g2.html#detecting-rare-diseases"><i class="fa fa-check"></i><b>2.10</b> Detecting Rare Diseases</a></li>
+<li class="chapter" data-level="2.11" data-path="g2.html"><a href="g2.html#tissue-evolution"><i class="fa fa-check"></i><b>2.11</b> Tissue Evolution</a></li>
+<li class="chapter" data-level="2.12" data-path="g2.html"><a href="g2.html#mutational-processes-in-cancer"><i class="fa fa-check"></i><b>2.12</b> Mutational Processes in Cancer</a></li>
+<li class="chapter" data-level="2.13" data-path="g2.html"><a href="g2.html#mutagenesis-in-cancer"><i class="fa fa-check"></i><b>2.13</b> Mutagenesis in Cancer</a><ul>
+<li class="chapter" data-level="2.13.1" data-path="g2.html"><a href="g2.html#mutation-rates"><i class="fa fa-check"></i><b>2.13.1</b> Mutation Rates</a></li>
+<li class="chapter" data-level="2.13.2" data-path="g2.html"><a href="g2.html#mutation-load"><i class="fa fa-check"></i><b>2.13.2</b> Mutation Load</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="g2.html"><a href="g2.html#genetic-manipulation"><i class="fa fa-check"></i><b>2.14</b> Genetic Manipulation</a><ul>
+<li class="chapter" data-level="2.14.1" data-path="g2.html"><a href="g2.html#cloning"><i class="fa fa-check"></i><b>2.14.1</b> Cloning</a></li>
+<li class="chapter" data-level="2.14.2" data-path="g2.html"><a href="g2.html#gene-therapy"><i class="fa fa-check"></i><b>2.14.2</b> Gene Therapy</a></li>
+<li class="chapter" data-level="2.14.3" data-path="g2.html"><a href="g2.html#genetic-rescue"><i class="fa fa-check"></i><b>2.14.3</b> Genetic Rescue</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="neurosci.html"><a href="neurosci.html"><i class="fa fa-check"></i><b>3</b> Neuroscience</a><ul>
+<li class="chapter" data-level="3.1" data-path="neurosci.html"><a href="neurosci.html#alzheimers-disease"><i class="fa fa-check"></i><b>3.1</b> Alzheimer’s Disease</a></li>
+<li class="chapter" data-level="3.2" data-path="neurosci.html"><a href="neurosci.html#sleep"><i class="fa fa-check"></i><b>3.2</b> Sleep</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aging.html"><a href="aging.html"><i class="fa fa-check"></i><b>4</b> Aging</a><ul>
+<li class="chapter" data-level="4.1" data-path="aging.html"><a href="aging.html#somatic-mutation-theory"><i class="fa fa-check"></i><b>4.1</b> Somatic Mutation Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="competition.html"><a href="competition.html"><i class="fa fa-check"></i><b>5</b> Cell Competition</a><ul>
+<li class="chapter" data-level="5.1" data-path="competition.html"><a href="competition.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="competition.html"><a href="competition.html#trophic-theory"><i class="fa fa-check"></i><b>5.2</b> Trophic Theory</a></li>
+<li class="chapter" data-level="5.3" data-path="competition.html"><a href="competition.html#modern-theory"><i class="fa fa-check"></i><b>5.3</b> Modern Theory</a></li>
+<li class="chapter" data-level="5.4" data-path="competition.html"><a href="competition.html#localization"><i class="fa fa-check"></i><b>5.4</b> Localization</a></li>
+<li class="chapter" data-level="5.5" data-path="competition.html"><a href="competition.html#microenvironment"><i class="fa fa-check"></i><b>5.5</b> Microenvironment</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bioinformatics.html"><a href="bioinformatics.html"><i class="fa fa-check"></i><b>6</b> Bioinformatics</a><ul>
+<li class="chapter" data-level="6.1" data-path="bioinformatics.html"><a href="bioinformatics.html#genome-stuff"><i class="fa fa-check"></i><b>6.1</b> Genome stuff</a></li>
+<li class="chapter" data-level="6.2" data-path="bioinformatics.html"><a href="bioinformatics.html#software"><i class="fa fa-check"></i><b>6.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cancer.html"><a href="cancer.html"><i class="fa fa-check"></i><b>7</b> Cancer</a><ul>
+<li class="chapter" data-level="7.1" data-path="cancer.html"><a href="cancer.html#introduction-3"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="cancer.html"><a href="cancer.html#incidence-rates"><i class="fa fa-check"></i><b>7.1.1</b> Incidence Rates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">On Matters Of Nature and Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="g2" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Genetics and Genomics</h1>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Introduction</h2>
+<p>A haplotype block is a set of closely linked alleles or markers on a chromosome that tend to be inherited together over evolutionary time.</p>
+<p>Across Eukaryotes, the frequency of recombination is inversely proportional to overall genome size. The result is that yeast have a recombination rate a few orders of magnitude higher than that of humans (She and Jarosz, 2018).</p>
+<div id="subpoint" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Subpoint</h3>
+<p>This is some sub info</p>
+</div>
+<div id="second-subpoint" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Second subpoint</h3>
+<p>A haplotype block is a set of closely linked alleles or markers on a chromosome that tend to be inherited together over evolutionary time.</p>
+<p>Across Eukaryotes, the frequency of recombination is inversely proportional to overall genome size. The result is that yeast have a recombination rate a few orders of magnitude higher than that of humans (She and Jarosz, 2018).</p>
+</div>
+</div>
+<div id="dna-replication" class="section level2">
+<h2><span class="header-section-number">2.2</span> DNA Replication</h2>
+<p>When the origin of replication(s) is removed from bacteria or eukaryotes, growth and division is restricted or entirely eliminated, but in some strains of archaea like H volcanii, deletion of the origin of replication accelerates cell growth rates. It turns out that this archaea can use a process that is similar to homologous recombination to create a replication fork and replicate its chromosome (Hawkins et al., 2013).</p>
+</div>
+<div id="mutation-rate" class="section level2">
+<h2><span class="header-section-number">2.3</span> Mutation Rate</h2>
+<div id="observed-mutation-rates" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Observed Mutation Rates</h3>
+<p>Using whole-genome sequencing or next-gen sequencing to determine mutation rates by base, it appears that C&gt;T mutations at CpG sites mutate at a frequency of 10-7 changes/cell division, and all other sites are within the range of 10^-8 - 10^-9 base changes per division (Arnheim and Calabrese, 2009, 2016; Campbell and Eichler, 2013; Ségurel et al., 2014; <span class="citation">Kong et al. (<a href="#ref-kong2012rate">2012</a>)</span>; <span class="citation">Ségurel, Wyman, and Przeworski (<a href="#ref-segurel2014determinants">2014</a>)</span>).</p>
+<p>It appears that humans have the highest germline mutation rate of all analyzed species (Lynch, 2016). It also appears from trio sequencing that both human and chimp mutation rates are in the range of 1.0-1.25x10^-8 mutations per site per generation <span class="citation">(Kong et al. <a href="#ref-kong2012rate">2012</a>)</span>.</p>
+<p>While germline mutation rates are similar in chimps and humans, there are important differences, one example being that CpG mutations are more prevalent in the chimp germline <span class="citation">(Venn et al. <a href="#ref-venn2014strong">2014</a>)</span>.</p>
+<p>Possibly supporting the somatic theory of aging, increases and reductions in DNA damage rates may accelerate and decelerate, respectively, some aspects of aging <span class="citation">(Behjati et al. <a href="#ref-behjati2014genome">2014</a>; Altieri et al. <a href="#ref-altieri2008dna">2008</a>)</span>.</p>
+</div>
+<div id="mutation-rate-evolution" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Mutation Rate Evolution</h3>
+<p>Providing an example of how human mutation rates can differ by geographic origination, Europeans compared to African/Asian populations have a 1.6 increased mutation rate of a TCC-&gt;TTC transitions (Harris, 2015). This change in DNA replication fidelity appears to have happened 40-80kya when Europeans and Asians diverged and illustrates that DNA repair rates have not remained entirely stable throughout human evolution.</p>
+<p>Just as in humans show a number of different mutational likelihoods, the great apes apes also show evolution in the rates of different triplet-context mutation rates <span class="citation">(Harris and Pritchard <a href="#ref-harris2017rapid">2017</a>)</span>. It would be interesting to investigate how these different rates have constrained evolution, if at all.</p>
+</div>
+</div>
+<div id="mutation-hotspots" class="section level2">
+<h2><span class="header-section-number">2.4</span> Mutation Hotspots</h2>
+<p>There are a number of sporadic mutation hotspots associated with disease incidence, like achondroplasia which has a sporadic incidence rate of 4.5 x 10-5 per generation (Arnheim and Calabrese, 2016; Waller et al., 2008). This disease originates from a single mutation in the FGFR3 gene at a mutation rate ~450 times higher than what would ordinarily be expected at a CpG site (Bellus et al., 1995; Rousseau et al., 1994; Shiang et al., 1994).</p>
+</div>
+<div id="mutation-detection" class="section level2">
+<h2><span class="header-section-number">2.5</span> Mutation Detection</h2>
+<p>Pyrophosphorolysis-activated polymerization is a mutation detection method that can detect a single mutant molecule of DNA within 25,000 genomes (Liu and Sommer, 2004; Qin et al., 2007).</p>
+</div>
+<div id="genetic-modifications" class="section level2">
+<h2><span class="header-section-number">2.6</span> Genetic Modifications</h2>
+<p>Caffeine was cloned to allow for caffeine-deficient coffee and teas without the decaffeination process (Kato et al., 2000).</p>
+<p>When a DNA-associating protein from tardigrades was cloned into mammalian cells, they became about 40% more tolerant to radiation (Hashimoto et al., 2016).</p>
+</div>
+<div id="sequencing-methods" class="section level2">
+<h2><span class="header-section-number">2.7</span> Sequencing Methods</h2>
+<p>Using a new sequencing method called sci-RNA-seq, the transcriptome of every cell of 762 cells in C Elegans was sequenced to yield single-cell sequencing results and transcriptome profiling of every cell in the body. The way this is done is by methanol fixing nuclei and then incorporating a UMI when converting to cDNA, then mixing cells again and incorporating another UMI when synthesizing the other strand (Cao et al., 2017).</p>
+<p>It appears that DAPI does not increase sequencing error rates by Illumina sequencing (Leung et al., 2016).</p>
+<p>One group came up with a method that is essentially identical to mine in which they use barcoded probes to detect leukemia but they tracked the mutation manually and ignored background (Wong et al. 2015)</p>
+</div>
+<div id="diagnostics" class="section level2">
+<h2><span class="header-section-number">2.8</span> Diagnostics</h2>
+<p>In Li and Snyder Cell 2018, the EHR from hospitals is used to integrate with a machine learning algorithm trained on aneurysm detection. Patients are then whole genome sequenced, and the genome sequencing plus the lifestyle of the individual on EHR is then used to predict if the person has an aneurysm. They were able to achieve pretty robust detection results that could then be used in a prediction setting in the clinic.</p>
+</div>
+<div id="detecting-common-diseases" class="section level2">
+<h2><span class="header-section-number">2.9</span> Detecting Common Diseases</h2>
+<p>Much of the following information comes from this review: <span class="citation">(Shendure, Findlay, and Snyder <a href="#ref-shendure2019genomic">2019</a>)</span>.</p>
+<p>Linkage disequilibrium studies were designed to detect Mendelian diseases GWAS designed back in 1996 to detect non-mendelian multigenic traits that have much less penetrant effects The promise that GWAS could risk stratify people for diseases has been challenging because most diseases seem to be driven by an extremely large number of variants with small effects that will likely require extremely large sample sizes There exists a problem of missing heritability, and it was often believed that common SNPs only held part of the puzzle, and more rare variants accounted for a great deal of heritability, but this does not yet seem to be the case, and SNPs seem to have a much greater effect size Another problem with GWAS is it is haplotype specific in that it can implicate a stretch of DNA inherited from one parent, but is blind to the individual effect sizes of each of the individual variants A challenge raised by Jonathan Pritchard is that gene regulatory networks are so interconnected that variants in one gene may actually cause changes in other genes and are therefore only peripherally relevant to a phenotype One continued promise of the utility of GWAS to identify the causal genetics behind diseases is that most of the strongest GWAS associations came from small studies of european populations that identified mutations of large effect sizes. By expanding studies to populations, especially those like african populations that have less linkage disequilibrium many more variants of large effect sizes could be identified and used to tease out relationships of smaller effect sizes in other populations. Methods are also improving fo linking regulatory elements to the genes they regulate like (Gasperini et al. 2018; Gasperini et al. 2019). Linking regulatory elements to their corresponding genes can be quite helpful, because this information can be incorporated into GWAS calculations to refine causal linkage probabilities. Polygenic risk scores have often been used to predict phenotypic variance in plants and animals, and have yet to really be applied to human genomics (Khera et al. 2018). Training of PRSs seem to not require fine-mapping, and their use has been aided by the UK Biobank (Bycroft et al. 2018).</p>
+</div>
+<div id="detecting-rare-diseases" class="section level2">
+<h2><span class="header-section-number">2.10</span> Detecting Rare Diseases</h2>
+<p>There are some 7k Mendelian monogenic disorders that impact about 0.5% of live births, but contribute to about 70% of pediatric hospital admissions An important surprise has been that de-novo mutations account for a substantial amount of intellectual disabilities and autism, where as many as 30-60% of ASD is caused by de-novo mutations Currently as many as half of acutely ill inpatient infants can be diagnosed from WGS. There are currently 59 genes designated by the American College of Medical Genetics as being sufficiently clinically actionable as to warrant sequencing and reporting in patients (Kalia et al. 2017).</p>
+</div>
+<div id="tissue-evolution" class="section level2">
+<h2><span class="header-section-number">2.11</span> Tissue Evolution</h2>
+<p>By sequencing 7,664 tumors spanning 29 different cancer types, it appears that unlike species evolution, the force of positive selection in developing tumors outweighs that of negative selection as evidenced by the loss of less than 1 coding nucleotide substitution per tumor <span class="citation">(Martincorena et al. <a href="#ref-martincorena2017universal">2017</a>)</span>. The number of mutations per cancer varied from 1 per thyroid and testicle cancer to over 10 per endometrial and colorectal cancers. This information helps to answer how many mutations are needed to effectively create cancers and how this can vary with across tissue types. A number of groups have tried to answer these questions in the past by mathematically estimating the number of rate limiting steps required in the process of oncogenesis <span class="citation">(Armitage and Doll <a href="#ref-armitage1954age">1954</a>; Tomasetti and Vogelstein <a href="#ref-tomasetti2015variation">2015</a>)</span>. There are two important problems with this approach, first that not all driver mutations need to be rate-limiting <span class="citation">(Yates et al. <a href="#ref-yates2015subclonal">2015</a>)</span>, and not all rate limiting steps in oncogenesis need to be driver mutations <span class="citation">(Martincorena et al. <a href="#ref-martincorena2015high">2015</a>)</span>. It has also been problematic to sequence tumors and count the number of high frequency mutations in oncogenic genes, but this has the added challenges of distinguishing passenger from driver mutations and is limited to current lists of oncogenes. Lists of genes involved in cancer have become increasingly detailed, but are still limited <span class="citation">(Lawrence et al. <a href="#ref-lawrence2014discovery">2014</a>; Kandoth et al. <a href="#ref-kandoth2013mutational">2013</a>)</span>. The absence of negative selection in cancer may well indicate how dispensable the majority of genes are for somatic cells.</p>
+<p>In their paper, Martincorena and Campbell show that the dN/dS ratio for somatic tissues and cancer tissue is 1 or greater showing that the effect of negative selection is minimal. In contrast, the dN/dS for germline species evolution is less than 0.5 showing a much greater effect of negative selection. Surprisingly, the non-synonymous mutations showed a dN/dS ration of 1 whether they existed in haploid or diploid regions suggesting the cells were not simply tolerating the mutations by having two copies.</p>
+<p>Using sequencing of blood to find spontaneous mutations and go back and use population biology to calculate the number of HSCs, it was found that there were between 50k-200k HSCs contributing to hematopoiesis at any given time <span class="citation">(Lee-Six et al. <a href="#ref-lee2018population">2018</a>)</span>.</p>
+</div>
+<div id="mutational-processes-in-cancer" class="section level2">
+<h2><span class="header-section-number">2.12</span> Mutational Processes in Cancer</h2>
+<p>Most cancers carry between 1,000 and 20,000 somatic point mutations and a few hundred insertions, deletions, and rearrangements <span class="citation">(Martincorena and Campbell <a href="#ref-martincorena2015somatic">2015</a>)</span>. Leukemias and pediatric brain cancers typically contain the lowest numbers of mutations while those tissues exposed to mutagens like lung and skin cancers tend to have the highest numbers <span class="citation">(Stephens et al. <a href="#ref-stephens2009complex">2009</a>; Alexandrov et al. <a href="#ref-alexandrov2013signatures">2013</a>; Lawrence et al. <a href="#ref-lawrence2013mutational">2013</a>; Vogelstein et al. <a href="#ref-vogelstein2013cancer">2013</a>)</span>. It is interesting to note that from the Cancer Gene Census database, it appears that only three genes; TP53, PIK3CA, and BRAF are mutated in 10% or more patients <span class="citation">(Martincorena and Campbell <a href="#ref-martincorena2015somatic">2015</a>)</span>.</p>
+<p>Carcinogens or particular mutations often cause identifiable mutational patterns. BRCA1 and BRCA2 mutations commonly associated with breast, ovarian, and pancreatic cancers are associated with particular substitution patterns, small indels, and large chromosome duplications <span class="citation">(Nik-Zainal et al. <a href="#ref-nik2012mutational">2012</a>)</span>.</p>
+<p>While mutations in TP53 and NOTCH1 can cause an imbalance in the division symmetry of stem cells in intestinal crypts by increasing the ratio of proliferation to differentiation<span class="citation">(Klein et al. <a href="#ref-klein2010stochastic">2010</a>; Alcolea et al. <a href="#ref-alcolea2014differentiation">2014</a>)</span>, mutations like APC and KRAS can increase the rates of crypt fission to allow multiple crypts to become clonal <span class="citation">(Preston et al. <a href="#ref-preston2003bottom">2003</a>; Snippert et al. <a href="#ref-snippert2014biased">2014</a>)</span>.</p>
+</div>
+<div id="mutagenesis-in-cancer" class="section level2">
+<h2><span class="header-section-number">2.13</span> Mutagenesis in Cancer</h2>
+<div id="mutation-rates" class="section level3">
+<h3><span class="header-section-number">2.13.1</span> Mutation Rates</h3>
+<p>Substitution rates in B/T lymphocytes appears to be on the order of 2 to 10 mutations per diploid genome per cell division, a rate which may be about 10 times higher than that occurring in germ cells <span class="citation">(Lynch <a href="#ref-lynch2010rate">2010</a>)</span>.</p>
+</div>
+<div id="mutation-load" class="section level3">
+<h3><span class="header-section-number">2.13.2</span> Mutation Load</h3>
+<p>Sun exposed skin cells can carry thousands of point mutations, and about 25-30% of these cells have acquired at least one driver mutation, and yet, while positive selection is evident as the clones expand, clone sizes are relatively similar across individuals suggesting that some mechanism is constraining the expansion of driver clones <span class="citation">(Martincorena and Campbell <a href="#ref-martincorena2015somatic">2015</a>)</span>.</p>
+<p>The progression of Barrett’s esophagus to esophageal adenocarcinoma shows no significant increase in mutation load. This may mean that Barrett’s esophagus is an advanced precancerous lesion, but some other step in the tissue is required for it to transition into such a stage <span class="citation">(Gusev et al. <a href="#ref-gusev2014partitioning">2014</a>)</span>.</p>
+</div>
+</div>
+<div id="genetic-manipulation" class="section level2">
+<h2><span class="header-section-number">2.14</span> Genetic Manipulation</h2>
+<div id="cloning" class="section level3">
+<h3><span class="header-section-number">2.14.1</span> Cloning</h3>
+<p>A macaque was the first primate to be cloned by SCNT (Liu et al., 2018).</p>
+</div>
+<div id="gene-therapy" class="section level3">
+<h3><span class="header-section-number">2.14.2</span> Gene Therapy</h3>
+<p>X-linked severe combined immunodeficiency (SCID-X1) (commonly referred to as bubble-boy disease) is caused by mutations within the IL2RG gene which impairs the receptor for IL-2, IL-4, IL-7, IL-9, IL-15 and IL-21. The result of these mutations is that T and NK cells fail to develop. This disease is often treated with bone marrow transplant which involves irradiation. Instead of such a treatment, low-dose busulfan has been used in combination with WT IL2TG DNA carrying lentivirus to give HSCs a functional copy of the receptor. This treatment seems to allow T and NK cells to develop with minimal harm to the patient <span class="citation">(Mamcarz et al. <a href="#ref-Mamcarz2019-ei">2019</a>)</span>.</p>
+</div>
+<div id="genetic-rescue" class="section level3">
+<h3><span class="header-section-number">2.14.3</span> Genetic Rescue</h3>
+<p>Inbreeding of a population can result in an accumulation of deleterious mutations. The accompanying loss in fitness can be mitigated through outbreeding, as it can increase heterozygosity and thereby mask recessive deleterious alleles <span class="citation">(Keller and Waller <a href="#ref-keller2002inbreeding">2002</a>; Ingvarsson <a href="#ref-ingvarsson2001restoration">2001</a>; Vila et al. <a href="#ref-vila2003rescue">2003</a>)</span>. This effect depends on the principle of overdominance or heterozygous vigour, which is a condition where a heterozygous offspring has a higher fitness than either of the parents.</p>
+<p>Using a modeling approach, it appears that genetic rescue of a species will result in a substantial loss of the original genes of an organism. According to the models, the degree of genetic replacement of additive genes will proportionally match the genetic rescue, while the replacement of recessive genes may not need to occur as much as they will be masked by the foreign alleles <span class="citation">(Harris, Zhang, and Nielsen <a href="#ref-Harris2019-sm">2019</a>)</span>. One caveat to this, is that even if a large fraction of the genome in the inbred organism is recessive, it is likely that a substantial portion of it must be lost to restore fitness, as it is more likely that most of the recessive mutations contribute to the reduction in fitness, each with a small fitness effect, rather than only a handful of the mutations contributing with a large fitness effect.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-kong2012rate">
+<p>Kong, Augustine, Michael L Frigge, Gisli Masson, Soren Besenbacher, Patrick Sulem, Gisli Magnusson, Sigurjon A Gudjonsson, et al. 2012. “Rate of de Novo Mutations and the Importance of Father’s Age to Disease Risk.” <em>Nature</em> 488 (7412). Nature Publishing Group: 471.</p>
+</div>
+<div id="ref-segurel2014determinants">
+<p>Ségurel, Laure, Minyoung J Wyman, and Molly Przeworski. 2014. “Determinants of Mutation Rate Variation in the Human Germline.” <em>Annual Review of Genomics and Human Genetics</em> 15. Annual Reviews: 47–70.</p>
+</div>
+<div id="ref-venn2014strong">
+<p>Venn, Oliver, Isaac Turner, Iain Mathieson, Natasja de Groot, Ronald Bontrop, and Gil McVean. 2014. “Strong Male Bias Drives Germline Mutation in Chimpanzees.” <em>Science</em> 344 (6189). American Association for the Advancement of Science: 1272–5.</p>
+</div>
+<div id="ref-behjati2014genome">
+<p>Behjati, Sam, Meritxell Huch, Ruben van Boxtel, Wouter Karthaus, David C Wedge, Asif U Tamuri, Iñigo Martincorena, et al. 2014. “Genome Sequencing of Normal Cells Reveals Developmental Lineages and Mutational Processes.” <em>Nature</em> 513 (7518). Nature Publishing Group: 422.</p>
+</div>
+<div id="ref-altieri2008dna">
+<p>Altieri, Fabio, Caterina Grillo, Manola Maceroni, and Silvia Chichiarelli. 2008. “DNA Damage and Repair: From Molecular Mechanisms to Health Implications.” <em>Antioxidants &amp; Redox Signaling</em> 10 (5). Mary Ann Liebert, Inc. 2 Madison Avenue Larchmont, NY 10538 USA: 891–938.</p>
+</div>
+<div id="ref-harris2017rapid">
+<p>Harris, Kelley, and Jonathan K Pritchard. 2017. “Rapid Evolution of the Human Mutation Spectrum.” <em>Elife</em> 6. eLife Sciences Publications Limited: e24284.</p>
+</div>
+<div id="ref-shendure2019genomic">
+<p>Shendure, Jay, Gregory M Findlay, and Matthew W Snyder. 2019. “Genomic Medicine–Progress, Pitfalls, and Promise.” <em>Cell</em> 177 (1). Elsevier: 45–57.</p>
+</div>
+<div id="ref-martincorena2017universal">
+<p>Martincorena, Iñigo, Keiran M Raine, Moritz Gerstung, Kevin J Dawson, Kerstin Haase, Peter Van Loo, Helen Davies, Michael R Stratton, and Peter J Campbell. 2017. “Universal Patterns of Selection in Cancer and Somatic Tissues.” <em>Cell</em> 171 (5). Elsevier: 1029–41.</p>
+</div>
+<div id="ref-armitage1954age">
+<p>Armitage, Peter, and Richard Doll. 1954. “The Age Distribution of Cancer and a Multi-Stage Theory of Carcinogenesis.” <em>British Journal of Cancer</em> 8 (1). Nature Publishing Group: 1.</p>
+</div>
+<div id="ref-tomasetti2015variation">
+<p>Tomasetti, Cristian, and Bert Vogelstein. 2015. “Variation in Cancer Risk Among Tissues Can Be Explained by the Number of Stem Cell Divisions.” <em>Science</em> 347 (6217). American Association for the Advancement of Science: 78–81.</p>
+</div>
+<div id="ref-yates2015subclonal">
+<p>Yates, Lucy R, Moritz Gerstung, Stian Knappskog, Christine Desmedt, Gunes Gundem, Peter Van Loo, Turid Aas, et al. 2015. “Subclonal Diversification of Primary Breast Cancer Revealed by Multiregion Sequencing.” <em>Nature Medicine</em> 21 (7). Nature Publishing Group: 751.</p>
+</div>
+<div id="ref-martincorena2015high">
+<p>Martincorena, Iñigo, Amit Roshan, Moritz Gerstung, Peter Ellis, Peter Van Loo, Stuart McLaren, David C Wedge, et al. 2015. “High Burden and Pervasive Positive Selection of Somatic Mutations in Normal Human Skin.” <em>Science</em> 348 (6237). American Association for the Advancement of Science: 880–86.</p>
+</div>
+<div id="ref-lawrence2014discovery">
+<p>Lawrence, Michael S, Petar Stojanov, Craig H Mermel, James T Robinson, Levi A Garraway, Todd R Golub, Matthew Meyerson, Stacey B Gabriel, Eric S Lander, and Gad Getz. 2014. “Discovery and Saturation Analysis of Cancer Genes Across 21 Tumour Types.” <em>Nature</em> 505 (7484). Nature Publishing Group: 495.</p>
+</div>
+<div id="ref-kandoth2013mutational">
+<p>Kandoth, Cyriac, Michael D McLellan, Fabio Vandin, Kai Ye, Beifang Niu, Charles Lu, Mingchao Xie, et al. 2013. “Mutational Landscape and Significance Across 12 Major Cancer Types.” <em>Nature</em> 502 (7471). Nature Publishing Group: 333.</p>
+</div>
+<div id="ref-lee2018population">
+<p>Lee-Six, Henry, Nina Friesgaard Øbro, Mairi S Shepherd, Sebastian Grossmann, Kevin Dawson, Miriam Belmonte, Robert J Osborne, et al. 2018. “Population Dynamics of Normal Human Blood Inferred from Somatic Mutations.” <em>Nature</em> 561 (7724). Nature Publishing Group: 473.</p>
+</div>
+<div id="ref-martincorena2015somatic">
+<p>Martincorena, Iñigo, and Peter J Campbell. 2015. “Somatic Mutation in Cancer and Normal Cells.” <em>Science</em> 349 (6255). American Association for the Advancement of Science: 1483–9.</p>
+</div>
+<div id="ref-stephens2009complex">
+<p>Stephens, Philip J, David J McBride, Meng-Lay Lin, Ignacio Varela, Erin D Pleasance, Jared T Simpson, Lucy A Stebbings, et al. 2009. “Complex Landscapes of Somatic Rearrangement in Human Breast Cancer Genomes.” <em>Nature</em> 462 (7276). Nature Publishing Group: 1005.</p>
+</div>
+<div id="ref-alexandrov2013signatures">
+<p>Alexandrov, Ludmil B, Serena Nik-Zainal, David C Wedge, Samuel AJR Aparicio, Sam Behjati, Andrew V Biankin, Graham R Bignell, et al. 2013. “Signatures of Mutational Processes in Human Cancer.” <em>Nature</em> 500 (7463). Nature Publishing Group: 415.</p>
+</div>
+<div id="ref-lawrence2013mutational">
+<p>Lawrence, Michael S, Petar Stojanov, Paz Polak, Gregory V Kryukov, Kristian Cibulskis, Andrey Sivachenko, Scott L Carter, et al. 2013. “Mutational Heterogeneity in Cancer and the Search for New Cancer-Associated Genes.” <em>Nature</em> 499 (7457). Nature Publishing Group: 214.</p>
+</div>
+<div id="ref-vogelstein2013cancer">
+<p>Vogelstein, Bert, Nickolas Papadopoulos, Victor E Velculescu, Shibin Zhou, Luis A Diaz, and Kenneth W Kinzler. 2013. “Cancer Genome Landscapes.” <em>Science</em> 339 (6127). American Association for the Advancement of Science: 1546–58.</p>
+</div>
+<div id="ref-nik2012mutational">
+<p>Nik-Zainal, Serena, Ludmil B Alexandrov, David C Wedge, Peter Van Loo, Christopher D Greenman, Keiran Raine, David Jones, et al. 2012. “Mutational Processes Molding the Genomes of 21 Breast Cancers.” <em>Cell</em> 149 (5). Elsevier: 979–93.</p>
+</div>
+<div id="ref-klein2010stochastic">
+<p>Klein, Allon M, Douglas E Brash, Philip H Jones, and Benjamin D Simons. 2010. “Stochastic Fate of P53-Mutant Epidermal Progenitor Cells Is Tilted Toward Proliferation by Uv B During Preneoplasia.” <em>Proceedings of the National Academy of Sciences</em> 107 (1). National Acad Sciences: 270–75.</p>
+</div>
+<div id="ref-alcolea2014differentiation">
+<p>Alcolea, Maria P, Philip Greulich, Agnieszka Wabik, Julia Frede, Benjamin D Simons, and Philip H Jones. 2014. “Differentiation Imbalance in Single Oesophageal Progenitor Cells Causes Clonal Immortalization and Field Change.” <em>Nature Cell Biology</em> 16 (6). Nature Publishing Group: 612.</p>
+</div>
+<div id="ref-preston2003bottom">
+<p>Preston, Sean L, Wai-Man Wong, Annie On-On Chan, Richard Poulsom, Rosemary Jeffery, Robert A Goodlad, Nikki Mandir, et al. 2003. “Bottom-up Histogenesis of Colorectal Adenomas: Origin in the Monocryptal Adenoma and Initial Expansion by Crypt Fission.” <em>Cancer Research</em> 63 (13). AACR: 3819–25.</p>
+</div>
+<div id="ref-snippert2014biased">
+<p>Snippert, Hugo J, Arnout G Schepers, Johan H van Es, Benjamin D Simons, and Hans Clevers. 2014. “Biased Competition Between Lgr5 Intestinal Stem Cells Driven by Oncogenic Mutation Induces Clonal Expansion.” <em>EMBO Reports</em> 15 (1). EMBO Press: 62–69.</p>
+</div>
+<div id="ref-lynch2010rate">
+<p>Lynch, Michael. 2010. “Rate, Molecular Spectrum, and Consequences of Human Mutation.” <em>Proceedings of the National Academy of Sciences</em> 107 (3). National Acad Sciences: 961–68.</p>
+</div>
+<div id="ref-gusev2014partitioning">
+<p>Gusev, Alexander, S Hong Lee, Gosia Trynka, Hilary Finucane, Bjarni J Vilhjálmsson, Han Xu, Chongzhi Zang, et al. 2014. “Partitioning Heritability of Regulatory and Cell-Type-Specific Variants Across 11 Common Diseases.” <em>The American Journal of Human Genetics</em> 95 (5). Elsevier: 535–52.</p>
+</div>
+<div id="ref-Mamcarz2019-ei">
+<p>Mamcarz, Ewelina, Sheng Zhou, Timothy Lockey, Hossam Abdelsamed, Shane J Cross, Guolian Kang, Zhijun Ma, et al. 2019. “Lentiviral Gene Therapy Combined with Low-Dose Busulfan in Infants with SCID-X1.” <em>N. Engl. J. Med.</em> 380 (16). Massachusetts Medical Society: 1525–34.</p>
+</div>
+<div id="ref-keller2002inbreeding">
+<p>Keller, Lukas F, and Donald M Waller. 2002. “Inbreeding Effects in Wild Populations.” <em>Trends in Ecology &amp; Evolution</em> 17 (5). Elsevier: 230–41.</p>
+</div>
+<div id="ref-ingvarsson2001restoration">
+<p>Ingvarsson, Pär K. 2001. “Restoration of Genetic Variation Lost–the Genetic Rescue Hypothesis.” <em>Trends in Ecology &amp; Evolution</em> 16 (2). Elsevier: 62–63.</p>
+</div>
+<div id="ref-vila2003rescue">
+<p>Vila, Carles, Anna–Karin Sundqvist, Øystein Flagstad, Jennifer Seddon, Susanne Bjö rnerfeldt, Ilpo Kojola, Adriano Casulli, Håkan Sand, Petter Wabakken, and Hans Ellegren. 2003. “Rescue of a Severely Bottlenecked Wolf (Canis Lupus) Population by a Single Immigrant.” <em>Proceedings of the Royal Society of London. Series B: Biological Sciences</em> 270 (1510). The Royal Society: 91–97.</p>
+</div>
+<div id="ref-Harris2019-sm">
+<p>Harris, Kelley, Yulin Zhang, and Rasmus Nielsen. 2019. “Genetic Rescue and the Maintenance of Native Ancestry.” <em>Conserv. Genet.</em> 20 (1): 59–64.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="neurosci.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-genetics_genomics.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

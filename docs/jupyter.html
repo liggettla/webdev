@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 3 JupyterLab | On Matters Of Nature and Science</title>
+  <meta name="description" content="These are just some things.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 3 JupyterLab | On Matters Of Nature and Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are just some things." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 JupyterLab | On Matters Of Nature and Science" />
+  
+  <meta name="twitter:description" content="These are just some things." />
+  
+
+<meta name="author" content="L A Liggett">
+
+
+<meta name="date" content="2019-04-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="g2.html">
+<link rel="next" href="visualization.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">On Matters Of Nature and Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="g2.html"><a href="g2.html"><i class="fa fa-check"></i><b>2</b> Genetics and Genomics</a><ul>
+<li class="chapter" data-level="2.1" data-path="g2.html"><a href="g2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="g2.html"><a href="g2.html#subpoint"><i class="fa fa-check"></i><b>2.1.1</b> Subpoint</a></li>
+<li class="chapter" data-level="2.1.2" data-path="g2.html"><a href="g2.html#second-subpoint"><i class="fa fa-check"></i><b>2.1.2</b> Second subpoint</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="g2.html"><a href="g2.html#dna-replication"><i class="fa fa-check"></i><b>2.2</b> DNA Replication</a></li>
+<li class="chapter" data-level="2.3" data-path="g2.html"><a href="g2.html#cloning"><i class="fa fa-check"></i><b>2.3</b> Cloning</a></li>
+<li class="chapter" data-level="2.4" data-path="g2.html"><a href="g2.html#mutation-rate"><i class="fa fa-check"></i><b>2.4</b> Mutation Rate</a></li>
+<li class="chapter" data-level="2.5" data-path="g2.html"><a href="g2.html#mutation-hotspots"><i class="fa fa-check"></i><b>2.5</b> Mutation Hotspots</a></li>
+<li class="chapter" data-level="2.6" data-path="g2.html"><a href="g2.html#mutation-detection"><i class="fa fa-check"></i><b>2.6</b> Mutation Detection</a></li>
+<li class="chapter" data-level="2.7" data-path="g2.html"><a href="g2.html#genetic-modifications"><i class="fa fa-check"></i><b>2.7</b> Genetic Modifications</a></li>
+<li class="chapter" data-level="2.8" data-path="g2.html"><a href="g2.html#sequencing-methods"><i class="fa fa-check"></i><b>2.8</b> Sequencing Methods</a></li>
+<li class="chapter" data-level="2.9" data-path="g2.html"><a href="g2.html#diagnostics"><i class="fa fa-check"></i><b>2.9</b> Diagnostics</a></li>
+<li class="chapter" data-level="2.10" data-path="g2.html"><a href="g2.html#detecting-common-diseases"><i class="fa fa-check"></i><b>2.10</b> Detecting Common Diseases</a></li>
+<li class="chapter" data-level="2.11" data-path="g2.html"><a href="g2.html#detecting-rare-diseases"><i class="fa fa-check"></i><b>2.11</b> Detecting Rare Diseases</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="jupyter.html"><a href="jupyter.html"><i class="fa fa-check"></i><b>3</b> JupyterLab</a></li>
+<li class="chapter" data-level="4" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>4</b> Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="visualization.html"><a href="visualization.html#matplotlib"><i class="fa fa-check"></i><b>4.1</b> Matplotlib</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization.html"><a href="visualization.html#seaborn"><i class="fa fa-check"></i><b>4.2</b> Seaborn</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="biology.html"><a href="biology.html"><i class="fa fa-check"></i><b>5</b> Biology</a><ul>
+<li class="chapter" data-level="5.1" data-path="biology.html"><a href="biology.html#general"><i class="fa fa-check"></i><b>5.1</b> General</a></li>
+<li class="chapter" data-level="5.2" data-path="biology.html"><a href="biology.html#biopython"><i class="fa fa-check"></i><b>5.2</b> Biopython</a></li>
+<li class="chapter" data-level="5.3" data-path="biology.html"><a href="biology.html#ucsc-genome-browser"><i class="fa fa-check"></i><b>5.3</b> UCSC Genome Browser</a></li>
+<li class="chapter" data-level="5.4" data-path="biology.html"><a href="biology.html#ref-genome"><i class="fa fa-check"></i><b>5.4</b> Ref Genome</a></li>
+<li class="chapter" data-level="5.5" data-path="biology.html"><a href="biology.html#personal-information"><i class="fa fa-check"></i><b>5.5</b> Personal Information</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>6</b> Data I/O</a><ul>
+<li class="chapter" data-level="6.1" data-path="io.html"><a href="io.html#reading-data-files"><i class="fa fa-check"></i><b>6.1</b> Reading Data Files</a></li>
+<li class="chapter" data-level="6.2" data-path="io.html"><a href="io.html#pickles"><i class="fa fa-check"></i><b>6.2</b> Pickles</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="7" data-path="neurosci.html"><a href="neurosci.html"><i class="fa fa-check"></i><b>7</b> Neuroscience</a><ul>
+<li class="chapter" data-level="7.1" data-path="neurosci.html"><a href="neurosci.html#alzheimers-disease"><i class="fa fa-check"></i><b>7.1</b> Alzheimer’s Disease</a></li>
+<li class="chapter" data-level="7.2" data-path="neurosci.html"><a href="neurosci.html#sleep"><i class="fa fa-check"></i><b>7.2</b> Sleep</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">On Matters Of Nature and Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="jupyter" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> JupyterLab</h1>
+<p>Here is a simple template that I use that controls a couple useful things when starting a new notebook.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+sys.path.append(<span class="st">&#39;../util&#39;</span>)
+
+<span class="op">%</span>reload_ext autoreload
+<span class="op">%</span>autoreload <span class="dv">2</span>
+
+<span class="im">from</span> util <span class="im">import</span> <span class="op">*</span>
+<span class="im">import</span> numpy <span class="im">as</span> np                  
+<span class="im">import</span> pandas <span class="im">as</span> pd                 
+<span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt
+<span class="im">import</span> seaborn <span class="im">as</span> sns
+
+sns.set_palette(<span class="st">&#39;pastel&#39;</span>)
+sns.set_style(<span class="st">&#39;ticks&#39;</span>)
+sns.set_context(<span class="st">&#39;paper&#39;</span>, font_scale<span class="op">=</span><span class="dv">1</span>)</code></pre></div>
+<p>It is often convenient to have a notebook automatically refresh the imported libraries so that they can be modified while working on a JupyterLab notebook.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>reload_ext autoreload
+<span class="op">%</span>autoreload <span class="dv">2</span></code></pre></div>
+<p>To allow directory organization, dependcies can be separated into different directories and imported into a jupyter notebook using the following import statement.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+sys.path.append(<span class="st">&#39;../util&#39;</span>)</code></pre></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="g2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-jupyter.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

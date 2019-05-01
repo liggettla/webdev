@@ -1,0 +1,34 @@
+# Bootstrap {#bootstrap}
+
+## Setup 
+Create a folder that will contain the webfiles use npm to initialize a `package.json` file. Follow through the prompts to add the desired information. Set the entry point to be `index.html`. It can also be helpful to add the node_modules folder to `.gitignore`.
+```{bash eval=FALSE}
+npm init
+```
+
+Then just initialize some basic `index.html` file for testing purposes.
+```{bash eval=FALSE}
+<body>                        
+    <h1>This is a Header</h1> 
+    <p>This is a paragraph</p>
+</body>                       
+```
+
+Install the lite server, which will serve up the content from the folder. The `save-dev` flag will add the information to the json file that the lite-server should be used to serve the content. This should add lite-server under the devDependencies listing within `package.json` and a node-modules folder.
+```{bash eval=FALSE}
+npm install lite-server --save-dev
+```
+
+Within the `package.json` file, add the start and lite listings so it looks like the following.
+```{bash eval=FALSE}
+"scripts": {                                            
+  "start": "npm run lite",                              
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "lite": "lite-server"                                 
+},                                                      
+```
+
+The lite-server can then be run using npm start.
+```{bash eval=FALSE}
+npm start
+```

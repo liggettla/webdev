@@ -1,0 +1,24 @@
+--- 
+title: "Bootstrap and React for Web Development"
+author: "L A Liggett"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "These are just some things."
+---
+
+# Introduction
+
+<!--chapter:end:index.Rmd-->
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:99-references.Rmd-->
+

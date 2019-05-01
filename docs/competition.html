@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 5 Cell Competition | On Matters Of Nature and Science</title>
+  <meta name="description" content="These are just some things.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 5 Cell Competition | On Matters Of Nature and Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are just some things." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Cell Competition | On Matters Of Nature and Science" />
+  
+  <meta name="twitter:description" content="These are just some things." />
+  
+
+<meta name="author" content="L A Liggett">
+
+
+<meta name="date" content="2019-04-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="aging.html">
+<link rel="next" href="bioinformatics.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">On Matters Of Nature and Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="g2.html"><a href="g2.html"><i class="fa fa-check"></i><b>2</b> Genetics and Genomics</a><ul>
+<li class="chapter" data-level="2.1" data-path="g2.html"><a href="g2.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="g2.html"><a href="g2.html#subpoint"><i class="fa fa-check"></i><b>2.1.1</b> Subpoint</a></li>
+<li class="chapter" data-level="2.1.2" data-path="g2.html"><a href="g2.html#second-subpoint"><i class="fa fa-check"></i><b>2.1.2</b> Second subpoint</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="g2.html"><a href="g2.html#dna-replication"><i class="fa fa-check"></i><b>2.2</b> DNA Replication</a></li>
+<li class="chapter" data-level="2.3" data-path="g2.html"><a href="g2.html#mutation-rate"><i class="fa fa-check"></i><b>2.3</b> Mutation Rate</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="g2.html"><a href="g2.html#observed-mutation-rates"><i class="fa fa-check"></i><b>2.3.1</b> Observed Mutation Rates</a></li>
+<li class="chapter" data-level="2.3.2" data-path="g2.html"><a href="g2.html#mutation-rate-evolution"><i class="fa fa-check"></i><b>2.3.2</b> Mutation Rate Evolution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="g2.html"><a href="g2.html#mutation-hotspots"><i class="fa fa-check"></i><b>2.4</b> Mutation Hotspots</a></li>
+<li class="chapter" data-level="2.5" data-path="g2.html"><a href="g2.html#mutation-detection"><i class="fa fa-check"></i><b>2.5</b> Mutation Detection</a></li>
+<li class="chapter" data-level="2.6" data-path="g2.html"><a href="g2.html#genetic-modifications"><i class="fa fa-check"></i><b>2.6</b> Genetic Modifications</a></li>
+<li class="chapter" data-level="2.7" data-path="g2.html"><a href="g2.html#sequencing-methods"><i class="fa fa-check"></i><b>2.7</b> Sequencing Methods</a></li>
+<li class="chapter" data-level="2.8" data-path="g2.html"><a href="g2.html#diagnostics"><i class="fa fa-check"></i><b>2.8</b> Diagnostics</a></li>
+<li class="chapter" data-level="2.9" data-path="g2.html"><a href="g2.html#detecting-common-diseases"><i class="fa fa-check"></i><b>2.9</b> Detecting Common Diseases</a></li>
+<li class="chapter" data-level="2.10" data-path="g2.html"><a href="g2.html#detecting-rare-diseases"><i class="fa fa-check"></i><b>2.10</b> Detecting Rare Diseases</a></li>
+<li class="chapter" data-level="2.11" data-path="g2.html"><a href="g2.html#tissue-evolution"><i class="fa fa-check"></i><b>2.11</b> Tissue Evolution</a></li>
+<li class="chapter" data-level="2.12" data-path="g2.html"><a href="g2.html#mutational-processes-in-cancer"><i class="fa fa-check"></i><b>2.12</b> Mutational Processes in Cancer</a></li>
+<li class="chapter" data-level="2.13" data-path="g2.html"><a href="g2.html#mutagenesis-in-cancer"><i class="fa fa-check"></i><b>2.13</b> Mutagenesis in Cancer</a><ul>
+<li class="chapter" data-level="2.13.1" data-path="g2.html"><a href="g2.html#mutation-rates"><i class="fa fa-check"></i><b>2.13.1</b> Mutation Rates</a></li>
+<li class="chapter" data-level="2.13.2" data-path="g2.html"><a href="g2.html#mutation-load"><i class="fa fa-check"></i><b>2.13.2</b> Mutation Load</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="g2.html"><a href="g2.html#genetic-manipulation"><i class="fa fa-check"></i><b>2.14</b> Genetic Manipulation</a><ul>
+<li class="chapter" data-level="2.14.1" data-path="g2.html"><a href="g2.html#cloning"><i class="fa fa-check"></i><b>2.14.1</b> Cloning</a></li>
+<li class="chapter" data-level="2.14.2" data-path="g2.html"><a href="g2.html#gene-therapy"><i class="fa fa-check"></i><b>2.14.2</b> Gene Therapy</a></li>
+<li class="chapter" data-level="2.14.3" data-path="g2.html"><a href="g2.html#genetic-rescue"><i class="fa fa-check"></i><b>2.14.3</b> Genetic Rescue</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="neurosci.html"><a href="neurosci.html"><i class="fa fa-check"></i><b>3</b> Neuroscience</a><ul>
+<li class="chapter" data-level="3.1" data-path="neurosci.html"><a href="neurosci.html#alzheimers-disease"><i class="fa fa-check"></i><b>3.1</b> Alzheimer’s Disease</a></li>
+<li class="chapter" data-level="3.2" data-path="neurosci.html"><a href="neurosci.html#sleep"><i class="fa fa-check"></i><b>3.2</b> Sleep</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aging.html"><a href="aging.html"><i class="fa fa-check"></i><b>4</b> Aging</a><ul>
+<li class="chapter" data-level="4.1" data-path="aging.html"><a href="aging.html#somatic-mutation-theory"><i class="fa fa-check"></i><b>4.1</b> Somatic Mutation Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="competition.html"><a href="competition.html"><i class="fa fa-check"></i><b>5</b> Cell Competition</a><ul>
+<li class="chapter" data-level="5.1" data-path="competition.html"><a href="competition.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="competition.html"><a href="competition.html#trophic-theory"><i class="fa fa-check"></i><b>5.2</b> Trophic Theory</a></li>
+<li class="chapter" data-level="5.3" data-path="competition.html"><a href="competition.html#modern-theory"><i class="fa fa-check"></i><b>5.3</b> Modern Theory</a></li>
+<li class="chapter" data-level="5.4" data-path="competition.html"><a href="competition.html#localization"><i class="fa fa-check"></i><b>5.4</b> Localization</a></li>
+<li class="chapter" data-level="5.5" data-path="competition.html"><a href="competition.html#microenvironment"><i class="fa fa-check"></i><b>5.5</b> Microenvironment</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bioinformatics.html"><a href="bioinformatics.html"><i class="fa fa-check"></i><b>6</b> Bioinformatics</a><ul>
+<li class="chapter" data-level="6.1" data-path="bioinformatics.html"><a href="bioinformatics.html#genome-stuff"><i class="fa fa-check"></i><b>6.1</b> Genome stuff</a></li>
+<li class="chapter" data-level="6.2" data-path="bioinformatics.html"><a href="bioinformatics.html#software"><i class="fa fa-check"></i><b>6.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cancer.html"><a href="cancer.html"><i class="fa fa-check"></i><b>7</b> Cancer</a><ul>
+<li class="chapter" data-level="7.1" data-path="cancer.html"><a href="cancer.html#introduction-3"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="cancer.html"><a href="cancer.html#incidence-rates"><i class="fa fa-check"></i><b>7.1.1</b> Incidence Rates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">On Matters Of Nature and Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="competition" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Cell Competition</h1>
+<div id="introduction-2" class="section level2">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<p>One of the first examples of cell competition was the discovery of Minutes heterozygous cells (M+/-) in 1975 (Morata Dev Bio 1975 and Gogna Ann Rev Gen 2015). This along with Myc and Wnt mediated cell competition provide a good understanding of what it takes for certain cells to survive instead of their peers, but recent deep sequencing has revealed that alone, the Minutes mechanism may not always be sufficient to understand cell competition.</p>
+</div>
+<div id="trophic-theory" class="section level2">
+<h2><span class="header-section-number">5.2</span> Trophic Theory</h2>
+<p>Phenotypically, Drosophila with M(+/-) showed a reduced growth rate, but eventually reached full size with no noticeable defects. If M+/- were induced early during development, they were subsequently lost, and only retained into adulthood if they were induced late in development (Simpson Dev Bio 1979). Moreover, the number of WT or M+/- that were recovered at any given point were as would be predicted by just the difference in growth rates alone. 25 years later, this process of elimination was found to be apoptosis dependent, and driven by reduced Decapentaplegic (Dpp) pathway activation in M+/- cells (Moreno Nature 2002) (The Dpp morphogen is ortholog of the vertebrate Bone Morphogenetic Protein (BMP) and is necessary for patterning of the 15 imaginal discs in Drosophila). These experiments demonstrated how the Minutes gene switches between a ‘winner’ and a ‘loser’ phenotype. In the resultant ‘ligand capture model’, WT cells can outcompete Minutes cells because they can bind up the prosurvival trophic factor Dpp, while depriving the Minutes cells of this signal, leading to their apoptosis.</p>
+<p>This idea of supercompetitors has been demonstrated with the proto-oncogene Myc in Drosophila. When Myc is overexpressed in developing Drosophila the Myc overexpressing cells grow rapidly and cause the elimination of surrounding WT cells through induction of apoptosis, as seen in the outcompetition of the Minutes cells (de la Cova C Cell 2004 and Moreno Cell 2008). The idea of supercompetitors is that the particular mutation carried by a cell confers on it some significant advantage over its peers, yet when Myc is downregulated, cells are at a disadvantage and are lost (Johnston Cell 1999). It appears that population levels of Myc regulate the fitness of a cell such that a cell must have more Myc than its peers to have an advantage, and the number of copies of Myc a cell has over its peers determines the magnitude of its advantage (Moreno Cell 2004).</p>
+<p>People have continued to explore the ‘trophic theory’ of cell competition, finding other supporting evidence in the Wingless (Wg, Wnt ortholog) pathway. Just as Minute cells and Myc overexpressing cells do, Wg overexpressing cells in Drosophila induce JNK mediated apoptosis (Vincent Dev Cell 2011) in peers as a means of outcompeting them (Giraldez Development 2003).</p>
+</div>
+<div id="modern-theory" class="section level2">
+<h2><span class="header-section-number">5.3</span> Modern Theory</h2>
+<p>Secreted protein acidic and rich in cysteine (SPARC, osteonectin) is often expressed by loser cells (Portela Drosophila 2010), and as a secreted protein that modulates cell-cell and cell-ECM interactions, it is induced during morphogenesis, injury remodeling, and development (Clark J Cell Biochem 2008) and during cancer progression (Bradshaw Int J Biochem Cell Bio 2012). SPARC is important for cell competition because it raises the threshold for caspase activation in loser cells, thereby protecting cells of otherwise reduced fitness (Portela Drosophila 2010). SPARC can be a biomarker of certain types of cancer (Chlenski Semin Cell Dev Bio 2010) and may play a significant role in competition regulation during oncogenesis (Yamada Med Mol Morph 2015). SPARC is often associated with a number of cancers including breast cancer (Witkiewicz Cancer Bio Ther 2010, Bergamaschi J Path 2008), melanoma (Fenouille Pigment Cell Melanoma Res 2011, Massi Human Path 1999), osteosarcoma (Dalla-Torre BMC Cancer 2006), glioblastoma (Rich Cancer Res 2005), and bladder cancer (Yamanaka J Urol 2001). SPARC expression in surrounding stromal cells is indicative of a better prognosis in NSCLC (Koukourakis Cancer Res 2003), colon cancer (Lian J Mol Cell Card 2003), and pancreatic adenocarcinoma (Mantoni Cancer Bio Ther 2008).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;images/04-1.jpg&quot;</span>, <span class="dv">1</span>))</code></pre></div>
+<p><img src="images/04-1.jpg" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">comment=</span><span class="ot">NA</span>, <span class="dt">fig.width=</span><span class="dv">1</span>, <span class="dt">fig.height=</span><span class="dv">1</span>)</code></pre></div>
+<p>Flower is a putative transmembrane protein that has three isoforms, two are losers and one is a winner in Drosophila growing disc epithelium (Rhiner Drosophila Dev Cell 2010). RNAi against the losers is sufficient to make a cell a winner and vice versa for flower expressing cells in Drosophila epithelium. When DMBA-TPA is used to promote papilloma formation in mice, loser flower isotypes are expressed by surrounding stromal cells, while winner flower isotypes are expressed by the papilloma, suggesting that this mechanism is conserved from flies to vertebrates (Petrova Dis Models Mech 2012).</p>
+<p>Azot is an intracellular protein that integrates the information from flower and SPARC both from the same cell and from surrounding cells and decide if its cell should apoptose (Petrova Commun Integr Biol 2011). If cells have low expression levels of loser flower isoform or high SPARC, or surrounding cells have higher expression levels of loser flower, azot is not transcribed and the cell will survive (Merino Cell 2015).</p>
+<p>It might be possible that while tumor cells are growing and expanding, they express fitness impacting genes like flower, Azot, and Myc, which gives them a competitive advantage over surrounding stromal cells.</p>
+</div>
+<div id="localization" class="section level2">
+<h2><span class="header-section-number">5.4</span> Localization</h2>
+<p>In the Drosophila gonad, both germline stem cells (GSCs) and somatic stem cells (cyst progenitor cells, CPCs) share a niche created by stromal cells that make up the hub and both share a requirement for JAK-STAT signaling to maintain their stemness. This system provides an understanding for how a single niche with multiple cell types is not overrun by the one that cycles the most rapidly.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;images/04-2.jpg&quot;</span>, <span class="dv">1</span>))</code></pre></div>
+<p><img src="images/04-2.jpg" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">comment=</span><span class="ot">NA</span>, <span class="dt">fig.width=</span><span class="dv">1</span>, <span class="dt">fig.height=</span><span class="dv">1</span>)</code></pre></div>
+<p>In the Drosophila testis, suppressor of cytokine signaling (SOCS36E) which is a JAK-STAT antagonist is expressed at high levels in the hub and at low levels in the CPCs. The JAK-STAT signaling in part drives the expression of position specific βPS-integrin which is used by both the GSCs and the CPCs to bind and localize to the hub. The image to the right shows in F how typically the GSCs (yellow) have a large surface area integrin mediated connection with the hub, while CPCs (gray) only make small integrin mediated connections. As shown in G, when SOCS36E is inhibited in the CPCs, JAK-STAT signaling is downregulated resulting in an upregulation of βPS-integrin which then allows the CPCs to bind more readily to the hub. This increased surface area of association between the hub and the CPCs allows the CPCs to outcompete the GSCs for binding spots, and eventually results in loss of GPCs (Issigonis Science 2009). Aberrant JAK-STAT signaling which includes loss of SOCS expression in mammals(Bowman Oncogene 2000, Pontier J Cell Sci 2009, Leeman Expert Opin Biol Ther 2006), and may play a role in stem cell misregulation driven cancers (Reya Nature 2001).</p>
+<p>Similar to mammals, germline stem cell transplants in Drosophila are more efficient if the original GSCs are first depleted, supporting a space-filling model of GSC-hub binding (Bhattacharya Eur J Imm 2008, Oatley Ann Rev Cell Dev Bio 2008). Upon GSC loss, hub binding space is freed, which drives dedifferentiation of somatic stem cells that then fill the empty area adjacent to other GSCs (Sheng Cell Stem Cell 2009).</p>
+<p>In the skin, collagen 17 (COL17A1), a component of the hemidesmosome, fluctuates in response to genomic and oxidative stress induced proteolysis. The stem cells that maintain high levels of COL17A1 are able to maintain contact with the niche and symmetrically divide, allowing them to outcompete neighbors that express low levels of COL17A1 as they will divide asymmetrically. With age it seems that all skin stem cells begin to lose their COL17A1 expression and eventually start to delaminate, and contributing to aging. Forced maintenance of COL17A1 however, seems to somewhat rescue skin aging <span class="citation">(Liu et al. <a href="#ref-liu2019stem">2019</a>)</span>.</p>
+</div>
+<div id="microenvironment" class="section level2">
+<h2><span class="header-section-number">5.5</span> Microenvironment</h2>
+<p>Lethal Giant Larvae (lgl) and scribble (scrib) are tumor suppressor genes in Drosophila that play necessary roles in establishing cell polarity and asymmetric cell divisions (Knoblich Cell 2008). Larvae that are constitutively mutant for lgl develop diffuse, ultimately lethal tumors, but clones of mutant cells surrounded by WT cells do not produce tumors (Froldi BMC Biol 2010, Igaki Dev Cell 2009).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">comment=</span><span class="ot">NA</span>, <span class="dt">fig.width=</span><span class="dv">1</span>, <span class="dt">fig.height=</span><span class="dv">1</span>)
+knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">rep</span>(<span class="st">&quot;images/04-3.jpg&quot;</span>, <span class="dv">1</span>))</code></pre></div>
+<p><img src="images/04-3.jpg" /><!-- --> It appears that scrib mutant cells undergo JNK-driven apoptosis when surrounded by WT cells (Brumby EMBO 2003). This resembles minutes and Dpp cell competition (Moreno Nature 2002, Morata Dev Bio 1975). When lgl- cells are created using a heat shock method in Drosophila in order to affect only a small percentage of cells, the cells would still apoptose, and do so preferentially at the border of clones indicating a short-range apoptosis inducing mechanism originating from WT cells. Interestingly, when larvae were heat shocked for different amounts of time, there was an exponential increase in surviving non-apoptosing lgl cells (figure) (Menéndez et al. 2010). The theory for why this occurs is that lgl- clones need to form a protective niche to survive, and merging clones can facilitate this. This may solve the riddle of how all oncogenic mutations could be present in a given tissue and not give rise to a cancer, it may be that a critical mass of oncogenically initiated cells is necessary before they can avoid WT cell outcompetition.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-liu2019stem">
+<p>Liu, Nan, Hiroyuki Matsumura, Tomoki Kato, Shizuko Ichinose, Aki Takada, Takeshi Namiki, Kyosuke Asakawa, et al. 2019. “Stem Cell Competition Orchestrates Skin Homeostasis and Ageing.” <em>Nature</em>. Nature Publishing Group, 1.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aging.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bioinformatics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-cell_competition.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
