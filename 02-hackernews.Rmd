@@ -1,0 +1,133 @@
+# Hackernews {#hackernews}
+
+## Setup 
+First make sure create react app is installed. The project here follows [this](https://www.youtube.com/watch?v=oGB_VPrld0U&list=PLTTC1K14KAxHj6AftnRUD28SQaoVauvl3) tutorial. There are lots of other good looking tutorials like [The React Handbook](https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/), and others at [gitconnected](https://gitconnected.com/learn/react).
+```{bash eval=FALSE}
+npm i -g create-react-app
+```
+
+Then create a new directory for the app.
+```{bash eval=FALSE}
+create-react-app hacker-news-clone
+```
+
+Change into the newly created directory and then create a file to handle environmental variables.
+```{bash eval=FALSE}
+cd hacker-news-clone
+touch .env
+```
+Within the `.env` file refer to the `src` folder. This will allow dependencies to be more easily imported.
+Add the following to the `.env` file.
+```{bash eval=FALSE}
+NODE_PATH=src
+```
+
+Make a components directory within `src` to hold all of the components for the project.
+```{bash eval=FALSE}
+mkdir -p src/components/App
+```
+
+Make a services directory within `src` to add additional functionality to the app and reference other site APIs.
+```{bash eval=FALSE}
+mkdir src/services
+```
+
+Make a styles directory within `src` to add styles that can be used across the app.
+```{bash eval=FALSE}
+mkdir -p src/styles
+```
+
+Make a store directory within `src` to add styles that will add Redux function.
+```{bash eval=FALSE}
+mkdir -p src/store
+```
+
+Make a utils directory within `src` for shared functions across the app.
+```{bash eval=FALSE}
+mkdir -p src/utils
+```
+
+Now move `App.js` to components just to keep the components bundled together.
+Rename `App.js` to index so that it can be imported from the mycomponents app.
+```{bash eval=FALSE}
+mv src/App*js src/components/App/
+mv src/components/App/App.js src/components/App/index.js
+mv src/logo.svg src/components/App/
+```
+
+Delete the css files because style components will be used instead.
+```{bash eval=FALSE}
+rm src/*css
+```
+
+Remove the imports of the css files in `src/components/App/index.js`.
+```{bash eval=FALSE}
+import './App.css';
+```
+And remove the import within `src/index.js`.
+```{bash eval=FALSE}
+import './index.css';
+```
+
+Now create some styles to be used throughout the app.
+```{bash eval=FALSE}
+mkdir src/styles
+touch src/styles/globals.js
+touch src/styles/palette.js
+```
+
+The js files above contain routine code that can be copied from the author's [github page](https://github.com/treyhuffine/hn-clone).
+Alternatively, here is the code for `global.js`.
+```{bash eval=FALSE}
+
+import { injectGlobal } from 'styled-components';
+import { colorsDark } from './palette';
+
+const setGlobalStyles = () =>
+  injectGlobal`
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: Lato,Helvetica-Neue,Helvetica,Arial,sans-serif;
+      width: 100vw;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: ${colorsDark.background};
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      &:visited {
+        color: inherit;
+      }
+    }
+  `;
+
+export default setGlobalStyles;
+```
+
+And here is the code for `palette.js`.
+```{bash eval=FALSE}
+export const colorsDark = {
+  background: '#272727',
+  backgroundSecondary: '#393C3E',
+  text: '#bfbebe',
+  textSecondary: '#848886',
+  border: '#272727',
+};
+
+export const colorsLight = {
+  background: '#EAEAEA',
+  backgroundSecondary: '#F8F8F8',
+  text: '#848886',
+  textSecondary: '#aaaaaa',
+  border: '#EAEAEA',
+};
+```
+

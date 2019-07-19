@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bootstrap and React for Web Development</title>
+  <title>Chapter 3 Hackernews | Bootstrap and React for Web Development</title>
   <meta name="description" content="These are just some things.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Bootstrap and React for Web Development" />
+  <meta property="og:title" content="Chapter 3 Hackernews | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bootstrap and React for Web Development" />
+  <meta name="twitter:title" content="Chapter 3 Hackernews | Bootstrap and React for Web Development" />
   
   <meta name="twitter:description" content="These are just some things." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="bootstrap.html">
+<link rel="prev" href="bootstrap.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -132,22 +132,49 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bootstrap and React for Web Development</h1>
-<p class="author"><em>L A Liggett</em></p>
-<p class="date"><em>2019-07-16</em></p>
-</div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="hackernews" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Hackernews</h1>
+<div id="setup-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Setup</h2>
+<p>First make sure create react app is installed. The project here follows <a href="https://www.youtube.com/watch?v=oGB_VPrld0U&amp;list=PLTTC1K14KAxHj6AftnRUD28SQaoVauvl3">this</a> tutorial. There are lots of other good looking tutorials like <a href="https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/">The React Handbook</a>, and others at <a href="https://gitconnected.com/learn/react">gitconnected</a>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">npm</span> i -g create-react-app</code></pre></div>
+<p>Then create a new directory for the app.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">create-react-app</span> hacker-news-clone</code></pre></div>
+<p>Change into the newly created directory and then create a file to handle environmental variables.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> hacker-news-clone
+<span class="fu">touch</span> .env</code></pre></div>
+<p>Within the <code>.env</code> file refer to the <code>src</code> folder. This will allow dependencies to be more easily imported. Add the following to the <code>.env</code> file.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">NODE_PATH=</span>src</code></pre></div>
+<p>Make a components directory within <code>src</code> to hold all of the components for the project.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> -p src/components/App</code></pre></div>
+<p>Make a services directory within <code>src</code> to add additional functionality to the app and reference other site APIs.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> src/services</code></pre></div>
+<p>Make a styles directory within <code>src</code> to add styles that can be used across the app.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> -p src/styles</code></pre></div>
+<p>Make a store directory within <code>src</code> to add styles that will add Redux function.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> -p src/store</code></pre></div>
+<p>Make a utils directory within <code>src</code> for shared functions across the app.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> -p src/utils</code></pre></div>
+<p>Now move <code>App.js</code> to components just to keep the components bundled together. Rename <code>App.js</code> to index so that it can be imported from the mycomponents app.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mv</span> src/App*js src/components/App/
+<span class="fu">mv</span> src/components/App/App.js src/components/App/index.js
+<span class="fu">mv</span> src/logo.svg src/components/App/</code></pre></div>
+<p>Delete the css files because style components will be used instead.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">rm</span> src/*css</code></pre></div>
+<p>Remove the imports of the css files in <code>src/components/App/index.js</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">import</span> <span class="st">&#39;./App.css&#39;</span><span class="kw">;</span></code></pre></div>
+<p>And remove the import within <code>src/index.js</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">import</span> <span class="st">&#39;./index.css&#39;</span><span class="kw">;</span></code></pre></div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="bootstrap.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bootstrap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -177,7 +204,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-hackernews.Rmd",
 "text": "Edit"
 },
 "history": {
