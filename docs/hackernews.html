@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Hackernews | Bootstrap and React for Web Development</title>
+  <title>Chapter 4 Hackernews | Bootstrap and React for Web Development</title>
   <meta name="description" content="These are just some things.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Hackernews | Bootstrap and React for Web Development" />
+  <meta property="og:title" content="Chapter 4 Hackernews | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Hackernews | Bootstrap and React for Web Development" />
+  <meta name="twitter:title" content="Chapter 4 Hackernews | Bootstrap and React for Web Development" />
   
   <meta name="twitter:description" content="These are just some things." />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-07-16">
+<meta name="date" content="2019-07-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -105,11 +105,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>2</b> Bootstrap</a><ul>
-<li class="chapter" data-level="2.1" data-path="bootstrap.html"><a href="bootstrap.html#setup"><i class="fa fa-check"></i><b>2.1</b> Setup</a></li>
+<li class="chapter" data-level="2" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>2</b> HTML</a><ul>
+<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a></li>
+<li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>3</b> Hackernews</a><ul>
-<li class="chapter" data-level="3.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>3.1</b> Setup</a></li>
+<li class="chapter" data-level="3" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>3</b> Bootstrap</a><ul>
+<li class="chapter" data-level="3.1" data-path="bootstrap.html"><a href="bootstrap.html#setup"><i class="fa fa-check"></i><b>3.1</b> Setup</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>4</b> Hackernews</a><ul>
+<li class="chapter" data-level="4.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>4.1</b> Setup</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -133,9 +137,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="hackernews" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Hackernews</h1>
+<h1><span class="header-section-number">Chapter 4</span> Hackernews</h1>
 <div id="setup-1" class="section level2">
-<h2><span class="header-section-number">3.1</span> Setup</h2>
+<h2><span class="header-section-number">4.1</span> Setup</h2>
 <p>First make sure create react app is installed. The project here follows <a href="https://www.youtube.com/watch?v=oGB_VPrld0U&amp;list=PLTTC1K14KAxHj6AftnRUD28SQaoVauvl3">this</a> tutorial. There are lots of other good looking tutorials like <a href="https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/">The React Handbook</a>, and others at <a href="https://gitconnected.com/learn/react">gitconnected</a>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">npm</span> i -g create-react-app</code></pre></div>
 <p>Then create a new directory for the app.</p>
@@ -165,6 +169,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">import</span> <span class="st">&#39;./App.css&#39;</span><span class="kw">;</span></code></pre></div>
 <p>And remove the import within <code>src/index.js</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">import</span> <span class="st">&#39;./index.css&#39;</span><span class="kw">;</span></code></pre></div>
+<p>Now create some styles to be used throughout the app.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> src/styles
+<span class="fu">touch</span> src/styles/globals.js
+<span class="fu">touch</span> src/styles/palette.js</code></pre></div>
+<p>The js files above contain routine code that can be copied from the author’s <a href="https://github.com/treyhuffine/hn-clone">github page</a>. Alternatively, here is the code for <code>global.js</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">
+<span class="ex">import</span> { injectGlobal } <span class="ex">from</span> <span class="st">&#39;styled-components&#39;</span><span class="kw">;</span>
+<span class="ex">import</span> { colorsDark } <span class="ex">from</span> <span class="st">&#39;./palette&#39;</span><span class="kw">;</span>
+
+<span class="ex">const</span> setGlobalStyles = () =<span class="op">&gt;</span>
+  <span class="ex">injectGlobal</span><span class="kw">`</span>
+    <span class="ex">*</span> {
+      <span class="ex">box-sizing</span>: border-box<span class="kw">;</span>
+    }
+    <span class="ex">html</span>, body {
+      <span class="ex">font-family</span>: Lato,Helvetica-Neue,Helvetica,Arial,sans-serif<span class="kw">;</span>
+      <span class="ex">width</span>: 100vw<span class="kw">;</span>
+      <span class="ex">overflow-x</span>: hidden<span class="kw">;</span>
+      <span class="ex">margin</span>: 0<span class="kw">;</span>
+      <span class="ex">padding</span>: 0<span class="kw">;</span>
+      <span class="ex">min-height</span>: 100vh<span class="kw">;</span>
+      <span class="ex">background-color</span>: <span class="va">${colorsDark</span><span class="er">.background</span><span class="va">}</span><span class="kw">;</span>
+    }
+    <span class="ex">ul</span> {
+      <span class="ex">list-style</span>: none<span class="kw">;</span>
+      <span class="ex">padding</span>: 0<span class="kw">;</span>
+    }
+    <span class="ex">a</span> {
+      <span class="ex">text-decoration</span>: none<span class="kw">;</span>
+      <span class="kw">&amp;</span>:<span class="ex">visited</span> {
+        <span class="ex">color</span>: inherit<span class="kw">;</span>
+      }
+    }
+  <span class="kw">`;</span>
+
+<span class="bu">export</span> <span class="va">default</span> <span class="va">setGlobalStyles</span>;</code></pre></div>
+<p>And here is the code for <code>palette.js</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">const</span> <span class="va">colorsDark</span> <span class="va">=</span> {
+  <span class="ex">background</span>: <span class="st">&#39;#272727&#39;</span>,
+  <span class="ex">backgroundSecondary</span>: <span class="st">&#39;#393C3E&#39;</span>,
+  <span class="ex">text</span>: <span class="st">&#39;#bfbebe&#39;</span>,
+  <span class="ex">textSecondary</span>: <span class="st">&#39;#848886&#39;</span>,
+  <span class="ex">border</span>: <span class="st">&#39;#272727&#39;</span>,
+};
+
+<span class="bu">export</span> <span class="va">const</span> <span class="va">colorsLight</span> <span class="va">=</span> {
+  <span class="ex">background</span>: <span class="st">&#39;#EAEAEA&#39;</span>,
+  <span class="ex">backgroundSecondary</span>: <span class="st">&#39;#F8F8F8&#39;</span>,
+  <span class="ex">text</span>: <span class="st">&#39;#848886&#39;</span>,
+  <span class="ex">textSecondary</span>: <span class="st">&#39;#aaaaaa&#39;</span>,
+  <span class="ex">border</span>: <span class="st">&#39;#EAEAEA&#39;</span>,
+};</code></pre></div>
 
 </div>
 </div>
@@ -204,7 +260,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-hackernews.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/20-hackernews.Rmd",
 "text": "Edit"
 },
 "history": {

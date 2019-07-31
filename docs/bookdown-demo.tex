@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-07-16}
+    \date{2019-07-30}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -144,6 +144,350 @@
 \tableofcontents
 }
 \chapter{Introduction}\label{introduction}
+
+\chapter{HTML}\label{html}
+
+\section{HTML Properties}\label{html-properties}
+
+The head tag allows metadata to be labeled, the text of title for
+instance is typically listed in the tab or the status bar of the page in
+a browser.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}         
+            \ExtensionTok{My}\NormalTok{ Web Page!}
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{title}\OperatorTok{>}        
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+The body specifies text for the page body.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \ExtensionTok{Hello}\NormalTok{, world!   }
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Headings specifies header text of increasingly small sizes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{This is the largest headline}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}        
+        \OperatorTok{<}\ExtensionTok{h2}\OperatorTok{>}\NormalTok{This is also a large headline}\OperatorTok{<}\NormalTok{/h2}\OperatorTok{>}       
+        \OperatorTok{<}\ExtensionTok{h3}\OperatorTok{>}\NormalTok{This is a slightly smaller headline}\OperatorTok{<}\NormalTok{/h3}\OperatorTok{>} 
+        \OperatorTok{<}\ExtensionTok{h4}\OperatorTok{>}\NormalTok{This is an even smaller headline}\OperatorTok{<}\NormalTok{/h4}\OperatorTok{>}    
+        \OperatorTok{<}\ExtensionTok{h5}\OperatorTok{>}\NormalTok{This is the second-smallest headline}\OperatorTok{<}\NormalTok{/h5}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{h6}\OperatorTok{>}\NormalTok{This is the smallest headline}\OperatorTok{<}\NormalTok{/h6}\OperatorTok{>}       
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Unordered lists specify bullet points.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \ExtensionTok{An}\NormalTok{ Unordered List:           }
+        \OperatorTok{<}\ExtensionTok{ul}\OperatorTok{>}                         
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{One Item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}        
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{Another Item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}    
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{Yet Another Item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{ul}\OperatorTok{>}                        
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Ordered lists number lines in increasing order.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \ExtensionTok{An}\NormalTok{ Ordered List:}
+        \OperatorTok{<}\ExtensionTok{ol}\OperatorTok{>}                          
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{First Item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}       
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{Second Item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}      
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{Another Item Here}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{Fourth Item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}      
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{ol}\OperatorTok{>}                         
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+The image tag refers to and inserts an image as an html attribute. The
+alt gives alternative code if the image is missing. The height and width
+sets the image size in number of pixels. When the image size is set to
+50\% sets the image size dynamically to 50\% of the browser width or
+height.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{img}\NormalTok{ src=}\StringTok{"cat.jpg"}\NormalTok{ alt=}\StringTok{"cat"}\NormalTok{ width=}\StringTok{"300"}\NormalTok{ height=}\StringTok{"200"}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{img}\NormalTok{ src=}\StringTok{"cat.jpg"}\NormalTok{ alt=}\StringTok{"cat"}\NormalTok{ width=}\StringTok{"50%"} \OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Tables display data in a table format that can be styled in various
+ways. The \texttt{th} tag specifies the headings of each of the columns.
+The \texttt{td} tag specifies the data in each of the columns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{table}\OperatorTok{>}                         
+            \OperatorTok{<}\FunctionTok{tr}\OperatorTok{>}                        
+                \OperatorTok{<}\ExtensionTok{th}\OperatorTok{>}\NormalTok{First Name}\OperatorTok{<}\NormalTok{/th}\OperatorTok{>}     
+                \OperatorTok{<}\ExtensionTok{th}\OperatorTok{>}\NormalTok{Last Name}\OperatorTok{<}\NormalTok{/th}\OperatorTok{>}      
+                \OperatorTok{<}\ExtensionTok{th}\OperatorTok{>}\NormalTok{Years in Office}\OperatorTok{<}\NormalTok{/th}\OperatorTok{>}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{tr}\OperatorTok{>}                       
+            \OperatorTok{<}\FunctionTok{tr}\OperatorTok{>}                        
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{George}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}         
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{Washington}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}     
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{1789-}\OperatorTok{1797<}\NormalTok{/td}\OperatorTok{>}      
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{tr}\OperatorTok{>}                       
+            \OperatorTok{<}\FunctionTok{tr}\OperatorTok{>}                        
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{John}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}           
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{Adams}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}          
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{1797-}\OperatorTok{1801<}\NormalTok{/td}\OperatorTok{>}      
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{tr}\OperatorTok{>}                       
+            \OperatorTok{<}\FunctionTok{tr}\OperatorTok{>}                        
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{Thomas}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}         
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{Jefferson}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}      
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{1801-}\OperatorTok{1809<}\NormalTok{/td}\OperatorTok{>}      
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{tr}\OperatorTok{>}                       
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{table}\OperatorTok{>}                        
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Tables can be styled within the header of the html document. Both the
+\texttt{th} and the \texttt{td} styles are defined together.
+\texttt{border-collapse} combines the borders of cells together.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                  
+        \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}\NormalTok{Presidents}\OperatorTok{<}\NormalTok{/title}\OperatorTok{>}           
+        \OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}                             
+            \ExtensionTok{table}\NormalTok{ \{                         }
+                \ExtensionTok{border}\NormalTok{: 2px solid black}\KeywordTok{;}    
+                \ExtensionTok{border-collapse}\NormalTok{: collapse}\KeywordTok{;}  
+                \ExtensionTok{width}\NormalTok{: 50%}\KeywordTok{;}                 
+\NormalTok{            \}                               }
+                                            
+            \ExtensionTok{th}\NormalTok{, td \{                        }
+                \ExtensionTok{border}\NormalTok{: 1px solid black}\KeywordTok{;}    
+                \ExtensionTok{padding}\NormalTok{: 5px}\KeywordTok{;}               
+                \ExtensionTok{text-align}\NormalTok{: center}\KeywordTok{;}         
+\NormalTok{            \}                               }
+                                            
+            \ExtensionTok{th}\NormalTok{ \{                            }
+                \ExtensionTok{background-color}\NormalTok{: lightgray}\KeywordTok{;}
+\NormalTok{            \}                               }
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}                            
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                 
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{table}\OperatorTok{>}                         
+            \OperatorTok{<}\FunctionTok{tr}\OperatorTok{>}                        
+                \OperatorTok{<}\ExtensionTok{th}\OperatorTok{>}\NormalTok{First Name}\OperatorTok{<}\NormalTok{/th}\OperatorTok{>}     
+                \OperatorTok{<}\ExtensionTok{th}\OperatorTok{>}\NormalTok{Last Name}\OperatorTok{<}\NormalTok{/th}\OperatorTok{>}      
+                \OperatorTok{<}\ExtensionTok{th}\OperatorTok{>}\NormalTok{Years in Office}\OperatorTok{<}\NormalTok{/th}\OperatorTok{>}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{tr}\OperatorTok{>}                       
+            \OperatorTok{<}\FunctionTok{tr}\OperatorTok{>}                        
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{George}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}         
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{Washington}\OperatorTok{<}\NormalTok{/td}\OperatorTok{>}     
+                \OperatorTok{<}\ExtensionTok{td}\OperatorTok{>}\NormalTok{1789-}\OperatorTok{1797<}\NormalTok{/td}\OperatorTok{>}      
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{tr}\OperatorTok{>}                       
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{table}\OperatorTok{>}                        
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Forms can be created and labeled as such. The \texttt{placeholder} text
+is what is written within the form before anything is entered into it.
+The \texttt{name} is similar to a variable name and can be used to refer
+to the form and the data that is entered into it. The text within the
+button is the text that will appear on the button in the page.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{form}\OperatorTok{>}                                                     
+            \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ placeholder=}\StringTok{"Full Name"}\NormalTok{ name=}\StringTok{"name"}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Submit!}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                               
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}                                                    
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Text can be aligned and colord by specifying styles within the
+respective tags of text.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{h1}\NormalTok{ style=}\StringTok{"color:red;text-align:center;"}\OperatorTok{>}\NormalTok{Welcome to My Web Page!}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{h1}\NormalTok{ style=}\StringTok{"color:#4290f5;text-align:center;"}\OperatorTok{>}\NormalTok{Second heading}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+Style elements can be separated from the actual body of the webpage. In
+this example every \texttt{h1} is styled within the style portion of the
+header.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                         
+        \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}\NormalTok{My Web Page!}\OperatorTok{<}\NormalTok{/title}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}                    
+            \ExtensionTok{h1}\NormalTok{ \{                   }
+                \ExtensionTok{color}\NormalTok{: red}\KeywordTok{;}        
+                \ExtensionTok{text-align}\NormalTok{: center}\KeywordTok{;}
+\NormalTok{            \}                      }
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}                   
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                        
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}              
+        \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{Welcome to My Web Page!}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+\section{CSS}\label{css}
+
+CSS properties can be found
+\href{https://developer.mozilla.org/en-US/docs/Web/CSS/Reference}{here}.
+
+Instead of putting the css styles within the header of the html file,
+they can be included in a separate css file and referenced. In this
+example, the type of file being referenced is classified as a
+\texttt{stylesheet} and the code is within \texttt{styles.css}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                  
+    \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                       
+        \OperatorTok{<}\FunctionTok{link}\NormalTok{ rel=}\StringTok{"stylesheet"}\NormalTok{ href=}\StringTok{"styles.css"}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                      
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                 
+\end{Highlighting}
+\end{Shaded}
+
+The code that goes within the css file is here, and it is simply the
+same code that was put into the style headers in the above example.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{h1}\NormalTok{ \{                   }
+    \ExtensionTok{color}\NormalTok{: blue}\KeywordTok{;}       
+    \ExtensionTok{text-align}\NormalTok{: center}\KeywordTok{;}
+\NormalTok{\}                      }
+\end{Highlighting}
+\end{Shaded}
+
+Divisions define sections of the code that can be separated so it can be
+controlled in a particular manner. Font priorities are taken left to
+right if some fonts are not found.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}                        
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                                 
+    \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                             
+        \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}\NormalTok{My Web Page!}\OperatorTok{<}\NormalTok{/title}\OperatorTok{>}    
+        \OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}                        
+            \ExtensionTok{div}\NormalTok{ \{                      }
+                \ExtensionTok{background-color}\NormalTok{: teal}\KeywordTok{;}
+                \ExtensionTok{width}\NormalTok{: 500px}\KeywordTok{;}          
+                \ExtensionTok{height}\NormalTok{: 400px}\KeywordTok{;}         
+                \ExtensionTok{margin}\NormalTok{: 30px}\KeywordTok{;}
+                \ExtensionTok{padding}\NormalTok{: 20px}\KeywordTok{;}
+                \ExtensionTok{font-family}\NormalTok{: Arial, sans-serif}\KeywordTok{;}
+                \ExtensionTok{font-size}\NormalTok{: 28px}\KeywordTok{;}               
+                \ExtensionTok{font-weight}\NormalTok{: bold}\KeywordTok{;}             
+                \ExtensionTok{border}\NormalTok{: 1px dotted black}\KeywordTok{;}
+\NormalTok{            \}                          }
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}                       
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                            
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}                             
+        \OperatorTok{<}\ExtensionTok{div}\OperatorTok{>}                          
+            \ExtensionTok{Hello}\NormalTok{, world!              }
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}                         
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}                            
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}                                
+\end{Highlighting}
+\end{Shaded}
+
+Divisions and spans can be named and used to refer to different parts of
+the html document specifically.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{DOCTYPE}\NormalTok{ html}\OperatorTok{>}                                                         
+\OperatorTok{<}\ExtensionTok{html}\OperatorTok{>}                                                                  
+    \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                                              
+        \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}\NormalTok{My Web Page!}\OperatorTok{<}\NormalTok{/title}\OperatorTok{>}                                     
+        \OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}                                                         
+            \CommentTok{#top \{                                                      }
+                \ExtensionTok{font-size}\NormalTok{: 36px}\KeywordTok{;}                                        
+                \ExtensionTok{color}\NormalTok{: red}\KeywordTok{;}                                             
+\NormalTok{            \}                                                           }
+                                                                        
+            \ExtensionTok{.name}\NormalTok{ \{                                                     }
+                \ExtensionTok{font-weight}\NormalTok{: bold}\KeywordTok{;}                                      
+                \ExtensionTok{color}\NormalTok{: blue}\KeywordTok{;}                                            
+\NormalTok{            \}                                                           }
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}                                                        
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                                             
+    \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}                                                              
+        \OperatorTok{<}\ExtensionTok{div}\NormalTok{ id=}\StringTok{"top"}\OperatorTok{>}                                                  
+            \ExtensionTok{This}\NormalTok{ is the }\OperatorTok{<}\NormalTok{span class=}\StringTok{"name"}\OperatorTok{>}\NormalTok{top}\OperatorTok{<}\NormalTok{/span}\OperatorTok{>}\NormalTok{ of my web page.   }
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}                                                          
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}                                                             
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Bootstrap}\label{bootstrap}
 
@@ -330,6 +674,78 @@ And remove the import within \texttt{src/index.js}.
 \begin{Shaded}
 \begin{Highlighting}[]
 \ExtensionTok{import} \StringTok{'./index.css'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Now create some styles to be used throughout the app.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mkdir}\NormalTok{ src/styles}
+\FunctionTok{touch}\NormalTok{ src/styles/globals.js}
+\FunctionTok{touch}\NormalTok{ src/styles/palette.js}
+\end{Highlighting}
+\end{Shaded}
+
+The js files above contain routine code that can be copied from the
+author's \href{https://github.com/treyhuffine/hn-clone}{github page}.
+Alternatively, here is the code for \texttt{global.js}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\ExtensionTok{import}\NormalTok{ \{ injectGlobal \} }\ExtensionTok{from} \StringTok{'styled-components'}\KeywordTok{;}
+\ExtensionTok{import}\NormalTok{ \{ colorsDark \} }\ExtensionTok{from} \StringTok{'./palette'}\KeywordTok{;}
+
+\ExtensionTok{const}\NormalTok{ setGlobalStyles = () =}\OperatorTok{>}
+  \ExtensionTok{injectGlobal}\KeywordTok{`}
+    \ExtensionTok{*}\NormalTok{ \{}
+      \ExtensionTok{box-sizing}\NormalTok{: border-box}\KeywordTok{;}
+\NormalTok{    \}}
+    \ExtensionTok{html}\NormalTok{, body \{}
+      \ExtensionTok{font-family}\NormalTok{: Lato,Helvetica-Neue,Helvetica,Arial,sans-serif}\KeywordTok{;}
+      \ExtensionTok{width}\NormalTok{: 100vw}\KeywordTok{;}
+      \ExtensionTok{overflow-x}\NormalTok{: hidden}\KeywordTok{;}
+      \ExtensionTok{margin}\NormalTok{: 0}\KeywordTok{;}
+      \ExtensionTok{padding}\NormalTok{: 0}\KeywordTok{;}
+      \ExtensionTok{min-height}\NormalTok{: 100vh}\KeywordTok{;}
+      \ExtensionTok{background-color}\NormalTok{: }\VariableTok{$\{colorsDark}\ErrorTok{.background}\VariableTok{\}}\KeywordTok{;}
+\NormalTok{    \}}
+    \ExtensionTok{ul}\NormalTok{ \{}
+      \ExtensionTok{list-style}\NormalTok{: none}\KeywordTok{;}
+      \ExtensionTok{padding}\NormalTok{: 0}\KeywordTok{;}
+\NormalTok{    \}}
+    \ExtensionTok{a}\NormalTok{ \{}
+      \ExtensionTok{text-decoration}\NormalTok{: none}\KeywordTok{;}
+      \KeywordTok{&}\NormalTok{:}\ExtensionTok{visited}\NormalTok{ \{}
+        \ExtensionTok{color}\NormalTok{: inherit}\KeywordTok{;}
+\NormalTok{      \}}
+\NormalTok{    \}}
+  \KeywordTok{`;}
+
+\BuiltInTok{export} \VariableTok{default} \VariableTok{setGlobalStyles}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+And here is the code for \texttt{palette.js}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{export} \VariableTok{const} \VariableTok{colorsDark} \VariableTok{=}\NormalTok{ \{}
+  \ExtensionTok{background}\NormalTok{: }\StringTok{'#272727'}\NormalTok{,}
+  \ExtensionTok{backgroundSecondary}\NormalTok{: }\StringTok{'#393C3E'}\NormalTok{,}
+  \ExtensionTok{text}\NormalTok{: }\StringTok{'#bfbebe'}\NormalTok{,}
+  \ExtensionTok{textSecondary}\NormalTok{: }\StringTok{'#848886'}\NormalTok{,}
+  \ExtensionTok{border}\NormalTok{: }\StringTok{'#272727'}\NormalTok{,}
+\NormalTok{\};}
+
+\BuiltInTok{export} \VariableTok{const} \VariableTok{colorsLight} \VariableTok{=}\NormalTok{ \{}
+  \ExtensionTok{background}\NormalTok{: }\StringTok{'#EAEAEA'}\NormalTok{,}
+  \ExtensionTok{backgroundSecondary}\NormalTok{: }\StringTok{'#F8F8F8'}\NormalTok{,}
+  \ExtensionTok{text}\NormalTok{: }\StringTok{'#848886'}\NormalTok{,}
+  \ExtensionTok{textSecondary}\NormalTok{: }\StringTok{'#aaaaaa'}\NormalTok{,}
+  \ExtensionTok{border}\NormalTok{: }\StringTok{'#EAEAEA'}\NormalTok{,}
+\NormalTok{\};}
 \end{Highlighting}
 \end{Shaded}
 

@@ -1,0 +1,291 @@
+# HTML {#html}
+
+## HTML Properties
+
+The head tag allows metadata to be labeled, the text of title for instance is typically listed in the tab or the status bar of the page in a browser.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <head>              
+        <title>         
+            My Web Page!
+        </title>        
+    </head>             
+</html>                 
+```
+
+The body specifies text for the page body.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+        Hello, world!   
+    </body>             
+</html>                 
+```
+
+Headings specifies header text of increasingly small sizes.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		<h1>This is the largest headline</h1>        
+		<h2>This is also a large headline</h2>       
+		<h3>This is a slightly smaller headline</h3> 
+		<h4>This is an even smaller headline</h4>    
+		<h5>This is the second-smallest headline</h5>
+		<h6>This is the smallest headline</h6>       
+    </body>             
+</html>                 
+```
+
+Unordered lists specify bullet points.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		An Unordered List:           
+		<ul>                         
+			<li>One Item</li>        
+			<li>Another Item</li>    
+			<li>Yet Another Item</li>
+		</ul>                        
+    </body>             
+</html>                 
+```
+
+Ordered lists number lines in increasing order.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		An Ordered List:
+		<ol>                          
+			<li>First Item</li>       
+			<li>Second Item</li>      
+			<li>Another Item Here</li>
+			<li>Fourth Item</li>      
+		</ol>                         
+    </body>             
+</html>                 
+```
+
+The image tag refers to and inserts an image as an html attribute.
+The alt gives alternative code if the image is missing.
+The height and width sets the image size in number of pixels.
+When the image size is set to 50% sets the image size dynamically to 50% of the browser width or height.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		<img src="cat.jpg" alt="cat" width="300" height="200">
+		<img src="cat.jpg" alt="cat" width="50%" >
+    </body>             
+</html>                 
+```
+
+Tables display data in a table format that can be styled in various ways.
+The `th` tag specifies the headings of each of the columns.
+The `td` tag specifies the data in each of the columns.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		<table>                         
+			<tr>                        
+				<th>First Name</th>     
+				<th>Last Name</th>      
+				<th>Years in Office</th>
+			</tr>                       
+			<tr>                        
+				<td>George</td>         
+				<td>Washington</td>     
+				<td>1789-1797</td>      
+			</tr>                       
+			<tr>                        
+				<td>John</td>           
+				<td>Adams</td>          
+				<td>1797-1801</td>      
+			</tr>                       
+			<tr>                        
+				<td>Thomas</td>         
+				<td>Jefferson</td>      
+				<td>1801-1809</td>      
+			</tr>                       
+		</table>                        
+    </body>             
+</html>                 
+```
+
+Tables can be styled within the header of the html document.
+Both the `th` and the `td` styles are defined together.
+`border-collapse` combines the borders of cells together.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+	<head>                                  
+		<title>Presidents</title>           
+		<style>                             
+			table {                         
+				border: 2px solid black;    
+				border-collapse: collapse;  
+				width: 50%;                 
+			}                               
+											
+			th, td {                        
+				border: 1px solid black;    
+				padding: 5px;               
+				text-align: center;         
+			}                               
+											
+			th {                            
+				background-color: lightgray;
+			}                               
+		</style>                            
+	</head>                                 
+    <body>              
+		<table>                         
+			<tr>                        
+				<th>First Name</th>     
+				<th>Last Name</th>      
+				<th>Years in Office</th>
+			</tr>                       
+			<tr>                        
+				<td>George</td>         
+				<td>Washington</td>     
+				<td>1789-1797</td>      
+			</tr>                       
+		</table>                        
+    </body>             
+</html>                 
+```
+
+Forms can be created and labeled as such.
+The `placeholder` text is what is written within the form before anything is entered into it.
+The `name` is similar to a variable name and can be used to refer to the form and the data that is entered into it.
+The text within the button is the text that will appear on the button in the page.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		<form>                                                     
+			<input type="text" placeholder="Full Name" name="name">
+			<button>Submit!</button>                               
+		</form>                                                    
+    </body>             
+</html>                 
+```
+
+Text can be aligned and colord by specifying styles within the respective tags of text.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+    <body>              
+		<h1 style="color:red;text-align:center;">Welcome to My Web Page!</h1>
+		<h1 style="color:#4290f5;text-align:center;">Second heading</h1>
+    </body>             
+</html>                 
+```
+
+Style elements can be separated from the actual body of the webpage.
+In this example every `h1` is styled within the style portion of the header.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+	<head>                         
+		<title>My Web Page!</title>
+		<style>                    
+			h1 {                   
+				color: red;        
+				text-align: center;
+			}                      
+		</style>                   
+	</head>                        
+    <body>              
+		<h1>Welcome to My Web Page!</h1>
+    </body>             
+</html>                 
+```
+
+## CSS
+
+CSS properties can be found [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
+
+Instead of putting the css styles within the header of the html file, they can be included in a separate css file and referenced.
+In this example, the type of file being referenced is classified as a `stylesheet` and the code is within `styles.css`.
+```{bash eval=FALSE}
+<!DOCTYPE html>         
+<html>                  
+	<head>                                       
+		<link rel="stylesheet" href="styles.css">
+	</head>                                      
+</html>                 
+```
+The code that goes within the css file is here, and it is simply the same code that was put into the style headers in the above example.
+```{bash eval=FALSE}
+h1 {                   
+    color: blue;       
+    text-align: center;
+}                      
+```
+
+Divisions define sections of the code that can be separated so it can be controlled in a particular manner.
+Font priorities are taken left to right if some fonts are not found.
+```{bash eval=FALSE}
+<!DOCTYPE html>                        
+<html>                                 
+    <head>                             
+        <title>My Web Page!</title>    
+        <style>                        
+            div {                      
+                background-color: teal;
+                width: 500px;          
+                height: 400px;         
+				margin: 30px;
+				padding: 20px;
+				font-family: Arial, sans-serif;
+				font-size: 28px;               
+				font-weight: bold;             
+				border: 1px dotted black;
+            }                          
+        </style>                       
+    </head>                            
+    <body>                             
+        <div>                          
+            Hello, world!              
+        </div>                         
+    </body>                            
+</html>                                
+```
+
+Divisions and spans can be named and used to refer to different parts of the html document specifically.
+```{bash eval=FALSE}
+<!DOCTYPE html>                                                         
+<html>                                                                  
+    <head>                                                              
+        <title>My Web Page!</title>                                     
+        <style>                                                         
+            #top {                                                      
+                font-size: 36px;                                        
+                color: red;                                             
+            }                                                           
+                                                                        
+            .name {                                                     
+                font-weight: bold;                                      
+                color: blue;                                            
+            }                                                           
+        </style>                                                        
+    </head>                                                             
+    <body>                                                              
+        <div id="top">                                                  
+            This is the <span class="name">top</span> of my web page.   
+        </div>                                                          
+    </body>                                                             
+</html>
+```
+
+
+
+
+
+

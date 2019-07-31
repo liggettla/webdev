@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 HTML | Bootstrap and React for Web Development</title>
+  <meta name="description" content="These are just some things.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 HTML | Bootstrap and React for Web Development" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are just some things." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 HTML | Bootstrap and React for Web Development" />
+  
+  <meta name="twitter:description" content="These are just some things." />
+  
+
+<meta name="author" content="L A Liggett">
+
+
+<meta name="date" content="2019-07-30">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="bootstrap.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">On Matters Of Nature and Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>2</b> HTML</a><ul>
+<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a></li>
+<li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>3</b> Bootstrap</a><ul>
+<li class="chapter" data-level="3.1" data-path="bootstrap.html"><a href="bootstrap.html#setup"><i class="fa fa-check"></i><b>3.1</b> Setup</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>4</b> Hackernews</a><ul>
+<li class="chapter" data-level="4.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>4.1</b> Setup</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bootstrap and React for Web Development</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="html" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> HTML</h1>
+<div id="html-properties" class="section level2">
+<h2><span class="header-section-number">2.1</span> HTML Properties</h2>
+<p>The head tag allows metadata to be labeled, the text of title for instance is typically listed in the tab or the status bar of the page in a browser.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>         
+            <span class="ex">My</span> Web Page!
+        <span class="op">&lt;</span>/<span class="ex">title</span><span class="op">&gt;</span>        
+    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>The body specifies text for the page body.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="ex">Hello</span>, world!   
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Headings specifies header text of increasingly small sizes.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>This is the largest headline<span class="op">&lt;</span>/h1<span class="op">&gt;</span>        
+        <span class="op">&lt;</span><span class="ex">h2</span><span class="op">&gt;</span>This is also a large headline<span class="op">&lt;</span>/h2<span class="op">&gt;</span>       
+        <span class="op">&lt;</span><span class="ex">h3</span><span class="op">&gt;</span>This is a slightly smaller headline<span class="op">&lt;</span>/h3<span class="op">&gt;</span> 
+        <span class="op">&lt;</span><span class="ex">h4</span><span class="op">&gt;</span>This is an even smaller headline<span class="op">&lt;</span>/h4<span class="op">&gt;</span>    
+        <span class="op">&lt;</span><span class="ex">h5</span><span class="op">&gt;</span>This is the second-smallest headline<span class="op">&lt;</span>/h5<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">h6</span><span class="op">&gt;</span>This is the smallest headline<span class="op">&lt;</span>/h6<span class="op">&gt;</span>       
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Unordered lists specify bullet points.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="ex">An</span> Unordered List:           
+        <span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>                         
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>One Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>        
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Another Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>    
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Yet Another Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>
+        <span class="op">&lt;</span>/<span class="ex">ul</span><span class="op">&gt;</span>                        
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Ordered lists number lines in increasing order.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="ex">An</span> Ordered List:
+        <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>                          
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>First Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>       
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Second Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>      
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Another Item Here<span class="op">&lt;</span>/li<span class="op">&gt;</span>
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Fourth Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>      
+        <span class="op">&lt;</span>/<span class="ex">ol</span><span class="op">&gt;</span>                         
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>The image tag refers to and inserts an image as an html attribute. The alt gives alternative code if the image is missing. The height and width sets the image size in number of pixels. When the image size is set to 50% sets the image size dynamically to 50% of the browser width or height.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">img</span> src=<span class="st">&quot;cat.jpg&quot;</span> alt=<span class="st">&quot;cat&quot;</span> width=<span class="st">&quot;300&quot;</span> height=<span class="st">&quot;200&quot;</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">img</span> src=<span class="st">&quot;cat.jpg&quot;</span> alt=<span class="st">&quot;cat&quot;</span> width=<span class="st">&quot;50%&quot;</span> <span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Tables display data in a table format that can be styled in various ways. The <code>th</code> tag specifies the headings of each of the columns. The <code>td</code> tag specifies the data in each of the columns.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">table</span><span class="op">&gt;</span>                         
+            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
+                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>First Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>     
+                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Last Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>      
+                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Years in Office<span class="op">&lt;</span>/th<span class="op">&gt;</span>
+            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
+            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>George<span class="op">&lt;</span>/td<span class="op">&gt;</span>         
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Washington<span class="op">&lt;</span>/td<span class="op">&gt;</span>     
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1789-<span class="op">1797&lt;</span>/td<span class="op">&gt;</span>      
+            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
+            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>John<span class="op">&lt;</span>/td<span class="op">&gt;</span>           
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Adams<span class="op">&lt;</span>/td<span class="op">&gt;</span>          
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1797-<span class="op">1801&lt;</span>/td<span class="op">&gt;</span>      
+            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
+            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Thomas<span class="op">&lt;</span>/td<span class="op">&gt;</span>         
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Jefferson<span class="op">&lt;</span>/td<span class="op">&gt;</span>      
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1801-<span class="op">1809&lt;</span>/td<span class="op">&gt;</span>      
+            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
+        <span class="op">&lt;</span>/<span class="ex">table</span><span class="op">&gt;</span>                        
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Tables can be styled within the header of the html document. Both the <code>th</code> and the <code>td</code> styles are defined together. <code>border-collapse</code> combines the borders of cells together.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                  
+        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>Presidents<span class="op">&lt;</span>/title<span class="op">&gt;</span>           
+        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                             
+            <span class="ex">table</span> {                         
+                <span class="ex">border</span>: 2px solid black<span class="kw">;</span>    
+                <span class="ex">border-collapse</span>: collapse<span class="kw">;</span>  
+                <span class="ex">width</span>: 50%<span class="kw">;</span>                 
+            }                               
+                                            
+            <span class="ex">th</span>, td {                        
+                <span class="ex">border</span>: 1px solid black<span class="kw">;</span>    
+                <span class="ex">padding</span>: 5px<span class="kw">;</span>               
+                <span class="ex">text-align</span>: center<span class="kw">;</span>         
+            }                               
+                                            
+            <span class="ex">th</span> {                            
+                <span class="ex">background-color</span>: lightgray<span class="kw">;</span>
+            }                               
+        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                            
+    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                 
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">table</span><span class="op">&gt;</span>                         
+            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
+                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>First Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>     
+                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Last Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>      
+                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Years in Office<span class="op">&lt;</span>/th<span class="op">&gt;</span>
+            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
+            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>George<span class="op">&lt;</span>/td<span class="op">&gt;</span>         
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Washington<span class="op">&lt;</span>/td<span class="op">&gt;</span>     
+                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1789-<span class="op">1797&lt;</span>/td<span class="op">&gt;</span>      
+            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
+        <span class="op">&lt;</span>/<span class="ex">table</span><span class="op">&gt;</span>                        
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Forms can be created and labeled as such. The <code>placeholder</code> text is what is written within the form before anything is entered into it. The <code>name</code> is similar to a variable name and can be used to refer to the form and the data that is entered into it. The text within the button is the text that will appear on the button in the page.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">form</span><span class="op">&gt;</span>                                                     
+            <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;Full Name&quot;</span> name=<span class="st">&quot;name&quot;</span><span class="op">&gt;</span>
+            <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Submit!<span class="op">&lt;</span>/button<span class="op">&gt;</span>                               
+        <span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                    
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Text can be aligned and colord by specifying styles within the respective tags of text.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">h1</span> style=<span class="st">&quot;color:red;text-align:center;&quot;</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">h1</span> style=<span class="st">&quot;color:#4290f5;text-align:center;&quot;</span><span class="op">&gt;</span>Second heading<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Style elements can be separated from the actual body of the webpage. In this example every <code>h1</code> is styled within the style portion of the header.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                         
+        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                    
+            <span class="ex">h1</span> {                   
+                <span class="ex">color</span>: red<span class="kw">;</span>        
+                <span class="ex">text-align</span>: center<span class="kw">;</span>
+            }                      
+        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                   
+    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                        
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
+        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+</div>
+<div id="css" class="section level2">
+<h2><span class="header-section-number">2.2</span> CSS</h2>
+<p>CSS properties can be found <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">here</a>.</p>
+<p>Instead of putting the css styles within the header of the html file, they can be included in a separate css file and referenced. In this example, the type of file being referenced is classified as a <code>stylesheet</code> and the code is within <code>styles.css</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
+    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                       
+        <span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;styles.css&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                      
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>The code that goes within the css file is here, and it is simply the same code that was put into the style headers in the above example.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">h1</span> {                   
+    <span class="ex">color</span>: blue<span class="kw">;</span>       
+    <span class="ex">text-align</span>: center<span class="kw">;</span>
+}                      </code></pre></div>
+<p>Divisions define sections of the code that can be separated so it can be controlled in a particular manner. Font priorities are taken left to right if some fonts are not found.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>                        
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                                 
+    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                             
+        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>    
+        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                        
+            <span class="ex">div</span> {                      
+                <span class="ex">background-color</span>: teal<span class="kw">;</span>
+                <span class="ex">width</span>: 500px<span class="kw">;</span>          
+                <span class="ex">height</span>: 400px<span class="kw">;</span>         
+                <span class="ex">margin</span>: 30px<span class="kw">;</span>
+                <span class="ex">padding</span>: 20px<span class="kw">;</span>
+                <span class="ex">font-family</span>: Arial, sans-serif<span class="kw">;</span>
+                <span class="ex">font-size</span>: 28px<span class="kw">;</span>               
+                <span class="ex">font-weight</span>: bold<span class="kw">;</span>             
+                <span class="ex">border</span>: 1px dotted black<span class="kw">;</span>
+            }                          
+        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                       
+    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                            
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                             
+        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>                          
+            <span class="ex">Hello</span>, world!              
+        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>                         
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                            
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                                </code></pre></div>
+<p>Divisions and spans can be named and used to refer to different parts of the html document specifically.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>                                                         
+<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                                                                  
+    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                              
+        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                     
+        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                                                         
+            <span class="co">#top {                                                      </span>
+                <span class="ex">font-size</span>: 36px<span class="kw">;</span>                                        
+                <span class="ex">color</span>: red<span class="kw">;</span>                                             
+            }                                                           
+                                                                        
+            <span class="ex">.name</span> {                                                     
+                <span class="ex">font-weight</span>: bold<span class="kw">;</span>                                      
+                <span class="ex">color</span>: blue<span class="kw">;</span>                                            
+            }                                                           
+        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                                                        
+    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                             
+    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                              
+        <span class="op">&lt;</span><span class="ex">div</span> id=<span class="st">&quot;top&quot;</span><span class="op">&gt;</span>                                                  
+            <span class="ex">This</span> is the <span class="op">&lt;</span>span class=<span class="st">&quot;name&quot;</span><span class="op">&gt;</span>top<span class="op">&lt;</span>/span<span class="op">&gt;</span> of my web page.   
+        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>                                                          
+    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                             
+<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bootstrap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-html.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
