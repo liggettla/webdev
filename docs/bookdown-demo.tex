@@ -109,7 +109,7 @@
 \usepackage{titling}
 
 % Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
+\newcommand{\subtitle}[1]{
   \posttitle{
     \begin{center}\large#1\end{center}
     }
@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-07-30}
+    \date{2019-07-31}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -486,6 +486,39 @@ the html document specifically.
         \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}                                                          
     \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}                                                             
 \OperatorTok{<}\NormalTok{/}\ExtensionTok{html}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Link styling can be done by adjusting colors and text decorations of
+links.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}                             
+    \ExtensionTok{a}\NormalTok{:link \{                        }
+      \ExtensionTok{color}\NormalTok{: blue}\KeywordTok{;}                  
+      \ExtensionTok{background-color}\NormalTok{: transparent}\KeywordTok{;}
+      \ExtensionTok{text-decoration}\NormalTok{: none}\KeywordTok{;}        
+\NormalTok{    \}                               }
+                                    
+    \ExtensionTok{a}\NormalTok{:visited \{                     }
+      \ExtensionTok{color}\NormalTok{: red}\KeywordTok{;}                   
+      \ExtensionTok{background-color}\NormalTok{: transparent}\KeywordTok{;}
+      \ExtensionTok{text-decoration}\NormalTok{: none}\KeywordTok{;}        
+\NormalTok{    \}                               }
+                                    
+    \ExtensionTok{a}\NormalTok{:hover \{                       }
+      \ExtensionTok{color}\NormalTok{: pink}\KeywordTok{;}                  
+      \ExtensionTok{background-color}\NormalTok{: transparent}\KeywordTok{;}
+      \ExtensionTok{text-decoration}\NormalTok{: underline}\KeywordTok{;}   
+\NormalTok{    \}                               }
+                                    
+    \ExtensionTok{a}\NormalTok{:active \{                      }
+      \ExtensionTok{color}\NormalTok{: orange}\KeywordTok{;}                
+      \ExtensionTok{background-color}\NormalTok{: transparent}\KeywordTok{;}
+      \ExtensionTok{text-decoration}\NormalTok{: underline}\KeywordTok{;}   
+\NormalTok{    \}                               }
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}                            
 \end{Highlighting}
 \end{Shaded}
 
