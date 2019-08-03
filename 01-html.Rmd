@@ -2,6 +2,13 @@
 
 ## HTML Properties
 
+Commenting in HTML.
+```{bash eval=FALSE}
+<!--
+These are some comments.
+-->
+```
+
 The head tag allows metadata to be labeled, the text of title for instance is typically listed in the tab or the status bar of the page in a browser.
 ```{bash eval=FALSE}
 <!DOCTYPE html>         
@@ -207,7 +214,24 @@ In this example every `h1` is styled within the style portion of the header.
 </html>                 
 ```
 
+Links to local pages or hyperlinks are included within the `<a>` tag.
+```{bash eval=FALSE}
+<a href="about.html">About</a>
+```
+
+A newline can be inserted within the body of text by using `<br />`.
+```{bash eval=FALSE}
+<a href="about.html">About</a><br />
+```
+
 ## CSS
+
+Commenting in CSS. 
+```{bash eval=FALSE}
+/*
+These are some comments.
+*/
+```
 
 CSS properties can be found [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 
@@ -313,6 +337,30 @@ Link styling can be done by adjusting colors and text decorations of links.
 </style>                            
 ```
 
+Fonts can be imported from locations like google's hosted fonts and used directly to avoid problems with a browser not supporting them.
+The link to the fonts goes within the header portion of the html code.
+```{bash eval=FALSE}
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre&display=swap" rel="stylesheet">
+</head>
+```
+The imported font families can then be used within the CSS directly.
+```{bash eval=FALSE}
+body {
+    font-family: Proza Libre, Cormorant Garamond
+}
+````
+
+### Media Queries
+Media queries are CSS rules that are only used if certain properties are true. A commonly used property is screen size to adjust page layouts fore mobile. It is generally a good idea to design for mobile first and adjust properties to fit desktop, as this will ensure mobile gets the fastest performace.
+
+Here the width of a column is being altered if the browser window is at least 768px in size. Altering the design in this way illustrates how development can be done "mobile-first", as the property is altered if a desktop is used instead of mobile.
+```{bash eval=FALSE}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+}
+```
 
 
 

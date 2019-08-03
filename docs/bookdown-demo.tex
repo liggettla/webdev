@@ -109,7 +109,7 @@
 \usepackage{titling}
 
 % Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
+\providecommand{\subtitle}[1]{
   \posttitle{
     \begin{center}\large#1\end{center}
     }
@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-07-31}
+    \date{2019-08-03}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -148,6 +148,16 @@
 \chapter{HTML}\label{html}
 
 \section{HTML Properties}\label{html-properties}
+
+Commenting in HTML.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{--}
+\ExtensionTok{These}\NormalTok{ are some comments.}
+\ExtensionTok{--}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
 
 The head tag allows metadata to be labeled, the text of title for
 instance is typically listed in the tab or the status bar of the page in
@@ -393,7 +403,35 @@ header.
 \end{Highlighting}
 \end{Shaded}
 
+Links to local pages or hyperlinks are included within the
+\texttt{\textless{}a\textgreater{}} tag.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"about.html"}\OperatorTok{>}\NormalTok{About}\OperatorTok{<}\NormalTok{/a}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+A newline can be inserted within the body of text by using
+\texttt{\textless{}br\ /\textgreater{}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"about.html"}\OperatorTok{>}\NormalTok{About}\OperatorTok{<}\NormalTok{/a}\OperatorTok{><}\NormalTok{br /}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
 \section{CSS}\label{css}
+
+Commenting in CSS.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{/*}
+\ExtensionTok{These}\NormalTok{ are some comments.}
+\ExtensionTok{*/}
+\end{Highlighting}
+\end{Shaded}
 
 CSS properties can be found
 \href{https://developer.mozilla.org/en-US/docs/Web/CSS/Reference}{here}.
@@ -519,6 +557,50 @@ links.
       \ExtensionTok{text-decoration}\NormalTok{: underline}\KeywordTok{;}   
 \NormalTok{    \}                               }
 \OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}                            
+\end{Highlighting}
+\end{Shaded}
+
+Fonts can be imported from locations like google's hosted fonts and used
+directly to avoid problems with a browser not supporting them. The link
+to the fonts goes within the header portion of the html code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}
+    \OperatorTok{<}\FunctionTok{link}\NormalTok{ href=}\StringTok{"https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre&display=swap"}\NormalTok{ rel=}\StringTok{"stylesheet"}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+The imported font families can then be used within the CSS directly.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{body}\NormalTok{ \{}
+    \ExtensionTok{font-family}\NormalTok{: Proza Libre, Cormorant Garamond}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Media Queries}\label{media-queries}
+
+Media queries are CSS rules that are only used if certain properties are
+true. A commonly used property is screen size to adjust page layouts
+fore mobile. It is generally a good idea to design for mobile first and
+adjust properties to fit desktop, as this will ensure mobile gets the
+fastest performace.
+
+Here the width of a column is being altered if the browser window is at
+least 768px in size. Altering the design in this way illustrates how
+development can be done ``mobile-first'', as the property is altered if
+a desktop is used instead of mobile.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@media}\NormalTok{ only screen and (min-width: 768px) }\KeywordTok{\{}
+  \ExtensionTok{/*}\NormalTok{ For desktop: */}
+  \ExtensionTok{.col-1}\NormalTok{ \{width: 8.33%}\KeywordTok{;\}}
+\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 

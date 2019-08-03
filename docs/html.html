@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-07-31">
+<meta name="date" content="2019-08-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -107,7 +107,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>2</b> HTML</a><ul>
 <li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a></li>
-<li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a></li>
+<li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="html.html"><a href="html.html#media-queries"><i class="fa fa-check"></i><b>2.2.1</b> Media Queries</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>3</b> Bootstrap</a><ul>
 <li class="chapter" data-level="3.1" data-path="bootstrap.html"><a href="bootstrap.html#setup"><i class="fa fa-check"></i><b>3.1</b> Setup</a></li>
@@ -140,6 +142,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 2</span> HTML</h1>
 <div id="html-properties" class="section level2">
 <h2><span class="header-section-number">2.1</span> HTML Properties</h2>
+<p>Commenting in HTML.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">--</span>
+<span class="ex">These</span> are some comments.
+<span class="ex">--</span><span class="op">&gt;</span></code></pre></div>
 <p>The head tag allows metadata to be labeled, the text of title for instance is typically listed in the tab or the status bar of the page in a browser.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
 <span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
@@ -301,9 +307,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
     <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
 <span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Links to local pages or hyperlinks are included within the <code>&lt;a&gt;</code> tag.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;</span></code></pre></div>
+<p>A newline can be inserted within the body of text by using <code>&lt;br /&gt;</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;&lt;</span>br /<span class="op">&gt;</span></code></pre></div>
 </div>
 <div id="css" class="section level2">
 <h2><span class="header-section-number">2.2</span> CSS</h2>
+<p>Commenting in CSS.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">/*</span>
+<span class="ex">These</span> are some comments.
+<span class="ex">*/</span></code></pre></div>
 <p>CSS properties can be found <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">here</a>.</p>
 <p>Instead of putting the css styles within the header of the html file, they can be included in a separate css file and referenced. In this example, the type of file being referenced is classified as a <code>stylesheet</code> and the code is within <code>styles.css</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
@@ -391,7 +405,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <span class="ex">text-decoration</span>: underline<span class="kw">;</span>   
     }                               
 <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                            </code></pre></div>
+<p>Fonts can be imported from locations like google’s hosted fonts and used directly to avoid problems with a browser not supporting them. The link to the fonts goes within the header portion of the html code.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="fu">link</span> href=<span class="st">&quot;https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre&amp;display=swap&quot;</span> rel=<span class="st">&quot;stylesheet&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span></code></pre></div>
+<p>The imported font families can then be used within the CSS directly.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">body</span> {
+    <span class="ex">font-family</span>: Proza Libre, Cormorant Garamond
+}</code></pre></div>
+<div id="media-queries" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Media Queries</h3>
+<p>Media queries are CSS rules that are only used if certain properties are true. A commonly used property is screen size to adjust page layouts fore mobile. It is generally a good idea to design for mobile first and adjust properties to fit desktop, as this will ensure mobile gets the fastest performace.</p>
+<p>Here the width of a column is being altered if the browser window is at least 768px in size. Altering the design in this way illustrates how development can be done “mobile-first”, as the property is altered if a desktop is used instead of mobile.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@media</span> only screen and (min-width: 768px) <span class="kw">{</span>
+  <span class="ex">/*</span> For desktop: */
+  <span class="ex">.col-1</span> {width: 8.33%<span class="kw">;}</span>
+}</code></pre></div>
 
+</div>
 </div>
 </div>
             </section>
