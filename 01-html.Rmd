@@ -217,6 +217,13 @@ In this example every `h1` is styled within the style portion of the header.
 Links to local pages or hyperlinks are included within the `<a>` tag.
 ```{bash eval=FALSE}
 <a href="about.html">About</a>
+<a href="http://www.google.com">Google</a>
+```
+
+Links can also refer to locations on the same page.
+```{bash eval=FALSE}
+<a href="section1">Section 1</a>
+<h1 id="section1">Some stuff.</h1>
 ```
 
 A newline can be inserted within the body of text by using `<br />`.
@@ -224,7 +231,30 @@ A newline can be inserted within the body of text by using `<br />`.
 <a href="about.html">About</a><br />
 ```
 
+### Forms
+Generic text input fields can be created with the text type.
+```{bash eval=FALSE}
+<div>
+<input name="name" type="text" placeholder="Name">
+</div>
+```
+
+A password field is pretty similar to a text field, but the characters are obscured.
+```{bash eval=FALSE}
+<input name="password" type="password" placeholder="Password">
+```
+
+Dropdown lists of the possible valid choices for a field can be used with `datalist`.
+```{bash eval=FALSE}
+<input name="country" list="countries" placeholder="Country">
+<datalist id="countries">
+    <option value="Afghanistan">
+    <option value="Albania">
+    <option value="Algeria">
+```
+
 ## CSS
+
 
 Commenting in CSS. 
 ```{bash eval=FALSE}
@@ -351,7 +381,111 @@ body {
 }
 ````
 
-### Media Queries
+Nested elements can be styled in a grouped manner.
+```{bash eval=FALSE}
+<style>
+    ol li {
+        color: red;
+    }
+</style>
+<body>
+    <ol>
+        <li>list item</li>
+        <li>second list item</li>
+    </ol>
+</body>
+```
+
+A similar use is to style the immediately nested child elements and none other using the `>` operator.
+```{bash eval=FALSE}
+<style>
+    ol > li {
+        color: red;
+    }
+</style>
+<body>
+    <ol>
+        <li>this will be colored</li>
+        <ul>
+            <li>this won't be colored</li>
+        </ul>
+        <li>this will also be colored</li>
+    </ol>
+</body>
+```
+
+Fields of particular types can be styled based on their type. These are examples of a text field that allows letters and numbers and a number field that only allows numbers.  
+The fields can then be styled based on the type of field that they are.
+```{bash eval=FALSE}
+<style>
+    input[type=text] {
+    background-color: red;
+}
+</style>
+
+<body>
+    <input name="name" type="text" placeholder="First Name">
+    <input name="name" type="number" placeholder="Age">
+</body>
+```
+
+### Selectors
+
+CSS Selectors allow specific classes or elements to be selected and styled individually.
+```{bash eval=FALSE}
+a, b /* Multiple element selector */
+a b /* Descendant selector */
+a > b /* Child selector */
+a + b /* Adjacent sibling selector */
+[a=b] /* Attribute selector */
+a:b /* Pseudoclass selector */
+a::b /* Pseudoelement selector */
+```
+
+Pseudo-classes allow for different styling effects depending on the state of the element.
+```{bash eval=FALSE}
+<style>
+    button {
+        background-color: green;
+    }
+    button:hover {
+        background-color: orange;
+    }
+</style>
+<body>
+    <button>Click</button>
+</body>
+```
+
+Pseudo-elements are similar but select elements also allow things to be styled by placing information at the beginning of an item.  
+What is happening here is that there is a link amd before the link it says "Click here:", and to the left of that the `\21d12` specifies a unicode arrow.
+```{bash eval=FALSE}
+<style>
+    a::before {
+        content: "\21d2 Click here: ";
+        font-weight: bold;
+    }
+</style>
+<body>
+    <a href="#">A link</a>
+</body>
+```
+
+Text highlighting can also be controlled with pseudo-elements. Here the text color turns red and the highlight is in yellow when the text is highlighted.
+```{bash eval=FALSE}
+<style>
+    p::selection {
+        color: red;
+        background-color: yellow;
+    }
+</style>
+<body>
+    <p>This is some text</p>
+</body>
+```
+
+### Responsive Design
+
 Media queries are CSS rules that are only used if certain properties are true. A commonly used property is screen size to adjust page layouts fore mobile. It is generally a good idea to design for mobile first and adjust properties to fit desktop, as this will ensure mobile gets the fastest performace.
 
 Here the width of a column is being altered if the browser window is at least 768px in size. Altering the design in this way illustrates how development can be done "mobile-first", as the property is altered if a desktop is used instead of mobile.
@@ -362,7 +496,89 @@ Here the width of a column is being altered if the browser window is at least 76
 }
 ```
 
+Media queries can also control content what content gets printed. Here both paragraphs get displayed on the page, but only the first paragraph appears when the page is printed.
+```{bash eval=FALSE}
+<style>
+    @media print {
+        .screen-only {
+            display: none;
+        }
+    }
+</style>
+<body>
+    <p>This gets printed</p>
+    <p class="screen-only">This does not get printed</p>
+</body>
+```
 
+The content of the page can also be changed using media queries.
+```{bash eval=FALSE}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @media (min-width: 500px) {
+        h1::before {
+            content: "Welcome to My Web Page!";
+        }
+    }
 
+    @media (max-width: 499px) {
+        h1::before {
+            content: "Welcome!";
+        }
+    }
+</style>
+<body>
+    <h1></h1>
+</body>
+```
+
+### Flexbox
+
+Flexbox styling allows elements to be dynamically arranged to fit the screen. With a wide enough screen the div elements will all be in one row, but as the screen shrinks, they will move down into new rows.
+```{bash eval=FALSE}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container > div {
+        background-color: springgreen;
+    }
+</style>
+<body>
+    <div class="container">
+        <div>Some stuff</div>
+        <div>Some stuff</div>
+        <div>Some stuff</div>
+    </div>
+</body>
+```
+
+### Grid Styling
+
+In the following example a grid system is being used for the items being displayed. the grid creates the first two colums as 200px and the last column is automatically sized to fill the rest of the remaining screen.
+```{bash eval=FALSE}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .grid {
+        background-color: green;
+        display: grid;
+        grid-template-columns: 200px 200px auto;
+    }
+
+    .grid-item {
+        background-color: white;
+    }
+</style>
+<body>
+    <div class="grid">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+    </div>
+</body>
+```
 
 

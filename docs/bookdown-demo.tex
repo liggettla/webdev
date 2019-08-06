@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-03}
+    \date{2019-08-05}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -409,6 +409,16 @@ Links to local pages or hyperlinks are included within the
 \begin{Shaded}
 \begin{Highlighting}[]
 \OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"about.html"}\OperatorTok{>}\NormalTok{About}\OperatorTok{<}\NormalTok{/a}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"http://www.google.com"}\OperatorTok{>}\NormalTok{Google}\OperatorTok{<}\NormalTok{/a}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Links can also refer to locations on the same page.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"section1"}\OperatorTok{>}\NormalTok{Section }\OperatorTok{1<}\NormalTok{/a}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{h1}\NormalTok{ id=}\StringTok{"section1"}\OperatorTok{>}\NormalTok{Some stuff.}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}
 \end{Highlighting}
 \end{Shaded}
 
@@ -418,6 +428,40 @@ A newline can be inserted within the body of text by using
 \begin{Shaded}
 \begin{Highlighting}[]
 \OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"about.html"}\OperatorTok{>}\NormalTok{About}\OperatorTok{<}\NormalTok{/a}\OperatorTok{><}\NormalTok{br /}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Forms}\label{forms}
+
+Generic text input fields can be created with the text type.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{div}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{input}\NormalTok{ name=}\StringTok{"name"}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ placeholder=}\StringTok{"Name"}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+A password field is pretty similar to a text field, but the characters
+are obscured.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{input}\NormalTok{ name=}\StringTok{"password"}\NormalTok{ type=}\StringTok{"password"}\NormalTok{ placeholder=}\StringTok{"Password"}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Dropdown lists of the possible valid choices for a field can be used
+with \texttt{datalist}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{input}\NormalTok{ name=}\StringTok{"country"}\NormalTok{ list=}\StringTok{"countries"}\NormalTok{ placeholder=}\StringTok{"Country"}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{datalist}\NormalTok{ id=}\StringTok{"countries"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{option}\NormalTok{ value=}\StringTok{"Afghanistan"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{option}\NormalTok{ value=}\StringTok{"Albania"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{option}\NormalTok{ value=}\StringTok{"Algeria"}\OperatorTok{>}
 \end{Highlighting}
 \end{Shaded}
 
@@ -582,7 +626,141 @@ The imported font families can then be used within the CSS directly.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Media Queries}\label{media-queries}
+Nested elements can be styled in a grouped manner.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{ol}\NormalTok{ li \{}
+        \ExtensionTok{color}\NormalTok{: red}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{ol}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{list item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{second list item}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{ol}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+A similar use is to style the immediately nested child elements and none
+other using the \texttt{\textgreater{}} operator.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{ol} \OperatorTok{>}\NormalTok{ li \{}
+        \ExtensionTok{color}\NormalTok{: red}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{ol}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{this will be colored}\OperatorTok{<}\NormalTok{/li}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{ul}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{this won}\StringTok{'t be colored</li>}
+\StringTok{        </ul>}
+\StringTok{        <li>this will also be colored</li>}
+\StringTok{    </ol>}
+\StringTok{</body>}
+\end{Highlighting}
+\end{Shaded}
+
+Fields of particular types can be styled based on their type. These are
+examples of a text field that allows letters and numbers and a number
+field that only allows numbers.\\
+The fields can then be styled based on the type of field that they are.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{input}\NormalTok{[type=text] \{}
+    \ExtensionTok{background-color}\NormalTok{: red}\KeywordTok{;}
+\NormalTok{\}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{input}\NormalTok{ name=}\StringTok{"name"}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ placeholder=}\StringTok{"First Name"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{input}\NormalTok{ name=}\StringTok{"name"}\NormalTok{ type=}\StringTok{"number"}\NormalTok{ placeholder=}\StringTok{"Age"}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Selectors}\label{selectors}
+
+CSS Selectors allow specific classes or elements to be selected and
+styled individually.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{a}\NormalTok{, b /* Multiple element selector */}
+\ExtensionTok{a}\NormalTok{ b /* Descendant selector */}
+\ExtensionTok{a} \OperatorTok{>}\NormalTok{ b /* Child selector */}
+\ExtensionTok{a}\NormalTok{ + b /* Adjacent sibling selector */}
+\NormalTok{[}\VariableTok{a=}\NormalTok{b] }\ExtensionTok{/*}\NormalTok{ Attribute selector */}
+\ExtensionTok{a}\NormalTok{:b /* Pseudoclass selector */}
+\ExtensionTok{a}\NormalTok{::b /* Pseudoelement selector */}
+\end{Highlighting}
+\end{Shaded}
+
+Pseudo-classes allow for different styling effects depending on the
+state of the element.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{button}\NormalTok{ \{}
+        \ExtensionTok{background-color}\NormalTok{: green}\KeywordTok{;}
+\NormalTok{    \}}
+    \ExtensionTok{button}\NormalTok{:hover \{}
+        \ExtensionTok{background-color}\NormalTok{: orange}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Click}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Pseudo-elements are similar but select elements also allow things to be
+styled by placing information at the beginning of an item.\\
+What is happening here is that there is a link amd before the link it
+says ``Click here:'', and to the left of that the
+\texttt{\textbackslash{}21d12} specifies a unicode arrow.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{a}\NormalTok{::before \{}
+        \ExtensionTok{content}\NormalTok{: }\StringTok{"\textbackslash{}21d2 Click here: "}\KeywordTok{;}
+        \ExtensionTok{font-weight}\NormalTok{: bold}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"#"}\OperatorTok{>}\NormalTok{A link}\OperatorTok{<}\NormalTok{/a}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Text highlighting can also be controlled with pseudo-elements. Here the
+text color turns red and the highlight is in yellow when the text is
+highlighted.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{p}\NormalTok{::selection \{}
+        \ExtensionTok{color}\NormalTok{: red}\KeywordTok{;}
+        \ExtensionTok{background-color}\NormalTok{: yellow}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{p}\OperatorTok{>}\NormalTok{This is some text}\OperatorTok{<}\NormalTok{/p}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Responsive Design}\label{responsive-design}
 
 Media queries are CSS rules that are only used if certain properties are
 true. A commonly used property is screen size to adjust page layouts
@@ -604,64 +782,135 @@ a desktop is used instead of mobile.
 \end{Highlighting}
 \end{Shaded}
 
+Media queries can also control content what content gets printed. Here
+both paragraphs get displayed on the page, but only the first paragraph
+appears when the page is printed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{@media}\NormalTok{ print \{}
+        \ExtensionTok{.screen-only}\NormalTok{ \{}
+            \ExtensionTok{display}\NormalTok{: none}\KeywordTok{;}
+\NormalTok{        \}}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{p}\OperatorTok{>}\NormalTok{This gets printed}\OperatorTok{<}\NormalTok{/p}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{p}\NormalTok{ class=}\StringTok{"screen-only"}\OperatorTok{>}\NormalTok{This does not get printed}\OperatorTok{<}\NormalTok{/p}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+The content of the page can also be changed using media queries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{meta}\NormalTok{ name=}\StringTok{"viewport"}\NormalTok{ content=}\StringTok{"width=device-width, initial-scale=1.0"}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{@media}\NormalTok{ (min-width: 500px) }\KeywordTok{\{}
+        \ExtensionTok{h1}\NormalTok{::before \{}
+            \ExtensionTok{content}\NormalTok{: }\StringTok{"Welcome to My Web Page!"}\KeywordTok{;}
+        \KeywordTok{\}}
+\NormalTok{    \}}
+
+    \ExtensionTok{@media}\NormalTok{ (max-width: 499px) }\KeywordTok{\{}
+        \ExtensionTok{h1}\NormalTok{::before \{}
+            \ExtensionTok{content}\NormalTok{: }\StringTok{"Welcome!"}\KeywordTok{;}
+        \KeywordTok{\}}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{><}\NormalTok{/h1}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Flexbox}\label{flexbox}
+
+Flexbox styling allows elements to be dynamically arranged to fit the
+screen. With a wide enough screen the div elements will all be in one
+row, but as the screen shrinks, they will move down into new rows.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{meta}\NormalTok{ name=}\StringTok{"viewport"}\NormalTok{ content=}\StringTok{"width=device-width, initial-scale=1.0"}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{.container}\NormalTok{ \{}
+        \ExtensionTok{display}\NormalTok{: flex}\KeywordTok{;}
+        \ExtensionTok{flex-wrap}\NormalTok{: wrap}\KeywordTok{;}
+\NormalTok{    \}}
+
+    \ExtensionTok{.container} \OperatorTok{>}\NormalTok{ div \{}
+        \ExtensionTok{background-color}\NormalTok{: springgreen}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"container"}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\OperatorTok{>}\NormalTok{Some stuff}\OperatorTok{<}\NormalTok{/div}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\OperatorTok{>}\NormalTok{Some stuff}\OperatorTok{<}\NormalTok{/div}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\OperatorTok{>}\NormalTok{Some stuff}\OperatorTok{<}\NormalTok{/div}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Grid Styling}\label{grid-styling}
+
+In the following example a grid system is being used for the items being
+displayed. the grid creates the first two colums as 200px and the last
+column is automatically sized to fill the rest of the remaining screen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{meta}\NormalTok{ name=}\StringTok{"viewport"}\NormalTok{ content=}\StringTok{"width=device-width, initial-scale=1.0"}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{.grid}\NormalTok{ \{}
+        \ExtensionTok{background-color}\NormalTok{: green}\KeywordTok{;}
+        \ExtensionTok{display}\NormalTok{: grid}\KeywordTok{;}
+        \ExtensionTok{grid-template-columns}\NormalTok{: 200px 200px auto}\KeywordTok{;}
+\NormalTok{    \}}
+
+    \ExtensionTok{.grid-item}\NormalTok{ \{}
+        \ExtensionTok{background-color}\NormalTok{: white}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"grid"}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"grid-item"}\OperatorTok{>1<}\NormalTok{/div}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"grid-item"}\OperatorTok{>2<}\NormalTok{/div}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"grid-item"}\OperatorTok{>3<}\NormalTok{/div}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
 \chapter{Bootstrap}\label{bootstrap}
 
 \section{Setup}\label{setup}
 
-Create a folder that will contain the webfiles use npm to initialize a
-\texttt{package.json} file. Follow through the prompts to add the
-desired information. Set the entry point to be \texttt{index.html}. It
-can also be helpful to add the node\_modules folder to
-\texttt{.gitignore}.
+The bootstrap stylesheet \texttt{\textless{}link\textgreater{}} can be
+used directly \texttt{stackpath.com} by including the following
+reference in the \texttt{\textless{}head\textgreater{}} before any other
+listed stylesheets.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{npm}\NormalTok{ init}
+\OperatorTok{<}\FunctionTok{link}\NormalTok{ rel=}\StringTok{"stylesheet"}\NormalTok{ href=}\StringTok{"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"}\NormalTok{ integrity=}\StringTok{"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"}\NormalTok{ crossorigin=}\StringTok{"anonymous"}\OperatorTok{>}
 \end{Highlighting}
 \end{Shaded}
 
-Then just initialize some basic \texttt{index.html} file for testing
-purposes.
+The \texttt{charset} and \texttt{viewport} meta tags are often required
+for proper bootstrap responsive behaviors, and should be included when
+using the bootstrap css.\\
+The \texttt{viewport} line is a responsive meta tag that ensures proper
+rendering and touch zooming for mobile devices.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}                        
-    \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{This is a Header}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>} 
-    \OperatorTok{<}\ExtensionTok{p}\OperatorTok{>}\NormalTok{This is a paragraph}\OperatorTok{<}\NormalTok{/p}\OperatorTok{>}
-\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}                       
-\end{Highlighting}
-\end{Shaded}
-
-Install the lite server, which will serve up the content from the
-folder. The \texttt{save-dev} flag will add the information to the json
-file that the lite-server should be used to serve the content. This
-should add lite-server under the devDependencies listing within
-\texttt{package.json} and a node-modules folder.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{npm}\NormalTok{ install lite-server --save-dev}
-\end{Highlighting}
-\end{Shaded}
-
-Within the \texttt{package.json} file, add the start and lite listings
-so it looks like the following.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\StringTok{"scripts"}\NormalTok{: }\KeywordTok{\{}                                            
-  \StringTok{"start"}\NormalTok{: }\StringTok{"npm run lite"}\NormalTok{,                              }
-  \StringTok{"test"}\NormalTok{: }\StringTok{"echo }\DataTypeTok{\textbackslash{}"}\StringTok{Error: no test specified}\DataTypeTok{\textbackslash{}"}\StringTok{ && exit 1"}\NormalTok{,}
-  \StringTok{"lite"}\NormalTok{: }\StringTok{"lite-server"}                                 
-\KeywordTok{\}}\NormalTok{,                                                      }
-\end{Highlighting}
-\end{Shaded}
-
-The lite-server can then be run using npm start.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{npm}\NormalTok{ start}
+\OperatorTok{<}\NormalTok{!}\ExtensionTok{--}\NormalTok{ Required meta tags --}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{meta}\NormalTok{ charset=}\StringTok{"utf-8"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{meta}\NormalTok{ name=}\StringTok{"viewport"}\NormalTok{ content=}\StringTok{"width=device-width, initial-scale=1, shrink-to-fit=no"}\OperatorTok{>}
 \end{Highlighting}
 \end{Shaded}
 

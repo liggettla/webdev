@@ -1,34 +1,15 @@
 # Bootstrap {#bootstrap}
 
 ## Setup 
-Create a folder that will contain the webfiles use npm to initialize a `package.json` file. Follow through the prompts to add the desired information. Set the entry point to be `index.html`. It can also be helpful to add the node_modules folder to `.gitignore`.
+The bootstrap stylesheet `<link>` can be used directly `stackpath.com` by including the following reference in the `<head>` before any other listed stylesheets.
 ```{bash eval=FALSE}
-npm init
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 ```
 
-Then just initialize some basic `index.html` file for testing purposes.
+The `charset` and `viewport` meta tags are often required for proper bootstrap responsive behaviors, and should be included when using the bootstrap css.  
+The `viewport` line is a responsive meta tag that ensures proper rendering and touch zooming for mobile devices.
 ```{bash eval=FALSE}
-<body>                        
-    <h1>This is a Header</h1> 
-    <p>This is a paragraph</p>
-</body>                       
-```
-
-Install the lite server, which will serve up the content from the folder. The `save-dev` flag will add the information to the json file that the lite-server should be used to serve the content. This should add lite-server under the devDependencies listing within `package.json` and a node-modules folder.
-```{bash eval=FALSE}
-npm install lite-server --save-dev
-```
-
-Within the `package.json` file, add the start and lite listings so it looks like the following.
-```{bash eval=FALSE}
-"scripts": {                                            
-  "start": "npm run lite",                              
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "lite": "lite-server"                                 
-},                                                      
-```
-
-The lite-server can then be run using npm start.
-```{bash eval=FALSE}
-npm start
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 ```

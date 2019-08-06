@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-08-03">
+<meta name="date" content="2019-08-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,9 +106,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>2</b> HTML</a><ul>
-<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a></li>
+<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="html.html"><a href="html.html#forms"><i class="fa fa-check"></i><b>2.1.1</b> Forms</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="html.html"><a href="html.html#media-queries"><i class="fa fa-check"></i><b>2.2.1</b> Media Queries</a></li>
+<li class="chapter" data-level="2.2.1" data-path="html.html"><a href="html.html#selectors"><i class="fa fa-check"></i><b>2.2.1</b> Selectors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="html.html"><a href="html.html#responsive-design"><i class="fa fa-check"></i><b>2.2.2</b> Responsive Design</a></li>
+<li class="chapter" data-level="2.2.3" data-path="html.html"><a href="html.html#flexbox"><i class="fa fa-check"></i><b>2.2.3</b> Flexbox</a></li>
+<li class="chapter" data-level="2.2.4" data-path="html.html"><a href="html.html#grid-styling"><i class="fa fa-check"></i><b>2.2.4</b> Grid Styling</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>3</b> Bootstrap</a><ul>
@@ -142,23 +147,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 3</span> Bootstrap</h1>
 <div id="setup" class="section level2">
 <h2><span class="header-section-number">3.1</span> Setup</h2>
-<p>Create a folder that will contain the webfiles use npm to initialize a <code>package.json</code> file. Follow through the prompts to add the desired information. Set the entry point to be <code>index.html</code>. It can also be helpful to add the node_modules folder to <code>.gitignore</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">npm</span> init</code></pre></div>
-<p>Then just initialize some basic <code>index.html</code> file for testing purposes.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                        
-    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>This is a Header<span class="op">&lt;</span>/h1<span class="op">&gt;</span> 
-    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This is a paragraph<span class="op">&lt;</span>/p<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                       </code></pre></div>
-<p>Install the lite server, which will serve up the content from the folder. The <code>save-dev</code> flag will add the information to the json file that the lite-server should be used to serve the content. This should add lite-server under the devDependencies listing within <code>package.json</code> and a node-modules folder.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">npm</span> install lite-server --save-dev</code></pre></div>
-<p>Within the <code>package.json</code> file, add the start and lite listings so it looks like the following.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="st">&quot;scripts&quot;</span>: <span class="kw">{</span>                                            
-  <span class="st">&quot;start&quot;</span>: <span class="st">&quot;npm run lite&quot;</span>,                              
-  <span class="st">&quot;test&quot;</span>: <span class="st">&quot;echo </span><span class="dt">\&quot;</span><span class="st">Error: no test specified</span><span class="dt">\&quot;</span><span class="st"> &amp;&amp; exit 1&quot;</span>,
-  <span class="st">&quot;lite&quot;</span>: <span class="st">&quot;lite-server&quot;</span>                                 
-<span class="kw">}</span>,                                                      </code></pre></div>
-<p>The lite-server can then be run using npm start.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">npm</span> start</code></pre></div>
+<p>The bootstrap stylesheet <code>&lt;link&gt;</code> can be used directly <code>stackpath.com</code> by including the following reference in the <code>&lt;head&gt;</code> before any other listed stylesheets.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot;</span> integrity=<span class="st">&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot;</span> crossorigin=<span class="st">&quot;anonymous&quot;</span><span class="op">&gt;</span></code></pre></div>
+<p>The <code>charset</code> and <code>viewport</code> meta tags are often required for proper bootstrap responsive behaviors, and should be included when using the bootstrap css.<br />
+The <code>viewport</code> line is a responsive meta tag that ensures proper rendering and touch zooming for mobile devices.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">--</span> Required meta tags --<span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">meta</span> charset=<span class="st">&quot;utf-8&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="op">&gt;</span></code></pre></div>
 
 </div>
 </div>

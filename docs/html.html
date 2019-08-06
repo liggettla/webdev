@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-08-03">
+<meta name="date" content="2019-08-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,9 +106,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>2</b> HTML</a><ul>
-<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a></li>
+<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="html.html"><a href="html.html#forms"><i class="fa fa-check"></i><b>2.1.1</b> Forms</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="html.html"><a href="html.html#media-queries"><i class="fa fa-check"></i><b>2.2.1</b> Media Queries</a></li>
+<li class="chapter" data-level="2.2.1" data-path="html.html"><a href="html.html#selectors"><i class="fa fa-check"></i><b>2.2.1</b> Selectors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="html.html"><a href="html.html#responsive-design"><i class="fa fa-check"></i><b>2.2.2</b> Responsive Design</a></li>
+<li class="chapter" data-level="2.2.3" data-path="html.html"><a href="html.html#flexbox"><i class="fa fa-check"></i><b>2.2.3</b> Flexbox</a></li>
+<li class="chapter" data-level="2.2.4" data-path="html.html"><a href="html.html#grid-styling"><i class="fa fa-check"></i><b>2.2.4</b> Grid Styling</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>3</b> Bootstrap</a><ul>
@@ -308,9 +313,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
 <span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
 <p>Links to local pages or hyperlinks are included within the <code>&lt;a&gt;</code> tag.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;http://www.google.com&quot;</span><span class="op">&gt;</span>Google<span class="op">&lt;</span>/a<span class="op">&gt;</span></code></pre></div>
+<p>Links can also refer to locations on the same page.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;section1&quot;</span><span class="op">&gt;</span>Section <span class="op">1&lt;</span>/a<span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;section1&quot;</span><span class="op">&gt;</span>Some stuff.<span class="op">&lt;</span>/h1<span class="op">&gt;</span></code></pre></div>
 <p>A newline can be inserted within the body of text by using <code>&lt;br /&gt;</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;&lt;</span>br /<span class="op">&gt;</span></code></pre></div>
+<div id="forms" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Forms</h3>
+<p>Generic text input fields can be created with the text type.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;Name&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span></code></pre></div>
+<p>A password field is pretty similar to a text field, but the characters are obscured.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;password&quot;</span> type=<span class="st">&quot;password&quot;</span> placeholder=<span class="st">&quot;Password&quot;</span><span class="op">&gt;</span></code></pre></div>
+<p>Dropdown lists of the possible valid choices for a field can be used with <code>datalist</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;country&quot;</span> list=<span class="st">&quot;countries&quot;</span> placeholder=<span class="st">&quot;Country&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">datalist</span> id=<span class="st">&quot;countries&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Afghanistan&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Albania&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Algeria&quot;</span><span class="op">&gt;</span></code></pre></div>
+</div>
 </div>
 <div id="css" class="section level2">
 <h2><span class="header-section-number">2.2</span> CSS</h2>
@@ -413,14 +437,172 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">body</span> {
     <span class="ex">font-family</span>: Proza Libre, Cormorant Garamond
 }</code></pre></div>
-<div id="media-queries" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Media Queries</h3>
+<p>Nested elements can be styled in a grouped manner.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">ol</span> li {
+        <span class="ex">color</span>: red<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>list item<span class="op">&lt;</span>/li<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>second list item<span class="op">&lt;</span>/li<span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">ol</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>A similar use is to style the immediately nested child elements and none other using the <code>&gt;</code> operator.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">ol</span> <span class="op">&gt;</span> li {
+        <span class="ex">color</span>: red<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>this will be colored<span class="op">&lt;</span>/li<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>
+            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>this won<span class="st">&#39;t be colored&lt;/li&gt;</span>
+<span class="st">        &lt;/ul&gt;</span>
+<span class="st">        &lt;li&gt;this will also be colored&lt;/li&gt;</span>
+<span class="st">    &lt;/ol&gt;</span>
+<span class="st">&lt;/body&gt;</span></code></pre></div>
+<p>Fields of particular types can be styled based on their type. These are examples of a text field that allows letters and numbers and a number field that only allows numbers.<br />
+The fields can then be styled based on the type of field that they are.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">input</span>[type=text] {
+    <span class="ex">background-color</span>: red<span class="kw">;</span>
+}
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;First Name&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;number&quot;</span> placeholder=<span class="st">&quot;Age&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div id="selectors" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Selectors</h3>
+<p>CSS Selectors allow specific classes or elements to be selected and styled individually.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">a</span>, b /* Multiple element selector */
+<span class="ex">a</span> b /* Descendant selector */
+<span class="ex">a</span> <span class="op">&gt;</span> b /* Child selector */
+<span class="ex">a</span> + b /* Adjacent sibling selector */
+[<span class="va">a=</span>b] <span class="ex">/*</span> Attribute selector */
+<span class="ex">a</span>:b /* Pseudoclass selector */
+<span class="ex">a</span>::b /* Pseudoelement selector */</code></pre></div>
+<p>Pseudo-classes allow for different styling effects depending on the state of the element.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">button</span> {
+        <span class="ex">background-color</span>: green<span class="kw">;</span>
+    }
+    <span class="ex">button</span>:hover {
+        <span class="ex">background-color</span>: orange<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click<span class="op">&lt;</span>/button<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>Pseudo-elements are similar but select elements also allow things to be styled by placing information at the beginning of an item.<br />
+What is happening here is that there is a link amd before the link it says “Click here:”, and to the left of that the <code>\21d12</code> specifies a unicode arrow.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">a</span>::before {
+        <span class="ex">content</span>: <span class="st">&quot;\21d2 Click here: &quot;</span><span class="kw">;</span>
+        <span class="ex">font-weight</span>: bold<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;#&quot;</span><span class="op">&gt;</span>A link<span class="op">&lt;</span>/a<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>Text highlighting can also be controlled with pseudo-elements. Here the text color turns red and the highlight is in yellow when the text is highlighted.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">p</span>::selection {
+        <span class="ex">color</span>: red<span class="kw">;</span>
+        <span class="ex">background-color</span>: yellow<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This is some text<span class="op">&lt;</span>/p<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+</div>
+<div id="responsive-design" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Responsive Design</h3>
 <p>Media queries are CSS rules that are only used if certain properties are true. A commonly used property is screen size to adjust page layouts fore mobile. It is generally a good idea to design for mobile first and adjust properties to fit desktop, as this will ensure mobile gets the fastest performace.</p>
 <p>Here the width of a column is being altered if the browser window is at least 768px in size. Altering the design in this way illustrates how development can be done “mobile-first”, as the property is altered if a desktop is used instead of mobile.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@media</span> only screen and (min-width: 768px) <span class="kw">{</span>
   <span class="ex">/*</span> For desktop: */
   <span class="ex">.col-1</span> {width: 8.33%<span class="kw">;}</span>
 }</code></pre></div>
+<p>Media queries can also control content what content gets printed. Here both paragraphs get displayed on the page, but only the first paragraph appears when the page is printed.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">@media</span> print {
+        <span class="ex">.screen-only</span> {
+            <span class="ex">display</span>: none<span class="kw">;</span>
+        }
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This gets printed<span class="op">&lt;</span>/p<span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">p</span> class=<span class="st">&quot;screen-only&quot;</span><span class="op">&gt;</span>This does not get printed<span class="op">&lt;</span>/p<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>The content of the page can also be changed using media queries.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">@media</span> (min-width: 500px) <span class="kw">{</span>
+        <span class="ex">h1</span>::before {
+            <span class="ex">content</span>: <span class="st">&quot;Welcome to My Web Page!&quot;</span><span class="kw">;</span>
+        <span class="kw">}</span>
+    }
+
+    <span class="ex">@media</span> (max-width: 499px) <span class="kw">{</span>
+        <span class="ex">h1</span>::before {
+            <span class="ex">content</span>: <span class="st">&quot;Welcome!&quot;</span><span class="kw">;</span>
+        <span class="kw">}</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;&lt;</span>/h1<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+</div>
+<div id="flexbox" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Flexbox</h3>
+<p>Flexbox styling allows elements to be dynamically arranged to fit the screen. With a wide enough screen the div elements will all be in one row, but as the screen shrinks, they will move down into new rows.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">.container</span> {
+        <span class="ex">display</span>: flex<span class="kw">;</span>
+        <span class="ex">flex-wrap</span>: wrap<span class="kw">;</span>
+    }
+
+    <span class="ex">.container</span> <span class="op">&gt;</span> div {
+        <span class="ex">background-color</span>: springgreen<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+</div>
+<div id="grid-styling" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Grid Styling</h3>
+<p>In the following example a grid system is being used for the items being displayed. the grid creates the first two colums as 200px and the last column is automatically sized to fill the rest of the remaining screen.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="ex">.grid</span> {
+        <span class="ex">background-color</span>: green<span class="kw">;</span>
+        <span class="ex">display</span>: grid<span class="kw">;</span>
+        <span class="ex">grid-template-columns</span>: 200px 200px auto<span class="kw">;</span>
+    }
+
+    <span class="ex">.grid-item</span> {
+        <span class="ex">background-color</span>: white<span class="kw">;</span>
+    }
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid&quot;</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;1&lt;</span>/div<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;2&lt;</span>/div<span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;3&lt;</span>/div<span class="op">&gt;</span>
+    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
 
 </div>
 </div>
