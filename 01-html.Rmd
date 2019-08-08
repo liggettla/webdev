@@ -565,6 +565,8 @@ In the following example a grid system is being used for the items being display
     .grid {
         background-color: green;
         display: grid;
+        grid-column-gap: 20px;
+        gird-row-gap: 10px;
         grid-template-columns: 200px 200px auto;
     }
 

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 5 Flask | Bootstrap and React for Web Development</title>
+  <meta name="description" content="These are just some things.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 5 Flask | Bootstrap and React for Web Development" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are just some things." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Flask | Bootstrap and React for Web Development" />
+  
+  <meta name="twitter:description" content="These are just some things." />
+  
+
+<meta name="author" content="L A Liggett">
+
+
+<meta name="date" content="2019-08-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="sass.html">
+<link rel="next" href="hackernews.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">On Matters Of Nature and Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>2</b> HTML</a><ul>
+<li class="chapter" data-level="2.1" data-path="html.html"><a href="html.html#html-properties"><i class="fa fa-check"></i><b>2.1</b> HTML Properties</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="html.html"><a href="html.html#forms"><i class="fa fa-check"></i><b>2.1.1</b> Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="html.html"><a href="html.html#css"><i class="fa fa-check"></i><b>2.2</b> CSS</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="html.html"><a href="html.html#selectors"><i class="fa fa-check"></i><b>2.2.1</b> Selectors</a></li>
+<li class="chapter" data-level="2.2.2" data-path="html.html"><a href="html.html#responsive-design"><i class="fa fa-check"></i><b>2.2.2</b> Responsive Design</a></li>
+<li class="chapter" data-level="2.2.3" data-path="html.html"><a href="html.html#flexbox"><i class="fa fa-check"></i><b>2.2.3</b> Flexbox</a></li>
+<li class="chapter" data-level="2.2.4" data-path="html.html"><a href="html.html#grid-styling"><i class="fa fa-check"></i><b>2.2.4</b> Grid Styling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>3</b> Bootstrap</a><ul>
+<li class="chapter" data-level="3.1" data-path="bootstrap.html"><a href="bootstrap.html#setup"><i class="fa fa-check"></i><b>3.1</b> Setup</a></li>
+<li class="chapter" data-level="3.2" data-path="bootstrap.html"><a href="bootstrap.html#columns"><i class="fa fa-check"></i><b>3.2</b> Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sass.html"><a href="sass.html"><i class="fa fa-check"></i><b>4</b> Sass</a><ul>
+<li class="chapter" data-level="4.1" data-path="sass.html"><a href="sass.html#intro"><i class="fa fa-check"></i><b>4.1</b> Intro</a></li>
+<li class="chapter" data-level="4.2" data-path="sass.html"><a href="sass.html#nesting"><i class="fa fa-check"></i><b>4.2</b> Nesting</a></li>
+<li class="chapter" data-level="4.3" data-path="sass.html"><a href="sass.html#inheritance"><i class="fa fa-check"></i><b>4.3</b> Inheritance</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="flask.html"><a href="flask.html"><i class="fa fa-check"></i><b>5</b> Flask</a><ul>
+<li class="chapter" data-level="5.1" data-path="flask.html"><a href="flask.html#intro-1"><i class="fa fa-check"></i><b>5.1</b> Intro</a></li>
+<li class="chapter" data-level="5.2" data-path="flask.html"><a href="flask.html#routes"><i class="fa fa-check"></i><b>5.2</b> Routes</a></li>
+<li class="chapter" data-level="5.3" data-path="flask.html"><a href="flask.html#templates"><i class="fa fa-check"></i><b>5.3</b> Templates</a></li>
+<li class="chapter" data-level="5.4" data-path="flask.html"><a href="flask.html#jinja"><i class="fa fa-check"></i><b>5.4</b> Jinja</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="flask.html"><a href="flask.html#inheritance-1"><i class="fa fa-check"></i><b>5.4.1</b> Inheritance</a></li>
+<li class="chapter" data-level="5.4.2" data-path="flask.html"><a href="flask.html#forms-1"><i class="fa fa-check"></i><b>5.4.2</b> Forms</a></li>
+<li class="chapter" data-level="5.4.3" data-path="flask.html"><a href="flask.html#sessions"><i class="fa fa-check"></i><b>5.4.3</b> Sessions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>6</b> Hackernews</a><ul>
+<li class="chapter" data-level="6.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>6.1</b> Setup</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bootstrap and React for Web Development</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="flask" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Flask</h1>
+<div id="intro-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Intro</h2>
+<p>There seems to be a nice full flask tutorial <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">here</a> where a blog is created.</p>
+<p>Installation can be done through anaconda.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge flask</code></pre></div>
+<p>Flask code is generally stored within a file called <code>application.py</code>. Below is a general framework of the flask code that resides in this file.<br />
+Line 3 is creating a new flask web application.<br />
+Flask applications are designed around routes. On line 5, what is happening is that the code is referring to navigation to the <code>/</code> or home directory. The two lines below this route give the code of what to do when a user navigates to that home directory.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import Flask   
+                          
+<span class="ex">app</span> = Flask(__name__)     
+                          
+<span class="ex">@app.route</span>(<span class="st">&quot;/&quot;</span>)           
+<span class="ex">def</span> index()<span class="bu">:</span>              
+    <span class="bu">return</span> <span class="st">&quot;Hello, world!&quot;</span></code></pre></div>
+<p>Flask then needs to be told how to import it, by setting the <code>FLASK_APP</code> environment variable. If the above code is put into a file called <code>application.py</code>, just export that filename. It may be useful if <code>application.py</code> is always going to be the main filename to just add this code to the bashrc.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">FLASK_APP=</span>application.py</code></pre></div>
+<p>If flask is run in debug mode, an app will update anytime a change is made to the underlying code.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">FLASK_ENV=</span>development</code></pre></div>
+<p>The web application can then be run by running a flask webserver.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flask</span> run</code></pre></div>
+</div>
+<div id="routes" class="section level2">
+<h2><span class="header-section-number">5.2</span> Routes</h2>
+<p>Instead of just using the main route, new routes can be created that when navigated to can have different functionality. In the following example, the route can be accessed at this address: <code>http://127.0.0.1:5000/david</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@app.route</span>(<span class="st">&quot;/david&quot;</span>)
+<span class="ex">def</span> david()<span class="bu">:</span>
+    <span class="bu">return</span> <span class="st">&quot;Hello, David&quot;</span></code></pre></div>
+<p>The route can take the URL addess information dynamically and use it as a variable. In the following example, the text in the URL is being read in as a <code>string</code>, and the value is being assigned to the <code>name</code> variable.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@app.route</span>(<span class="st">&quot;/&lt;string:name&gt;&quot;</span>)
+<span class="ex">def</span> hello(name)<span class="bu">:</span>
+    <span class="ex">name</span> = name.capitalize()
+    <span class="bu">return</span> <span class="st">&quot;Hello, {}!&quot;</span>.format(name)</code></pre></div>
+<p>HTML code can also be included in the python code and can be returned and interpreted as HTML. In the following example the text that is getting returned and displayed is being styled as header text on the webpage.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@app.route</span>(<span class="st">&quot;/&lt;string:name&gt;&quot;</span>)
+<span class="ex">def</span> hello(name)<span class="bu">:</span>
+    <span class="ex">name</span> = name.capitalize()
+    <span class="bu">return</span> <span class="st">&quot;&lt;h1&gt;Hello, {}!&lt;/h1&gt;&quot;</span>.format(name)</code></pre></div>
+</div>
+<div id="templates" class="section level2">
+<h2><span class="header-section-number">5.3</span> Templates</h2>
+<p>Instead of embedding HTML within values that get returned by python code, HTML files themselves can be served by the python code. Flask can look for HTML files and it will look in a subdirectory of the main directory called <code>templates</code>. So in the following example if there is an HTML file called <code>index.html</code> within a subdirectory called <code>templates</code>, that html file gets served up by the following code.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@app.route</span>(<span class="st">&quot;/&quot;</span>)
+<span class="ex">def</span> index()<span class="bu">:</span>
+    <span class="bu">return</span> render_template(<span class="st">&quot;index.html&quot;</span>)</code></pre></div>
+<p>Variables can also be passed from python to the html files that exist within the <code>templates</code> directory in order to dynamically alter the HTML content.<br />
+In the following code, the <code>headline</code> variable is defined in python and then getting passed to HTML, and it is common that the varible names are just kept the same, though in the return function the second <code>headline</code> refers to the python variable and the first to the html variable just as is python methods.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@app.route</span>(<span class="st">&quot;/&quot;</span>)
+<span class="ex">def</span> index()<span class="bu">:</span>
+    <span class="ex">headline</span> = <span class="st">&quot;Hello thar&quot;</span>
+    <span class="bu">return</span> render_template(<span class="st">&quot;index.html&quot;</span>, headline=headline)</code></pre></div>
+<p>Now this <code>headline</code> variable can be used in HTML like so. The language being used is Jinja code. This functionality can be helpful in using the very same HTML code but allow it to perform differently.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>{{ headline }}<span class="op">&lt;</span>/<span class="ex">h1</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+</div>
+<div id="jinja" class="section level2">
+<h2><span class="header-section-number">5.4</span> Jinja</h2>
+<p>Jinja brings programming logic gates to HTML. The code must be put into an html file within the <code>templates</code> directory and used by flask as shown in the above templates section.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    {<span class="ex">%</span> if new_year %}
+        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Happy New Year!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
+    {<span class="ex">%</span> else %}
+        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Go back to work<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
+    {<span class="ex">%</span> endif %}
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>For loops work pretty similar to python as well. In the following code <code>names</code> is a python list getting passed from <code>application.py</code>, and the list items are rendered as a <code>ul</code> in HTML.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>
+    {<span class="ex">%</span> for name in names %}
+        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>{{ name }}<span class="op">&lt;</span>/<span class="ex">li</span><span class="op">&gt;</span>
+    {<span class="ex">%</span> endfor %}
+<span class="op">&lt;</span>/<span class="ex">ul</span><span class="op">&gt;</span></code></pre></div>
+<p>Routes can be referred to by the name of a method within them from HTML. If the following code exists within the <code>application.py</code> file:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@app.route</span>(<span class="st">&quot;/more&quot;</span>)
+<span class="ex">def</span> more()<span class="bu">:</span>
+    <span class="bu">return</span> render_template(<span class="st">&quot;more.html&quot;</span>)</code></pre></div>
+<p>The above method <code>more()</code> just refers to another html file, and this html file can be used from html like so, where the jinja function <code>url_for</code> finds the route that contains the <code>more()</code> method, and then uses that URL as the link in the <code>href</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;{{ url_for(&#39;more&#39;) }}&quot;</span><span class="op">&gt;</span>See more...<span class="op">&lt;</span>/a<span class="op">&gt;</span></code></pre></div>
+<div id="inheritance-1" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Inheritance</h3>
+<p>Inheritance is useful when html code is being repetitively used, as it allows a general layout to be defined and they reused and slightly modified.<br />
+The first part of the example below is how the general layout html can be setup in a file called <code>layout.html</code>. In the following code a block is being defined, and the content it uses is whatever is being passed under the variable name <code>heading</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>{% block heading %}{<span class="ex">%</span> endblock %}<span class="op">&lt;</span>/<span class="ex">h1</span><span class="op">&gt;</span></code></pre></div>
+<p>A separate html file can then inherit all of the html content within <code>layout.html</code>, but then add something unique to the black defined above.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">{<span class="ex">%extends</span> <span class="st">&quot;layout.html&quot;</span> %}
+
+{<span class="ex">%</span> block heading %}
+    <span class="ex">This</span> is the header
+{<span class="ex">%</span> endblock %}</code></pre></div>
+</div>
+<div id="forms-1" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Forms</h3>
+<p>Forms or fields allow input to be captures from the user and then used to perform other functions. In the below example, the <code>action</code> is being set as the route that contains teh <code>hello</code> method, and the manner in which the information is sent is <code>post</code>. The <code>post</code> method is different from other methods like the <code>get</code> method where information is submitted and a result is returned; may need to read more on this. The <code>get</code> method will place the text from the form into the URL. The information being input into the <code>&lt;input&gt;</code> field is named <code>&quot;name&quot;</code> and this varible can be then passed to <code>Application.py</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">form</span> action=<span class="st">&quot;{{ url_for(&#39;hello&#39;) }}&quot;</span> method=<span class="st">&quot;post&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> name=<span class="st">&quot;name&quot;</span> placeholder=<span class="st">&quot;Enter Your Name&quot;</span>}
+    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Submit<span class="op">&lt;</span>/button<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span></code></pre></div>
+<p>Within <code>Application.py</code> the text that was input into the form is then used to send to <code>hello.html</code>. here the <code>name</code> variable gets set by using the <code>form.get</code> method to retrieve the information, and then the <code>hello.html</code> template is rendered by passing the <code>name</code> variable tot by using the <code>form.get</code> method to retrieve the information, and then the <code>hello.html</code> template is rendered by passing the <code>name</code> variable to it.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import Flask, render_template, request
+
+<span class="ex">@app.route</span>(<span class="st">&quot;/hello&quot;</span>, methods=[<span class="st">&quot;POST&quot;</span>])             
+<span class="ex">def</span> hello()<span class="bu">:</span>                                       
+    <span class="ex">name</span> = request.form.get(<span class="st">&quot;name&quot;</span>)                
+    <span class="bu">return</span> render_template(<span class="st">&quot;hello.html&quot;</span>, name=name)</code></pre></div>
+<p><code>hello.html</code> can then use the <code>name</code> variable to display the text entered into the form.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Hello</span>, {{ name }}!</code></pre></div>
+</div>
+<div id="sessions" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Sessions</h3>
+<p>Sessions allow data to be stored, and as long as the webserver is still running (or the data can be saved), and furthermore allows each user to have data that is specific to their individual session. First <code>flask_session</code> needs to be installed.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip</span> install flask-session</code></pre></div>
+<p>Here in <code>application.py</code> a <code>notes</code> list is being created to store data that is being input. The route uses both the <code>get</code> and <code>post</code> methods to get data from the user. And the form sends the <code>note</code> variable.<br />
+The <code>notes</code> list is created using <code>session[&quot;notes&quot;]</code> as this will create a list that is stored in a cookie and is specific to the user.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import Flask, render_template, request, session
+<span class="ex">from</span> flask_session import Session                         
+                                                          
+<span class="ex">app</span> = Flask(__name__)                                     
+                                                          
+<span class="ex">app.config</span>[<span class="st">&quot;SESSION_PERMANENT&quot;</span>] = False                   
+<span class="ex">app.config</span>[<span class="st">&quot;SESSION_TYPE&quot;</span>] = <span class="st">&quot;filesystem&quot;</span>                 
+<span class="ex">Session</span>(app)                                              
+                                                          
+<span class="ex">@app.route</span>(<span class="st">&quot;/&quot;</span>, methods=[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])                  
+<span class="ex">def</span> index()<span class="bu">:</span>                                              
+    <span class="kw">if</span> <span class="ex">session.get</span>(<span class="st">&quot;notes&quot;</span>) <span class="ex">is</span> None:
+        <span class="ex">session</span>[<span class="st">&quot;notes&quot;</span>] = []       
+
+    <span class="kw">if</span> <span class="ex">request.method</span> == <span class="st">&quot;POST&quot;</span>:                          
+        <span class="ex">note</span> = request.form.get(<span class="st">&quot;note&quot;</span>)                   
+        <span class="ex">notes.append</span>(note)                                
+                                                          
+    <span class="bu">return</span> render_template(<span class="st">&quot;index.html&quot;</span>, notes=notes)     </code></pre></div>
+<p>Then in <code>index.html</code> the form is created to send the data to the <code>application.py</code> file. And since <code>notes</code> is an ever growing list, the list is rendered in the html.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>                                                             
+    {<span class="ex">%</span> for note in notes %}                                      
+        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>{{ note }}<span class="op">&lt;</span>/<span class="ex">li</span><span class="op">&gt;</span>                                      
+    {<span class="ex">%</span> endfor %}                                                 
+<span class="op">&lt;</span>/<span class="ex">ul</span><span class="op">&gt;</span>                                                            
+                                                                 
+<span class="op">&lt;</span><span class="ex">form</span> action=<span class="st">&quot;{{ url_for(&#39;index&#39;) }}&quot;</span> method=<span class="st">&quot;post&quot;</span><span class="op">&gt;</span>             
+    <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> name=<span class="st">&quot;note&quot;</span> placeholder=<span class="st">&quot;Enter Note Here&quot;</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Add Note<span class="op">&lt;</span>/button<span class="op">&gt;</span>                                    
+<span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                          </code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sass.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hackernews.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-flask.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

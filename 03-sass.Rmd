@@ -1,0 +1,65 @@
+# Sass {#sass}
+
+## Intro
+Sass can be installed with npm.
+```{bash eval=FALSE}
+npm install -g sass
+```
+
+Sass is an extension to CSS that adds functionality, including the addition of variables. Sass converts its code into CSS that can then be used by the browser. Below is an example of setting a Sass variable `$color`.
+```{bash eval=FALSE}
+$color: blue;
+
+ul {
+    font-size:14px;
+    color: $color;
+}
+```
+
+A Sass file is then converted to CSS by running Sass and specifying the output.
+```{bash eval=FALSE}
+sass variables.scss variables.css
+```
+
+CSS files can be automatically recompiled if any changes are detected using Sass. Here the `variables.scss` file is being monitored for changes and recompiled to `variables.css` whenever changes are detected.
+```{bash eval=FALSE}
+sass --watch variables.scss:variables.css
+```
+
+Github pages actually will automatically compile scss files into css files when a scss file is comitted to a github repository.
+
+## Nesting
+Styles can be applied to divisions or items within other divisions when using sass. In the below example, the code within a sass file will style only those paragraphs that are nested within a `div` blue and only the `ul` wihin `div` as green. Anything outside of a `div` will not be styled by this scss code.
+```{bash eval=FALSE}
+div {                
+    font-size: 18px; 
+                     
+    p {              
+        color: blue; 
+    }                
+                     
+    ul {             
+        color: green;
+    }                
+}                    
+```
+
+## Inheritance
+Sass uses inheritance to create generic governing rules that can then be extended by other elements. This can be useful for similar elements that share a number of properties but then have a couple of different properties.  
+In the following example, a `%message` group is created with a number of different styles, then `.success` extends `%message` and thereby inherits all of the included styles but then also has a green background.
+```{bash eval=FALSE}
+%message {                  
+    font-family: sans-serif;
+    font-size: 18px;        
+    font-weight: bold;      
+    border: 1px solid black;
+    padding: 20px;          
+    margin: 20px;           
+}                           
+                            
+.success {                  
+    @extend %message;       
+    background-color: green;
+}                           
+```
+

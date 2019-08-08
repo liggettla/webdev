@@ -1,9 +1,15 @@
 # Bootstrap {#bootstrap}
 
 ## Setup 
+
 The bootstrap stylesheet `<link>` can be used directly `stackpath.com` by including the following reference in the `<head>` before any other listed stylesheets.
 ```{bash eval=FALSE}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+```
+
+Here is an alternative link to the bootstrap CSS file.
+```{bash eval=FALSE}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+
 ```
 
 The `charset` and `viewport` meta tags are often required for proper bootstrap responsive behaviors, and should be included when using the bootstrap css.  
@@ -12,4 +18,53 @@ The `viewport` line is a responsive meta tag that ensures proper rendering and t
 <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+```
+
+## Columns
+
+Bootstrap styles a page as 12 columns. In the following code, columns that are 3/12 columns wide are used.
+```{bash eval=FALSE}
+<style>
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col=3">
+                This is stuff
+            </div>
+            <div class="col=3">
+                This is stuff
+            </div>
+            <div class="col=3">
+                This is stuff
+            </div>
+        </div>
+    </div>
+</body>
+```
+
+Bootstrap can also style elements to take different amounts of the 12 total columns depending on the screen size. What is happening in the following code is that the columns being listed take 3/12 columns if the screen is large, as defined by the bootstrap CSS, and they take 6/12 columns if the screen is small.
+```{bash eval=FALSE}
+<style>
+    .row > div{
+        padding: 20px;
+        background-color: teal;
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                This is a section.
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                This is a section.
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                This is a section.
+            </div>
+        </div>
+    </div>
+</body>
 ```

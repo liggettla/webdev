@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bootstrap and React for Web Development</title>
+  <title>Chapter 4 Sass | Bootstrap and React for Web Development</title>
   <meta name="description" content="These are just some things.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Bootstrap and React for Web Development" />
+  <meta property="og:title" content="Chapter 4 Sass | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bootstrap and React for Web Development" />
+  <meta name="twitter:title" content="Chapter 4 Sass | Bootstrap and React for Web Development" />
   
   <meta name="twitter:description" content="These are just some things." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="html.html">
+<link rel="prev" href="bootstrap.html">
+<link rel="next" href="flask.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -159,22 +159,67 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bootstrap and React for Web Development</h1>
-<p class="author"><em>L A Liggett</em></p>
-<p class="date"><em>2019-08-07</em></p>
-</div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="sass" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Sass</h1>
+<div id="intro" class="section level2">
+<h2><span class="header-section-number">4.1</span> Intro</h2>
+<p>Sass can be installed with npm.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">npm</span> install -g sass</code></pre></div>
+<p>Sass is an extension to CSS that adds functionality, including the addition of variables. Sass converts its code into CSS that can then be used by the browser. Below is an example of setting a Sass variable <code>$color</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">$color</span>: <span class="ex">blue</span><span class="kw">;</span>
 
+<span class="ex">ul</span> {
+    <span class="ex">font-size</span>:14px<span class="kw">;</span>
+    <span class="ex">color</span>: <span class="va">$color</span><span class="kw">;</span>
+}</code></pre></div>
+<p>A Sass file is then converted to CSS by running Sass and specifying the output.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">sass</span> variables.scss variables.css</code></pre></div>
+<p>CSS files can be automatically recompiled if any changes are detected using Sass. Here the <code>variables.scss</code> file is being monitored for changes and recompiled to <code>variables.css</code> whenever changes are detected.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">sass</span> --watch variables.scss:variables.css</code></pre></div>
+<p>Github pages actually will automatically compile scss files into css files when a scss file is comitted to a github repository.</p>
+</div>
+<div id="nesting" class="section level2">
+<h2><span class="header-section-number">4.2</span> Nesting</h2>
+<p>Styles can be applied to divisions or items within other divisions when using sass. In the below example, the code within a sass file will style only those paragraphs that are nested within a <code>div</code> blue and only the <code>ul</code> wihin <code>div</code> as green. Anything outside of a <code>div</code> will not be styled by this scss code.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">div</span> {                
+    <span class="ex">font-size</span>: 18px<span class="kw">;</span> 
+                     
+    <span class="ex">p</span> {              
+        <span class="ex">color</span>: blue<span class="kw">;</span> 
+    }                
+                     
+    <span class="ex">ul</span> {             
+        <span class="ex">color</span>: green<span class="kw">;</span>
+    }                
+}                    </code></pre></div>
+</div>
+<div id="inheritance" class="section level2">
+<h2><span class="header-section-number">4.3</span> Inheritance</h2>
+<p>Sass uses inheritance to create generic governing rules that can then be extended by other elements. This can be useful for similar elements that share a number of properties but then have a couple of different properties.<br />
+In the following example, a <code>%message</code> group is created with a number of different styles, then <code>.success</code> extends <code>%message</code> and thereby inherits all of the included styles but then also has a green background.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">%message</span> {                  
+    <span class="ex">font-family</span>: sans-serif<span class="kw">;</span>
+    <span class="ex">font-size</span>: 18px<span class="kw">;</span>        
+    <span class="ex">font-weight</span>: bold<span class="kw">;</span>      
+    <span class="ex">border</span>: 1px solid black<span class="kw">;</span>
+    <span class="ex">padding</span>: 20px<span class="kw">;</span>          
+    <span class="ex">margin</span>: 20px<span class="kw">;</span>           
+}                           
+                            
+<span class="ex">.success</span> {                  
+    <span class="ex">@extend</span> %message<span class="kw">;</span>       
+    <span class="ex">background-color</span>: green<span class="kw">;</span>
+}                           </code></pre></div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="html.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bootstrap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="flask.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -204,7 +249,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-sass.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-05}
+    \date{2019-08-07}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -868,6 +868,8 @@ column is automatically sized to fill the rest of the remaining screen.
     \ExtensionTok{.grid}\NormalTok{ \{}
         \ExtensionTok{background-color}\NormalTok{: green}\KeywordTok{;}
         \ExtensionTok{display}\NormalTok{: grid}\KeywordTok{;}
+        \ExtensionTok{grid-column-gap}\NormalTok{: 20px}\KeywordTok{;}
+        \ExtensionTok{gird-row-gap}\NormalTok{: 10px}\KeywordTok{;}
         \ExtensionTok{grid-template-columns}\NormalTok{: 200px 200px auto}\KeywordTok{;}
 \NormalTok{    \}}
 
@@ -900,6 +902,14 @@ listed stylesheets.
 \end{Highlighting}
 \end{Shaded}
 
+Here is an alternative link to the bootstrap CSS file.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{link}\NormalTok{ rel=}\StringTok{"stylesheet"}\NormalTok{ href=}\StringTok{"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"}\NormalTok{ integrity=}\StringTok{"sha384-Gn5384xqQ1aoWXA+}
+\end{Highlighting}
+\end{Shaded}
+
 The \texttt{charset} and \texttt{viewport} meta tags are often required
 for proper bootstrap responsive behaviors, and should be included when
 using the bootstrap css.\\
@@ -911,6 +921,527 @@ rendering and touch zooming for mobile devices.
 \OperatorTok{<}\NormalTok{!}\ExtensionTok{--}\NormalTok{ Required meta tags --}\OperatorTok{>}
     \OperatorTok{<}\ExtensionTok{meta}\NormalTok{ charset=}\StringTok{"utf-8"}\OperatorTok{>}
     \OperatorTok{<}\ExtensionTok{meta}\NormalTok{ name=}\StringTok{"viewport"}\NormalTok{ content=}\StringTok{"width=device-width, initial-scale=1, shrink-to-fit=no"}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Columns}\label{columns}
+
+Bootstrap styles a page as 12 columns. In the following code, columns
+that are 3/12 columns wide are used.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"container"}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"row"}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"col=3"}\OperatorTok{>}
+                \ExtensionTok{This}\NormalTok{ is stuff}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"col=3"}\OperatorTok{>}
+                \ExtensionTok{This}\NormalTok{ is stuff}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"col=3"}\OperatorTok{>}
+                \ExtensionTok{This}\NormalTok{ is stuff}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Bootstrap can also style elements to take different amounts of the 12
+total columns depending on the screen size. What is happening in the
+following code is that the columns being listed take 3/12 columns if the
+screen is large, as defined by the bootstrap CSS, and they take 6/12
+columns if the screen is small.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \ExtensionTok{.row} \OperatorTok{>}\NormalTok{ div\{}
+        \ExtensionTok{padding}\NormalTok{: 20px}\KeywordTok{;}
+        \ExtensionTok{background-color}\NormalTok{: teal}\KeywordTok{;}
+        \ExtensionTok{border}\NormalTok{: 2px solid black}\KeywordTok{;}
+\NormalTok{    \}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"container"}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"row"}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"col-lg-3 col-sm-6"}\OperatorTok{>}
+                \ExtensionTok{This}\NormalTok{ is a section.}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"col-lg-3 col-sm-6"}\OperatorTok{>}
+                \ExtensionTok{This}\NormalTok{ is a section.}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+            \OperatorTok{<}\ExtensionTok{div}\NormalTok{ class=}\StringTok{"col-lg-3 col-sm-6"}\OperatorTok{>}
+                \ExtensionTok{This}\NormalTok{ is a section.}
+            \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+        \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{div}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{Sass}\label{sass}
+
+\section{Intro}\label{intro}
+
+Sass can be installed with npm.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{npm}\NormalTok{ install -g sass}
+\end{Highlighting}
+\end{Shaded}
+
+Sass is an extension to CSS that adds functionality, including the
+addition of variables. Sass converts its code into CSS that can then be
+used by the browser. Below is an example of setting a Sass variable
+\texttt{\$color}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{$color}\NormalTok{: }\ExtensionTok{blue}\KeywordTok{;}
+
+\ExtensionTok{ul}\NormalTok{ \{}
+    \ExtensionTok{font-size}\NormalTok{:14px}\KeywordTok{;}
+    \ExtensionTok{color}\NormalTok{: }\VariableTok{$color}\KeywordTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+A Sass file is then converted to CSS by running Sass and specifying the
+output.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{sass}\NormalTok{ variables.scss variables.css}
+\end{Highlighting}
+\end{Shaded}
+
+CSS files can be automatically recompiled if any changes are detected
+using Sass. Here the \texttt{variables.scss} file is being monitored for
+changes and recompiled to \texttt{variables.css} whenever changes are
+detected.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{sass}\NormalTok{ --watch variables.scss:variables.css}
+\end{Highlighting}
+\end{Shaded}
+
+Github pages actually will automatically compile scss files into css
+files when a scss file is comitted to a github repository.
+
+\section{Nesting}\label{nesting}
+
+Styles can be applied to divisions or items within other divisions when
+using sass. In the below example, the code within a sass file will style
+only those paragraphs that are nested within a \texttt{div} blue and
+only the \texttt{ul} wihin \texttt{div} as green. Anything outside of a
+\texttt{div} will not be styled by this scss code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{div}\NormalTok{ \{                }
+    \ExtensionTok{font-size}\NormalTok{: 18px}\KeywordTok{;} 
+                     
+    \ExtensionTok{p}\NormalTok{ \{              }
+        \ExtensionTok{color}\NormalTok{: blue}\KeywordTok{;} 
+\NormalTok{    \}                }
+                     
+    \ExtensionTok{ul}\NormalTok{ \{             }
+        \ExtensionTok{color}\NormalTok{: green}\KeywordTok{;}
+\NormalTok{    \}                }
+\NormalTok{\}                    }
+\end{Highlighting}
+\end{Shaded}
+
+\section{Inheritance}\label{inheritance}
+
+Sass uses inheritance to create generic governing rules that can then be
+extended by other elements. This can be useful for similar elements that
+share a number of properties but then have a couple of different
+properties.\\
+In the following example, a \texttt{\%message} group is created with a
+number of different styles, then \texttt{.success} extends
+\texttt{\%message} and thereby inherits all of the included styles but
+then also has a green background.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{%message}\NormalTok{ \{                  }
+    \ExtensionTok{font-family}\NormalTok{: sans-serif}\KeywordTok{;}
+    \ExtensionTok{font-size}\NormalTok{: 18px}\KeywordTok{;}        
+    \ExtensionTok{font-weight}\NormalTok{: bold}\KeywordTok{;}      
+    \ExtensionTok{border}\NormalTok{: 1px solid black}\KeywordTok{;}
+    \ExtensionTok{padding}\NormalTok{: 20px}\KeywordTok{;}          
+    \ExtensionTok{margin}\NormalTok{: 20px}\KeywordTok{;}           
+\NormalTok{\}                           }
+                            
+\ExtensionTok{.success}\NormalTok{ \{                  }
+    \ExtensionTok{@extend}\NormalTok{ %message}\KeywordTok{;}       
+    \ExtensionTok{background-color}\NormalTok{: green}\KeywordTok{;}
+\NormalTok{\}                           }
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{Flask}\label{flask}
+
+\section{Intro}\label{intro-1}
+
+There seems to be a nice full flask tutorial
+\href{https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world}{here}
+where a blog is created.
+
+Installation can be done through anaconda.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{conda}\NormalTok{ install -c conda-forge flask}
+\end{Highlighting}
+\end{Shaded}
+
+Flask code is generally stored within a file called
+\texttt{application.py}. Below is a general framework of the flask code
+that resides in this file.\\
+Line 3 is creating a new flask web application.\\
+Flask applications are designed around routes. On line 5, what is
+happening is that the code is referring to navigation to the \texttt{/}
+or home directory. The two lines below this route give the code of what
+to do when a user navigates to that home directory.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{from}\NormalTok{ flask import Flask   }
+                          
+\ExtensionTok{app}\NormalTok{ = Flask(__name__)     }
+                          
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/"}\NormalTok{)           }
+\ExtensionTok{def}\NormalTok{ index()}\BuiltInTok{:}              
+    \BuiltInTok{return} \StringTok{"Hello, world!"}
+\end{Highlighting}
+\end{Shaded}
+
+Flask then needs to be told how to import it, by setting the
+\texttt{FLASK\_APP} environment variable. If the above code is put into
+a file called \texttt{application.py}, just export that filename. It may
+be useful if \texttt{application.py} is always going to be the main
+filename to just add this code to the bashrc.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{export} \VariableTok{FLASK_APP=}\NormalTok{application.py}
+\end{Highlighting}
+\end{Shaded}
+
+If flask is run in debug mode, an app will update anytime a change is
+made to the underlying code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{export} \VariableTok{FLASK_ENV=}\NormalTok{development}
+\end{Highlighting}
+\end{Shaded}
+
+The web application can then be run by running a flask webserver.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{flask}\NormalTok{ run}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Routes}\label{routes}
+
+Instead of just using the main route, new routes can be created that
+when navigated to can have different functionality. In the following
+example, the route can be accessed at this address:
+\texttt{http://127.0.0.1:5000/david}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/david"}\NormalTok{)}
+\ExtensionTok{def}\NormalTok{ david()}\BuiltInTok{:}
+    \BuiltInTok{return} \StringTok{"Hello, David"}
+\end{Highlighting}
+\end{Shaded}
+
+The route can take the URL addess information dynamically and use it as
+a variable. In the following example, the text in the URL is being read
+in as a \texttt{string}, and the value is being assigned to the
+\texttt{name} variable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/<string:name>"}\NormalTok{)}
+\ExtensionTok{def}\NormalTok{ hello(name)}\BuiltInTok{:}
+    \ExtensionTok{name}\NormalTok{ = name.capitalize()}
+    \BuiltInTok{return} \StringTok{"Hello, \{\}!"}\NormalTok{.format(name)}
+\end{Highlighting}
+\end{Shaded}
+
+HTML code can also be included in the python code and can be returned
+and interpreted as HTML. In the following example the text that is
+getting returned and displayed is being styled as header text on the
+webpage.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/<string:name>"}\NormalTok{)}
+\ExtensionTok{def}\NormalTok{ hello(name)}\BuiltInTok{:}
+    \ExtensionTok{name}\NormalTok{ = name.capitalize()}
+    \BuiltInTok{return} \StringTok{"<h1>Hello, \{\}!</h1>"}\NormalTok{.format(name)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Templates}\label{templates}
+
+Instead of embedding HTML within values that get returned by python
+code, HTML files themselves can be served by the python code. Flask can
+look for HTML files and it will look in a subdirectory of the main
+directory called \texttt{templates}. So in the following example if
+there is an HTML file called \texttt{index.html} within a subdirectory
+called \texttt{templates}, that html file gets served up by the
+following code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/"}\NormalTok{)}
+\ExtensionTok{def}\NormalTok{ index()}\BuiltInTok{:}
+    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"index.html"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Variables can also be passed from python to the html files that exist
+within the \texttt{templates} directory in order to dynamically alter
+the HTML content.\\
+In the following code, the \texttt{headline} variable is defined in
+python and then getting passed to HTML, and it is common that the
+varible names are just kept the same, though in the return function the
+second \texttt{headline} refers to the python variable and the first to
+the html variable just as is python methods.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/"}\NormalTok{)}
+\ExtensionTok{def}\NormalTok{ index()}\BuiltInTok{:}
+    \ExtensionTok{headline}\NormalTok{ = }\StringTok{"Hello thar"}
+    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"index.html"}\NormalTok{, headline=headline)}
+\end{Highlighting}
+\end{Shaded}
+
+Now this \texttt{headline} variable can be used in HTML like so. The
+language being used is Jinja code. This functionality can be helpful in
+using the very same HTML code but allow it to perform differently.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{\{\{ headline \}\}}\OperatorTok{<}\NormalTok{/}\ExtensionTok{h1}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Jinja}\label{jinja}
+
+Jinja brings programming logic gates to HTML. The code must be put into
+an html file within the \texttt{templates} directory and used by flask
+as shown in the above templates section.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ if new_year %\}}
+        \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{Happy New Year!}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ else %\}}
+        \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{Go back to work}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ endif %\}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+For loops work pretty similar to python as well. In the following code
+\texttt{names} is a python list getting passed from
+\texttt{application.py}, and the list items are rendered as a
+\texttt{ul} in HTML.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{ul}\OperatorTok{>}
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ for name in names %\}}
+        \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{\{\{ name \}\}}\OperatorTok{<}\NormalTok{/}\ExtensionTok{li}\OperatorTok{>}
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ endfor %\}}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{ul}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Routes can be referred to by the name of a method within them from HTML.
+If the following code exists within the \texttt{application.py} file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/more"}\NormalTok{)}
+\ExtensionTok{def}\NormalTok{ more()}\BuiltInTok{:}
+    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"more.html"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The above method \texttt{more()} just refers to another html file, and
+this html file can be used from html like so, where the jinja function
+\texttt{url\_for} finds the route that contains the \texttt{more()}
+method, and then uses that URL as the link in the \texttt{href}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{"\{\{ url_for('more') \}\}"}\OperatorTok{>}\NormalTok{See more...}\OperatorTok{<}\NormalTok{/a}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Inheritance}\label{inheritance-1}
+
+Inheritance is useful when html code is being repetitively used, as it
+allows a general layout to be defined and they reused and slightly
+modified.\\
+The first part of the example below is how the general layout html can
+be setup in a file called \texttt{layout.html}. In the following code a
+block is being defined, and the content it uses is whatever is being
+passed under the variable name \texttt{heading}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{\{% block heading %\}\{}\ExtensionTok{%}\NormalTok{ endblock %\}}\OperatorTok{<}\NormalTok{/}\ExtensionTok{h1}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+A separate html file can then inherit all of the html content within
+\texttt{layout.html}, but then add something unique to the black defined
+above.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\{}\ExtensionTok{%extends} \StringTok{"layout.html"}\NormalTok{ %\}}
+
+\NormalTok{\{}\ExtensionTok{%}\NormalTok{ block heading %\}}
+    \ExtensionTok{This}\NormalTok{ is the header}
+\NormalTok{\{}\ExtensionTok{%}\NormalTok{ endblock %\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Forms}\label{forms-1}
+
+Forms or fields allow input to be captures from the user and then used
+to perform other functions. In the below example, the \texttt{action} is
+being set as the route that contains teh \texttt{hello} method, and the
+manner in which the information is sent is \texttt{post}. The
+\texttt{post} method is different from other methods like the
+\texttt{get} method where information is submitted and a result is
+returned; may need to read more on this. The \texttt{get} method will
+place the text from the form into the URL. The information being input
+into the \texttt{\textless{}input\textgreater{}} field is named
+\texttt{"name"} and this varible can be then passed to
+\texttt{Application.py}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{form}\NormalTok{ action=}\StringTok{"\{\{ url_for('hello') \}\}"}\NormalTok{ method=}\StringTok{"post"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ name=}\StringTok{"name"}\NormalTok{ placeholder=}\StringTok{"Enter Your Name"}\NormalTok{\}}
+    \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Submit}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Within \texttt{Application.py} the text that was input into the form is
+then used to send to \texttt{hello.html}. here the \texttt{name}
+variable gets set by using the \texttt{form.get} method to retrieve the
+information, and then the \texttt{hello.html} template is rendered by
+passing the \texttt{name} variable tot by using the \texttt{form.get}
+method to retrieve the information, and then the \texttt{hello.html}
+template is rendered by passing the \texttt{name} variable to it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{from}\NormalTok{ flask import Flask, render_template, request}
+
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/hello"}\NormalTok{, methods=[}\StringTok{"POST"}\NormalTok{])             }
+\ExtensionTok{def}\NormalTok{ hello()}\BuiltInTok{:}                                       
+    \ExtensionTok{name}\NormalTok{ = request.form.get(}\StringTok{"name"}\NormalTok{)                }
+    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"hello.html"}\NormalTok{, name=name)}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{hello.html} can then use the \texttt{name} variable to display
+the text entered into the form.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Hello}\NormalTok{, \{\{ name \}\}!}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Sessions}\label{sessions}
+
+Sessions allow data to be stored, and as long as the webserver is still
+running (or the data can be saved), and furthermore allows each user to
+have data that is specific to their individual session. First
+\texttt{flask\_session} needs to be installed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{pip}\NormalTok{ install flask-session}
+\end{Highlighting}
+\end{Shaded}
+
+Here in \texttt{application.py} a \texttt{notes} list is being created
+to store data that is being input. The route uses both the \texttt{get}
+and \texttt{post} methods to get data from the user. And the form sends
+the \texttt{note} variable.\\
+The \texttt{notes} list is created using \texttt{session{[}"notes"{]}}
+as this will create a list that is stored in a cookie and is specific to
+the user.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{from}\NormalTok{ flask import Flask, render_template, request, session}
+\ExtensionTok{from}\NormalTok{ flask_session import Session                         }
+                                                          
+\ExtensionTok{app}\NormalTok{ = Flask(__name__)                                     }
+                                                          
+\ExtensionTok{app.config}\NormalTok{[}\StringTok{"SESSION_PERMANENT"}\NormalTok{] = False                   }
+\ExtensionTok{app.config}\NormalTok{[}\StringTok{"SESSION_TYPE"}\NormalTok{] = }\StringTok{"filesystem"}                 
+\ExtensionTok{Session}\NormalTok{(app)                                              }
+                                                          
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/"}\NormalTok{, methods=[}\StringTok{"GET"}\NormalTok{, }\StringTok{"POST"}\NormalTok{])                  }
+\ExtensionTok{def}\NormalTok{ index()}\BuiltInTok{:}                                              
+    \KeywordTok{if} \ExtensionTok{session.get}\NormalTok{(}\StringTok{"notes"}\NormalTok{) }\ExtensionTok{is}\NormalTok{ None:}
+        \ExtensionTok{session}\NormalTok{[}\StringTok{"notes"}\NormalTok{] = []       }
+
+    \KeywordTok{if} \ExtensionTok{request.method}\NormalTok{ == }\StringTok{"POST"}\NormalTok{:                          }
+        \ExtensionTok{note}\NormalTok{ = request.form.get(}\StringTok{"note"}\NormalTok{)                   }
+        \ExtensionTok{notes.append}\NormalTok{(note)                                }
+                                                          
+    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"index.html"}\NormalTok{, notes=notes)     }
+\end{Highlighting}
+\end{Shaded}
+
+Then in \texttt{index.html} the form is created to send the data to the
+\texttt{application.py} file. And since \texttt{notes} is an ever
+growing list, the list is rendered in the html.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{ul}\OperatorTok{>}                                                             
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ for note in notes %\}                                      }
+        \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{\{\{ note \}\}}\OperatorTok{<}\NormalTok{/}\ExtensionTok{li}\OperatorTok{>}                                      
+\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ endfor %\}                                                 }
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{ul}\OperatorTok{>}                                                            
+                                                                 
+\OperatorTok{<}\ExtensionTok{form}\NormalTok{ action=}\StringTok{"\{\{ url_for('index') \}\}"}\NormalTok{ method=}\StringTok{"post"}\OperatorTok{>}             
+    \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ name=}\StringTok{"note"}\NormalTok{ placeholder=}\StringTok{"Enter Note Here"}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Add Note}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                                    
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}                                                          
 \end{Highlighting}
 \end{Shaded}
 
