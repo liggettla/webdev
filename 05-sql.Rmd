@@ -1,0 +1,73 @@
+# SQL {#sql}
+
+## Intro
+SQL stands for structured query language that is designed to facilitate accessing data that is structured into table form. PostgreSQL is a version of SQL that is used in these notes.
+
+## Installation
+The method I can easily get to work is by installing through `apt`.
+```{bash eval=FALSE}
+sudo apt-get install postgresql postgresql-client
+```
+Both the default database user and default database are called postgres, so switch to that user.
+```{bash eval=FALSE}
+sudo -u postgres bash
+```
+Then start a server.
+```{bash eval=FALSE}
+psql
+```
+
+I have not been able to get the installation working through a conda install but here is the reference to postgresql.
+```{bash eval=FALSE}
+conda install -c conda-forge postgresql
+```
+
+## Creating a Database
+Below is the general syntax to create a PostgreSQL database.  
+The `id` is being used in a manner similar to an index that will just number each of the items.  
+The next three lines are all different data, and are of types `VARCHAR` and `INTEGER`.  
+The `NOT NULL` aspect will cause the server to reject the entry if some data is added to the database but that value is not included.
+```{bash eval=FALSE}
+CREATE TABLE flights (           
+    id SERIAL PRIMARY KEY,       
+    origin VARCHAR NOT NULL,     
+    destination VARCHAR NOT NULL,
+    duration INTEGER NOT NULL    
+);                               
+```
+
+Display the currently created databases.
+```{bash eval=FALSE}
+\d
+```
+
+Insert data into the flights database.
+```{bash eval=FALSE}
+INSERT INTO flights (origin, destination, duration) VALUES ('New York', 'London', 415);
+```
+
+Select all the data from flights.
+```{bash eval=FALSE}
+SELECT * FROM flights;
+```
+
+Select only the origin and destination columns from flights.
+```{bash eval=FALSE}
+SELECT origin, destination FROM flights;
+```
+
+Select only the data in flights where the id is 3.
+```{bash eval=FALSE}
+SELECT * FROM flights WHERE id = 3;
+```
+
+Select only the data in flights that have an origin of New York.
+```{bash eval=FALSE}
+SELECT * FROM flights WHERE origin = 'New York';
+```
+
+Boolean logic data selection from flights.
+```{bash eval=FALSE}
+SELECT * FROM flights WHERE destination = 'Paris' AND duration > 500;
+```
+

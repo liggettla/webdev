@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Bootstrap | Bootstrap and React for Web Development</title>
+  <title>Chapter 7 Creating a Database | Bootstrap and React for Web Development</title>
   <meta name="description" content="These are just some things.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Bootstrap | Bootstrap and React for Web Development" />
+  <meta property="og:title" content="Chapter 7 Creating a Database | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Bootstrap | Bootstrap and React for Web Development" />
+  <meta name="twitter:title" content="Chapter 7 Creating a Database | Bootstrap and React for Web Development" />
   
   <meta name="twitter:description" content="These are just some things." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="html.html">
-<link rel="next" href="sass.html">
+<link rel="prev" href="sql.html">
+<link rel="next" href="hackernews.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -137,11 +137,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="sql.html"><a href="sql.html"><i class="fa fa-check"></i><b>6</b> SQL</a><ul>
 <li class="chapter" data-level="6.1" data-path="sql.html"><a href="sql.html#intro-2"><i class="fa fa-check"></i><b>6.1</b> Intro</a></li>
-<li class="chapter" data-level="6.2" data-path="sql.html"><a href="sql.html#installation"><i class="fa fa-check"></i><b>6.2</b> Installation</a></li>
-<li class="chapter" data-level="6.3" data-path="sql.html"><a href="sql.html#creating-a-database"><i class="fa fa-check"></i><b>6.3</b> Creating a Database</a></li>
+<li class="chapter" data-level="6.2" data-path="sql.html"><a href="sql.html#installation."><i class="fa fa-check"></i><b>6.2</b> Installation.</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>7</b> Hackernews</a><ul>
-<li class="chapter" data-level="7.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
+<li class="chapter" data-level="7" data-path="creating-a-database.html"><a href="creating-a-database.html"><i class="fa fa-check"></i><b>7</b> Creating a Database</a></li>
+<li class="chapter" data-level="8" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>8</b> Hackernews</a><ul>
+<li class="chapter" data-level="8.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>8.1</b> Setup</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -164,73 +164,41 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bootstrap" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Bootstrap</h1>
-<div id="setup" class="section level2">
-<h2><span class="header-section-number">3.1</span> Setup</h2>
-<p>The bootstrap stylesheet <code>&lt;link&gt;</code> can be used directly <code>stackpath.com</code> by including the following reference in the <code>&lt;head&gt;</code> before any other listed stylesheets.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot;</span> integrity=<span class="st">&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot;</span> crossorigin=<span class="st">&quot;anonymous&quot;</span><span class="op">&gt;</span></code></pre></div>
-<p>Here is an alternative link to the bootstrap CSS file.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&quot;</span> integrity=<span class="st">&quot;sha384-Gn5384xqQ1aoWXA+</span></code></pre></div>
-<p>The <code>charset</code> and <code>viewport</code> meta tags are often required for proper bootstrap responsive behaviors, and should be included when using the bootstrap css.<br />
-The <code>viewport</code> line is a responsive meta tag that ensures proper rendering and touch zooming for mobile devices.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">--</span> Required meta tags --<span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">meta</span> charset=<span class="st">&quot;utf-8&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="op">&gt;</span></code></pre></div>
-</div>
-<div id="columns" class="section level2">
-<h2><span class="header-section-number">3.2</span> Columns</h2>
-<p>Bootstrap styles a page as 12 columns. In the following code, columns that are 3/12 columns wide are used.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;row&quot;</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col=3&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is stuff
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col=3&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is stuff
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col=3&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is stuff
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
-<p>Bootstrap can also style elements to take different amounts of the 12 total columns depending on the screen size. What is happening in the following code is that the columns being listed take 3/12 columns if the screen is large, as defined by the bootstrap CSS, and they take 6/12 columns if the screen is small.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">.row</span> <span class="op">&gt;</span> div{
-        <span class="ex">padding</span>: 20px<span class="kw">;</span>
-        <span class="ex">background-color</span>: teal<span class="kw">;</span>
-        <span class="ex">border</span>: 2px solid black<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;row&quot;</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col-lg-3 col-sm-6&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is a section.
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col-lg-3 col-sm-6&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is a section.
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col-lg-3 col-sm-6&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is a section.
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div id="creating-a-database" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Creating a Database</h1>
+<p>Below is the general syntax to create a PostgreSQL database.<br />
+The <code>id</code> is being used in a manner similar to an index that will just number each of the items.<br />
+The next three lines are all different data, and are of types <code>VARCHAR</code> and <code>INTEGER</code>.<br />
+The <code>NOT NULL</code> aspect will cause the server to reject the entry if some data is added to the database but that value is not included.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">CREATE</span> TABLE flights (           
+    <span class="fu">id</span> SERIAL PRIMARY KEY,       
+    <span class="ex">origin</span> VARCHAR NOT NULL,     
+    <span class="ex">destination</span> VARCHAR NOT NULL,
+    <span class="ex">duration</span> INTEGER NOT NULL    
+);                               </code></pre></div>
+<p>Display the currently created databases.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">\<span class="ex">d</span></code></pre></div>
+<p>Insert data into the flights database.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">INSERT</span> INTO flights (origin, destination, duration) <span class="ex">VALUES</span> (<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;London&#39;</span>, 415);</code></pre></div>
+<p>Select all the data from flights.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights<span class="kw">;</span></code></pre></div>
+<p>Select only the origin and destination columns from flights.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination FROM flights<span class="kw">;</span></code></pre></div>
+<p>Select only the data in flights where the id is 3.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE id = 3<span class="kw">;</span></code></pre></div>
+<p>Select only the data in flights that have an origin of New York.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE origin = <span class="st">&#39;New York&#39;</span><span class="kw">;</span></code></pre></div>
+<p>Boolean logic data selection from flights.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE destination = <span class="st">&#39;Paris&#39;</span> AND duration <span class="op">&gt;</span> 500<span class="kw">;</span></code></pre></div>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="html.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sass.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sql.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hackernews.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -260,7 +228,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-bootstrap.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-sql.Rmd",
 "text": "Edit"
 },
 "history": {

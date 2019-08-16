@@ -195,4 +195,3 @@ Then in `index.html` the form is created to send the data to the `application.py
     <button>Add Note</button>                                    
 </form>                                                          
 ```
-

@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-07}
+    \date{2019-08-15}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1442,6 +1442,128 @@ growing list, the list is rendered in the html.
     \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ name=}\StringTok{"note"}\NormalTok{ placeholder=}\StringTok{"Enter Note Here"}\OperatorTok{>}
     \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Add Note}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                                    
 \OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}                                                          
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{SQL}\label{sql}
+
+\section{Intro}\label{intro-2}
+
+SQL stands for structured query language that is designed to facilitate
+accessing data that is structured into table form. PostgreSQL is a
+version of SQL that is used in these notes.
+
+\section{Installation}\label{installation}
+
+The method I can easily get to work is by installing through
+\texttt{apt}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ apt-get install postgresql postgresql-client}
+\end{Highlighting}
+\end{Shaded}
+
+Both the default database user and default database are called postgres,
+so switch to that user.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ -u postgres bash}
+\end{Highlighting}
+\end{Shaded}
+
+Then start a server.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{psql}
+\end{Highlighting}
+\end{Shaded}
+
+I have not been able to get the installation working through a conda
+install but here is the reference to postgresql.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{conda}\NormalTok{ install -c conda-forge postgresql}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Creating a Database}\label{creating-a-database}
+
+Below is the general syntax to create a PostgreSQL database.\\
+The \texttt{id} is being used in a manner similar to an index that will
+just number each of the items.\\
+The next three lines are all different data, and are of types
+\texttt{VARCHAR} and \texttt{INTEGER}.\\
+The \texttt{NOT\ NULL} aspect will cause the server to reject the entry
+if some data is added to the database but that value is not included.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{CREATE}\NormalTok{ TABLE flights (           }
+    \FunctionTok{id}\NormalTok{ SERIAL PRIMARY KEY,       }
+    \ExtensionTok{origin}\NormalTok{ VARCHAR NOT NULL,     }
+    \ExtensionTok{destination}\NormalTok{ VARCHAR NOT NULL,}
+    \ExtensionTok{duration}\NormalTok{ INTEGER NOT NULL    }
+\NormalTok{);                               }
+\end{Highlighting}
+\end{Shaded}
+
+Display the currently created databases.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}}\ExtensionTok{d}
+\end{Highlighting}
+\end{Shaded}
+
+Insert data into the flights database.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{INSERT}\NormalTok{ INTO flights (origin, destination, duration) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'New York'}\NormalTok{, }\StringTok{'London'}\NormalTok{, 415);}
+\end{Highlighting}
+\end{Shaded}
+
+Select all the data from flights.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Select only the origin and destination columns from flights.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ origin, destination FROM flights}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Select only the data in flights where the id is 3.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights WHERE id = 3}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Select only the data in flights that have an origin of New York.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights WHERE origin = }\StringTok{'New York'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Boolean logic data selection from flights.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights WHERE destination = }\StringTok{'Paris'}\NormalTok{ AND duration }\OperatorTok{>}\NormalTok{ 500}\KeywordTok{;}
 \end{Highlighting}
 \end{Shaded}
 
