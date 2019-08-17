@@ -103,6 +103,22 @@ SQL uses `LIMIT` to function like `HEAD`.
 SELECT * FROM flights LIMIT 2;
 ```
 
+Order data in ascending order `asc` is ascending and `desc` is for descending.
+```{bash eval=FALSE}
+select * from flights order by duration asc;
+```
+
+Data can be grouped together as in pandas.  
+The following code selects the origin column, counts the number of identical origin entries and then adds this count to a new count column.
+```{bash eval=FALSE}
+select origin, count(*) from flights group by origin;
+```
+
+Grouped data counts can be immedately filtered when searching.
+```{bash eval=FALSE}
+SELECT origin, COUNT(*) FROM flights GROUP BY origin HAVING COUNT(*) > 1;
+```
+
 ## Updating Data
 
 This will change the duration of the flight from New York to London to 430.
@@ -118,4 +134,46 @@ Delete a set of matching data from a database.
 DELETE FROM flights
 WHERE destination = 'Tokyo';
 ```
+
+## Join/Merge
+Inner join is the default join and will only include data that is matched.
+
+Foreign keys can be used to reference the data within another table so that data does not need to be continually repeated. For instance if a number of flights are all heading to New York, the city id could be set as number 1 and then flight destination ids could be just set to 1.  
+As an example, the following table can be created that has passenger names, and in the `flight_id` column, the `flights` database is reference to get the actual flight locations.  
+When one database references another as in the following code, the referenced column is typically the `PRIMARY KEY`, thought this can be modified if necessary.
+```{bash eval=FALSE}
+CREATE TABLE passengers(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    flight_id INTEGER REFERENCES flights);
+```
+
+It might be helpful to add some data to the above database for testing, so here is some data.
+```{bash eval=FALSE}
+INSERT INTO passengers (name, flight_id) VALUES ('Alice', 1);  
+INSERT INTO passengers (name, flight_id) VALUES ('Bob', 1);    
+INSERT INTO passengers (name, flight_id) VALUES ('Charlie', 2);
+INSERT INTO passengers (name, flight_id) VALUES ('Dave', 2);   
+INSERT INTO passengers (name, flight_id) VALUES ('Erin', 4);   
+INSERT INTO passengers (name, flight_id) VALUES ('Frank', 6);  
+INSERT INTO passengers (name, flight_id) VALUES ('Grace', 6);  
+```
+
+In order to reference the id data from the `flights` database for instance and match that up with the data found in the `passengers` database, the databases should can be joined on the id columns that correspond with each other, in an analagous manner as is performed in pandas.  
+The following code selects the `origin` and `destination` columns from the `flights` database, and the `name` column from the `passengers` database, after the two databases have been joined on their respective flight id columns.
+```{bash eval=FALSE}
+SELECT origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id;
+```
+
+Data can be directly selected when merging two databases together like the following selection of on the data corresponding with the passenger named `Alice`.
+```{bash eval=FALSE}
+SELECT origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id WHERE name = 'Alice';
+```
+
+Left/right joining of databases can be performed that unlike inner join will include all of the data in the left or right database.
+```{bash eval=FALSE}
+SELECT origin, destination, name FROM flights left JOIN passengers ON passengers.flight_id = flights.id WHERE name = 'Alice';
+```
+
+## Indexing
 

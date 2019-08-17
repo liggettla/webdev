@@ -1618,6 +1618,33 @@ SQL uses \texttt{LIMIT} to function like \texttt{HEAD}.
 \end{Highlighting}
 \end{Shaded}
 
+Order data in ascending order \texttt{asc} is ascending and
+\texttt{desc} is for descending.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{select} \ExtensionTok{*}\NormalTok{ from flights order by duration asc}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Data can be grouped together as in pandas.\\
+The following code selects the origin column, counts the number of
+identical origin entries and then adds this count to a new count column.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{select} \ExtensionTok{origin}\NormalTok{, count(*) }\ExtensionTok{from}\NormalTok{ flights group by origin}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Grouped data counts can be immedately filtered when searching.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ origin, COUNT(*) }\ExtensionTok{FROM}\NormalTok{ flights GROUP BY origin HAVING COUNT(*) }\OperatorTok{>} \ExtensionTok{1}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
 \section{Updating Data}\label{updating-data}
 
 This will change the duration of the flight from New York to London to
@@ -1640,6 +1667,83 @@ Delete a set of matching data from a database.
 \ExtensionTok{WHERE}\NormalTok{ destination = }\StringTok{'Tokyo'}\KeywordTok{;}
 \end{Highlighting}
 \end{Shaded}
+
+\section{Join/Merge}\label{joinmerge}
+
+Inner join is the default join and will only include data that is
+matched.
+
+Foreign keys can be used to reference the data within another table so
+that data does not need to be continually repeated. For instance if a
+number of flights are all heading to New York, the city id could be set
+as number 1 and then flight destination ids could be just set to 1.\\
+As an example, the following table can be created that has passenger
+names, and in the \texttt{flight\_id} column, the \texttt{flights}
+database is reference to get the actual flight locations.\\
+When one database references another as in the following code, the
+referenced column is typically the \texttt{PRIMARY\ KEY}, thought this
+can be modified if necessary.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{CREATE}\NormalTok{ TABLE passengers(}
+    \FunctionTok{id}\NormalTok{ SERIAL PRIMARY KEY,}
+    \ExtensionTok{name}\NormalTok{ VARCHAR NOT NULL,}
+    \ExtensionTok{flight_id}\NormalTok{ INTEGER REFERENCES flights);}
+\end{Highlighting}
+\end{Shaded}
+
+It might be helpful to add some data to the above database for testing,
+so here is some data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Alice'}\NormalTok{, 1);  }
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Bob'}\NormalTok{, 1);    }
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Charlie'}\NormalTok{, 2);}
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Dave'}\NormalTok{, 2);   }
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Erin'}\NormalTok{, 4);   }
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Frank'}\NormalTok{, 6);  }
+\ExtensionTok{INSERT}\NormalTok{ INTO passengers (name, flight_id) }\ExtensionTok{VALUES}\NormalTok{ (}\StringTok{'Grace'}\NormalTok{, 6);  }
+\end{Highlighting}
+\end{Shaded}
+
+In order to reference the id data from the \texttt{flights} database for
+instance and match that up with the data found in the
+\texttt{passengers} database, the databases should can be joined on the
+id columns that correspond with each other, in an analagous manner as is
+performed in pandas.\\
+The following code selects the \texttt{origin} and \texttt{destination}
+columns from the \texttt{flights} database, and the \texttt{name} column
+from the \texttt{passengers} database, after the two databases have been
+joined on their respective flight id columns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Data can be directly selected when merging two databases together like
+the following selection of on the data corresponding with the passenger
+named \texttt{Alice}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id WHERE name = }\StringTok{'Alice'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Left/right joining of databases can be performed that unlike inner join
+will include all of the data in the left or right database.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ origin, destination, name FROM flights left JOIN passengers ON passengers.flight_id = flights.id WHERE name = }\StringTok{'Alice'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Indexing}\label{indexing}
 
 \chapter{Hackernews}\label{hackernews}
 

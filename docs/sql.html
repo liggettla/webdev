@@ -140,6 +140,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.2" data-path="sql.html"><a href="sql.html#installation"><i class="fa fa-check"></i><b>6.2</b> Installation</a></li>
 <li class="chapter" data-level="6.3" data-path="sql.html"><a href="sql.html#creating-a-database"><i class="fa fa-check"></i><b>6.3</b> Creating a Database</a></li>
 <li class="chapter" data-level="6.4" data-path="sql.html"><a href="sql.html#updating-data"><i class="fa fa-check"></i><b>6.4</b> Updating Data</a></li>
+<li class="chapter" data-level="6.5" data-path="sql.html"><a href="sql.html#joinmerge"><i class="fa fa-check"></i><b>6.5</b> Join/Merge</a></li>
+<li class="chapter" data-level="6.6" data-path="sql.html"><a href="sql.html#indexing"><i class="fa fa-check"></i><b>6.6</b> Indexing</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>7</b> Hackernews</a><ul>
 <li class="chapter" data-level="7.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
@@ -221,6 +223,13 @@ The <code>NOT NULL</code> aspect will cause the server to reject the entry if so
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE origin LIKE <span class="st">&#39;%a%&#39;</span><span class="kw">;</span></code></pre></div>
 <p>SQL uses <code>LIMIT</code> to function like <code>HEAD</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights LIMIT 2<span class="kw">;</span></code></pre></div>
+<p>Order data in ascending order <code>asc</code> is ascending and <code>desc</code> is for descending.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">*</span> from flights order by duration asc<span class="kw">;</span></code></pre></div>
+<p>Data can be grouped together as in pandas.<br />
+The following code selects the origin column, counts the number of identical origin entries and then adds this count to a new count column.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">origin</span>, count(*) <span class="ex">from</span> flights group by origin<span class="kw">;</span></code></pre></div>
+<p>Grouped data counts can be immedately filtered when searching.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, COUNT(*) <span class="ex">FROM</span> flights GROUP BY origin HAVING COUNT(*) <span class="op">&gt;</span> <span class="ex">1</span><span class="kw">;</span></code></pre></div>
 </div>
 <div id="updating-data" class="section level2">
 <h2><span class="header-section-number">6.4</span> Updating Data</h2>
@@ -232,6 +241,35 @@ The <code>NOT NULL</code> aspect will cause the server to reject the entry if so
 <p>Delete a set of matching data from a database.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">DELETE</span> FROM flights
 <span class="ex">WHERE</span> destination = <span class="st">&#39;Tokyo&#39;</span><span class="kw">;</span></code></pre></div>
+</div>
+<div id="joinmerge" class="section level2">
+<h2><span class="header-section-number">6.5</span> Join/Merge</h2>
+<p>Inner join is the default join and will only include data that is matched.</p>
+<p>Foreign keys can be used to reference the data within another table so that data does not need to be continually repeated. For instance if a number of flights are all heading to New York, the city id could be set as number 1 and then flight destination ids could be just set to 1.<br />
+As an example, the following table can be created that has passenger names, and in the <code>flight_id</code> column, the <code>flights</code> database is reference to get the actual flight locations.<br />
+When one database references another as in the following code, the referenced column is typically the <code>PRIMARY KEY</code>, thought this can be modified if necessary.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">CREATE</span> TABLE passengers(
+    <span class="fu">id</span> SERIAL PRIMARY KEY,
+    <span class="ex">name</span> VARCHAR NOT NULL,
+    <span class="ex">flight_id</span> INTEGER REFERENCES flights);</code></pre></div>
+<p>It might be helpful to add some data to the above database for testing, so here is some data.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Alice&#39;</span>, 1);  
+<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Bob&#39;</span>, 1);    
+<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Charlie&#39;</span>, 2);
+<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Dave&#39;</span>, 2);   
+<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Erin&#39;</span>, 4);   
+<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Frank&#39;</span>, 6);  
+<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Grace&#39;</span>, 6);  </code></pre></div>
+<p>In order to reference the id data from the <code>flights</code> database for instance and match that up with the data found in the <code>passengers</code> database, the databases should can be joined on the id columns that correspond with each other, in an analagous manner as is performed in pandas.<br />
+The following code selects the <code>origin</code> and <code>destination</code> columns from the <code>flights</code> database, and the <code>name</code> column from the <code>passengers</code> database, after the two databases have been joined on their respective flight id columns.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id<span class="kw">;</span></code></pre></div>
+<p>Data can be directly selected when merging two databases together like the following selection of on the data corresponding with the passenger named <code>Alice</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></code></pre></div>
+<p>Left/right joining of databases can be performed that unlike inner join will include all of the data in the left or right database.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights left JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></code></pre></div>
+</div>
+<div id="indexing" class="section level2">
+<h2><span class="header-section-number">6.6</span> Indexing</h2>
 
 </div>
 </div>
