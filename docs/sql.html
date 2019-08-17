@@ -142,6 +142,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.4" data-path="sql.html"><a href="sql.html#updating-data"><i class="fa fa-check"></i><b>6.4</b> Updating Data</a></li>
 <li class="chapter" data-level="6.5" data-path="sql.html"><a href="sql.html#joinmerge"><i class="fa fa-check"></i><b>6.5</b> Join/Merge</a></li>
 <li class="chapter" data-level="6.6" data-path="sql.html"><a href="sql.html#indexing"><i class="fa fa-check"></i><b>6.6</b> Indexing</a></li>
+<li class="chapter" data-level="6.7" data-path="sql.html"><a href="sql.html#sql-injection"><i class="fa fa-check"></i><b>6.7</b> SQL Injection</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>7</b> Hackernews</a><ul>
 <li class="chapter" data-level="7.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
@@ -260,7 +261,7 @@ When one database references another as in the following code, the referenced co
 <span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Erin&#39;</span>, 4);   
 <span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Frank&#39;</span>, 6);  
 <span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Grace&#39;</span>, 6);  </code></pre></div>
-<p>In order to reference the id data from the <code>flights</code> database for instance and match that up with the data found in the <code>passengers</code> database, the databases should can be joined on the id columns that correspond with each other, in an analagous manner as is performed in pandas.<br />
+<p>In order to reference the id data from the <code>flights</code> database for instance and match that up with the data found in the <code>passengers</code> database, the databases should can be joined on the id columns that correspond with each other, in an analogous manner as is performed in pandas.<br />
 The following code selects the <code>origin</code> and <code>destination</code> columns from the <code>flights</code> database, and the <code>name</code> column from the <code>passengers</code> database, after the two databases have been joined on their respective flight id columns.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id<span class="kw">;</span></code></pre></div>
 <p>Data can be directly selected when merging two databases together like the following selection of on the data corresponding with the passenger named <code>Alice</code>.</p>
@@ -270,6 +271,18 @@ The following code selects the <code>origin</code> and <code>destination</code> 
 </div>
 <div id="indexing" class="section level2">
 <h2><span class="header-section-number">6.6</span> Indexing</h2>
+<p>Indexing allows a subset of one database (sort of like a pandas series) to be used to select data from a database (analogous to a DataFrame).<br />
+In the following code, within the parentheses the <code>flight_id</code> column is being selected to create a “series”, and the ids are being grouped by <code>passengers</code>, and only those flights have more than one passenger are included within the “series”. This series of flight ids is then used to filter the original <code>flights</code> “DataFrame”.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">*</span> from flights where id in (select flight_id from passengers group by flight_id having count(*) <span class="op">&gt;</span> <span class="ex">1</span>);</code></pre></div>
+</div>
+<div id="sql-injection" class="section level2">
+<h2><span class="header-section-number">6.7</span> SQL Injection</h2>
+<p>User input should be escaped or sanitized to prevent a user from inputting SQL code into input fields and have it be directly executed as SQL.<br />
+As an example if a username and password field are presented to the user, and the input is checked against a SQL database, it might look something like the following.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;12345&#39;</span>)</code></pre></div>
+<p>The problem with the above code is that SQL code could theoretically be entered into the fields like the following.<br />
+If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL query would looks something like the following, which evaluates as True and may allow somebody access to the database.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;1&#39;</span>, OR <span class="st">&#39;1&#39;</span> = <span class="st">&#39;1&#39;</span>)</code></pre></div>
 
 </div>
 </div>

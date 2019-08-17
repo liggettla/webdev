@@ -1711,7 +1711,7 @@ so here is some data.
 In order to reference the id data from the \texttt{flights} database for
 instance and match that up with the data found in the
 \texttt{passengers} database, the databases should can be joined on the
-id columns that correspond with each other, in an analagous manner as is
+id columns that correspond with each other, in an analogous manner as is
 performed in pandas.\\
 The following code selects the \texttt{origin} and \texttt{destination}
 columns from the \texttt{flights} database, and the \texttt{name} column
@@ -1744,6 +1744,49 @@ will include all of the data in the left or right database.
 \end{Shaded}
 
 \section{Indexing}\label{indexing}
+
+Indexing allows a subset of one database (sort of like a pandas series)
+to be used to select data from a database (analogous to a DataFrame).\\
+In the following code, within the parentheses the \texttt{flight\_id}
+column is being selected to create a ``series'', and the ids are being
+grouped by \texttt{passengers}, and only those flights have more than
+one passenger are included within the ``series''. This series of flight
+ids is then used to filter the original \texttt{flights} ``DataFrame''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{select} \ExtensionTok{*}\NormalTok{ from flights where id in (select flight_id from passengers group by flight_id having count(*) }\OperatorTok{>} \ExtensionTok{1}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\section{SQL Injection}\label{sql-injection}
+
+User input should be escaped or sanitized to prevent a user from
+inputting SQL code into input fields and have it be directly executed as
+SQL.\\
+As an example if a username and password field are presented to the
+user, and the input is checked against a SQL database, it might look
+something like the following.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM users WHERE (username = }\StringTok{'Bill'}\NormalTok{) }\ExtensionTok{AND}\NormalTok{ (password = }\StringTok{'12345'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The problem with the above code is that SQL code could theoretically be
+entered into the fields like the following.\\
+If
+\texttt{1\textquotesingle{},\ OR\ \textquotesingle{}1\textquotesingle{}\ =\ \textquotesingle{}1\textquotesingle{}}
+is entered into the password field, now the SQL query would looks
+something like the following, which evaluates as True and may allow
+somebody access to the database.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM users WHERE (username = }\StringTok{'Bill'}\NormalTok{) }\ExtensionTok{AND}\NormalTok{ (password = }\StringTok{'1'}\NormalTok{, OR }\StringTok{'1'}\NormalTok{ = }\StringTok{'1'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Hackernews}\label{hackernews}
 

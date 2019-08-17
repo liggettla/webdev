@@ -159,7 +159,7 @@ INSERT INTO passengers (name, flight_id) VALUES ('Frank', 6);
 INSERT INTO passengers (name, flight_id) VALUES ('Grace', 6);  
 ```
 
-In order to reference the id data from the `flights` database for instance and match that up with the data found in the `passengers` database, the databases should can be joined on the id columns that correspond with each other, in an analagous manner as is performed in pandas.  
+In order to reference the id data from the `flights` database for instance and match that up with the data found in the `passengers` database, the databases should can be joined on the id columns that correspond with each other, in an analogous manner as is performed in pandas.  
 The following code selects the `origin` and `destination` columns from the `flights` database, and the `name` column from the `passengers` database, after the two databases have been joined on their respective flight id columns.
 ```{bash eval=FALSE}
 SELECT origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id;
@@ -176,4 +176,23 @@ SELECT origin, destination, name FROM flights left JOIN passengers ON passengers
 ```
 
 ## Indexing
+Indexing allows a subset of one database (sort of like a pandas series) to be used to select data from a database (analogous to a DataFrame).  
+In the following code, within the parentheses the `flight_id` column is being selected to create a "series", and the ids are being grouped by `passengers`, and only those flights have more than one passenger are included within the "series". This series of flight ids is then used to filter the original `flights` "DataFrame".
+```{bash eval=FALSE}
+select * from flights where id in (select flight_id from passengers group by flight_id having count(*) > 1);
+```
+
+## SQL Injection
+User input should be escaped or sanitized to prevent a user from inputting SQL code into input fields and have it be directly executed as SQL.  
+As an example if a username and password field are presented to the user, and the input is checked against a SQL database, it might look something like the following.
+```{bash eval=FALSE}
+SELECT * FROM users WHERE (username = 'Bill') AND (password = '12345')
+```
+
+The problem with the above code is that SQL code could theoretically be entered into the fields like the following.  
+If `1', OR '1' = '1'` is entered into the password field, now the SQL query would looks something like the following, which evaluates as True and may allow somebody access to the database.
+```{bash eval=FALSE}
+SELECT * FROM users WHERE (username = 'Bill') AND (password = '1', OR '1' = '1')
+```
+
 
