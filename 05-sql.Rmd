@@ -23,6 +23,8 @@ conda install -c conda-forge postgresql
 ```
 
 ## Creating a Database
+Note that reserved words are all being capitalized below, but this is not required, but rather a stylistic choice.
+
 Below is the general syntax to create a PostgreSQL database.  
 The `id` is being used in a manner similar to an index that will just number each of the items.  
 The next three lines are all different data, and are of types `VARCHAR` and `INTEGER`.  
@@ -69,5 +71,51 @@ SELECT * FROM flights WHERE origin = 'New York';
 Boolean logic data selection from flights.
 ```{bash eval=FALSE}
 SELECT * FROM flights WHERE destination = 'Paris' AND duration > 500;
+```
+
+Average a column of data.
+```{bash eval=FALSE}
+SELECT AVG(duration) FROM flights;
+```
+
+Combine boolean logic with calculations performed on the data.
+```{bash eval=FALSE}
+SELECT AVG(duration) FROM flights WHERE origin = 'New York';
+```
+
+Count columns of matching data.
+```{bash eval=FALSE}
+SELECT COUNT(*) FROM flights;
+```
+
+Select matching data from a list.
+```{bash eval=FALSE}
+SELECT * FROM flights WHERE origin IN ('New York', 'Lima');
+```
+
+Wildcards can be used to search for substrings.
+```{bash eval=FALSE}
+SELECT * FROM flights WHERE origin LIKE '%a%';
+```
+
+SQL uses `LIMIT` to function like `HEAD`.
+```{bash eval=FALSE}
+SELECT * FROM flights LIMIT 2;
+```
+
+## Updating Data
+
+This will change the duration of the flight from New York to London to 430.
+```{bash eval=FALSE}
+UPDATE flights
+SET duration = 430
+WHERE origin = 'New York'
+AND destination = 'London';
+```
+
+Delete a set of matching data from a database.
+```{bash eval=FALSE}
+DELETE FROM flights
+WHERE destination = 'Tokyo';
 ```
 

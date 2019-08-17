@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-15}
+    \date{2019-08-16}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1492,6 +1492,9 @@ install but here is the reference to postgresql.
 
 \section{Creating a Database}\label{creating-a-database}
 
+Note that reserved words are all being capitalized below, but this is
+not required, but rather a stylistic choice.
+
 Below is the general syntax to create a PostgreSQL database.\\
 The \texttt{id} is being used in a manner similar to an index that will
 just number each of the items.\\
@@ -1564,6 +1567,77 @@ Boolean logic data selection from flights.
 \begin{Shaded}
 \begin{Highlighting}[]
 \ExtensionTok{SELECT}\NormalTok{ * FROM flights WHERE destination = }\StringTok{'Paris'}\NormalTok{ AND duration }\OperatorTok{>}\NormalTok{ 500}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Average a column of data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ AVG(duration) }\ExtensionTok{FROM}\NormalTok{ flights}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Combine boolean logic with calculations performed on the data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ AVG(duration) }\ExtensionTok{FROM}\NormalTok{ flights WHERE origin = }\StringTok{'New York'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Count columns of matching data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ COUNT(*) }\ExtensionTok{FROM}\NormalTok{ flights}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Select matching data from a list.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights WHERE origin IN (}\StringTok{'New York'}\NormalTok{, }\StringTok{'Lima'}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+Wildcards can be used to search for substrings.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights WHERE origin LIKE }\StringTok{'%a%'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+SQL uses \texttt{LIMIT} to function like \texttt{HEAD}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{SELECT}\NormalTok{ * FROM flights LIMIT 2}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Updating Data}\label{updating-data}
+
+This will change the duration of the flight from New York to London to
+430.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{UPDATE}\NormalTok{ flights}
+\ExtensionTok{SET}\NormalTok{ duration = 430}
+\ExtensionTok{WHERE}\NormalTok{ origin = }\StringTok{'New York'}
+\ExtensionTok{AND}\NormalTok{ destination = }\StringTok{'London'}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Delete a set of matching data from a database.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{DELETE}\NormalTok{ FROM flights}
+\ExtensionTok{WHERE}\NormalTok{ destination = }\StringTok{'Tokyo'}\KeywordTok{;}
 \end{Highlighting}
 \end{Shaded}
 
