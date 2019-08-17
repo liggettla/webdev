@@ -195,4 +195,14 @@ If `1', OR '1' = '1'` is entered into the password field, now the SQL query woul
 SELECT * FROM users WHERE (username = 'Bill') AND (password = '1', OR '1' = '1')
 ```
 
+## Transactions and Race Conditions
+This refers to a challenge if multiple requests simultaneously are made to the same data within a database and an attempt to modify the database occurs. The problem is that if the requests conflict in some manner the database can be improperly altered. One solution to this is transactions, where one user essentially checks-out the database and can modify it, and the second user can only modify the database after the first user as completed interacting with the database.
+
+## SQLAlchemy
+SQLAlchemy is a python library that can be used to interact with SQL data.  
+The library can be installed like this:
+```{bash eval=FALSE}
+conda install -c conda-forge sqlalchemy sqlalchemy-utils
+```
+
 

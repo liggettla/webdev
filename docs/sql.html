@@ -143,6 +143,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.5" data-path="sql.html"><a href="sql.html#joinmerge"><i class="fa fa-check"></i><b>6.5</b> Join/Merge</a></li>
 <li class="chapter" data-level="6.6" data-path="sql.html"><a href="sql.html#indexing"><i class="fa fa-check"></i><b>6.6</b> Indexing</a></li>
 <li class="chapter" data-level="6.7" data-path="sql.html"><a href="sql.html#sql-injection"><i class="fa fa-check"></i><b>6.7</b> SQL Injection</a></li>
+<li class="chapter" data-level="6.8" data-path="sql.html"><a href="sql.html#transactions-and-race-conditions"><i class="fa fa-check"></i><b>6.8</b> Transactions and Race Conditions</a></li>
+<li class="chapter" data-level="6.9" data-path="sql.html"><a href="sql.html#sqlalchemy"><i class="fa fa-check"></i><b>6.9</b> SQLAlchemy</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>7</b> Hackernews</a><ul>
 <li class="chapter" data-level="7.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
@@ -283,6 +285,16 @@ As an example if a username and password field are presented to the user, and th
 <p>The problem with the above code is that SQL code could theoretically be entered into the fields like the following.<br />
 If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL query would looks something like the following, which evaluates as True and may allow somebody access to the database.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;1&#39;</span>, OR <span class="st">&#39;1&#39;</span> = <span class="st">&#39;1&#39;</span>)</code></pre></div>
+</div>
+<div id="transactions-and-race-conditions" class="section level2">
+<h2><span class="header-section-number">6.8</span> Transactions and Race Conditions</h2>
+<p>This refers to a challenge if multiple requests simultaneously are made to the same data within a database and an attempt to modify the database occurs. The problem is that if the requests conflict in some manner the database can be improperly altered. One solution to this is transactions, where one user essentially checks-out the database and can modify it, and the second user can only modify the database after the first user as completed interacting with the database.</p>
+</div>
+<div id="sqlalchemy" class="section level2">
+<h2><span class="header-section-number">6.9</span> SQLAlchemy</h2>
+<p>SQLAlchemy is a python library that can be used to interact with SQL data.<br />
+The library can be installed like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge sqlalchemy sqlalchemy-utils</code></pre></div>
 
 </div>
 </div>

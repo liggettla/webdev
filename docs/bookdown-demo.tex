@@ -1788,6 +1788,29 @@ somebody access to the database.
 \end{Highlighting}
 \end{Shaded}
 
+\section{Transactions and Race
+Conditions}\label{transactions-and-race-conditions}
+
+This refers to a challenge if multiple requests simultaneously are made
+to the same data within a database and an attempt to modify the database
+occurs. The problem is that if the requests conflict in some manner the
+database can be improperly altered. One solution to this is
+transactions, where one user essentially checks-out the database and can
+modify it, and the second user can only modify the database after the
+first user as completed interacting with the database.
+
+\section{SQLAlchemy}\label{sqlalchemy}
+
+SQLAlchemy is a python library that can be used to interact with SQL
+data.\\
+The library can be installed like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{conda}\NormalTok{ install -c conda-forge sqlalchemy sqlalchemy-utils}
+\end{Highlighting}
+\end{Shaded}
+
 \chapter{Hackernews}\label{hackernews}
 
 \section{Setup}\label{setup-1}
