@@ -205,4 +205,8 @@ The library can be installed like this:
 conda install -c conda-forge sqlalchemy sqlalchemy-utils
 ```
 
+https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database
+https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545
+https://docs.cs50.net/web/2018/x/projects/1/project1.html
+https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/
 
