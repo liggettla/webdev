@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-17}
+    \date{2019-08-21}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1464,6 +1464,8 @@ The method I can easily get to work is by installing through
 \end{Highlighting}
 \end{Shaded}
 
+conda install -c conda-forge psycopg2 flask-sqlalchemy flask-migrate
+
 Both the default database user and default database are called postgres,
 so switch to that user.
 
@@ -1490,10 +1492,36 @@ install but here is the reference to postgresql.
 \end{Highlighting}
 \end{Shaded}
 
+To quit \texttt{psql} run \texttt{\textbackslash{}q}.
+
+Install Heroku.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ snap install --classic heroku}
+\end{Highlighting}
+\end{Shaded}
+
 \section{Creating a Database}\label{creating-a-database}
 
 Note that reserved words are all being capitalized below, but this is
 not required, but rather a stylistic choice.
+
+To create a new database, first run \texttt{psql}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{create}\NormalTok{ database airplanes}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Refer to that database.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{export} \VariableTok{DATABASE_URL=}\StringTok{"postgresql://localhost/airplanes"}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
 
 Below is the general syntax to create a PostgreSQL database.\\
 The \texttt{id} is being used in a manner similar to an index that will
@@ -1810,6 +1838,8 @@ The library can be installed like this:
 \ExtensionTok{conda}\NormalTok{ install -c conda-forge sqlalchemy sqlalchemy-utils}
 \end{Highlighting}
 \end{Shaded}
+
+\url{https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/}
 
 \url{https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database}
 \url{https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545}

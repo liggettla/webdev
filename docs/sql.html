@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-08-17">
+<meta name="date" content="2019-08-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -180,16 +180,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">6.2</span> Installation</h2>
 <p>The method I can easily get to work is by installing through <code>apt</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install postgresql postgresql-client</code></pre></div>
+<p>conda install -c conda-forge psycopg2 flask-sqlalchemy flask-migrate</p>
 <p>Both the default database user and default database are called postgres, so switch to that user.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> -u postgres bash</code></pre></div>
 <p>Then start a server.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">psql</span></code></pre></div>
 <p>I have not been able to get the installation working through a conda install but here is the reference to postgresql.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge postgresql</code></pre></div>
+<p>To quit <code>psql</code> run <code>\q</code>.</p>
+<p>Install Heroku.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> snap install --classic heroku</code></pre></div>
 </div>
 <div id="creating-a-database" class="section level2">
 <h2><span class="header-section-number">6.3</span> Creating a Database</h2>
 <p>Note that reserved words are all being capitalized below, but this is not required, but rather a stylistic choice.</p>
+<p>To create a new database, first run <code>psql</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">create</span> database airplanes<span class="kw">;</span></code></pre></div>
+<p>Refer to that database.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">DATABASE_URL=</span><span class="st">&quot;postgresql://localhost/airplanes&quot;</span>;</code></pre></div>
 <p>Below is the general syntax to create a PostgreSQL database.<br />
 The <code>id</code> is being used in a manner similar to an index that will just number each of the items.<br />
 The next three lines are all different data, and are of types <code>VARCHAR</code> and <code>INTEGER</code>.<br />
@@ -295,6 +303,7 @@ If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL
 <p>SQLAlchemy is a python library that can be used to interact with SQL data.<br />
 The library can be installed like this:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge sqlalchemy sqlalchemy-utils</code></pre></div>
+<p><a href="https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/" class="uri">https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/</a></p>
 <p><a href="https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database" class="uri">https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database</a> <a href="https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545" class="uri">https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545</a> <a href="https://docs.cs50.net/web/2018/x/projects/1/project1.html" class="uri">https://docs.cs50.net/web/2018/x/projects/1/project1.html</a> <a href="https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/" class="uri">https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/</a></p>
 
 </div>

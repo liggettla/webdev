@@ -8,6 +8,9 @@ The method I can easily get to work is by installing through `apt`.
 ```{bash eval=FALSE}
 sudo apt-get install postgresql postgresql-client
 ```
+
+conda install -c conda-forge psycopg2 flask-sqlalchemy flask-migrate
+
 Both the default database user and default database are called postgres, so switch to that user.
 ```{bash eval=FALSE}
 sudo -u postgres bash
@@ -22,8 +25,25 @@ I have not been able to get the installation working through a conda install but
 conda install -c conda-forge postgresql
 ```
 
+To quit `psql` run `\q`.
+
+Install Heroku.
+```{bash eval=FALSE}
+sudo snap install --classic heroku
+```
+
 ## Creating a Database
 Note that reserved words are all being capitalized below, but this is not required, but rather a stylistic choice.
+
+To create a new database, first run `psql`.
+```{bash eval=FALSE}
+create database airplanes;
+```
+
+Refer to that database.
+```{bash eval=FALSE}
+export DATABASE_URL="postgresql://localhost/airplanes";
+```
 
 Below is the general syntax to create a PostgreSQL database.  
 The `id` is being used in a manner similar to an index that will just number each of the items.  
@@ -204,6 +224,10 @@ The library can be installed like this:
 ```{bash eval=FALSE}
 conda install -c conda-forge sqlalchemy sqlalchemy-utils
 ```
+
+
+
+https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
 
 https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database
 https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545
