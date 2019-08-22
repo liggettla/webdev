@@ -32,6 +32,17 @@ Install Heroku.
 sudo snap install --classic heroku
 ```
 
+## Database Hosting With Heroku
+1. Navigate to https://www.heroku.com/, and create an account if you don’t already have one.
+2. On Heroku’s Dashboard, click “New” and choose “Create new app.”
+3. Give your app a name, and click “Create app.”
+4. On your app’s “Overview” page, click the “Configure Add-ons” button.
+5. In the “Add-ons” section of the page, type in and select “Heroku Postgres.”
+6. Choose the “Hobby Dev - Free” plan, which will give you access to a free PostgreSQL database that will support up to 10,000 rows of data. Click “Provision.”
+7. Now, click the “Heroku Postgres :: Database” link.
+8. You should now be on your database’s overview page. Click on “Settings”, and then “View Credentials.” This is the information you’ll need to log into your database. You can access the database via Adminer, filling in the server (the “Host” in the credentials list), your username (the “User”), your password, and the name of the database, all of which you can find on the Heroku credentials page.
+9. Use the URI found in the Settings page of Credentials to link to the database using `export DATABASE_url="URI_URL"`
+
 ## Creating a Database
 Note that reserved words are all being capitalized below, but this is not required, but rather a stylistic choice.
 

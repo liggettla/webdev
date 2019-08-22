@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-21}
+    \date{2019-08-22}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1501,6 +1501,43 @@ Install Heroku.
 \FunctionTok{sudo}\NormalTok{ snap install --classic heroku}
 \end{Highlighting}
 \end{Shaded}
+
+\section{Database Hosting With
+Heroku}\label{database-hosting-with-heroku}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Navigate to \url{https://www.heroku.com/}, and create an account if
+  you don't already have one.
+\item
+  On Heroku's Dashboard, click ``New'' and choose ``Create new app.''
+\item
+  Give your app a name, and click ``Create app.''
+\item
+  On your app's ``Overview'' page, click the ``Configure Add-ons''
+  button.
+\item
+  In the ``Add-ons'' section of the page, type in and select ``Heroku
+  Postgres.''
+\item
+  Choose the ``Hobby Dev - Free'' plan, which will give you access to a
+  free PostgreSQL database that will support up to 10,000 rows of data.
+  Click ``Provision.''
+\item
+  Now, click the ``Heroku Postgres :: Database'' link.
+\item
+  You should now be on your database's overview page. Click on
+  ``Settings'', and then ``View Credentials.'' This is the information
+  you'll need to log into your database. You can access the database via
+  Adminer, filling in the server (the ``Host'' in the credentials list),
+  your username (the ``User''), your password, and the name of the
+  database, all of which you can find on the Heroku credentials page.
+\item
+  Use the URI found in the Settings page of Credentials to link to the
+  database using \texttt{export\ DATABASE\_url="URI\_URL"}
+\end{enumerate}
 
 \section{Creating a Database}\label{creating-a-database}
 
