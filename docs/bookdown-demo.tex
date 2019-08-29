@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-28}
+    \date{2019-08-29}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1630,6 +1630,13 @@ includeing the postgres version (PG Version)
 
 \begin{verbatim}
 heroku pg
+\end{verbatim}
+
+As long as postgresql is installed locally, it is possible to connect to
+the remote database.
+
+\begin{verbatim}
+heroku pg:psql
 \end{verbatim}
 
 \section{Database Hosting With

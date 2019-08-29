@@ -121,6 +121,11 @@ More extensive information about the app can also be displayed, includeing the p
 heroku pg
 ```
 
+As long as postgresql is installed locally, it is possible to connect to the remote database.
+```
+heroku pg:psql
+```
+
 
 ## Database Hosting With Heroku
 1. Navigate to https://www.heroku.com/, and create an account if you don’t already have one.
