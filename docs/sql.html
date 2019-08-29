@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-08-22">
+<meta name="date" content="2019-08-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -318,6 +318,17 @@ If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL
 <p>SQLAlchemy is a python library that can be used to interact with SQL data.<br />
 The library can be installed like this:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge sqlalchemy sqlalchemy-utils</code></pre></div>
+<p>SQLAlchemy can be used to interface with an SQL database.</p>
+<pre><code>from sqlalchemy import create_engine
+engine = create_engine(os.getenv(&quot;DATABASE_URL&quot;))</code></pre>
+<p>Users should also be permitted to interact with the SQL database individually within sessions. To do this, a scoped session variable can be created and used to individually interact with the SQL database.</p>
+<pre><code>from sqlalchemy.orm import scoped_session, sessionmaker
+db = scoped_session(sessionmaker(bind=engine))
+
+# this is an example then of interacting with the database
+flights = db.execute(&quot;SELECT origin, destination, duration FROM flights&quot;).fetchall()
+for flight in flights:
+    print(f&quot;{flight.origin} to {flight.destination}, {flight.duration} minutes.&quot;)</code></pre>
 <p><a href="https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/" class="uri">https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/</a></p>
 <p><a href="https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database" class="uri">https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database</a> <a href="https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545" class="uri">https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545</a> <a href="https://docs.cs50.net/web/2018/x/projects/1/project1.html" class="uri">https://docs.cs50.net/web/2018/x/projects/1/project1.html</a> <a href="https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/" class="uri">https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/</a></p>
 

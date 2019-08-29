@@ -236,6 +236,24 @@ The library can be installed like this:
 conda install -c conda-forge sqlalchemy sqlalchemy-utils
 ```
 
+SQLAlchemy can be used to interface with an SQL database.
+```
+from sqlalchemy import create_engine
+engine = create_engine(os.getenv("DATABASE_URL"))
+```
+
+Users should also be permitted to interact with the SQL database individually within sessions. To do this, a scoped session variable can be created and used to individually interact with the SQL database.
+```
+from sqlalchemy.orm import scoped_session, sessionmaker
+db = scoped_session(sessionmaker(bind=engine))
+
+# this is an example then of interacting with the database
+flights = db.execute("SELECT origin, destination, duration FROM flights").fetchall()
+for flight in flights:
+    print(f"{flight.origin} to {flight.destination}, {flight.duration} minutes.")
+```
+
+
 
 
 https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
