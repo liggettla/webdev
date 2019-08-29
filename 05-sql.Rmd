@@ -4,16 +4,17 @@
 SQL stands for structured query language that is designed to facilitate accessing data that is structured into table form. PostgreSQL is a version of SQL that is used in these notes.
 
 ## Installation
-The method I can easily get to work is by installing through `apt`.
+The method I can easily get to work is by installing through `apt`.  
+It seems also that for some reason the install only works if the version number is specified.
 ```{bash eval=FALSE}
-sudo apt-get install postgresql postgresql-client
+sudo apt-get install postgresql-9.6 postgresql-client libpq-dev
 ```
 
 conda install -c conda-forge psycopg2 flask-sqlalchemy flask-migrate
 
-Both the default database user and default database are called postgres, so switch to that user.
+Both the default database user and default database are called postgres, so switch to that user and start `psql`.
 ```{bash eval=FALSE}
-sudo -u postgres bash
+sudo -u postgres psql
 ```
 Then start a server.
 ```{bash eval=FALSE}
@@ -27,10 +28,99 @@ conda install -c conda-forge postgresql
 
 To quit `psql` run `\q`.
 
+## Heroku
 Install Heroku.
 ```{bash eval=FALSE}
 sudo snap install --classic heroku
 ```
+
+Then running any command should prompt to login to Heroku but the `login` command is specific for this.
+```
+heroku login
+```
+
+A sample app from heroku can be cloned to test app deployment.
+```
+git clone https://github.com/heroku/python-getting-started.git
+cd python-getting-started
+```
+
+From within the app directory, create the app on heroku. This will create a new app with a random name, but a name can instead be passed to manually set the app name.
+```
+heroku create
+```
+
+The app code can then be committed to the heroku server.
+```
+git push heroku master
+```
+
+Pushing the code will deploy the app, but an instance of the app must be then be run.
+```
+heroku ps:scale web=1
+```
+
+The app can now be visited on the web.
+```
+heroku open
+```
+
+Logs can be viewed of page requests here in a way that will constantly update with each new request.
+```
+heroku logs --tail
+```
+
+The `Procfile` is a file within the root directory of the application that declares the command that should be executed when the app is started. Typically it contains the following.
+```
+web: gunicorn gettingstarted.wsgi --log-file -
+```
+
+### Heroku Dynos
+Heroku has some [introduction]('https://devcenter.heroku.com/articles/getting-started-with-python#provision-a-database') to using postgresql with a deployed app. And some more extensive [information]('https://devcenter.heroku.com/articles/heroku-postgresql') as well. It also looks like CS50 has some [instructions]('https://cs50.readthedocs.io/heroku/') as well.
+
+By default heroku apps are deployed to a single dyno which is like a container that runs the commands specified in the `Procfile`. Using a free account will allow a single dyno to be used that will sleep after a half an hour of inactivity. The number of dyno containers can be scaled up and down. If scaled to zero, no containers will run the app.
+```
+heroku ps:scale web=0
+```
+
+The number of free dyno hours is set to 550 per month and with a verified credit card on file will be set to 1000. The remaining time available for a dyno to be running for an app can be checked.
+```
+heroku ps -a <app-name>
+```
+
+To run the heroku test app locally first setup Django to use local assets.
+```
+python manage.py collectstatic
+```
+
+The app can then be run locally at `http://localhost:5000`.
+```
+heroku local web
+```
+
+Changes can be committed in a similar manner as is done with github.
+```
+git add .
+git commit -m 'message'
+git push heroku master
+```
+
+### Heroku Databases
+The current addons including databases available to an app can be viewed.
+```
+heroku addons
+```
+
+The `DATABASE_URL` can be displayed.
+```
+heroku config
+```
+
+More extensive information about the app can also be displayed, includeing the postgres version (PG Version)
+```
+heroku pg
+```
+
 
 ## Database Hosting With Heroku
 1. Navigate to https://www.heroku.com/, and create an account if you don’t already have one.
@@ -54,6 +144,18 @@ create database airplanes;
 Refer to that database.
 ```{bash eval=FALSE}
 export DATABASE_URL="postgresql://localhost/airplanes";
+```
+
+List current databases.
+```
+\list
+```
+
+Connect to a new database;
+```
+\connect airplanes
+or
+\c airplanes
 ```
 
 Below is the general syntax to create a PostgreSQL database.  
@@ -251,6 +353,29 @@ db = scoped_session(sessionmaker(bind=engine))
 flights = db.execute("SELECT origin, destination, duration FROM flights").fetchall()
 for flight in flights:
     print(f"{flight.origin} to {flight.destination}, {flight.duration} minutes.")
+```
+
+CSV files can be used to store the information for a database, and inserted into an SQL database.  
+Assuming `flights.csv looks something like this:
+```
+Paris,New York,540    
+Tokyo,Shanghai,185    
+Seoul,Mexico City,825 
+Mexico City,Lima,350  
+Hong Kong,Shanghai,130
+```
+
+The following code will then read `flights.csv` and add in the flights to the database.  
+`:origin`, `:destination`, and `:duration` define placeholders within the database into which data will be inserted. This placeholder syntax also provides a layer of safety as it helps to prevent users from entering SQL code into a field and directly running SQL.
+```
+def main():
+    f = open("flights.csv")                                                                                        
+    reader = csv.reader(f)                                                                                         
+    for origin, destination, duration in reader:                                                                   
+        db.execute("INSERT INTO flights (origin, destination, duration) VALUES (:origin, :destination, :duration)",
+                    {"origin": origin, "destination": destination, "duration": duration})                          
+        print(f"Added flight from {origin} to {destination} lasting {duration} minutes.")                          
+    db.commit()                                                                                                    
 ```
 
 

@@ -1456,22 +1456,24 @@ version of SQL that is used in these notes.
 \section{Installation}\label{installation}
 
 The method I can easily get to work is by installing through
-\texttt{apt}.
+\texttt{apt}.\\
+It seems also that for some reason the install only works if the version
+number is specified.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{sudo}\NormalTok{ apt-get install postgresql postgresql-client}
+\FunctionTok{sudo}\NormalTok{ apt-get install postgresql-9.6 postgresql-client libpq-dev}
 \end{Highlighting}
 \end{Shaded}
 
 conda install -c conda-forge psycopg2 flask-sqlalchemy flask-migrate
 
 Both the default database user and default database are called postgres,
-so switch to that user.
+so switch to that user and start \texttt{psql}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{sudo}\NormalTok{ -u postgres bash}
+\FunctionTok{sudo}\NormalTok{ -u postgres psql}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1494,6 +1496,8 @@ install but here is the reference to postgresql.
 
 To quit \texttt{psql} run \texttt{\textbackslash{}q}.
 
+\section{Heroku}\label{heroku}
+
 Install Heroku.
 
 \begin{Shaded}
@@ -1501,6 +1505,132 @@ Install Heroku.
 \FunctionTok{sudo}\NormalTok{ snap install --classic heroku}
 \end{Highlighting}
 \end{Shaded}
+
+Then running any command should prompt to login to Heroku but the
+\texttt{login} command is specific for this.
+
+\begin{verbatim}
+heroku login
+\end{verbatim}
+
+A sample app from heroku can be cloned to test app deployment.
+
+\begin{verbatim}
+git clone https://github.com/heroku/python-getting-started.git
+cd python-getting-started
+\end{verbatim}
+
+From within the app directory, create the app on heroku. This will
+create a new app with a random name, but a name can instead be passed to
+manually set the app name.
+
+\begin{verbatim}
+heroku create
+\end{verbatim}
+
+The app code can then be committed to the heroku server.
+
+\begin{verbatim}
+git push heroku master
+\end{verbatim}
+
+Pushing the code will deploy the app, but an instance of the app must be
+then be run.
+
+\begin{verbatim}
+heroku ps:scale web=1
+\end{verbatim}
+
+The app can now be visited on the web.
+
+\begin{verbatim}
+heroku open
+\end{verbatim}
+
+Logs can be viewed of page requests here in a way that will constantly
+update with each new request.
+
+\begin{verbatim}
+heroku logs --tail
+\end{verbatim}
+
+The \texttt{Procfile} is a file within the root directory of the
+application that declares the command that should be executed when the
+app is started. Typically it contains the following.
+
+\begin{verbatim}
+web: gunicorn gettingstarted.wsgi --log-file -
+\end{verbatim}
+
+\subsection{Heroku Dynos}\label{heroku-dynos}
+
+Heroku has some
+\href{'https://devcenter.heroku.com/articles/getting-started-with-python\#provision-a-database'}{introduction}
+to using postgresql with a deployed app. And some more extensive
+\href{'https://devcenter.heroku.com/articles/heroku-postgresql'}{information}
+as well. It also looks like CS50 has some
+\href{'https://cs50.readthedocs.io/heroku/'}{instructions} as well.
+
+By default heroku apps are deployed to a single dyno which is like a
+container that runs the commands specified in the \texttt{Procfile}.
+Using a free account will allow a single dyno to be used that will sleep
+after a half an hour of inactivity. The number of dyno containers can be
+scaled up and down. If scaled to zero, no containers will run the app.
+
+\begin{verbatim}
+heroku ps:scale web=0
+\end{verbatim}
+
+The number of free dyno hours is set to 550 per month and with a
+verified credit card on file will be set to 1000. The remaining time
+available for a dyno to be running for an app can be checked.
+
+\begin{verbatim}
+heroku ps -a <app-name>
+\end{verbatim}
+
+To run the heroku test app locally first setup Django to use local
+assets.
+
+\begin{verbatim}
+python manage.py collectstatic
+\end{verbatim}
+
+The app can then be run locally at \texttt{http://localhost:5000}.
+
+\begin{verbatim}
+heroku local web
+\end{verbatim}
+
+Changes can be committed in a similar manner as is done with github.
+
+\begin{verbatim}
+git add .
+git commit -m 'message'
+git push heroku master
+\end{verbatim}
+
+\subsection{Heroku Databases}\label{heroku-databases}
+
+The current addons including databases available to an app can be
+viewed.
+
+\begin{verbatim}
+heroku addons
+\end{verbatim}
+
+The \texttt{DATABASE\_URL} can be displayed.
+
+\begin{verbatim}
+heroku config
+\end{verbatim}
+
+More extensive information about the app can also be displayed,
+includeing the postgres version (PG Version)
+
+\begin{verbatim}
+heroku pg
+\end{verbatim}
 
 \section{Database Hosting With
 Heroku}\label{database-hosting-with-heroku}
@@ -1559,6 +1689,20 @@ Refer to that database.
 \BuiltInTok{export} \VariableTok{DATABASE_URL=}\StringTok{"postgresql://localhost/airplanes"}\NormalTok{;}
 \end{Highlighting}
 \end{Shaded}
+
+List current databases.
+
+\begin{verbatim}
+\list
+\end{verbatim}
+
+Connect to a new database;
+
+\begin{verbatim}
+\connect airplanes
+or
+\c airplanes
+\end{verbatim}
 
 Below is the general syntax to create a PostgreSQL database.\\
 The \texttt{id} is being used in a manner similar to an index that will
@@ -1895,6 +2039,37 @@ db = scoped_session(sessionmaker(bind=engine))
 flights = db.execute("SELECT origin, destination, duration FROM flights").fetchall()
 for flight in flights:
     print(f"{flight.origin} to {flight.destination}, {flight.duration} minutes.")
+\end{verbatim}
+
+CSV files can be used to store the information for a database, and
+inserted into an SQL database.\\
+Assuming `flights.csv looks something like this:
+
+\begin{verbatim}
+Paris,New York,540    
+Tokyo,Shanghai,185    
+Seoul,Mexico City,825 
+Mexico City,Lima,350  
+Hong Kong,Shanghai,130
+\end{verbatim}
+
+The following code will then read \texttt{flights.csv} and add in the
+flights to the database.\\
+\texttt{:origin}, \texttt{:destination}, and \texttt{:duration} define
+placeholders within the database into which data will be inserted. This
+placeholder syntax also provides a layer of safety as it helps to
+prevent users from entering SQL code into a field and directly running
+SQL.
+
+\begin{verbatim}
+def main():
+    f = open("flights.csv")                                                                                        
+    reader = csv.reader(f)                                                                                         
+    for origin, destination, duration in reader:                                                                   
+        db.execute("INSERT INTO flights (origin, destination, duration) VALUES (:origin, :destination, :duration)",
+                    {"origin": origin, "destination": destination, "duration": duration})                          
+        print(f"Added flight from {origin} to {destination} lasting {duration} minutes.")                          
+    db.commit()                                                                                                    
 \end{verbatim}
 
 \url{https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/}
