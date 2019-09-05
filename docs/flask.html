@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-08-29">
+<meta name="date" content="2019-09-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -243,6 +243,10 @@ In the following code, the <code>headline</code> variable is defined in python a
         <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Go back to work<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
     {<span class="ex">%</span> endif %}
 <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>Here is an example of a simple counter.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">{<span class="ex">%</span> for i in p %}
+    {<span class="kw">{</span> <span class="ex">loop.index</span> <span class="kw">}</span>}
+{<span class="ex">%</span> endfor %}</code></pre></div>
 <p>For loops work pretty similar to python as well. In the following code <code>names</code> is a python list getting passed from <code>application.py</code>, and the list items are rendered as a <code>ul</code> in HTML.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>
     {<span class="ex">%</span> for name in names %}

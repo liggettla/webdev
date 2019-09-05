@@ -95,6 +95,13 @@ Jinja brings programming logic gates to HTML. The code must be put into an html 
 </body>
 ```
 
+Here is an example of a simple counter.
+```{bash eval=FALSE}
+{% for i in p %}
+	{{ loop.index }}
+{% endfor %}
+```
+
 For loops work pretty similar to python as well. In the following code `names` is a python list getting passed from `application.py`, and the list items are rendered as a `ul` in HTML.
 ```{bash eval=FALSE}
 <ul>

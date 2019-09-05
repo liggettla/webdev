@@ -126,6 +126,13 @@ As long as postgresql is installed locally, it is possible to connect to the rem
 heroku pg:psql
 ```
 
+It is also possible to connect with a database that has just been initiated, where the URI is listed in the `Config Vars` section of the Settings, under `DATABASE_URL`.
+```
+psql <URI>
+
+```
+
+
 
 ## Database Hosting With Heroku
 1. Navigate to https://www.heroku.com/, and create an account if you don’t already have one.

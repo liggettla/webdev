@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-29}
+    \date{2019-09-04}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1263,6 +1263,16 @@ as shown in the above templates section.
 \end{Highlighting}
 \end{Shaded}
 
+Here is an example of a simple counter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\{}\ExtensionTok{%}\NormalTok{ for i in p %\}}
+\NormalTok{    \{}\KeywordTok{\{} \ExtensionTok{loop.index} \KeywordTok{\}}\NormalTok{\}}
+\NormalTok{\{}\ExtensionTok{%}\NormalTok{ endfor %\}}
+\end{Highlighting}
+\end{Shaded}
+
 For loops work pretty similar to python as well. In the following code
 \texttt{names} is a python list getting passed from
 \texttt{application.py}, and the list items are rendered as a
@@ -1637,6 +1647,14 @@ the remote database.
 
 \begin{verbatim}
 heroku pg:psql
+\end{verbatim}
+
+It is also possible to connect with a database that has just been
+initiated, where the URI is listed in the \texttt{Config\ Vars} section
+of the Settings, under \texttt{DATABASE\_URL}.
+
+\begin{verbatim}
+psql <URI>
 \end{verbatim}
 
 \section{Database Hosting With
