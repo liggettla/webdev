@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-09-04">
+<meta name="date" content="2019-09-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -129,11 +129,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.1" data-path="flask.html"><a href="flask.html#intro-1"><i class="fa fa-check"></i><b>5.1</b> Intro</a></li>
 <li class="chapter" data-level="5.2" data-path="flask.html"><a href="flask.html#routes"><i class="fa fa-check"></i><b>5.2</b> Routes</a></li>
 <li class="chapter" data-level="5.3" data-path="flask.html"><a href="flask.html#templates"><i class="fa fa-check"></i><b>5.3</b> Templates</a></li>
-<li class="chapter" data-level="5.4" data-path="flask.html"><a href="flask.html#jinja"><i class="fa fa-check"></i><b>5.4</b> Jinja</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="flask.html"><a href="flask.html#inheritance-1"><i class="fa fa-check"></i><b>5.4.1</b> Inheritance</a></li>
-<li class="chapter" data-level="5.4.2" data-path="flask.html"><a href="flask.html#forms-1"><i class="fa fa-check"></i><b>5.4.2</b> Forms</a></li>
-<li class="chapter" data-level="5.4.3" data-path="flask.html"><a href="flask.html#sessions"><i class="fa fa-check"></i><b>5.4.3</b> Sessions</a></li>
-</ul></li>
+<li class="chapter" data-level="5.4" data-path="flask.html"><a href="flask.html#jinja"><i class="fa fa-check"></i><b>5.4</b> Jinja</a></li>
+<li class="chapter" data-level="5.5" data-path="flask.html"><a href="flask.html#user-handling"><i class="fa fa-check"></i><b>5.5</b> User Handling</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="sql.html"><a href="sql.html"><i class="fa fa-check"></i><b>6</b> SQL</a><ul>
 <li class="chapter" data-level="6.1" data-path="sql.html"><a href="sql.html#intro-2"><i class="fa fa-check"></i><b>6.1</b> Intro</a></li>
@@ -259,73 +256,11 @@ In the following code, the <code>headline</code> variable is defined in python a
     <span class="bu">return</span> render_template(<span class="st">&quot;more.html&quot;</span>)</code></pre></div>
 <p>The above method <code>more()</code> just refers to another html file, and this html file can be used from html like so, where the jinja function <code>url_for</code> finds the route that contains the <code>more()</code> method, and then uses that URL as the link in the <code>href</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;{{ url_for(&#39;more&#39;) }}&quot;</span><span class="op">&gt;</span>See more...<span class="op">&lt;</span>/a<span class="op">&gt;</span></code></pre></div>
-<div id="inheritance-1" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> Inheritance</h3>
-<p>Inheritance is useful when html code is being repetitively used, as it allows a general layout to be defined and they reused and slightly modified.<br />
-The first part of the example below is how the general layout html can be setup in a file called <code>layout.html</code>. In the following code a block is being defined, and the content it uses is whatever is being passed under the variable name <code>heading</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>{% block heading %}{<span class="ex">%</span> endblock %}<span class="op">&lt;</span>/<span class="ex">h1</span><span class="op">&gt;</span></code></pre></div>
-<p>A separate html file can then inherit all of the html content within <code>layout.html</code>, but then add something unique to the black defined above.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">{<span class="ex">%extends</span> <span class="st">&quot;layout.html&quot;</span> %}
-
-{<span class="ex">%</span> block heading %}
-    <span class="ex">This</span> is the header
-{<span class="ex">%</span> endblock %}</code></pre></div>
 </div>
-<div id="forms-1" class="section level3">
-<h3><span class="header-section-number">5.4.2</span> Forms</h3>
-<p>Forms or fields allow input to be captures from the user and then used to perform other functions. In the below example, the <code>action</code> is being set as the route that contains teh <code>hello</code> method, and the manner in which the information is sent is <code>post</code>. The <code>post</code> method is different from other methods like the <code>get</code> method where information is submitted and a result is returned; may need to read more on this. The <code>get</code> method will place the text from the form into the URL. The information being input into the <code>&lt;input&gt;</code> field is named <code>&quot;name&quot;</code> and this varible can be then passed to <code>Application.py</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">form</span> action=<span class="st">&quot;{{ url_for(&#39;hello&#39;) }}&quot;</span> method=<span class="st">&quot;post&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> name=<span class="st">&quot;name&quot;</span> placeholder=<span class="st">&quot;Enter Your Name&quot;</span>}
-    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Submit<span class="op">&lt;</span>/button<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span></code></pre></div>
-<p>Within <code>Application.py</code> the text that was input into the form is then used to send to <code>hello.html</code>. here the <code>name</code> variable gets set by using the <code>form.get</code> method to retrieve the information, and then the <code>hello.html</code> template is rendered by passing the <code>name</code> variable tot by using the <code>form.get</code> method to retrieve the information, and then the <code>hello.html</code> template is rendered by passing the <code>name</code> variable to it.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import Flask, render_template, request
+<div id="user-handling" class="section level2">
+<h2><span class="header-section-number">5.5</span> User Handling</h2>
+<p><a href="http://exploreflask.com/en/latest/users.html#authentication">This</a> seems like a decent guide about user authentication and handling.</p>
 
-<span class="ex">@app.route</span>(<span class="st">&quot;/hello&quot;</span>, methods=[<span class="st">&quot;POST&quot;</span>])             
-<span class="ex">def</span> hello()<span class="bu">:</span>                                       
-    <span class="ex">name</span> = request.form.get(<span class="st">&quot;name&quot;</span>)                
-    <span class="bu">return</span> render_template(<span class="st">&quot;hello.html&quot;</span>, name=name)</code></pre></div>
-<p><code>hello.html</code> can then use the <code>name</code> variable to display the text entered into the form.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Hello</span>, {{ name }}!</code></pre></div>
-</div>
-<div id="sessions" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> Sessions</h3>
-<p>Sessions allow data to be stored, and as long as the webserver is still running (or the data can be saved), and furthermore allows each user to have data that is specific to their individual session. First <code>flask_session</code> needs to be installed.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip</span> install flask-session</code></pre></div>
-<p>Here in <code>application.py</code> a <code>notes</code> list is being created to store data that is being input. The route uses both the <code>get</code> and <code>post</code> methods to get data from the user. And the form sends the <code>note</code> variable.<br />
-The <code>notes</code> list is created using <code>session[&quot;notes&quot;]</code> as this will create a list that is stored in a cookie and is specific to the user.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import Flask, render_template, request, session
-<span class="ex">from</span> flask_session import Session                         
-                                                          
-<span class="ex">app</span> = Flask(__name__)                                     
-                                                          
-<span class="ex">app.config</span>[<span class="st">&quot;SESSION_PERMANENT&quot;</span>] = False                   
-<span class="ex">app.config</span>[<span class="st">&quot;SESSION_TYPE&quot;</span>] = <span class="st">&quot;filesystem&quot;</span>                 
-<span class="ex">Session</span>(app)                                              
-                                                          
-<span class="ex">@app.route</span>(<span class="st">&quot;/&quot;</span>, methods=[<span class="st">&quot;GET&quot;</span>, <span class="st">&quot;POST&quot;</span>])                  
-<span class="ex">def</span> index()<span class="bu">:</span>                                              
-    <span class="kw">if</span> <span class="ex">session.get</span>(<span class="st">&quot;notes&quot;</span>) <span class="ex">is</span> None:
-        <span class="ex">session</span>[<span class="st">&quot;notes&quot;</span>] = []       
-
-    <span class="kw">if</span> <span class="ex">request.method</span> == <span class="st">&quot;POST&quot;</span>:                          
-        <span class="ex">note</span> = request.form.get(<span class="st">&quot;note&quot;</span>)                   
-        <span class="ex">notes.append</span>(note)                                
-                                                          
-    <span class="bu">return</span> render_template(<span class="st">&quot;index.html&quot;</span>, notes=notes)     </code></pre></div>
-<p>Then in <code>index.html</code> the form is created to send the data to the <code>application.py</code> file. And since <code>notes</code> is an ever growing list, the list is rendered in the html.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>                                                             
-    {<span class="ex">%</span> for note in notes %}                                      
-        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>{{ note }}<span class="op">&lt;</span>/<span class="ex">li</span><span class="op">&gt;</span>                                      
-    {<span class="ex">%</span> endfor %}                                                 
-<span class="op">&lt;</span>/<span class="ex">ul</span><span class="op">&gt;</span>                                                            
-                                                                 
-<span class="op">&lt;</span><span class="ex">form</span> action=<span class="st">&quot;{{ url_for(&#39;index&#39;) }}&quot;</span> method=<span class="st">&quot;post&quot;</span><span class="op">&gt;</span>             
-    <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> name=<span class="st">&quot;note&quot;</span> placeholder=<span class="st">&quot;Enter Note Here&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Add Note<span class="op">&lt;</span>/button<span class="op">&gt;</span>                                    
-<span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                          </code></pre></div>
-
-</div>
 </div>
 </div>
             </section>

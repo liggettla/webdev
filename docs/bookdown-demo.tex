@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-09-04}
+    \date{2019-09-12}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1310,150 +1310,10 @@ method, and then uses that URL as the link in the \texttt{href}.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Inheritance}\label{inheritance-1}
+\section{User Handling}\label{user-handling}
 
-Inheritance is useful when html code is being repetitively used, as it
-allows a general layout to be defined and they reused and slightly
-modified.\\
-The first part of the example below is how the general layout html can
-be setup in a file called \texttt{layout.html}. In the following code a
-block is being defined, and the content it uses is whatever is being
-passed under the variable name \texttt{heading}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{\{% block heading %\}\{}\ExtensionTok{%}\NormalTok{ endblock %\}}\OperatorTok{<}\NormalTok{/}\ExtensionTok{h1}\OperatorTok{>}
-\end{Highlighting}
-\end{Shaded}
-
-A separate html file can then inherit all of the html content within
-\texttt{layout.html}, but then add something unique to the black defined
-above.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{\{}\ExtensionTok{%extends} \StringTok{"layout.html"}\NormalTok{ %\}}
-
-\NormalTok{\{}\ExtensionTok{%}\NormalTok{ block heading %\}}
-    \ExtensionTok{This}\NormalTok{ is the header}
-\NormalTok{\{}\ExtensionTok{%}\NormalTok{ endblock %\}}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection{Forms}\label{forms-1}
-
-Forms or fields allow input to be captures from the user and then used
-to perform other functions. In the below example, the \texttt{action} is
-being set as the route that contains teh \texttt{hello} method, and the
-manner in which the information is sent is \texttt{post}. The
-\texttt{post} method is different from other methods like the
-\texttt{get} method where information is submitted and a result is
-returned; may need to read more on this. The \texttt{get} method will
-place the text from the form into the URL. The information being input
-into the \texttt{\textless{}input\textgreater{}} field is named
-\texttt{"name"} and this varible can be then passed to
-\texttt{Application.py}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OperatorTok{<}\ExtensionTok{form}\NormalTok{ action=}\StringTok{"\{\{ url_for('hello') \}\}"}\NormalTok{ method=}\StringTok{"post"}\OperatorTok{>}
-    \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ name=}\StringTok{"name"}\NormalTok{ placeholder=}\StringTok{"Enter Your Name"}\NormalTok{\}}
-    \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Submit}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
-\OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}
-\end{Highlighting}
-\end{Shaded}
-
-Within \texttt{Application.py} the text that was input into the form is
-then used to send to \texttt{hello.html}. here the \texttt{name}
-variable gets set by using the \texttt{form.get} method to retrieve the
-information, and then the \texttt{hello.html} template is rendered by
-passing the \texttt{name} variable tot by using the \texttt{form.get}
-method to retrieve the information, and then the \texttt{hello.html}
-template is rendered by passing the \texttt{name} variable to it.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{from}\NormalTok{ flask import Flask, render_template, request}
-
-\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/hello"}\NormalTok{, methods=[}\StringTok{"POST"}\NormalTok{])             }
-\ExtensionTok{def}\NormalTok{ hello()}\BuiltInTok{:}                                       
-    \ExtensionTok{name}\NormalTok{ = request.form.get(}\StringTok{"name"}\NormalTok{)                }
-    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"hello.html"}\NormalTok{, name=name)}
-\end{Highlighting}
-\end{Shaded}
-
-\texttt{hello.html} can then use the \texttt{name} variable to display
-the text entered into the form.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{Hello}\NormalTok{, \{\{ name \}\}!}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection{Sessions}\label{sessions}
-
-Sessions allow data to be stored, and as long as the webserver is still
-running (or the data can be saved), and furthermore allows each user to
-have data that is specific to their individual session. First
-\texttt{flask\_session} needs to be installed.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{pip}\NormalTok{ install flask-session}
-\end{Highlighting}
-\end{Shaded}
-
-Here in \texttt{application.py} a \texttt{notes} list is being created
-to store data that is being input. The route uses both the \texttt{get}
-and \texttt{post} methods to get data from the user. And the form sends
-the \texttt{note} variable.\\
-The \texttt{notes} list is created using \texttt{session{[}"notes"{]}}
-as this will create a list that is stored in a cookie and is specific to
-the user.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{from}\NormalTok{ flask import Flask, render_template, request, session}
-\ExtensionTok{from}\NormalTok{ flask_session import Session                         }
-                                                          
-\ExtensionTok{app}\NormalTok{ = Flask(__name__)                                     }
-                                                          
-\ExtensionTok{app.config}\NormalTok{[}\StringTok{"SESSION_PERMANENT"}\NormalTok{] = False                   }
-\ExtensionTok{app.config}\NormalTok{[}\StringTok{"SESSION_TYPE"}\NormalTok{] = }\StringTok{"filesystem"}                 
-\ExtensionTok{Session}\NormalTok{(app)                                              }
-                                                          
-\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/"}\NormalTok{, methods=[}\StringTok{"GET"}\NormalTok{, }\StringTok{"POST"}\NormalTok{])                  }
-\ExtensionTok{def}\NormalTok{ index()}\BuiltInTok{:}                                              
-    \KeywordTok{if} \ExtensionTok{session.get}\NormalTok{(}\StringTok{"notes"}\NormalTok{) }\ExtensionTok{is}\NormalTok{ None:}
-        \ExtensionTok{session}\NormalTok{[}\StringTok{"notes"}\NormalTok{] = []       }
-
-    \KeywordTok{if} \ExtensionTok{request.method}\NormalTok{ == }\StringTok{"POST"}\NormalTok{:                          }
-        \ExtensionTok{note}\NormalTok{ = request.form.get(}\StringTok{"note"}\NormalTok{)                   }
-        \ExtensionTok{notes.append}\NormalTok{(note)                                }
-                                                          
-    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{"index.html"}\NormalTok{, notes=notes)     }
-\end{Highlighting}
-\end{Shaded}
-
-Then in \texttt{index.html} the form is created to send the data to the
-\texttt{application.py} file. And since \texttt{notes} is an ever
-growing list, the list is rendered in the html.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\OperatorTok{<}\ExtensionTok{ul}\OperatorTok{>}                                                             
-\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ for note in notes %\}                                      }
-        \OperatorTok{<}\ExtensionTok{li}\OperatorTok{>}\NormalTok{\{\{ note \}\}}\OperatorTok{<}\NormalTok{/}\ExtensionTok{li}\OperatorTok{>}                                      
-\NormalTok{    \{}\ExtensionTok{%}\NormalTok{ endfor %\}                                                 }
-\OperatorTok{<}\NormalTok{/}\ExtensionTok{ul}\OperatorTok{>}                                                            
-                                                                 
-\OperatorTok{<}\ExtensionTok{form}\NormalTok{ action=}\StringTok{"\{\{ url_for('index') \}\}"}\NormalTok{ method=}\StringTok{"post"}\OperatorTok{>}             
-    \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"text"}\NormalTok{ name=}\StringTok{"note"}\NormalTok{ placeholder=}\StringTok{"Enter Note Here"}\OperatorTok{>}
-    \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Add Note}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                                    
-\OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}                                                          
-\end{Highlighting}
-\end{Shaded}
+\href{http://exploreflask.com/en/latest/users.html\#authentication}{This}
+seems like a decent guide about user authentication and handling.
 
 \chapter{SQL}\label{sql}
 
