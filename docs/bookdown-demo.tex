@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-09-12}
+    \date{2019-09-13}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1988,7 +1988,7 @@ for flight in flights:
 
 CSV files can be used to store the information for a database, and
 inserted into an SQL database.\\
-Assuming `flights.csv looks something like this:
+Assuming \texttt{flights.csv} looks something like this:
 
 \begin{verbatim}
 Paris,New York,540    
@@ -2064,6 +2064,98 @@ column within the \texttt{Flight} class.
     \FunctionTok{id}\NormalTok{ = db.Column(db.Integer, primary_key=True)                                  }
     \ExtensionTok{name}\NormalTok{ = db.Column(db.String, nullable=False)                                   }
     \ExtensionTok{flight_id}\NormalTok{ = db.Column(db.Integer, db.ForeignKey(}\StringTok{"flights.id"}\NormalTok{), }\VariableTok{nullable=}\NormalTok{False)}
+\end{Highlighting}
+\end{Shaded}
+
+Creating a class in the above manner will allow modification of an SQL
+database using just python with SQLAlchemy. This avoids the requirement
+of using SQL commands explicitly within the code.\\
+The following is an example of adding flight data to a database using
+the Flight class.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{db.init_app}\NormalTok{(app)}
+\ExtensionTok{flight}\NormalTok{ = Flight(origin=origin, destination=destination, duration=duration)}
+\ExtensionTok{db.session.add}\NormalTok{(flight)                                                    }
+\ExtensionTok{db.session.commit}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+A SQL database can also be queried with python instead of SQL
+commands.\\
+The first command below is how a SQL database can be queried with SQL
+syntax and the second is with python using SQLAlchemy.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# using SQL}
+\ExtensionTok{flights}\NormalTok{ = db.execute(}\StringTok{"SELECT origin, destination, duration FROM flights"}\NormalTok{)}\ExtensionTok{.fetchall}\NormalTok{()}
+
+\CommentTok{# using SQLAlchemy}
+\ExtensionTok{flights}\NormalTok{ = Flight.query.all()}
+\end{Highlighting}
+\end{Shaded}
+
+Filtering can also be done with similar code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{flights}\NormalTok{ = Flight.query.filter_by(origin=}\StringTok{"Paris"}\NormalTok{)}\ExtensionTok{.first}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Results can be counted.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{flights}\NormalTok{ = Flight.query.filter_by(origin=}\StringTok{"Paris"}\NormalTok{)}\ExtensionTok{.count}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Data can be retrieved by its ID, where the below code gets the row with
+ID 28.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Flight.query.get}\NormalTok{(28)}
+\end{Highlighting}
+\end{Shaded}
+
+Data within a table can be modified.\\
+The following code gets the row with an ID of 6 then updates its
+duration to 280.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{flight}\NormalTok{ = Flight.query.get(6)}
+\ExtensionTok{flight.duration}\NormalTok{ = 280}
+\end{Highlighting}
+\end{Shaded}
+
+Data can be deleted from a table.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{flight}\NormalTok{ = Flight.query.get(6)}
+\ExtensionTok{db.session.delete}\NormalTok{(flight)}
+\end{Highlighting}
+\end{Shaded}
+
+Data from a table can be retrieved and ordered.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Flight.query.order_by}\NormalTok{(Flight.origin.desc())}\ExtensionTok{.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Table data can be retrieved when it does not match a boolean expression.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Flight.query.filter}\NormalTok{(}
+    \ExtensionTok{Flight.origin}\NormalTok{ != }\StringTok{"Paris"}\NormalTok{)}\ExtensionTok{.all}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 

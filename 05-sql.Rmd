@@ -394,7 +394,7 @@ for flight in flights:
 ```
 
 CSV files can be used to store the information for a database, and inserted into an SQL database.  
-Assuming `flights.csv looks something like this:
+Assuming `flights.csv` looks something like this:
 ```
 Paris,New York,540    
 Tokyo,Shanghai,185    
@@ -423,6 +423,7 @@ Here are some links that may be helpful in setting up an sql database and using 
 [CS50 Project1 Help]('https://docs.cs50.net/web/2018/x/projects/1/project1.html')
 [Reddit CS50 SQLAlchemy Help]('https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/')
 
+
 ## Object-Relational Mapping
 Python classes can be used to control the function of a SQL database. Typically a Python class can be used to control the functionality in a single SQL database.
 
@@ -449,4 +450,64 @@ class Passenger(db.Model):
     name = db.Column(db.String, nullable=False)                                   
     flight_id = db.Column(db.Integer, db.ForeignKey("flights.id"), nullable=False)
 ```
+
+Creating a class in the above manner will allow modification of an SQL database using just python with SQLAlchemy. This avoids the requirement of using SQL commands explicitly within the code.  
+The following is an example of adding flight data to a database using the Flight class.
+```{bash eval=FALSE}
+db.init_app(app)
+flight = Flight(origin=origin, destination=destination, duration=duration)
+db.session.add(flight)                                                    
+db.session.commit()
+```
+
+A SQL database can also be queried with python instead of SQL commands.  
+The first command below is how a SQL database can be queried with SQL syntax and the second is with python using SQLAlchemy.
+```{bash eval=FALSE}
+# using SQL
+flights = db.execute("SELECT origin, destination, duration FROM flights").fetchall()
+
+# using SQLAlchemy
+flights = Flight.query.all()
+```
+
+Filtering can also be done with similar code.
+```{bash eval=FALSE}
+flights = Flight.query.filter_by(origin="Paris").first()
+```
+
+Results can be counted.
+```{bash eval=FALSE}
+flights = Flight.query.filter_by(origin="Paris").count()
+```
+
+Data can be retrieved by its ID, where the below code gets the row with ID 28.
+```{bash eval=FALSE}
+Flight.query.get(28)
+```
+
+Data within a table can be modified.  
+The following code gets the row with an ID of 6 then updates its duration to 280.
+```{bash eval=FALSE}
+flight = Flight.query.get(6)
+flight.duration = 280
+```
+
+Data can be deleted from a table.
+```{bash eval=FALSE}
+flight = Flight.query.get(6)
+db.session.delete(flight)
+```
+
+Data from a table can be retrieved and ordered.
+```{bash eval=FALSE}
+Flight.query.order_by(Flight.origin.desc()).all()
+```
+
+Table data can be retrieved when it does not match a boolean expression.
+```{bash eval=FALSE}
+Flight.query.filter(
+    Flight.origin != "Paris").all()
+```
+
+
 

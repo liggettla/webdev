@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-09-12">
+<meta name="date" content="2019-09-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -407,7 +407,7 @@ flights = db.execute(&quot;SELECT origin, destination, duration FROM flights&quo
 for flight in flights:
     print(f&quot;{flight.origin} to {flight.destination}, {flight.duration} minutes.&quot;)</code></pre>
 <p>CSV files can be used to store the information for a database, and inserted into an SQL database.<br />
-Assuming `flights.csv looks something like this:</p>
+Assuming <code>flights.csv</code> looks something like this:</p>
 <pre><code>Paris,New York,540    
 Tokyo,Shanghai,185    
 Seoul,Mexico City,825 
@@ -449,6 +449,37 @@ Hong Kong,Shanghai,130</code></pre>
     <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)                                  
     <span class="ex">name</span> = db.Column(db.String, nullable=False)                                   
     <span class="ex">flight_id</span> = db.Column(db.Integer, db.ForeignKey(<span class="st">&quot;flights.id&quot;</span>), <span class="va">nullable=</span>False)</code></pre></div>
+<p>Creating a class in the above manner will allow modification of an SQL database using just python with SQLAlchemy. This avoids the requirement of using SQL commands explicitly within the code.<br />
+The following is an example of adding flight data to a database using the Flight class.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">db.init_app</span>(app)
+<span class="ex">flight</span> = Flight(origin=origin, destination=destination, duration=duration)
+<span class="ex">db.session.add</span>(flight)                                                    
+<span class="ex">db.session.commit</span>()</code></pre></div>
+<p>A SQL database can also be queried with python instead of SQL commands.<br />
+The first command below is how a SQL database can be queried with SQL syntax and the second is with python using SQLAlchemy.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># using SQL</span>
+<span class="ex">flights</span> = db.execute(<span class="st">&quot;SELECT origin, destination, duration FROM flights&quot;</span>)<span class="ex">.fetchall</span>()
+
+<span class="co"># using SQLAlchemy</span>
+<span class="ex">flights</span> = Flight.query.all()</code></pre></div>
+<p>Filtering can also be done with similar code.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flights</span> = Flight.query.filter_by(origin=<span class="st">&quot;Paris&quot;</span>)<span class="ex">.first</span>()</code></pre></div>
+<p>Results can be counted.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flights</span> = Flight.query.filter_by(origin=<span class="st">&quot;Paris&quot;</span>)<span class="ex">.count</span>()</code></pre></div>
+<p>Data can be retrieved by its ID, where the below code gets the row with ID 28.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.get</span>(28)</code></pre></div>
+<p>Data within a table can be modified.<br />
+The following code gets the row with an ID of 6 then updates its duration to 280.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flight</span> = Flight.query.get(6)
+<span class="ex">flight.duration</span> = 280</code></pre></div>
+<p>Data can be deleted from a table.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flight</span> = Flight.query.get(6)
+<span class="ex">db.session.delete</span>(flight)</code></pre></div>
+<p>Data from a table can be retrieved and ordered.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.order_by</span>(Flight.origin.desc())<span class="ex">.all</span>()</code></pre></div>
+<p>Table data can be retrieved when it does not match a boolean expression.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
+    <span class="ex">Flight.origin</span> != <span class="st">&quot;Paris&quot;</span>)<span class="ex">.all</span>()</code></pre></div>
 
 </div>
 </div>
