@@ -1197,6 +1197,25 @@ webpage.
 \end{Highlighting}
 \end{Shaded}
 
+Routes can be referred to by a link which can also pass variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{a}\NormalTok{ href=}\StringTok{'\{\{ url_for('}\NormalTok{details}\StringTok{', title=book.title, author=book.author) \}\}'}\NormalTok{, method=}\StringTok{'GET'}\OperatorTok{>}\NormalTok{Link}\OperatorTok{<}\NormalTok{/a}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+The variables that get passed can then be used in
+\texttt{application.py} and passed to another html file.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{'/details/<string:title>/<string:author>'}\NormalTok{, methods=[}\StringTok{'GET'}\NormalTok{, }\StringTok{'POST'}\NormalTok{])}
+\ExtensionTok{def}\NormalTok{ details(title, author)}\BuiltInTok{:}                                                   
+    \BuiltInTok{return}\NormalTok{ render_template(}\StringTok{'details.html'}\NormalTok{, title=title, author=author)        }
+\end{Highlighting}
+\end{Shaded}
+
 \section{Templates}\label{templates}
 
 Instead of embedding HTML within values that get returned by python
@@ -1365,6 +1384,47 @@ install but here is the reference to postgresql.
 \end{Shaded}
 
 To quit \texttt{psql} run \texttt{\textbackslash{}q}.
+
+\section{Starting Local Database}\label{starting-local-database}
+
+First set a password for local use.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ -u postgres psql}
+\VariableTok{postgres=}\NormalTok{# \textbackslash{}}\ExtensionTok{password}
+\ExtensionTok{Enter}\NormalTok{ new password:}
+\ExtensionTok{Enter}\NormalTok{ it again:}
+\VariableTok{postgres=}\NormalTok{# \textbackslash{}}\ExtensionTok{q}
+\end{Highlighting}
+\end{Shaded}
+
+Initially work with localhost to create a database.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{psql}\NormalTok{ -U postgres -W  -h localhost}
+\ExtensionTok{create}\NormalTok{ database airplanes}\KeywordTok{;}
+\NormalTok{\textbackslash{}}\ExtensionTok{q}
+\end{Highlighting}
+\end{Shaded}
+
+Export the location to the newly created database and connect or connect
+directly.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{export} \VariableTok{DATABASE_URL=}\StringTok{"postgresql://localhost/airplanes"}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+or
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{psql}\NormalTok{ -U postgres -W  -h localhost postgres://localhost/airplanes}
+\end{Highlighting}
+\end{Shaded}
 
 \section{Heroku}\label{heroku}
 
@@ -1957,12 +2017,55 @@ def main():
     db.commit()                                                                                                    
 \end{verbatim}
 
-\url{https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/}
+Here are some links that may be helpful in setting up an sql database
+and using it with SQLAlchemy.
+\href{'https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/'}{RealPython}
+\href{'https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database'}{Location
+of Postgresql Database}
+\href{'https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545'}{Location
+of Postgresql Database}
+\href{'https://docs.cs50.net/web/2018/x/projects/1/project1.html'}{CS50
+Project1 Help}
+\href{'https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/'}{Reddit
+CS50 SQLAlchemy Help}
 
-\url{https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database}
-\url{https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545}
-\url{https://docs.cs50.net/web/2018/x/projects/1/project1.html}
-\url{https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/}
+\section{Object-Relational Mapping}\label{object-relational-mapping}
+
+Python classes can be used to control the function of a SQL database.
+Typically a Python class can be used to control the functionality in a
+single SQL database.
+
+Below is an example of a Python class that controls some of the function
+of an SQL database.\\
+\texttt{\_\_tablename\_\_} refers to the \texttt{flights} sql
+database.\\
+\texttt{db.Model} defines some interactivity with SQLAlchemy and the SQL
+database.\\
+\texttt{primary\_key=True} indicates that this column is used as the
+primary way to identify the data.\\
+\texttt{db.ForeignKey("flights.id")} references the \texttt{flights.id}
+column within the \texttt{Flight} class.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{from}\NormalTok{ flask_sqlalchemy import SQLAlchemy               }
+                                                      
+\ExtensionTok{db}\NormalTok{ = SQLAlchemy()                                     }
+                                                      
+\ExtensionTok{class}\NormalTok{ Flight(db.Model)}\BuiltInTok{:}                               
+    \ExtensionTok{__tablename__}\NormalTok{ = }\StringTok{"flights"}                         
+    \FunctionTok{id}\NormalTok{ = db.Column(db.Integer, primary_key=True)      }
+    \ExtensionTok{origin}\NormalTok{ = db.Column(db.String, nullable=False)     }
+    \ExtensionTok{destination}\NormalTok{ = db.Column(db.String, nullable=False)}
+    \ExtensionTok{duration}\NormalTok{ = db.Column(db.Integer, nullable=False)  }
+
+\ExtensionTok{class}\NormalTok{ Passenger(db.Model)}\BuiltInTok{:}                                                        
+    \ExtensionTok{__tablename__}\NormalTok{ = }\StringTok{"passengers"}                                                  
+    \FunctionTok{id}\NormalTok{ = db.Column(db.Integer, primary_key=True)                                  }
+    \ExtensionTok{name}\NormalTok{ = db.Column(db.String, nullable=False)                                   }
+    \ExtensionTok{flight_id}\NormalTok{ = db.Column(db.Integer, db.ForeignKey(}\StringTok{"flights.id"}\NormalTok{), }\VariableTok{nullable=}\NormalTok{False)}
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Hackernews}\label{hackernews}
 

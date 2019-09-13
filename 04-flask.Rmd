@@ -60,6 +60,17 @@ def hello(name):
 	return "<h1>Hello, {}!</h1>".format(name)
 ```
 
+Routes can be referred to by a link which can also pass variables.
+```{bash eval=FALSE}
+<a href='{{ url_for('details', title=book.title, author=book.author) }}', method='GET'>Link</a>
+```
+The variables that get passed can then be used in `application.py` and passed to another html file.
+```{bash eval=FALSE}
+@app.route('/details/<string:title>/<string:author>', methods=['GET', 'POST'])
+def details(title, author):                                                   
+    return render_template('details.html', title=title, author=author)        
+```
+
 ## Templates
 Instead of embedding HTML within values that get returned by python code, HTML files themselves can be served by the python code. Flask can look for HTML files and it will look in a subdirectory of the main directory called `templates`. So in the following example if there is an HTML file called `index.html` within a subdirectory called `templates`, that html file gets served up by the following code.
 ```{bash eval=FALSE}

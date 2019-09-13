@@ -28,6 +28,32 @@ conda install -c conda-forge postgresql
 
 To quit `psql` run `\q`.
 
+## Starting Local Database
+First set a password for local use.
+```{bash eval=FALSE}
+sudo -u postgres psql
+postgres=# \password
+Enter new password:
+Enter it again:
+postgres=# \q
+```
+
+Initially work with localhost to create a database.
+```{bash eval=FALSE}
+psql -U postgres -W  -h localhost
+create database airplanes;
+\q
+```
+
+Export the location to the newly created database and connect or connect directly.
+```{bash eval=FALSE}
+export DATABASE_URL="postgresql://localhost/airplanes";
+```
+or
+```{bash eval=FALSE}
+psql -U postgres -W  -h localhost postgres://localhost/airplanes
+```
+
 ## Heroku
 Install Heroku.
 ```{bash eval=FALSE}
@@ -390,13 +416,37 @@ def main():
     db.commit()                                                                                                    
 ```
 
+Here are some links that may be helpful in setting up an sql database and using it with SQLAlchemy.
+[RealPython]('https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/')
+[Location of Postgresql Database]('https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database')
+[Location of Postgresql Database]('https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545')
+[CS50 Project1 Help]('https://docs.cs50.net/web/2018/x/projects/1/project1.html')
+[Reddit CS50 SQLAlchemy Help]('https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/')
 
+## Object-Relational Mapping
+Python classes can be used to control the function of a SQL database. Typically a Python class can be used to control the functionality in a single SQL database.
 
+Below is an example of a Python class that controls some of the function of an SQL database.  
+`__tablename__` refers to the `flights` sql database.  
+`db.Model` defines some interactivity with SQLAlchemy and the SQL database.  
+`primary_key=True` indicates that this column is used as the primary way to identify the data.  
+`db.ForeignKey("flights.id")` references the `flights.id` column within the `Flight` class.
+```{bash eval=FALSE}
+from flask_sqlalchemy import SQLAlchemy               
+                                                      
+db = SQLAlchemy()                                     
+                                                      
+class Flight(db.Model):                               
+    __tablename__ = "flights"                         
+    id = db.Column(db.Integer, primary_key=True)      
+    origin = db.Column(db.String, nullable=False)     
+    destination = db.Column(db.String, nullable=False)
+    duration = db.Column(db.Integer, nullable=False)  
 
-https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
-
-https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database
-https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545
-https://docs.cs50.net/web/2018/x/projects/1/project1.html
-https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/
+class Passenger(db.Model):                                                        
+    __tablename__ = "passengers"                                                  
+    id = db.Column(db.Integer, primary_key=True)                                  
+    name = db.Column(db.String, nullable=False)                                   
+    flight_id = db.Column(db.Integer, db.ForeignKey("flights.id"), nullable=False)
+```
 

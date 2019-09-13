@@ -135,18 +135,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6" data-path="sql.html"><a href="sql.html"><i class="fa fa-check"></i><b>6</b> SQL</a><ul>
 <li class="chapter" data-level="6.1" data-path="sql.html"><a href="sql.html#intro-2"><i class="fa fa-check"></i><b>6.1</b> Intro</a></li>
 <li class="chapter" data-level="6.2" data-path="sql.html"><a href="sql.html#installation"><i class="fa fa-check"></i><b>6.2</b> Installation</a></li>
-<li class="chapter" data-level="6.3" data-path="sql.html"><a href="sql.html#heroku"><i class="fa fa-check"></i><b>6.3</b> Heroku</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="sql.html"><a href="sql.html#heroku-dynos"><i class="fa fa-check"></i><b>6.3.1</b> Heroku Dynos</a></li>
-<li class="chapter" data-level="6.3.2" data-path="sql.html"><a href="sql.html#heroku-databases"><i class="fa fa-check"></i><b>6.3.2</b> Heroku Databases</a></li>
+<li class="chapter" data-level="6.3" data-path="sql.html"><a href="sql.html#starting-local-database"><i class="fa fa-check"></i><b>6.3</b> Starting Local Database</a></li>
+<li class="chapter" data-level="6.4" data-path="sql.html"><a href="sql.html#heroku"><i class="fa fa-check"></i><b>6.4</b> Heroku</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="sql.html"><a href="sql.html#heroku-dynos"><i class="fa fa-check"></i><b>6.4.1</b> Heroku Dynos</a></li>
+<li class="chapter" data-level="6.4.2" data-path="sql.html"><a href="sql.html#heroku-databases"><i class="fa fa-check"></i><b>6.4.2</b> Heroku Databases</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="sql.html"><a href="sql.html#database-hosting-with-heroku"><i class="fa fa-check"></i><b>6.4</b> Database Hosting With Heroku</a></li>
-<li class="chapter" data-level="6.5" data-path="sql.html"><a href="sql.html#creating-a-database"><i class="fa fa-check"></i><b>6.5</b> Creating a Database</a></li>
-<li class="chapter" data-level="6.6" data-path="sql.html"><a href="sql.html#updating-data"><i class="fa fa-check"></i><b>6.6</b> Updating Data</a></li>
-<li class="chapter" data-level="6.7" data-path="sql.html"><a href="sql.html#joinmerge"><i class="fa fa-check"></i><b>6.7</b> Join/Merge</a></li>
-<li class="chapter" data-level="6.8" data-path="sql.html"><a href="sql.html#indexing"><i class="fa fa-check"></i><b>6.8</b> Indexing</a></li>
-<li class="chapter" data-level="6.9" data-path="sql.html"><a href="sql.html#sql-injection"><i class="fa fa-check"></i><b>6.9</b> SQL Injection</a></li>
-<li class="chapter" data-level="6.10" data-path="sql.html"><a href="sql.html#transactions-and-race-conditions"><i class="fa fa-check"></i><b>6.10</b> Transactions and Race Conditions</a></li>
-<li class="chapter" data-level="6.11" data-path="sql.html"><a href="sql.html#sqlalchemy"><i class="fa fa-check"></i><b>6.11</b> SQLAlchemy</a></li>
+<li class="chapter" data-level="6.5" data-path="sql.html"><a href="sql.html#database-hosting-with-heroku"><i class="fa fa-check"></i><b>6.5</b> Database Hosting With Heroku</a></li>
+<li class="chapter" data-level="6.6" data-path="sql.html"><a href="sql.html#creating-a-database"><i class="fa fa-check"></i><b>6.6</b> Creating a Database</a></li>
+<li class="chapter" data-level="6.7" data-path="sql.html"><a href="sql.html#updating-data"><i class="fa fa-check"></i><b>6.7</b> Updating Data</a></li>
+<li class="chapter" data-level="6.8" data-path="sql.html"><a href="sql.html#joinmerge"><i class="fa fa-check"></i><b>6.8</b> Join/Merge</a></li>
+<li class="chapter" data-level="6.9" data-path="sql.html"><a href="sql.html#indexing"><i class="fa fa-check"></i><b>6.9</b> Indexing</a></li>
+<li class="chapter" data-level="6.10" data-path="sql.html"><a href="sql.html#sql-injection"><i class="fa fa-check"></i><b>6.10</b> SQL Injection</a></li>
+<li class="chapter" data-level="6.11" data-path="sql.html"><a href="sql.html#transactions-and-race-conditions"><i class="fa fa-check"></i><b>6.11</b> Transactions and Race Conditions</a></li>
+<li class="chapter" data-level="6.12" data-path="sql.html"><a href="sql.html#sqlalchemy"><i class="fa fa-check"></i><b>6.12</b> SQLAlchemy</a></li>
+<li class="chapter" data-level="6.13" data-path="sql.html"><a href="sql.html#object-relational-mapping"><i class="fa fa-check"></i><b>6.13</b> Object-Relational Mapping</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>7</b> Hackernews</a><ul>
 <li class="chapter" data-level="7.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
@@ -192,8 +194,25 @@ It seems also that for some reason the install only works if the version number 
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge postgresql</code></pre></div>
 <p>To quit <code>psql</code> run <code>\q</code>.</p>
 </div>
+<div id="starting-local-database" class="section level2">
+<h2><span class="header-section-number">6.3</span> Starting Local Database</h2>
+<p>First set a password for local use.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> -u postgres psql
+<span class="va">postgres=</span># \<span class="ex">password</span>
+<span class="ex">Enter</span> new password:
+<span class="ex">Enter</span> it again:
+<span class="va">postgres=</span># \<span class="ex">q</span></code></pre></div>
+<p>Initially work with localhost to create a database.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">psql</span> -U postgres -W  -h localhost
+<span class="ex">create</span> database airplanes<span class="kw">;</span>
+\<span class="ex">q</span></code></pre></div>
+<p>Export the location to the newly created database and connect or connect directly.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">DATABASE_URL=</span><span class="st">&quot;postgresql://localhost/airplanes&quot;</span>;</code></pre></div>
+<p>or</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">psql</span> -U postgres -W  -h localhost postgres://localhost/airplanes</code></pre></div>
+</div>
 <div id="heroku" class="section level2">
-<h2><span class="header-section-number">6.3</span> Heroku</h2>
+<h2><span class="header-section-number">6.4</span> Heroku</h2>
 <p>Install Heroku.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> snap install --classic heroku</code></pre></div>
 <p>Then running any command should prompt to login to Heroku but the <code>login</code> command is specific for this.</p>
@@ -214,7 +233,7 @@ cd python-getting-started</code></pre>
 <p>The <code>Procfile</code> is a file within the root directory of the application that declares the command that should be executed when the app is started. Typically it contains the following.</p>
 <pre><code>web: gunicorn gettingstarted.wsgi --log-file -</code></pre>
 <div id="heroku-dynos" class="section level3">
-<h3><span class="header-section-number">6.3.1</span> Heroku Dynos</h3>
+<h3><span class="header-section-number">6.4.1</span> Heroku Dynos</h3>
 <p>Heroku has some <a href="&#39;https://devcenter.heroku.com/articles/getting-started-with-python#provision-a-database&#39;">introduction</a> to using postgresql with a deployed app. And some more extensive <a href="&#39;https://devcenter.heroku.com/articles/heroku-postgresql&#39;">information</a> as well. It also looks like CS50 has some <a href="&#39;https://cs50.readthedocs.io/heroku/&#39;">instructions</a> as well.</p>
 <p>By default heroku apps are deployed to a single dyno which is like a container that runs the commands specified in the <code>Procfile</code>. Using a free account will allow a single dyno to be used that will sleep after a half an hour of inactivity. The number of dyno containers can be scaled up and down. If scaled to zero, no containers will run the app.</p>
 <pre><code>heroku ps:scale web=0</code></pre>
@@ -230,7 +249,7 @@ git commit -m &#39;message&#39;
 git push heroku master</code></pre>
 </div>
 <div id="heroku-databases" class="section level3">
-<h3><span class="header-section-number">6.3.2</span> Heroku Databases</h3>
+<h3><span class="header-section-number">6.4.2</span> Heroku Databases</h3>
 <p>The current addons including databases available to an app can be viewed.</p>
 <pre><code>heroku addons</code></pre>
 <p>The <code>DATABASE_URL</code> can be displayed.</p>
@@ -245,7 +264,7 @@ git push heroku master</code></pre>
 </div>
 </div>
 <div id="database-hosting-with-heroku" class="section level2">
-<h2><span class="header-section-number">6.4</span> Database Hosting With Heroku</h2>
+<h2><span class="header-section-number">6.5</span> Database Hosting With Heroku</h2>
 <ol style="list-style-type: decimal">
 <li>Navigate to <a href="https://www.heroku.com/" class="uri">https://www.heroku.com/</a>, and create an account if you don’t already have one.</li>
 <li>On Heroku’s Dashboard, click “New” and choose “Create new app.”</li>
@@ -259,7 +278,7 @@ git push heroku master</code></pre>
 </ol>
 </div>
 <div id="creating-a-database" class="section level2">
-<h2><span class="header-section-number">6.5</span> Creating a Database</h2>
+<h2><span class="header-section-number">6.6</span> Creating a Database</h2>
 <p>Note that reserved words are all being capitalized below, but this is not required, but rather a stylistic choice.</p>
 <p>To create a new database, first run <code>psql</code>.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">create</span> database airplanes<span class="kw">;</span></code></pre></div>
@@ -316,7 +335,7 @@ The following code selects the origin column, counts the number of identical ori
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, COUNT(*) <span class="ex">FROM</span> flights GROUP BY origin HAVING COUNT(*) <span class="op">&gt;</span> <span class="ex">1</span><span class="kw">;</span></code></pre></div>
 </div>
 <div id="updating-data" class="section level2">
-<h2><span class="header-section-number">6.6</span> Updating Data</h2>
+<h2><span class="header-section-number">6.7</span> Updating Data</h2>
 <p>This will change the duration of the flight from New York to London to 430.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">UPDATE</span> flights
 <span class="ex">SET</span> duration = 430
@@ -327,7 +346,7 @@ The following code selects the origin column, counts the number of identical ori
 <span class="ex">WHERE</span> destination = <span class="st">&#39;Tokyo&#39;</span><span class="kw">;</span></code></pre></div>
 </div>
 <div id="joinmerge" class="section level2">
-<h2><span class="header-section-number">6.7</span> Join/Merge</h2>
+<h2><span class="header-section-number">6.8</span> Join/Merge</h2>
 <p>Inner join is the default join and will only include data that is matched.</p>
 <p>Foreign keys can be used to reference the data within another table so that data does not need to be continually repeated. For instance if a number of flights are all heading to New York, the city id could be set as number 1 and then flight destination ids could be just set to 1.<br />
 As an example, the following table can be created that has passenger names, and in the <code>flight_id</code> column, the <code>flights</code> database is reference to get the actual flight locations.<br />
@@ -353,13 +372,13 @@ The following code selects the <code>origin</code> and <code>destination</code> 
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights left JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></code></pre></div>
 </div>
 <div id="indexing" class="section level2">
-<h2><span class="header-section-number">6.8</span> Indexing</h2>
+<h2><span class="header-section-number">6.9</span> Indexing</h2>
 <p>Indexing allows a subset of one database (sort of like a pandas series) to be used to select data from a database (analogous to a DataFrame).<br />
 In the following code, within the parentheses the <code>flight_id</code> column is being selected to create a “series”, and the ids are being grouped by <code>passengers</code>, and only those flights have more than one passenger are included within the “series”. This series of flight ids is then used to filter the original <code>flights</code> “DataFrame”.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">*</span> from flights where id in (select flight_id from passengers group by flight_id having count(*) <span class="op">&gt;</span> <span class="ex">1</span>);</code></pre></div>
 </div>
 <div id="sql-injection" class="section level2">
-<h2><span class="header-section-number">6.9</span> SQL Injection</h2>
+<h2><span class="header-section-number">6.10</span> SQL Injection</h2>
 <p>User input should be escaped or sanitized to prevent a user from inputting SQL code into input fields and have it be directly executed as SQL.<br />
 As an example if a username and password field are presented to the user, and the input is checked against a SQL database, it might look something like the following.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;12345&#39;</span>)</code></pre></div>
@@ -368,11 +387,11 @@ If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;1&#39;</span>, OR <span class="st">&#39;1&#39;</span> = <span class="st">&#39;1&#39;</span>)</code></pre></div>
 </div>
 <div id="transactions-and-race-conditions" class="section level2">
-<h2><span class="header-section-number">6.10</span> Transactions and Race Conditions</h2>
+<h2><span class="header-section-number">6.11</span> Transactions and Race Conditions</h2>
 <p>This refers to a challenge if multiple requests simultaneously are made to the same data within a database and an attempt to modify the database occurs. The problem is that if the requests conflict in some manner the database can be improperly altered. One solution to this is transactions, where one user essentially checks-out the database and can modify it, and the second user can only modify the database after the first user as completed interacting with the database.</p>
 </div>
 <div id="sqlalchemy" class="section level2">
-<h2><span class="header-section-number">6.11</span> SQLAlchemy</h2>
+<h2><span class="header-section-number">6.12</span> SQLAlchemy</h2>
 <p>SQLAlchemy is a python library that can be used to interact with SQL data.<br />
 The library can be installed like this:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge sqlalchemy sqlalchemy-utils</code></pre></div>
@@ -404,8 +423,32 @@ Hong Kong,Shanghai,130</code></pre>
                     {&quot;origin&quot;: origin, &quot;destination&quot;: destination, &quot;duration&quot;: duration})                          
         print(f&quot;Added flight from {origin} to {destination} lasting {duration} minutes.&quot;)                          
     db.commit()                                                                                                    </code></pre>
-<p><a href="https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/" class="uri">https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/</a></p>
-<p><a href="https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database" class="uri">https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database</a> <a href="https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545" class="uri">https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545</a> <a href="https://docs.cs50.net/web/2018/x/projects/1/project1.html" class="uri">https://docs.cs50.net/web/2018/x/projects/1/project1.html</a> <a href="https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/" class="uri">https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/</a></p>
+<p>Here are some links that may be helpful in setting up an sql database and using it with SQLAlchemy. <a href="&#39;https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/&#39;">RealPython</a> <a href="&#39;https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database&#39;">Location of Postgresql Database</a> <a href="&#39;https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545&#39;">Location of Postgresql Database</a> <a href="&#39;https://docs.cs50.net/web/2018/x/projects/1/project1.html&#39;">CS50 Project1 Help</a> <a href="&#39;https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/&#39;">Reddit CS50 SQLAlchemy Help</a></p>
+</div>
+<div id="object-relational-mapping" class="section level2">
+<h2><span class="header-section-number">6.13</span> Object-Relational Mapping</h2>
+<p>Python classes can be used to control the function of a SQL database. Typically a Python class can be used to control the functionality in a single SQL database.</p>
+<p>Below is an example of a Python class that controls some of the function of an SQL database.<br />
+<code>__tablename__</code> refers to the <code>flights</code> sql database.<br />
+<code>db.Model</code> defines some interactivity with SQLAlchemy and the SQL database.<br />
+<code>primary_key=True</code> indicates that this column is used as the primary way to identify the data.<br />
+<code>db.ForeignKey(&quot;flights.id&quot;)</code> references the <code>flights.id</code> column within the <code>Flight</code> class.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask_sqlalchemy import SQLAlchemy               
+                                                      
+<span class="ex">db</span> = SQLAlchemy()                                     
+                                                      
+<span class="ex">class</span> Flight(db.Model)<span class="bu">:</span>                               
+    <span class="ex">__tablename__</span> = <span class="st">&quot;flights&quot;</span>                         
+    <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)      
+    <span class="ex">origin</span> = db.Column(db.String, nullable=False)     
+    <span class="ex">destination</span> = db.Column(db.String, nullable=False)
+    <span class="ex">duration</span> = db.Column(db.Integer, nullable=False)  
+
+<span class="ex">class</span> Passenger(db.Model)<span class="bu">:</span>                                                        
+    <span class="ex">__tablename__</span> = <span class="st">&quot;passengers&quot;</span>                                                  
+    <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)                                  
+    <span class="ex">name</span> = db.Column(db.String, nullable=False)                                   
+    <span class="ex">flight_id</span> = db.Column(db.Integer, db.ForeignKey(<span class="st">&quot;flights.id&quot;</span>), <span class="va">nullable=</span>False)</code></pre></div>
 
 </div>
 </div>
