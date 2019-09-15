@@ -2280,7 +2280,7 @@ accomplish this.
 
 FYI Ctrl+Shift+I in chrome opens the console. In the console commands
 can be entered and variables can be used that have been defined in the
-page.
+page. Variables can also be modified from this console as well.
 
 The \texttt{\textless{}script\textgreater{}} tags within the
 \texttt{\textless{}head\textgreater{}} is where javascript can be put.
@@ -2402,6 +2402,13 @@ a \texttt{something.js} file and then referenced within an html file.
 \end{Highlighting}
 \end{Shaded}
 
+\section{Variables}\label{variables}
+
+\texttt{const} can not be redefined.\\
+\texttt{let} has block scope so it only exists within a block defined by
+\texttt{\{\}}.\\
+\texttt{var} exists within the function in which it is defined.
+
 \section{Event Listeners}\label{event-listeners}
 
 Event listeners can be run only when the DOM is loaded, and can listen
@@ -2439,12 +2446,134 @@ refers to the count method.
 \end{Highlighting}
 \end{Shaded}
 
-\section{Variables}\label{variables}
+An event listener can be used to pull the contents of a field when a
+button is pressed.
 
-\texttt{const} can not be redefined.\\
-\texttt{let} has block scope so it only exists within a block defined by
-\texttt{\{\}}.\\
-\texttt{var} exists within the function in which it is defined.
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                                                               
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}                                                                         
+        \ExtensionTok{document.addEventListener}\NormalTok{(}\StringTok{'DOMContentLoaded'}\NormalTok{, function() }\KeywordTok{\{}                   
+            \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#form'}\NormalTok{)}\ExtensionTok{.onsubmit}\NormalTok{ = function() }\KeywordTok{\{}                  
+                \ExtensionTok{const}\NormalTok{ name = document.querySelector(}\StringTok{'#name'}\NormalTok{)}\ExtensionTok{.value}\KeywordTok{;}                  
+                \ExtensionTok{alert}\NormalTok{(}\KeywordTok{`}\ExtensionTok{Hello} \VariableTok{$\{name\}}\NormalTok{!}\KeywordTok{`}\NormalTok{);                                             }
+            \KeywordTok{\}}\NormalTok{;                                                                       }
+        \KeywordTok{\}}\NormalTok{);                                                                          }
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}                                                                        
+    \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}\NormalTok{My Website}\OperatorTok{<}\NormalTok{/title}\OperatorTok{>}                                                        
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                                                              
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}                                                                               
+    \OperatorTok{<}\ExtensionTok{form}\NormalTok{ id=}\StringTok{"form"}\OperatorTok{>}                                                                 
+        \OperatorTok{<}\ExtensionTok{input}\NormalTok{ id=}\StringTok{"name"}\NormalTok{ autocomplete=}\StringTok{"off"}\NormalTok{ autofocus placeholder=}\StringTok{"Name"}\NormalTok{ type=}\StringTok{"text"}\OperatorTok{>}
+        \OperatorTok{<}\ExtensionTok{input}\NormalTok{ type=}\StringTok{"submit"}\OperatorTok{>}                                                        
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{form}\OperatorTok{>}                                                                          
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}                                                                              
+\end{Highlighting}
+\end{Shaded}
+
+CSS styling can be changed using javascript event listeners.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#red'}\NormalTok{)}\ExtensionTok{.onclick}\NormalTok{ = function() }\KeywordTok{\{}    
+    \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#hello'}\NormalTok{)}\ExtensionTok{.style.color}\NormalTok{ = }\StringTok{'red'}\KeywordTok{;}
+\KeywordTok{\}}\NormalTok{;                                                       }
+\end{Highlighting}
+\end{Shaded}
+
+Event listeners can be generalized and used for multiple elements using
+the \texttt{dataset} property.\\
+In the following code,
+\texttt{document.querySelectorAll(\textquotesingle{}.color-change\textquotesingle{})}
+selects all of the buttons that belong ot hte \texttt{color-change}
+class.\\
+The \texttt{forEach} method loops through the array of all of the
+buttons.\\
+Then the onclick method uses \texttt{button.dataset.color} to reference
+the \texttt{data-color="red"} part of each button to set the color of
+the text defined by \texttt{id="hello"}.\\
+The \texttt{data-color="red"} of each button can be set to anything else
+that follows the pattern \texttt{data-*} and then can be referenced with
+\texttt{button.dataset.*}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                                                                  
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}                                                                            
+        \ExtensionTok{document.addEventListener}\NormalTok{(}\StringTok{'DOMContentLoaded'}\NormalTok{, function() }\KeywordTok{\{}                      
+                                                                                        
+            \ExtensionTok{//}\NormalTok{ Have each button change the color of the heading                         }
+            \ExtensionTok{document.querySelectorAll}\NormalTok{(}\StringTok{'.color-change'}\NormalTok{)}\ExtensionTok{.forEach}\NormalTok{(function(button) }\KeywordTok{\{}       
+                \ExtensionTok{button.onclick}\NormalTok{ = function() }\KeywordTok{\{}                                           
+                    \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#hello'}\NormalTok{)}\ExtensionTok{.style.color}\NormalTok{ = button.dataset.color}\KeywordTok{;}
+                \KeywordTok{\}}\NormalTok{;                                                                      }
+            \KeywordTok{\}}\NormalTok{);                                                                         }
+                                                                                        
+        \KeywordTok{\}}\NormalTok{);                                                                             }
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}                                                                           
+    \OperatorTok{<}\ExtensionTok{title}\OperatorTok{>}\NormalTok{My Website}\OperatorTok{<}\NormalTok{/title}\OperatorTok{>}                                                           
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                                                                 
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}                                                                                  
+    \OperatorTok{<}\ExtensionTok{h1}\NormalTok{ id=}\StringTok{"hello"}\OperatorTok{>}\NormalTok{Hello!}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}                                                          
+    \OperatorTok{<}\ExtensionTok{button}\NormalTok{ class=}\StringTok{"color-change"}\NormalTok{ data-color=}\StringTok{"red"}\OperatorTok{>}\NormalTok{Red}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                          
+    \OperatorTok{<}\ExtensionTok{button}\NormalTok{ class=}\StringTok{"color-change"}\NormalTok{ data-color=}\StringTok{"blue"}\OperatorTok{>}\NormalTok{Blue}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                        
+    \OperatorTok{<}\ExtensionTok{button}\NormalTok{ class=}\StringTok{"color-change"}\NormalTok{ data-color=}\StringTok{"green"}\OperatorTok{>}\NormalTok{Green}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}                      
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}                                                                                 
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Arrow Functions}\label{arrow-functions}
+
+Arrow functions are new to ES6 and abbreviate the manner in which
+functions are created.\\
+Below a function is created that creates the Hellow World alert.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{()}\NormalTok{ =}\OperatorTok{>} \KeywordTok{\{}
+    \ExtensionTok{alert}\NormalTok{(}\StringTok{'Hello world!'}\NormalTok{);}
+\KeywordTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Below is a function that takes as input the variable \texttt{x}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{x}\NormalTok{ =}\OperatorTok{>}\NormalTok{ \{}
+    \ExtensionTok{alert}\NormalTok{(x);}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+An even more succinct manner of writing a function is below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{x}\NormalTok{ =}\OperatorTok{>}\NormalTok{ x * 2}\KeywordTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Below is an example of the above code re-written to use arrow functions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}                                                                            
+    \ExtensionTok{document.addEventListener}\NormalTok{(}\StringTok{'DOMContentLoaded'}\NormalTok{, () =}\OperatorTok{>} \KeywordTok{\{}                           
+                                                                                    
+        \ExtensionTok{//}\NormalTok{ Have each button change the color of the heading                         }
+        \ExtensionTok{document.querySelectorAll}\NormalTok{(}\StringTok{'.color-change'}\NormalTok{)}\ExtensionTok{.forEach}\NormalTok{(button =}\OperatorTok{>}\NormalTok{ \{              }
+            \ExtensionTok{button.onclick}\NormalTok{ = () =}\OperatorTok{>} \KeywordTok{\{}                                                
+                \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#hello'}\NormalTok{)}\ExtensionTok{.style.color}\NormalTok{ = button.dataset.color}\KeywordTok{;}
+            \KeywordTok{\}}\NormalTok{;                                                                      }
+        \KeywordTok{\}}\NormalTok{);                                                                         }
+                                                                                    
+\NormalTok{    \});                                                                             }
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}                                                                           
+\end{Highlighting}
+\end{Shaded}
+
+\section{Adding to the DOM}\label{adding-to-the-dom}
 
 \chapter{Hackernews}\label{hackernews}
 

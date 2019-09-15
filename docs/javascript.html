@@ -154,8 +154,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>7</b> Javascript</a><ul>
 <li class="chapter" data-level="7.1" data-path="javascript.html"><a href="javascript.html#intro-3"><i class="fa fa-check"></i><b>7.1</b> Intro</a></li>
 <li class="chapter" data-level="7.2" data-path="javascript.html"><a href="javascript.html#event-handling"><i class="fa fa-check"></i><b>7.2</b> Event Handling</a></li>
-<li class="chapter" data-level="7.3" data-path="javascript.html"><a href="javascript.html#event-listeners"><i class="fa fa-check"></i><b>7.3</b> Event Listeners</a></li>
-<li class="chapter" data-level="7.4" data-path="javascript.html"><a href="javascript.html#variables"><i class="fa fa-check"></i><b>7.4</b> Variables</a></li>
+<li class="chapter" data-level="7.3" data-path="javascript.html"><a href="javascript.html#variables"><i class="fa fa-check"></i><b>7.3</b> Variables</a></li>
+<li class="chapter" data-level="7.4" data-path="javascript.html"><a href="javascript.html#event-listeners"><i class="fa fa-check"></i><b>7.4</b> Event Listeners</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="javascript.html"><a href="javascript.html#arrow-functions"><i class="fa fa-check"></i><b>7.4.1</b> Arrow Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="javascript.html"><a href="javascript.html#adding-to-the-dom"><i class="fa fa-check"></i><b>7.5</b> Adding to the DOM</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>8</b> Hackernews</a><ul>
 <li class="chapter" data-level="8.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>8.1</b> Setup</a></li>
@@ -185,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 7</span> Javascript</h1>
 <div id="intro-3" class="section level2">
 <h2><span class="header-section-number">7.1</span> Intro</h2>
-<p>FYI Ctrl+Shift+I in chrome opens the console. In the console commands can be entered and variables can be used that have been defined in the page.</p>
+<p>FYI Ctrl+Shift+I in chrome opens the console. In the console commands can be entered and variables can be used that have been defined in the page. Variables can also be modified from this console as well.</p>
 <p>The <code>&lt;script&gt;</code> tags within the <code>&lt;head&gt;</code> is where javascript can be put.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
     <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
@@ -254,8 +257,14 @@ In the following code, the <code>querySelector</code> searches for the first <co
     <span class="op">&lt;</span><span class="ex">script</span> src=<span class="st">&quot;something.js&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span>
 <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                </code></pre></div>
 </div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">7.3</span> Variables</h2>
+<p><code>const</code> can not be redefined.<br />
+<code>let</code> has block scope so it only exists within a block defined by <code>{}</code>.<br />
+<code>var</code> exists within the function in which it is defined.</p>
+</div>
 <div id="event-listeners" class="section level2">
-<h2><span class="header-section-number">7.3</span> Event Listeners</h2>
+<h2><span class="header-section-number">7.4</span> Event Listeners</h2>
 <p>Event listeners can be run only when the DOM is loaded, and can listen for events within the html document. This can be a helpful way of offloading some of the work from the html onto javascript.<br />
 Below is an example of using javascript to control the function of a button using a callback function.<br />
 <code>document.querySelector('button').onclick = count;</code> refers to the count method.</p>
@@ -281,12 +290,84 @@ Below is an example of using javascript to control the function of a button usin
     <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>     
     <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span>
 <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>An event listener can be used to pull the contents of a field when a button is pressed.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                                               
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                         
+        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span>                   
+            <span class="ex">document.querySelector</span>(<span class="st">&#39;#form&#39;</span>)<span class="ex">.onsubmit</span> = function() <span class="kw">{</span>                  
+                <span class="ex">const</span> name = document.querySelector(<span class="st">&#39;#name&#39;</span>)<span class="ex">.value</span><span class="kw">;</span>                  
+                <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Hello</span> <span class="va">${name}</span>!<span class="kw">`</span>);                                             
+            <span class="kw">}</span>;                                                                       
+        <span class="kw">}</span>);                                                                          
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                        
+    <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Website<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                                        
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                                              
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                                               
+    <span class="op">&lt;</span><span class="ex">form</span> id=<span class="st">&quot;form&quot;</span><span class="op">&gt;</span>                                                                 
+        <span class="op">&lt;</span><span class="ex">input</span> id=<span class="st">&quot;name&quot;</span> autocomplete=<span class="st">&quot;off&quot;</span> autofocus placeholder=<span class="st">&quot;Name&quot;</span> type=<span class="st">&quot;text&quot;</span><span class="op">&gt;</span>
+        <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;submit&quot;</span><span class="op">&gt;</span>                                                        
+    <span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                                          
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                                              </code></pre></div>
+<p>CSS styling can be changed using javascript event listeners.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">document.querySelector</span>(<span class="st">&#39;#red&#39;</span>)<span class="ex">.onclick</span> = function() <span class="kw">{</span>    
+    <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = <span class="st">&#39;red&#39;</span><span class="kw">;</span>
+<span class="kw">}</span>;                                                       </code></pre></div>
+<p>Event listeners can be generalized and used for multiple elements using the <code>dataset</code> property.<br />
+In the following code, <code>document.querySelectorAll('.color-change')</code> selects all of the buttons that belong ot hte <code>color-change</code> class.<br />
+The <code>forEach</code> method loops through the array of all of the buttons.<br />
+Then the onclick method uses <code>button.dataset.color</code> to reference the <code>data-color=&quot;red&quot;</code> part of each button to set the color of the text defined by <code>id=&quot;hello&quot;</code>.<br />
+The <code>data-color=&quot;red&quot;</code> of each button can be set to anything else that follows the pattern <code>data-*</code> and then can be referenced with <code>button.dataset.*</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                                                  
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                            
+        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span>                      
+                                                                                        
+            <span class="ex">//</span> Have each button change the color of the heading                         
+            <span class="ex">document.querySelectorAll</span>(<span class="st">&#39;.color-change&#39;</span>)<span class="ex">.forEach</span>(function(button) <span class="kw">{</span>       
+                <span class="ex">button.onclick</span> = function() <span class="kw">{</span>                                           
+                    <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = button.dataset.color<span class="kw">;</span>
+                <span class="kw">}</span>;                                                                      
+            <span class="kw">}</span>);                                                                         
+                                                                                        
+        <span class="kw">}</span>);                                                                             
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           
+    <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Website<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                                           
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                                                 
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                                                  
+    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;hello&quot;</span><span class="op">&gt;</span>Hello!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>                                                          
+    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;red&quot;</span><span class="op">&gt;</span>Red<span class="op">&lt;</span>/button<span class="op">&gt;</span>                          
+    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;blue&quot;</span><span class="op">&gt;</span>Blue<span class="op">&lt;</span>/button<span class="op">&gt;</span>                        
+    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;green&quot;</span><span class="op">&gt;</span>Green<span class="op">&lt;</span>/button<span class="op">&gt;</span>                      
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                                                 </code></pre></div>
+<div id="arrow-functions" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Arrow Functions</h3>
+<p>Arrow functions are new to ES6 and abbreviate the manner in which functions are created.<br />
+Below a function is created that creates the Hellow World alert.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">()</span> =<span class="op">&gt;</span> <span class="kw">{</span>
+    <span class="ex">alert</span>(<span class="st">&#39;Hello world!&#39;</span>);
+<span class="kw">}</span></code></pre></div>
+<p>Below is a function that takes as input the variable <code>x</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">x</span> =<span class="op">&gt;</span> {
+    <span class="ex">alert</span>(x);
+}</code></pre></div>
+<p>An even more succinct manner of writing a function is below.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">x</span> =<span class="op">&gt;</span> x * 2<span class="kw">;</span></code></pre></div>
+<p>Below is an example of the above code re-written to use arrow functions.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                            
+    <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, () =<span class="op">&gt;</span> <span class="kw">{</span>                           
+                                                                                    
+        <span class="ex">//</span> Have each button change the color of the heading                         
+        <span class="ex">document.querySelectorAll</span>(<span class="st">&#39;.color-change&#39;</span>)<span class="ex">.forEach</span>(button =<span class="op">&gt;</span> {              
+            <span class="ex">button.onclick</span> = () =<span class="op">&gt;</span> <span class="kw">{</span>                                                
+                <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = button.dataset.color<span class="kw">;</span>
+            <span class="kw">}</span>;                                                                      
+        <span class="kw">}</span>);                                                                         
+                                                                                    
+    });                                                                             
+<span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           </code></pre></div>
 </div>
-<div id="variables" class="section level2">
-<h2><span class="header-section-number">7.4</span> Variables</h2>
-<p><code>const</code> can not be redefined.<br />
-<code>let</code> has block scope so it only exists within a block defined by <code>{}</code>.<br />
-<code>var</code> exists within the function in which it is defined.</p>
+</div>
+<div id="adding-to-the-dom" class="section level2">
+<h2><span class="header-section-number">7.5</span> Adding to the DOM</h2>
 
 </div>
 </div>

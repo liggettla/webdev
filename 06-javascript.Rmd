@@ -1,7 +1,7 @@
 # Javascript {#javascript}
 
 ## Intro
-FYI Ctrl+Shift+I in chrome opens the console. In the console commands can be entered and variables can be used that have been defined in the page.
+FYI Ctrl+Shift+I in chrome opens the console. In the console commands can be entered and variables can be used that have been defined in the page. Variables can also be modified from this console as well.
 
 The `<script>` tags within the `<head>` is where javascript can be put.
 ```{bash eval=FALSE}
@@ -92,6 +92,10 @@ The necessary javascript can be separated out of a page and included in a `somet
 </head>                                
 ```
 
+## Variables
+`const` can not be redefined.  
+`let` has block scope so it only exists within a block defined by `{}`.  
+`var` exists within the function in which it is defined.  
 
 ## Event Listeners
 Event listeners can be run only when the DOM is loaded, and can listen for events within the html document. This can be a helpful way of offloading some of the work from the html onto javascript.  
@@ -122,7 +126,109 @@ Below is an example of using javascript to control the function of a button usin
 </body>
 ```
 
-## Variables
-`const` can not be redefined.  
-`let` has block scope so it only exists within a block defined by `{}`.  
-`var` exists within the function in which it is defined.  
+An event listener can be used to pull the contents of a field when a button is pressed.
+```{bash eval=FALSE}
+<head>                                                                               
+    <script>                                                                         
+        document.addEventListener('DOMContentLoaded', function() {                   
+            document.querySelector('#form').onsubmit = function() {                  
+                const name = document.querySelector('#name').value;                  
+                alert(`Hello ${name}!`);                                             
+            };                                                                       
+        });                                                                          
+    </script>                                                                        
+    <title>My Website</title>                                                        
+</head>                                                                              
+<body>                                                                               
+    <form id="form">                                                                 
+        <input id="name" autocomplete="off" autofocus placeholder="Name" type="text">
+        <input type="submit">                                                        
+    </form>                                                                          
+</body>                                                                              
+```
+
+CSS styling can be changed using javascript event listeners.
+```{bash eval=FALSE}
+document.querySelector('#red').onclick = function() {    
+    document.querySelector('#hello').style.color = 'red';
+};                                                       
+```
+
+Event listeners can be generalized and used for multiple elements using the `dataset` property.  
+In the following code, `document.querySelectorAll('.color-change')` selects all of the buttons that belong ot hte `color-change` class.  
+The `forEach` method loops through the array of all of the buttons.  
+Then the onclick method uses `button.dataset.color` to reference the `data-color="red"` part of each button to set the color of the text defined by `id="hello"`.  
+The `data-color="red"` of each button can be set to anything else that follows the pattern `data-*` and then can be referenced with `button.dataset.*`.
+```{bash eval=FALSE}
+<head>                                                                                  
+    <script>                                                                            
+        document.addEventListener('DOMContentLoaded', function() {                      
+                                                                                        
+            // Have each button change the color of the heading                         
+            document.querySelectorAll('.color-change').forEach(function(button) {       
+                button.onclick = function() {                                           
+                    document.querySelector('#hello').style.color = button.dataset.color;
+                };                                                                      
+            });                                                                         
+                                                                                        
+        });                                                                             
+    </script>                                                                           
+    <title>My Website</title>                                                           
+</head>                                                                                 
+<body>                                                                                  
+    <h1 id="hello">Hello!</h1>                                                          
+    <button class="color-change" data-color="red">Red</button>                          
+    <button class="color-change" data-color="blue">Blue</button>                        
+    <button class="color-change" data-color="green">Green</button>                      
+</body>                                                                                 
+```
+
+### Arrow Functions
+Arrow functions are new to ES6 and abbreviate the manner in which functions are created.  
+Below a function is created that creates the Hellow World alert.
+```{bash eval=FALSE}
+() => {
+	alert('Hello world!');
+}
+```
+
+Below is a function that takes as input the variable `x`.
+```{bash eval=FALSE}
+x => {
+	alert(x);
+}
+```
+
+An even more succinct manner of writing a function is below.
+```{bash eval=FALSE}
+x => x * 2;
+```
+
+Below is an example of the above code re-written to use arrow functions.
+```{bash eval=FALSE}
+<script>                                                                            
+    document.addEventListener('DOMContentLoaded', () => {                           
+                                                                                    
+        // Have each button change the color of the heading                         
+        document.querySelectorAll('.color-change').forEach(button => {              
+            button.onclick = () => {                                                
+                document.querySelector('#hello').style.color = button.dataset.color;
+            };                                                                      
+        });                                                                         
+                                                                                    
+    });                                                                             
+</script>                                                                           
+```
+
+## Adding to the DOM
+
+
+
+
+
+
+
+
+
+
+
