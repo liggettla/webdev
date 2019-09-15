@@ -537,4 +537,64 @@ db.session.query(Flight, Passenger).filter(
 ```
 
 ## APIs
-JSON stands for Javascript object notation
+API stands for application programming interface.  
+JSON stands for Javascript object notation.  
+
+There are a number of different HTTP request types.  
+GET: retrieve a resource  
+POST: create a new resource  
+PUT: replace a resource  
+PATCH: update a resource  
+DELETE: delete a resource  
+
+The python library `requests` enables requesting from python. Below is a get request which grabs the html code from google.com.
+```{bash eval=FALSE}
+import requests
+res = requests.get("https://www.google.com/")
+print(res.text)                              
+```
+
+API calls should return status codes that classify the status of the request.  
+Status codes are as follows:  
+200: OK  
+201: Created  
+400: Bad Request  
+403: Forbidden  
+404: Not Found  
+405: Method Not Allowed  
+422 Unprocessable Entity
+```{bash eval=FALSE}
+res = requests.get("https://api.fixer.io/latest?base=USD&symbols=EUR")
+if res.status_code != 200:                                            
+    raise Exception("ERROR: API request unsuccessful.")               
+    data = res.json()                                                     
+    print(data)                                                           
+
+```
+
+An API can be designed to return a JSON object that contains some of the information from the site.  
+In flask the `application.py` can use the following code to accomplish this.
+```{bash eval=FALSE}
+from flask import jsonify
+
+@app.route("/api/flights/<int:flight_id>")                 
+def flight_api(flight_id):                                 
+    """Return details about a single flight."""            
+                                                           
+    # Make sure flight exists.                             
+    flight = Flight.query.get(flight_id)                   
+    if flight is None:                                     
+        return jsonify({"error": "Invalid flight_id"}), 422
+                                                           
+    # Get all passengers.                                  
+    passengers = flight.passengers                         
+    names = []                                             
+    for passenger in passengers:                           
+        names.append(passenger.name)                       
+    return jsonify({                                       
+            "origin": flight.origin,                       
+            "destination": flight.destination,             
+            "duration": flight.duration,                   
+            "passengers": names                            
+        })                                                 
+```

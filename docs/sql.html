@@ -499,7 +499,56 @@ The following code gets the row with an ID of 6 then updates its duration to 280
 </div>
 <div id="apis" class="section level2">
 <h2><span class="header-section-number">6.14</span> APIs</h2>
-<p>JSON stands for Javascript object notation</p>
+<p>API stands for application programming interface.<br />
+JSON stands for Javascript object notation.</p>
+<p>There are a number of different HTTP request types.<br />
+GET: retrieve a resource<br />
+POST: create a new resource<br />
+PUT: replace a resource<br />
+PATCH: update a resource<br />
+DELETE: delete a resource</p>
+<p>The python library <code>requests</code> enables requesting from python. Below is a get request which grabs the html code from google.com.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">import</span> requests
+<span class="ex">res</span> = requests.get(<span class="st">&quot;https://www.google.com/&quot;</span>)
+<span class="ex">print</span>(res.text)                              </code></pre></div>
+<p>API calls should return status codes that classify the status of the request.<br />
+Status codes are as follows:<br />
+200: OK<br />
+201: Created<br />
+400: Bad Request<br />
+403: Forbidden<br />
+404: Not Found<br />
+405: Method Not Allowed<br />
+422 Unprocessable Entity</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">res</span> = requests.get(<span class="st">&quot;https://api.fixer.io/latest?base=USD&amp;symbols=EUR&quot;</span>)
+<span class="kw">if</span> <span class="ex">res.status_code</span> != 200:                                            
+    <span class="ex">raise</span> Exception(<span class="st">&quot;ERROR: API request unsuccessful.&quot;</span>)               
+    <span class="ex">data</span> = res.json()                                                     
+    <span class="ex">print</span>(data)                                                           </code></pre></div>
+<p>An API can be designed to return a JSON object that contains some of the information from the site.<br />
+In flask the <code>application.py</code> can use the following code to accomplish this.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import jsonify
+
+<span class="ex">@app.route</span>(<span class="st">&quot;/api/flights/&lt;int:flight_id&gt;&quot;</span>)                 
+<span class="ex">def</span> flight_api(flight_id)<span class="bu">:</span>                                 
+    <span class="st">&quot;&quot;&quot;Return details about a single flight.&quot;&quot;&quot;</span>            
+                                                           
+    <span class="co"># Make sure flight exists.                             </span>
+    <span class="ex">flight</span> = Flight.query.get(flight_id)                   
+    <span class="kw">if</span> <span class="ex">flight</span> is None:                                     
+        <span class="bu">return</span> jsonify({<span class="st">&quot;error&quot;</span>: <span class="st">&quot;Invalid flight_id&quot;</span>}), <span class="ex">422</span>
+                                                           
+    <span class="co"># Get all passengers.                                  </span>
+    <span class="ex">passengers</span> = flight.passengers                         
+    <span class="ex">names</span> = []                                             
+    <span class="kw">for</span> <span class="ex">passenger</span> in passengers:                           
+        <span class="ex">names.append</span>(passenger.name)                       
+    <span class="bu">return</span> jsonify({                                       
+            <span class="st">&quot;origin&quot;</span>: <span class="ex">flight.origin</span>,                       
+            <span class="st">&quot;destination&quot;</span>: <span class="ex">flight.destination</span>,             
+            <span class="st">&quot;duration&quot;</span>: <span class="ex">flight.duration</span>,                   
+            <span class="st">&quot;passengers&quot;</span>: <span class="ex">names</span>                            
+        })                                                 </code></pre></div>
 
 </div>
 </div>

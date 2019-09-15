@@ -2200,7 +2200,79 @@ Tables can be joined together.
 
 \section{APIs}\label{apis}
 
-JSON stands for Javascript object notation
+API stands for application programming interface.\\
+JSON stands for Javascript object notation.
+
+There are a number of different HTTP request types.\\
+GET: retrieve a resource\\
+POST: create a new resource\\
+PUT: replace a resource\\
+PATCH: update a resource\\
+DELETE: delete a resource
+
+The python library \texttt{requests} enables requesting from python.
+Below is a get request which grabs the html code from google.com.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{import}\NormalTok{ requests}
+\ExtensionTok{res}\NormalTok{ = requests.get(}\StringTok{"https://www.google.com/"}\NormalTok{)}
+\ExtensionTok{print}\NormalTok{(res.text)                              }
+\end{Highlighting}
+\end{Shaded}
+
+API calls should return status codes that classify the status of the
+request.\\
+Status codes are as follows:\\
+200: OK\\
+201: Created\\
+400: Bad Request\\
+403: Forbidden\\
+404: Not Found\\
+405: Method Not Allowed\\
+422 Unprocessable Entity
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{res}\NormalTok{ = requests.get(}\StringTok{"https://api.fixer.io/latest?base=USD&symbols=EUR"}\NormalTok{)}
+\KeywordTok{if} \ExtensionTok{res.status_code}\NormalTok{ != 200:                                            }
+    \ExtensionTok{raise}\NormalTok{ Exception(}\StringTok{"ERROR: API request unsuccessful."}\NormalTok{)               }
+    \ExtensionTok{data}\NormalTok{ = res.json()                                                     }
+    \ExtensionTok{print}\NormalTok{(data)                                                           }
+\end{Highlighting}
+\end{Shaded}
+
+An API can be designed to return a JSON object that contains some of the
+information from the site.\\
+In flask the \texttt{application.py} can use the following code to
+accomplish this.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{from}\NormalTok{ flask import jsonify}
+
+\ExtensionTok{@app.route}\NormalTok{(}\StringTok{"/api/flights/<int:flight_id>"}\NormalTok{)                 }
+\ExtensionTok{def}\NormalTok{ flight_api(flight_id)}\BuiltInTok{:}                                 
+    \StringTok{"""Return details about a single flight."""}            
+                                                           
+    \CommentTok{# Make sure flight exists.                             }
+    \ExtensionTok{flight}\NormalTok{ = Flight.query.get(flight_id)                   }
+    \KeywordTok{if} \ExtensionTok{flight}\NormalTok{ is None:                                     }
+        \BuiltInTok{return}\NormalTok{ jsonify(\{}\StringTok{"error"}\NormalTok{: }\StringTok{"Invalid flight_id"}\NormalTok{\}), }\ExtensionTok{422}
+                                                           
+    \CommentTok{# Get all passengers.                                  }
+    \ExtensionTok{passengers}\NormalTok{ = flight.passengers                         }
+    \ExtensionTok{names}\NormalTok{ = []                                             }
+    \KeywordTok{for} \ExtensionTok{passenger}\NormalTok{ in passengers:                           }
+        \ExtensionTok{names.append}\NormalTok{(passenger.name)                       }
+    \BuiltInTok{return}\NormalTok{ jsonify(\{                                       }
+            \StringTok{"origin"}\NormalTok{: }\ExtensionTok{flight.origin}\NormalTok{,                       }
+            \StringTok{"destination"}\NormalTok{: }\ExtensionTok{flight.destination}\NormalTok{,             }
+            \StringTok{"duration"}\NormalTok{: }\ExtensionTok{flight.duration}\NormalTok{,                   }
+            \StringTok{"passengers"}\NormalTok{: }\ExtensionTok{names}                            
+\NormalTok{        \})                                                 }
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Hackernews}\label{hackernews}
 
