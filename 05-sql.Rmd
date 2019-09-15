@@ -443,6 +443,7 @@ class Flight(db.Model):
     origin = db.Column(db.String, nullable=False)     
     destination = db.Column(db.String, nullable=False)
     duration = db.Column(db.Integer, nullable=False)  
+    passengers = db.relationship("Passenger", backref="flight", lazy=True)
 
 class Passenger(db.Model):                                                        
     __tablename__ = "passengers"                                                  
@@ -509,5 +510,31 @@ Flight.query.filter(
     Flight.origin != "Paris").all()
 ```
 
+SQL substring querying can be performed with SQLAlchemy.
+```{bash eval=FALSE}
+Flight.query.filter(
+    Flight.origin.like("%a%")).all()
+```
 
+SQL search can be performed using a list of values.
+```{bash eval=FALSE}
+Flight.query.filter(
+    Flight.origin.in_(
+        ["Tokyo", "Paris"])).all()
+```
 
+Boolean expressions can be used.
+```{bash eval=FALSE}
+Flight.query.filter(
+    or_(Flight.origin == "Paris",
+        Flight.duration > 500)).all()
+```
+
+Tables can be joined together.
+```{bash eval=FALSE}
+db.session.query(Flight, Passenger).filter(
+    Flight.id == Passenger.flight_id).all()
+```
+
+## APIs
+JSON stands for Javascript object notation

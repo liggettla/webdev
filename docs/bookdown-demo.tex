@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-09-13}
+    \date{2019-09-14}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -2058,6 +2058,7 @@ column within the \texttt{Flight} class.
     \ExtensionTok{origin}\NormalTok{ = db.Column(db.String, nullable=False)     }
     \ExtensionTok{destination}\NormalTok{ = db.Column(db.String, nullable=False)}
     \ExtensionTok{duration}\NormalTok{ = db.Column(db.Integer, nullable=False)  }
+    \ExtensionTok{passengers}\NormalTok{ = db.relationship(}\StringTok{"Passenger"}\NormalTok{, backref=}\StringTok{"flight"}\NormalTok{, lazy=True)}
 
 \ExtensionTok{class}\NormalTok{ Passenger(db.Model)}\BuiltInTok{:}                                                        
     \ExtensionTok{__tablename__}\NormalTok{ = }\StringTok{"passengers"}                                                  
@@ -2158,6 +2159,48 @@ Table data can be retrieved when it does not match a boolean expression.
     \ExtensionTok{Flight.origin}\NormalTok{ != }\StringTok{"Paris"}\NormalTok{)}\ExtensionTok{.all}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
+
+SQL substring querying can be performed with SQLAlchemy.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Flight.query.filter}\NormalTok{(}
+    \ExtensionTok{Flight.origin.like}\NormalTok{(}\StringTok{"%a%"}\NormalTok{))}\ExtensionTok{.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+SQL search can be performed using a list of values.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Flight.query.filter}\NormalTok{(}
+    \ExtensionTok{Flight.origin.in_}\NormalTok{(}
+\NormalTok{        [}\StringTok{"Tokyo"}\NormalTok{, }\StringTok{"Paris"}\NormalTok{]))}\ExtensionTok{.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Boolean expressions can be used.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Flight.query.filter}\NormalTok{(}
+    \ExtensionTok{or_}\NormalTok{(Flight.origin == }\StringTok{"Paris"}\NormalTok{,}
+        \ExtensionTok{Flight.duration} \OperatorTok{>}\NormalTok{ 500))}\ExtensionTok{.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Tables can be joined together.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{db.session.query}\NormalTok{(Flight, Passenger)}\ExtensionTok{.filter}\NormalTok{(}
+    \ExtensionTok{Flight.id}\NormalTok{ == Passenger.flight_id)}\ExtensionTok{.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\section{APIs}\label{apis}
+
+JSON stands for Javascript object notation
 
 \chapter{Hackernews}\label{hackernews}
 

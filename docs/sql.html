@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-09-13">
+<meta name="date" content="2019-09-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -149,6 +149,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.11" data-path="sql.html"><a href="sql.html#transactions-and-race-conditions"><i class="fa fa-check"></i><b>6.11</b> Transactions and Race Conditions</a></li>
 <li class="chapter" data-level="6.12" data-path="sql.html"><a href="sql.html#sqlalchemy"><i class="fa fa-check"></i><b>6.12</b> SQLAlchemy</a></li>
 <li class="chapter" data-level="6.13" data-path="sql.html"><a href="sql.html#object-relational-mapping"><i class="fa fa-check"></i><b>6.13</b> Object-Relational Mapping</a></li>
+<li class="chapter" data-level="6.14" data-path="sql.html"><a href="sql.html#apis"><i class="fa fa-check"></i><b>6.14</b> APIs</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>7</b> Hackernews</a><ul>
 <li class="chapter" data-level="7.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
@@ -443,6 +444,7 @@ Hong Kong,Shanghai,130</code></pre>
     <span class="ex">origin</span> = db.Column(db.String, nullable=False)     
     <span class="ex">destination</span> = db.Column(db.String, nullable=False)
     <span class="ex">duration</span> = db.Column(db.Integer, nullable=False)  
+    <span class="ex">passengers</span> = db.relationship(<span class="st">&quot;Passenger&quot;</span>, backref=<span class="st">&quot;flight&quot;</span>, lazy=True)
 
 <span class="ex">class</span> Passenger(db.Model)<span class="bu">:</span>                                                        
     <span class="ex">__tablename__</span> = <span class="st">&quot;passengers&quot;</span>                                                  
@@ -480,6 +482,24 @@ The following code gets the row with an ID of 6 then updates its duration to 280
 <p>Table data can be retrieved when it does not match a boolean expression.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
     <span class="ex">Flight.origin</span> != <span class="st">&quot;Paris&quot;</span>)<span class="ex">.all</span>()</code></pre></div>
+<p>SQL substring querying can be performed with SQLAlchemy.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
+    <span class="ex">Flight.origin.like</span>(<span class="st">&quot;%a%&quot;</span>))<span class="ex">.all</span>()</code></pre></div>
+<p>SQL search can be performed using a list of values.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
+    <span class="ex">Flight.origin.in_</span>(
+        [<span class="st">&quot;Tokyo&quot;</span>, <span class="st">&quot;Paris&quot;</span>]))<span class="ex">.all</span>()</code></pre></div>
+<p>Boolean expressions can be used.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
+    <span class="ex">or_</span>(Flight.origin == <span class="st">&quot;Paris&quot;</span>,
+        <span class="ex">Flight.duration</span> <span class="op">&gt;</span> 500))<span class="ex">.all</span>()</code></pre></div>
+<p>Tables can be joined together.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">db.session.query</span>(Flight, Passenger)<span class="ex">.filter</span>(
+    <span class="ex">Flight.id</span> == Passenger.flight_id)<span class="ex">.all</span>()</code></pre></div>
+</div>
+<div id="apis" class="section level2">
+<h2><span class="header-section-number">6.14</span> APIs</h2>
+<p>JSON stands for Javascript object notation</p>
 
 </div>
 </div>
