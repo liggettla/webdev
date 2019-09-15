@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Bootstrap | Bootstrap and React for Web Development</title>
+  <title>Chapter 7 Javascript | Bootstrap and React for Web Development</title>
   <meta name="description" content="These are just some things.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Bootstrap | Bootstrap and React for Web Development" />
+  <meta property="og:title" content="Chapter 7 Javascript | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Bootstrap | Bootstrap and React for Web Development" />
+  <meta name="twitter:title" content="Chapter 7 Javascript | Bootstrap and React for Web Development" />
   
   <meta name="twitter:description" content="These are just some things." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="html.html">
-<link rel="next" href="sass.html">
+<link rel="prev" href="sql.html">
+<link rel="next" href="hackernews.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -179,63 +179,54 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bootstrap" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Bootstrap</h1>
-<div id="setup" class="section level2">
-<h2><span class="header-section-number">3.1</span> Setup</h2>
-<p>The bootstrap stylesheet <code>&lt;link&gt;</code> can be used directly <code>stackpath.com</code> by including the following reference in the <code>&lt;head&gt;</code> before any other listed stylesheets.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot;</span> integrity=<span class="st">&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot;</span> crossorigin=<span class="st">&quot;anonymous&quot;</span><span class="op">&gt;</span></code></pre></div>
-<p>Here is an alternative link to the bootstrap CSS file.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&quot;</span> integrity=<span class="st">&quot;sha384-Gn5384xqQ1aoWXA+</span></code></pre></div>
-<p>The <code>charset</code> and <code>viewport</code> meta tags are often required for proper bootstrap responsive behaviors, and should be included when using the bootstrap css.<br />
-The <code>viewport</code> line is a responsive meta tag that ensures proper rendering and touch zooming for mobile devices.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">--</span> Required meta tags --<span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">meta</span> charset=<span class="st">&quot;utf-8&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="op">&gt;</span></code></pre></div>
+<div id="javascript" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Javascript</h1>
+<div id="intro-3" class="section level2">
+<h2><span class="header-section-number">7.1</span> Intro</h2>
+<p>The <code>&lt;script&gt;</code> tags within the <code>&lt;head&gt;</code> is where javascript can be put.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
+        <span class="ex">alert</span>(<span class="st">&#39;Hello&#39;</span>);
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span></code></pre></div>
 </div>
-<div id="columns" class="section level2">
-<h2><span class="header-section-number">3.2</span> Columns</h2>
-<p>Bootstrap styles a page as 12 columns. In the following code, columns that are 3/12 columns wide are used.</p>
+<div id="event-handling" class="section level2">
+<h2><span class="header-section-number">7.2</span> Event Handling</h2>
+<p>There a number of event handlers in Javascript, and here are a few:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">onclick</span>
+<span class="ex">onmouseover</span>
+<span class="ex">onkeydown</span>
+<span class="ex">onkeyup</span>
+<span class="ex">onload</span>
+<span class="ex">onblur</span></code></pre></div>
+<p>The following code creates a button that runs the <code>hello()</code> function only when the button is clicked.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
+        <span class="kw">function</span><span class="fu"> hello()</span> <span class="kw">{</span>
+            <span class="ex">alert</span>(<span class="st">&#39;Hello!&#39;</span>);
+        <span class="kw">}</span>
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;hello()&quot;</span><span class="op">&gt;</span>Click Here<span class="op">&lt;</span>/button<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>Javascript can be used to change the contents of the html within a page.<br />
+In the following code, the <code>querySelector</code> searches for the first <code>h1</code> tag on the page, and then uses the <code>innerHTML</code> method to modify the contents within that tag.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
+        <span class="kw">function</span><span class="fu"> hello()</span> <span class="kw">{</span>                                      
+            <span class="ex">document.querySelector</span>(<span class="st">&#39;h1&#39;</span>)<span class="ex">.innerHTML</span> = <span class="st">&#39;Goodbye!&#39;</span><span class="kw">;</span>
+            <span class="kw">}</span>                                                       
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>
 <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
 <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;row&quot;</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col=3&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is stuff
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col=3&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is stuff
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col=3&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is stuff
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>                             
+    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;hello()&quot;</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span>
 <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
-<p>Bootstrap can also style elements to take different amounts of the 12 total columns depending on the screen size. What is happening in the following code is that the columns being listed take 3/12 columns if the screen is large, as defined by the bootstrap CSS, and they take 6/12 columns if the screen is small.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">.row</span> <span class="op">&gt;</span> div{
-        <span class="ex">padding</span>: 20px<span class="kw">;</span>
-        <span class="ex">background-color</span>: teal<span class="kw">;</span>
-        <span class="ex">border</span>: 2px solid black<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;row&quot;</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col-lg-3 col-sm-6&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is a section.
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col-lg-3 col-sm-6&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is a section.
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;col-lg-3 col-sm-6&quot;</span><span class="op">&gt;</span>
-                <span class="ex">This</span> is a section.
-            <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p><code>querySelector</code> can also select by id or class.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">document.querySelector</span>(<span class="st">&#39;tag&#39;</span>)
+<span class="ex">document.querySelector</span>(<span class="st">&#39;#id&#39;</span>)
+<span class="ex">document.querySelector</span>(<span class="st">&#39;.class&#39;</span>)</code></pre></div>
 
 </div>
 </div>
@@ -244,8 +235,8 @@ The <code>viewport</code> line is a responsive meta tag that ensures proper rend
           </div>
         </div>
       </div>
-<a href="html.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sass.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sql.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hackernews.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -275,7 +266,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-bootstrap.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-javascript.Rmd",
 "text": "Edit"
 },
 "history": {

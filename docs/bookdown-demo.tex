@@ -2274,6 +2274,88 @@ accomplish this.
 \end{Highlighting}
 \end{Shaded}
 
+\chapter{Javascript}\label{javascript}
+
+\section{Intro}\label{intro-3}
+
+The \texttt{\textless{}script\textgreater{}} tags within the
+\texttt{\textless{}head\textgreater{}} is where javascript can be put.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+        \ExtensionTok{alert}\NormalTok{(}\StringTok{'Hello'}\NormalTok{);}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Event Handling}\label{event-handling}
+
+There a number of event handlers in Javascript, and here are a few:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{onclick}
+\ExtensionTok{onmouseover}
+\ExtensionTok{onkeydown}
+\ExtensionTok{onkeyup}
+\ExtensionTok{onload}
+\ExtensionTok{onblur}
+\end{Highlighting}
+\end{Shaded}
+
+The following code creates a button that runs the \texttt{hello()}
+function only when the button is clicked.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+        \KeywordTok{function}\FunctionTok{ hello()} \KeywordTok{\{}
+            \ExtensionTok{alert}\NormalTok{(}\StringTok{'Hello!'}\NormalTok{);}
+        \KeywordTok{\}}
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{button}\NormalTok{ onclick=}\StringTok{"hello()"}\OperatorTok{>}\NormalTok{Click Here}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Javascript can be used to change the contents of the html within a
+page.\\
+In the following code, the \texttt{querySelector} searches for the first
+\texttt{h1} tag on the page, and then uses the \texttt{innerHTML} method
+to modify the contents within that tag.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+        \KeywordTok{function}\FunctionTok{ hello()} \KeywordTok{\{}                                      
+            \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'h1'}\NormalTok{)}\ExtensionTok{.innerHTML}\NormalTok{ = }\StringTok{'Goodbye!'}\KeywordTok{;}
+            \KeywordTok{\}}                                                       
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{h1}\OperatorTok{>}\NormalTok{Welcome!}\OperatorTok{<}\NormalTok{/h1}\OperatorTok{>}                             
+    \OperatorTok{<}\ExtensionTok{button}\NormalTok{ onclick=}\StringTok{"hello()"}\OperatorTok{>}\NormalTok{Click Here!}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{querySelector} can also select by id or class.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'tag'}\NormalTok{)}
+\ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#id'}\NormalTok{)}
+\ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'.class'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
 \chapter{Hackernews}\label{hackernews}
 
 \section{Setup}\label{setup-1}

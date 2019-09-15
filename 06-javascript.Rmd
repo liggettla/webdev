@@ -1,0 +1,59 @@
+# Javascript {#javascript}
+
+## Intro
+The `<script>` tags within the `<head>` is where javascript can be put.
+```{bash eval=FALSE}
+<head>
+    <script>
+        alert('Hello');
+    </script>
+</head>
+```
+
+## Event Handling
+There a number of event handlers in Javascript, and here are a few:  
+```{bash eval=FALSE}
+onclick
+onmouseover
+onkeydown
+onkeyup
+onload
+onblur
+```
+
+The following code creates a button that runs the `hello()` function only when the button is clicked.
+```{bash eval=FALSE}
+<head>
+    <script>
+        function hello() {
+            alert('Hello!');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="hello()">Click Here</button>
+</body>
+```
+
+Javascript can be used to change the contents of the html within a page.  
+In the following code, the `querySelector` searches for the first `h1` tag on the page, and then uses the `innerHTML` method to modify the contents within that tag.
+```{bash eval=FALSE}
+<style>
+    <script>
+        function hello() {                                      
+            document.querySelector('h1').innerHTML = 'Goodbye!';
+            }                                                       
+    </script>
+</style>
+<body>
+    <h1>Welcome!</h1>                             
+    <button onclick="hello()">Click Here!</button>
+</body>
+```
+
+`querySelector` can also select by id or class.
+```{bash eval=FALSE}
+document.querySelector('tag')
+document.querySelector('#id')
+document.querySelector('.class')
+```
