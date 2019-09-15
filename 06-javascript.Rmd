@@ -1,6 +1,8 @@
 # Javascript {#javascript}
 
 ## Intro
+FYI Ctrl+Shift+I in chrome opens the console. In the console commands can be entered and variables can be used that have been defined in the page.
+
 The `<script>` tags within the `<head>` is where javascript can be put.
 ```{bash eval=FALSE}
 <head>
@@ -57,3 +59,70 @@ document.querySelector('tag')
 document.querySelector('#id')
 document.querySelector('.class')
 ```
+
+Here is an example that uses the `id` to control its contents.
+```{bash eval=FALSE}
+<style>
+    <script>
+		counter = 0;                                               
+																   
+		function count() {                                         
+			counter++;                                             
+			document.querySelector('#counter').innerHTML = counter;
+		}                                                          
+    </script>
+</style>
+<body>
+	<h1 id="counter">0</h1>                       
+	<button onclick="count()">Click Here!</button>
+</body>
+```
+
+Template literals allow variables to be used within a string.
+```{bash eval=FALSE}
+if (counter % 10 === 0) {              
+    alert(`Counter is at ${counter}!`);
+}                                      
+```
+
+The necessary javascript can be separated out of a page and included in a `something.js` file and then referenced within an html file.  
+```{bash eval=FALSE}
+<head>                                 
+    <script src="something.js"></script>
+</head>                                
+```
+
+
+## Event Listeners
+Event listeners can be run only when the DOM is loaded, and can listen for events within the html document. This can be a helpful way of offloading some of the work from the html onto javascript.  
+Below is an example of using javascript to control the function of a button using a callback function.  
+`document.querySelector('button').onclick = count;` refers to the count method.
+```{bash eval=FALSE}
+<head>
+    <script>
+		document.addEventListener('DOMContentLoaded', function() { 
+			document.querySelector('button').onclick = count;      
+		});                                                        
+																   
+		let counter = 0;                                           
+																   
+		function count() {                                         
+			counter++;                                             
+			document.querySelector('#counter').innerHTML = counter;
+																   
+			if (counter % 10 === 0) {                              
+				alert(`Counter is at ${counter}!`);                
+			}                                                      
+		}                                                          
+    </script>
+</head>
+<body>
+	<h1 id="counter">0</h1>     
+	<button>Click Here!</button>
+</body>
+```
+
+## Variables
+`const` can not be redefined.  
+`let` has block scope so it only exists within a block defined by `{}`.  
+`var` exists within the function in which it is defined.  

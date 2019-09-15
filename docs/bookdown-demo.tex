@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-09-14}
+    \date{2019-09-15}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -2278,6 +2278,10 @@ accomplish this.
 
 \section{Intro}\label{intro-3}
 
+FYI Ctrl+Shift+I in chrome opens the console. In the console commands
+can be entered and variables can be used that have been defined in the
+page.
+
 The \texttt{\textless{}script\textgreater{}} tags within the
 \texttt{\textless{}head\textgreater{}} is where javascript can be put.
 
@@ -2355,6 +2359,92 @@ to modify the contents within that tag.
 \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'.class'}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+Here is an example that uses the \texttt{id} to control its contents.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{style}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+        \ExtensionTok{counter}\NormalTok{ = 0}\KeywordTok{;}                                               
+                                                                   
+        \KeywordTok{function}\FunctionTok{ count()} \KeywordTok{\{}                                         
+            \ExtensionTok{counter++}\KeywordTok{;}                                             
+            \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#counter'}\NormalTok{)}\ExtensionTok{.innerHTML}\NormalTok{ = counter}\KeywordTok{;}
+        \KeywordTok{\}}                                                          
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{style}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{h1}\NormalTok{ id=}\StringTok{"counter"}\OperatorTok{>0<}\NormalTok{/h1}\OperatorTok{>}                       
+    \OperatorTok{<}\ExtensionTok{button}\NormalTok{ onclick=}\StringTok{"count()"}\OperatorTok{>}\NormalTok{Click Here!}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+Template literals allow variables to be used within a string.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{if} \KeywordTok{(}\ExtensionTok{counter}\NormalTok{ % 10 === 0}\KeywordTok{)} \KeywordTok{\{}              
+    \ExtensionTok{alert}\NormalTok{(}\KeywordTok{`}\ExtensionTok{Counter}\NormalTok{ is at }\VariableTok{$\{counter\}}\NormalTok{!}\KeywordTok{`}\NormalTok{);}
+\KeywordTok{\}}                                      
+\end{Highlighting}
+\end{Shaded}
+
+The necessary javascript can be separated out of a page and included in
+a \texttt{something.js} file and then referenced within an html file.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                 
+    \OperatorTok{<}\ExtensionTok{script}\NormalTok{ src=}\StringTok{"something.js"}\OperatorTok{><}\NormalTok{/script}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                
+\end{Highlighting}
+\end{Shaded}
+
+\section{Event Listeners}\label{event-listeners}
+
+Event listeners can be run only when the DOM is loaded, and can listen
+for events within the html document. This can be a helpful way of
+offloading some of the work from the html onto javascript.\\
+Below is an example of using javascript to control the function of a
+button using a callback function.\\
+\texttt{document.querySelector(\textquotesingle{}button\textquotesingle{}).onclick\ =\ count;}
+refers to the count method.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\FunctionTok{head}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+        \ExtensionTok{document.addEventListener}\NormalTok{(}\StringTok{'DOMContentLoaded'}\NormalTok{, function() }\KeywordTok{\{} 
+            \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'button'}\NormalTok{)}\ExtensionTok{.onclick}\NormalTok{ = count}\KeywordTok{;}      
+        \KeywordTok{\}}\NormalTok{);                                                        }
+                                                                   
+        \BuiltInTok{let}\NormalTok{ counter = 0}\KeywordTok{;}                                           
+                                                                   
+        \KeywordTok{function}\FunctionTok{ count()} \KeywordTok{\{}                                         
+            \ExtensionTok{counter++}\KeywordTok{;}                                             
+            \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#counter'}\NormalTok{)}\ExtensionTok{.innerHTML}\NormalTok{ = counter}\KeywordTok{;}
+                                                                   
+            \KeywordTok{if} \KeywordTok{(}\ExtensionTok{counter}\NormalTok{ % 10 === 0}\KeywordTok{)} \KeywordTok{\{}                              
+                \ExtensionTok{alert}\NormalTok{(}\KeywordTok{`}\ExtensionTok{Counter}\NormalTok{ is at }\VariableTok{$\{counter\}}\NormalTok{!}\KeywordTok{`}\NormalTok{);                }
+            \KeywordTok{\}}                                                      
+        \KeywordTok{\}}                                                          
+    \OperatorTok{<}\NormalTok{/}\ExtensionTok{script}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
+    \OperatorTok{<}\ExtensionTok{h1}\NormalTok{ id=}\StringTok{"counter"}\OperatorTok{>0<}\NormalTok{/h1}\OperatorTok{>}     
+    \OperatorTok{<}\ExtensionTok{button}\OperatorTok{>}\NormalTok{Click Here!}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
+\OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Variables}\label{variables}
+
+\texttt{const} can not be redefined.\\
+\texttt{let} has block scope so it only exists within a block defined by
+\texttt{\{\}}.\\
+\texttt{var} exists within the function in which it is defined.
 
 \chapter{Hackernews}\label{hackernews}
 

@@ -25,7 +25,7 @@
 <meta name="author" content="L A Liggett">
 
 
-<meta name="date" content="2019-09-14">
+<meta name="date" content="2019-09-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -154,6 +154,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>7</b> Javascript</a><ul>
 <li class="chapter" data-level="7.1" data-path="javascript.html"><a href="javascript.html#intro-3"><i class="fa fa-check"></i><b>7.1</b> Intro</a></li>
 <li class="chapter" data-level="7.2" data-path="javascript.html"><a href="javascript.html#event-handling"><i class="fa fa-check"></i><b>7.2</b> Event Handling</a></li>
+<li class="chapter" data-level="7.3" data-path="javascript.html"><a href="javascript.html#event-listeners"><i class="fa fa-check"></i><b>7.3</b> Event Listeners</a></li>
+<li class="chapter" data-level="7.4" data-path="javascript.html"><a href="javascript.html#variables"><i class="fa fa-check"></i><b>7.4</b> Variables</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>8</b> Hackernews</a><ul>
 <li class="chapter" data-level="8.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>8.1</b> Setup</a></li>
@@ -183,6 +185,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 7</span> Javascript</h1>
 <div id="intro-3" class="section level2">
 <h2><span class="header-section-number">7.1</span> Intro</h2>
+<p>FYI Ctrl+Shift+I in chrome opens the console. In the console commands can be entered and variables can be used that have been defined in the page.</p>
 <p>The <code>&lt;script&gt;</code> tags within the <code>&lt;head&gt;</code> is where javascript can be put.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
     <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
@@ -227,6 +230,63 @@ In the following code, the <code>querySelector</code> searches for the first <co
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">document.querySelector</span>(<span class="st">&#39;tag&#39;</span>)
 <span class="ex">document.querySelector</span>(<span class="st">&#39;#id&#39;</span>)
 <span class="ex">document.querySelector</span>(<span class="st">&#39;.class&#39;</span>)</code></pre></div>
+<p>Here is an example that uses the <code>id</code> to control its contents.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
+        <span class="ex">counter</span> = 0<span class="kw">;</span>                                               
+                                                                   
+        <span class="kw">function</span><span class="fu"> count()</span> <span class="kw">{</span>                                         
+            <span class="ex">counter++</span><span class="kw">;</span>                                             
+            <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span>
+        <span class="kw">}</span>                                                          
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>                       
+    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;count()&quot;</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<p>Template literals allow variables to be used within a string.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>              
+    <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);
+<span class="kw">}</span>                                      </code></pre></div>
+<p>The necessary javascript can be separated out of a page and included in a <code>something.js</code> file and then referenced within an html file.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                 
+    <span class="op">&lt;</span><span class="ex">script</span> src=<span class="st">&quot;something.js&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                </code></pre></div>
+</div>
+<div id="event-listeners" class="section level2">
+<h2><span class="header-section-number">7.3</span> Event Listeners</h2>
+<p>Event listeners can be run only when the DOM is loaded, and can listen for events within the html document. This can be a helpful way of offloading some of the work from the html onto javascript.<br />
+Below is an example of using javascript to control the function of a button using a callback function.<br />
+<code>document.querySelector('button').onclick = count;</code> refers to the count method.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>
+        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span> 
+            <span class="ex">document.querySelector</span>(<span class="st">&#39;button&#39;</span>)<span class="ex">.onclick</span> = count<span class="kw">;</span>      
+        <span class="kw">}</span>);                                                        
+                                                                   
+        <span class="bu">let</span> counter = 0<span class="kw">;</span>                                           
+                                                                   
+        <span class="kw">function</span><span class="fu"> count()</span> <span class="kw">{</span>                                         
+            <span class="ex">counter++</span><span class="kw">;</span>                                             
+            <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span>
+                                                                   
+            <span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>                              
+                <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);                
+            <span class="kw">}</span>                                                      
+        <span class="kw">}</span>                                                          
+    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>     
+    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span>
+<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+</div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">7.4</span> Variables</h2>
+<p><code>const</code> can not be redefined.<br />
+<code>let</code> has block scope so it only exists within a block defined by <code>{}</code>.<br />
+<code>var</code> exists within the function in which it is defined.</p>
 
 </div>
 </div>
