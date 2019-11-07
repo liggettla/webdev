@@ -100,7 +100,7 @@ The necessary javascript can be separated out of a page and included in a `somet
 ## Event Listeners
 Event listeners can be run only when the DOM is loaded, and can listen for events within the html document. This can be a helpful way of offloading some of the work from the html onto javascript.  
 Below is an example of using javascript to control the function of a button using a callback function.  
-`document.querySelector('button').onclick = count;` refers to the count method.
+In the following code, the `addEventListener` takes two input variables, the first is `DOMContentLoaded` which triggers the listener to start processing after the page has loaded. For the second parameter, whatever should be triggered is passed. Below, the second parameter is an entire function being passed in, and it selects the first button, and runs the count method on a click event.
 ```{bash eval=FALSE}
 <head>
     <script>
