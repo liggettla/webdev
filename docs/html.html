@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 HTML | Bootstrap and React for Web Development</title>
-  <meta name="description" content="These are just some things.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="These are just some things." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 HTML | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   <meta name="twitter:description" content="These are just some things." />
   
 
-<meta name="author" content="L A Liggett">
+<meta name="author" content="L A Liggett" />
 
 
-<meta name="date" content="2019-09-15">
+<meta name="date" content="2019-11-06" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="bootstrap.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="bootstrap.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -189,463 +216,477 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="html-properties" class="section level2">
 <h2><span class="header-section-number">2.1</span> HTML Properties</h2>
 <p>Commenting in HTML.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">--</span>
-<span class="ex">These</span> are some comments.
-<span class="ex">--</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">--</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ex">These</span> are some comments.</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="ex">--</span><span class="op">&gt;</span></a></code></pre></div>
 <p>The head tag allows metadata to be labeled, the text of title for instance is typically listed in the tab or the status bar of the page in a browser.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>         
-            <span class="ex">My</span> Web Page!
-        <span class="op">&lt;</span>/<span class="ex">title</span><span class="op">&gt;</span>        
-    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">            <span class="ex">My</span> Web Page!</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">        <span class="op">&lt;</span>/<span class="ex">title</span><span class="op">&gt;</span>        </a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>The body specifies text for the page body.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="ex">Hello</span>, world!   
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">        <span class="ex">Hello</span>, world!   </a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>Headings specifies header text of increasingly small sizes.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>This is the largest headline<span class="op">&lt;</span>/h1<span class="op">&gt;</span>        
-        <span class="op">&lt;</span><span class="ex">h2</span><span class="op">&gt;</span>This is also a large headline<span class="op">&lt;</span>/h2<span class="op">&gt;</span>       
-        <span class="op">&lt;</span><span class="ex">h3</span><span class="op">&gt;</span>This is a slightly smaller headline<span class="op">&lt;</span>/h3<span class="op">&gt;</span> 
-        <span class="op">&lt;</span><span class="ex">h4</span><span class="op">&gt;</span>This is an even smaller headline<span class="op">&lt;</span>/h4<span class="op">&gt;</span>    
-        <span class="op">&lt;</span><span class="ex">h5</span><span class="op">&gt;</span>This is the second-smallest headline<span class="op">&lt;</span>/h5<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">h6</span><span class="op">&gt;</span>This is the smallest headline<span class="op">&lt;</span>/h6<span class="op">&gt;</span>       
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>This is the largest headline<span class="op">&lt;</span>/h1<span class="op">&gt;</span>        </a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">h2</span><span class="op">&gt;</span>This is also a large headline<span class="op">&lt;</span>/h2<span class="op">&gt;</span>       </a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">        <span class="op">&lt;</span><span class="ex">h3</span><span class="op">&gt;</span>This is a slightly smaller headline<span class="op">&lt;</span>/h3<span class="op">&gt;</span> </a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">        <span class="op">&lt;</span><span class="ex">h4</span><span class="op">&gt;</span>This is an even smaller headline<span class="op">&lt;</span>/h4<span class="op">&gt;</span>    </a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">        <span class="op">&lt;</span><span class="ex">h5</span><span class="op">&gt;</span>This is the second-smallest headline<span class="op">&lt;</span>/h5<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">        <span class="op">&lt;</span><span class="ex">h6</span><span class="op">&gt;</span>This is the smallest headline<span class="op">&lt;</span>/h6<span class="op">&gt;</span>       </a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>Unordered lists specify bullet points.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="ex">An</span> Unordered List:           
-        <span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>                         
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>One Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>        
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Another Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>    
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Yet Another Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>
-        <span class="op">&lt;</span>/<span class="ex">ul</span><span class="op">&gt;</span>                        
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">        <span class="ex">An</span> Unordered List:           </a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>                         </a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>One Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>        </a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Another Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>    </a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Yet Another Item<span class="op">&lt;</span>/li<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">        <span class="op">&lt;</span>/<span class="ex">ul</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>Ordered lists number lines in increasing order.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="ex">An</span> Ordered List:
-        <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>                          
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>First Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>       
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Second Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>      
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Another Item Here<span class="op">&lt;</span>/li<span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Fourth Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>      
-        <span class="op">&lt;</span>/<span class="ex">ol</span><span class="op">&gt;</span>                         
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
-<p>The image tag refers to and inserts an image as an html attribute. The alt gives alternative code if the image is missing. The height and width sets the image size in number of pixels. When the image size is set to 50% sets the image size dynamically to 50% of the browser width or height.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">img</span> src=<span class="st">&quot;cat.jpg&quot;</span> alt=<span class="st">&quot;cat&quot;</span> width=<span class="st">&quot;300&quot;</span> height=<span class="st">&quot;200&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">img</span> src=<span class="st">&quot;cat.jpg&quot;</span> alt=<span class="st">&quot;cat&quot;</span> width=<span class="st">&quot;50%&quot;</span> <span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
-<p>Tables display data in a table format that can be styled in various ways. The <code>th</code> tag specifies the headings of each of the columns. The <code>td</code> tag specifies the data in each of the columns.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">table</span><span class="op">&gt;</span>                         
-            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
-                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>First Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>     
-                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Last Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>      
-                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Years in Office<span class="op">&lt;</span>/th<span class="op">&gt;</span>
-            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
-            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>George<span class="op">&lt;</span>/td<span class="op">&gt;</span>         
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Washington<span class="op">&lt;</span>/td<span class="op">&gt;</span>     
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1789-<span class="op">1797&lt;</span>/td<span class="op">&gt;</span>      
-            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
-            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>John<span class="op">&lt;</span>/td<span class="op">&gt;</span>           
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Adams<span class="op">&lt;</span>/td<span class="op">&gt;</span>          
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1797-<span class="op">1801&lt;</span>/td<span class="op">&gt;</span>      
-            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
-            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Thomas<span class="op">&lt;</span>/td<span class="op">&gt;</span>         
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Jefferson<span class="op">&lt;</span>/td<span class="op">&gt;</span>      
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1801-<span class="op">1809&lt;</span>/td<span class="op">&gt;</span>      
-            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
-        <span class="op">&lt;</span>/<span class="ex">table</span><span class="op">&gt;</span>                        
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
-<p>Tables can be styled within the header of the html document. Both the <code>th</code> and the <code>td</code> styles are defined together. <code>border-collapse</code> combines the borders of cells together.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                  
-        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>Presidents<span class="op">&lt;</span>/title<span class="op">&gt;</span>           
-        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                             
-            <span class="ex">table</span> {                         
-                <span class="ex">border</span>: 2px solid black<span class="kw">;</span>    
-                <span class="ex">border-collapse</span>: collapse<span class="kw">;</span>  
-                <span class="ex">width</span>: 50%<span class="kw">;</span>                 
-            }                               
-                                            
-            <span class="ex">th</span>, td {                        
-                <span class="ex">border</span>: 1px solid black<span class="kw">;</span>    
-                <span class="ex">padding</span>: 5px<span class="kw">;</span>               
-                <span class="ex">text-align</span>: center<span class="kw">;</span>         
-            }                               
-                                            
-            <span class="ex">th</span> {                            
-                <span class="ex">background-color</span>: lightgray<span class="kw">;</span>
-            }                               
-        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                            
-    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                 
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">table</span><span class="op">&gt;</span>                         
-            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
-                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>First Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>     
-                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Last Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>      
-                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Years in Office<span class="op">&lt;</span>/th<span class="op">&gt;</span>
-            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
-            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>George<span class="op">&lt;</span>/td<span class="op">&gt;</span>         
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Washington<span class="op">&lt;</span>/td<span class="op">&gt;</span>     
-                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1789-<span class="op">1797&lt;</span>/td<span class="op">&gt;</span>      
-            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       
-        <span class="op">&lt;</span>/<span class="ex">table</span><span class="op">&gt;</span>                        
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
-<p>Forms can be created and labeled as such. The <code>placeholder</code> text is what is written within the form before anything is entered into it. The <code>name</code> is similar to a variable name and can be used to refer to the form and the data that is entered into it. The text within the button is the text that will appear on the button in the page.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">form</span><span class="op">&gt;</span>                                                     
-            <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;Full Name&quot;</span> name=<span class="st">&quot;name&quot;</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Submit!<span class="op">&lt;</span>/button<span class="op">&gt;</span>                               
-        <span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                    
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">        <span class="ex">An</span> Ordered List:</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>                          </a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>First Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>       </a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Second Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Another Item Here<span class="op">&lt;</span>/li<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>Fourth Item<span class="op">&lt;</span>/li<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">        <span class="op">&lt;</span>/<span class="ex">ol</span><span class="op">&gt;</span>                         </a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
+<p>The image tag refers to and inserts an image as an html attribute.
+The alt gives alternative code if the image is missing.
+The height and width sets the image size in number of pixels.
+When the image size is set to 50% sets the image size dynamically to 50% of the browser width or height.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">img</span> src=<span class="st">&quot;cat.jpg&quot;</span> alt=<span class="st">&quot;cat&quot;</span> width=<span class="st">&quot;300&quot;</span> height=<span class="st">&quot;200&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">img</span> src=<span class="st">&quot;cat.jpg&quot;</span> alt=<span class="st">&quot;cat&quot;</span> width=<span class="st">&quot;50%&quot;</span> <span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
+<p>Tables display data in a table format that can be styled in various ways.
+The <code>th</code> tag specifies the headings of each of the columns.
+The <code>td</code> tag specifies the data in each of the columns.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">table</span><span class="op">&gt;</span>                         </a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>First Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>     </a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Last Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Years in Office<span class="op">&lt;</span>/th<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>George<span class="op">&lt;</span>/td<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb8-12" data-line-number="12">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Washington<span class="op">&lt;</span>/td<span class="op">&gt;</span>     </a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1789-<span class="op">1797&lt;</span>/td<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb8-15" data-line-number="15">            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>John<span class="op">&lt;</span>/td<span class="op">&gt;</span>           </a>
+<a class="sourceLine" id="cb8-17" data-line-number="17">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Adams<span class="op">&lt;</span>/td<span class="op">&gt;</span>          </a>
+<a class="sourceLine" id="cb8-18" data-line-number="18">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1797-<span class="op">1801&lt;</span>/td<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb8-19" data-line-number="19">            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb8-20" data-line-number="20">            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb8-21" data-line-number="21">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Thomas<span class="op">&lt;</span>/td<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb8-22" data-line-number="22">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Jefferson<span class="op">&lt;</span>/td<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb8-23" data-line-number="23">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1801-<span class="op">1809&lt;</span>/td<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb8-24" data-line-number="24">            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb8-25" data-line-number="25">        <span class="op">&lt;</span>/<span class="ex">table</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb8-26" data-line-number="26">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb8-27" data-line-number="27"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
+<p>Tables can be styled within the header of the html document.
+Both the <code>th</code> and the <code>td</code> styles are defined together.
+<code>border-collapse</code> combines the borders of cells together.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                  </a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>Presidents<span class="op">&lt;</span>/title<span class="op">&gt;</span>           </a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                             </a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">            <span class="ex">table</span> {                         </a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">                <span class="ex">border</span>: 2px solid black<span class="kw">;</span>    </a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">                <span class="ex">border-collapse</span>: collapse<span class="kw">;</span>  </a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">                <span class="ex">width</span>: 50%<span class="kw">;</span>                 </a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">            }                               </a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">                                            </a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">            <span class="ex">th</span>, td {                        </a>
+<a class="sourceLine" id="cb9-13" data-line-number="13">                <span class="ex">border</span>: 1px solid black<span class="kw">;</span>    </a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">                <span class="ex">padding</span>: 5px<span class="kw">;</span>               </a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">                <span class="ex">text-align</span>: center<span class="kw">;</span>         </a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">            }                               </a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">                                            </a>
+<a class="sourceLine" id="cb9-18" data-line-number="18">            <span class="ex">th</span> {                            </a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">                <span class="ex">background-color</span>: lightgray<span class="kw">;</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20">            }                               </a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                            </a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                 </a>
+<a class="sourceLine" id="cb9-23" data-line-number="23">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb9-24" data-line-number="24">        <span class="op">&lt;</span><span class="ex">table</span><span class="op">&gt;</span>                         </a>
+<a class="sourceLine" id="cb9-25" data-line-number="25">            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb9-26" data-line-number="26">                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>First Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>     </a>
+<a class="sourceLine" id="cb9-27" data-line-number="27">                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Last Name<span class="op">&lt;</span>/th<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb9-28" data-line-number="28">                <span class="op">&lt;</span><span class="ex">th</span><span class="op">&gt;</span>Years in Office<span class="op">&lt;</span>/th<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb9-29" data-line-number="29">            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb9-30" data-line-number="30">            <span class="op">&lt;</span><span class="fu">tr</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb9-31" data-line-number="31">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>George<span class="op">&lt;</span>/td<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb9-32" data-line-number="32">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>Washington<span class="op">&lt;</span>/td<span class="op">&gt;</span>     </a>
+<a class="sourceLine" id="cb9-33" data-line-number="33">                <span class="op">&lt;</span><span class="ex">td</span><span class="op">&gt;</span>1789-<span class="op">1797&lt;</span>/td<span class="op">&gt;</span>      </a>
+<a class="sourceLine" id="cb9-34" data-line-number="34">            <span class="op">&lt;</span>/<span class="ex">tr</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb9-35" data-line-number="35">        <span class="op">&lt;</span>/<span class="ex">table</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb9-36" data-line-number="36">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb9-37" data-line-number="37"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
+<p>Forms can be created and labeled as such.
+The <code>placeholder</code> text is what is written within the form before anything is entered into it.
+The <code>name</code> is similar to a variable name and can be used to refer to the form and the data that is entered into it.
+The text within the button is the text that will appear on the button in the page.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">form</span><span class="op">&gt;</span>                                                     </a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">            <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;Full Name&quot;</span> name=<span class="st">&quot;name&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">            <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Submit!<span class="op">&lt;</span>/button<span class="op">&gt;</span>                               </a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">        <span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                    </a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>Text can be aligned and colord by specifying styles within the respective tags of text.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">h1</span> style=<span class="st">&quot;color:red;text-align:center;&quot;</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">h1</span> style=<span class="st">&quot;color:#4290f5;text-align:center;&quot;</span><span class="op">&gt;</span>Second heading<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
-<p>Style elements can be separated from the actual body of the webpage. In this example every <code>h1</code> is styled within the style portion of the header.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                         
-        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                    
-            <span class="ex">h1</span> {                   
-                <span class="ex">color</span>: red<span class="kw">;</span>        
-                <span class="ex">text-align</span>: center<span class="kw">;</span>
-            }                      
-        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                   
-    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                        
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              
-        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">h1</span> style=<span class="st">&quot;color:red;text-align:center;&quot;</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">h1</span> style=<span class="st">&quot;color:#4290f5;text-align:center;&quot;</span><span class="op">&gt;</span>Second heading<span class="op">&lt;</span>/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
+<p>Style elements can be separated from the actual body of the webpage.
+In this example every <code>h1</code> is styled within the style portion of the header.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                         </a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                    </a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">            <span class="ex">h1</span> {                   </a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">                <span class="ex">color</span>: red<span class="kw">;</span>        </a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">                <span class="ex">text-align</span>: center<span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">            }                      </a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                   </a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>              </a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">        <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome to My Web Page!<span class="op">&lt;</span>/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>             </a>
+<a class="sourceLine" id="cb12-15" data-line-number="15"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>Links to local pages or hyperlinks are included within the <code>&lt;a&gt;</code> tag.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;http://www.google.com&quot;</span><span class="op">&gt;</span>Google<span class="op">&lt;</span>/a<span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;http://www.google.com&quot;</span><span class="op">&gt;</span>Google<span class="op">&lt;</span>/a<span class="op">&gt;</span></a></code></pre></div>
 <p>Links can also refer to locations on the same page.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;section1&quot;</span><span class="op">&gt;</span>Section <span class="op">1&lt;</span>/a<span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;section1&quot;</span><span class="op">&gt;</span>Some stuff.<span class="op">&lt;</span>/h1<span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;section1&quot;</span><span class="op">&gt;</span>Section <span class="op">1&lt;</span>/a<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;section1&quot;</span><span class="op">&gt;</span>Some stuff.<span class="op">&lt;</span>/h1<span class="op">&gt;</span></a></code></pre></div>
 <p>A newline can be inserted within the body of text by using <code>&lt;br /&gt;</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;&lt;</span>br /<span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;about.html&quot;</span><span class="op">&gt;</span>About<span class="op">&lt;</span>/a<span class="op">&gt;&lt;</span>br /<span class="op">&gt;</span></a></code></pre></div>
 <div id="forms" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Forms</h3>
 <p>Generic text input fields can be created with the text type.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;Name&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;Name&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span></a></code></pre></div>
 <p>A password field is pretty similar to a text field, but the characters are obscured.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;password&quot;</span> type=<span class="st">&quot;password&quot;</span> placeholder=<span class="st">&quot;Password&quot;</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;password&quot;</span> type=<span class="st">&quot;password&quot;</span> placeholder=<span class="st">&quot;Password&quot;</span><span class="op">&gt;</span></a></code></pre></div>
 <p>Dropdown lists of the possible valid choices for a field can be used with <code>datalist</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;country&quot;</span> list=<span class="st">&quot;countries&quot;</span> placeholder=<span class="st">&quot;Country&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">datalist</span> id=<span class="st">&quot;countries&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Afghanistan&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Albania&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Algeria&quot;</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;country&quot;</span> list=<span class="st">&quot;countries&quot;</span> placeholder=<span class="st">&quot;Country&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">datalist</span> id=<span class="st">&quot;countries&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Afghanistan&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Albania&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">    <span class="op">&lt;</span><span class="ex">option</span> value=<span class="st">&quot;Algeria&quot;</span><span class="op">&gt;</span></a></code></pre></div>
 </div>
 </div>
 <div id="css" class="section level2">
 <h2><span class="header-section-number">2.2</span> CSS</h2>
 <p>Commenting in CSS.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">/*</span>
-<span class="ex">These</span> are some comments.
-<span class="ex">*/</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="ex">/*</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="ex">These</span> are some comments.</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="ex">*/</span></a></code></pre></div>
 <p>CSS properties can be found <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">here</a>.</p>
-<p>Instead of putting the css styles within the header of the html file, they can be included in a separate css file and referenced. In this example, the type of file being referenced is classified as a <code>stylesheet</code> and the code is within <code>styles.css</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  
-    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                       
-        <span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;styles.css&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                      
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </code></pre></div>
+<p>Instead of putting the css styles within the header of the html file, they can be included in a separate css file and referenced.
+In this example, the type of file being referenced is classified as a <code>stylesheet</code> and the code is within <code>styles.css</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>         </a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                  </a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                       </a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">        <span class="op">&lt;</span><span class="fu">link</span> rel=<span class="st">&quot;stylesheet&quot;</span> href=<span class="st">&quot;styles.css&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                      </a>
+<a class="sourceLine" id="cb20-6" data-line-number="6"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                 </a></code></pre></div>
 <p>The code that goes within the css file is here, and it is simply the same code that was put into the style headers in the above example.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">h1</span> {                   
-    <span class="ex">color</span>: blue<span class="kw">;</span>       
-    <span class="ex">text-align</span>: center<span class="kw">;</span>
-}                      </code></pre></div>
-<p>Divisions define sections of the code that can be separated so it can be controlled in a particular manner. Font priorities are taken left to right if some fonts are not found.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>                        
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                                 
-    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                             
-        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>    
-        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                        
-            <span class="ex">div</span> {                      
-                <span class="ex">background-color</span>: teal<span class="kw">;</span>
-                <span class="ex">width</span>: 500px<span class="kw">;</span>          
-                <span class="ex">height</span>: 400px<span class="kw">;</span>         
-                <span class="ex">margin</span>: 30px<span class="kw">;</span>
-                <span class="ex">padding</span>: 20px<span class="kw">;</span>
-                <span class="ex">font-family</span>: Arial, sans-serif<span class="kw">;</span>
-                <span class="ex">font-size</span>: 28px<span class="kw">;</span>               
-                <span class="ex">font-weight</span>: bold<span class="kw">;</span>             
-                <span class="ex">border</span>: 1px dotted black<span class="kw">;</span>
-            }                          
-        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                       
-    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                            
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                             
-        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>                          
-            <span class="ex">Hello</span>, world!              
-        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>                         
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                            
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                                </code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="ex">h1</span> {                   </a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">    <span class="ex">color</span>: blue<span class="kw">;</span>       </a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">    <span class="ex">text-align</span>: center<span class="kw">;</span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">}                      </a></code></pre></div>
+<p>Divisions define sections of the code that can be separated so it can be controlled in a particular manner.
+Font priorities are taken left to right if some fonts are not found.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                                 </a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                             </a>
+<a class="sourceLine" id="cb22-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>    </a>
+<a class="sourceLine" id="cb22-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">            <span class="ex">div</span> {                      </a>
+<a class="sourceLine" id="cb22-7" data-line-number="7">                <span class="ex">background-color</span>: teal<span class="kw">;</span></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8">                <span class="ex">width</span>: 500px<span class="kw">;</span>          </a>
+<a class="sourceLine" id="cb22-9" data-line-number="9">                <span class="ex">height</span>: 400px<span class="kw">;</span>         </a>
+<a class="sourceLine" id="cb22-10" data-line-number="10">                <span class="ex">margin</span>: 30px<span class="kw">;</span></a>
+<a class="sourceLine" id="cb22-11" data-line-number="11">                <span class="ex">padding</span>: 20px<span class="kw">;</span></a>
+<a class="sourceLine" id="cb22-12" data-line-number="12">                <span class="ex">font-family</span>: Arial, sans-serif<span class="kw">;</span></a>
+<a class="sourceLine" id="cb22-13" data-line-number="13">                <span class="ex">font-size</span>: 28px<span class="kw">;</span>               </a>
+<a class="sourceLine" id="cb22-14" data-line-number="14">                <span class="ex">font-weight</span>: bold<span class="kw">;</span>             </a>
+<a class="sourceLine" id="cb22-15" data-line-number="15">                <span class="ex">border</span>: 1px dotted black<span class="kw">;</span></a>
+<a class="sourceLine" id="cb22-16" data-line-number="16">            }                          </a>
+<a class="sourceLine" id="cb22-17" data-line-number="17">        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb22-18" data-line-number="18">    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                            </a>
+<a class="sourceLine" id="cb22-19" data-line-number="19">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                             </a>
+<a class="sourceLine" id="cb22-20" data-line-number="20">        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>                          </a>
+<a class="sourceLine" id="cb22-21" data-line-number="21">            <span class="ex">Hello</span>, world!              </a>
+<a class="sourceLine" id="cb22-22" data-line-number="22">        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>                         </a>
+<a class="sourceLine" id="cb22-23" data-line-number="23">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                            </a>
+<a class="sourceLine" id="cb22-24" data-line-number="24"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span>                                </a></code></pre></div>
 <p>Divisions and spans can be named and used to refer to different parts of the html document specifically.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>                                                         
-<span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                                                                  
-    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                              
-        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                     
-        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                                                         
-            <span class="co">#top {                                                      </span>
-                <span class="ex">font-size</span>: 36px<span class="kw">;</span>                                        
-                <span class="ex">color</span>: red<span class="kw">;</span>                                             
-            }                                                           
-                                                                        
-            <span class="ex">.name</span> {                                                     
-                <span class="ex">font-weight</span>: bold<span class="kw">;</span>                                      
-                <span class="ex">color</span>: blue<span class="kw">;</span>                                            
-            }                                                           
-        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                                                        
-    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                             
-    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                              
-        <span class="op">&lt;</span><span class="ex">div</span> id=<span class="st">&quot;top&quot;</span><span class="op">&gt;</span>                                                  
-            <span class="ex">This</span> is the <span class="op">&lt;</span>span class=<span class="st">&quot;name&quot;</span><span class="op">&gt;</span>top<span class="op">&lt;</span>/span<span class="op">&gt;</span> of my web page.   
-        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>                                                          
-    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                             
-<span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="op">&lt;</span>!<span class="ex">DOCTYPE</span> html<span class="op">&gt;</span>                                                         </a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">html</span><span class="op">&gt;</span>                                                                  </a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">    <span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                              </a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">        <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Web Page!<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                     </a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">        <span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                                                         </a>
+<a class="sourceLine" id="cb23-6" data-line-number="6">            <span class="co">#top {                                                      </span></a>
+<a class="sourceLine" id="cb23-7" data-line-number="7">                <span class="ex">font-size</span>: 36px<span class="kw">;</span>                                        </a>
+<a class="sourceLine" id="cb23-8" data-line-number="8">                <span class="ex">color</span>: red<span class="kw">;</span>                                             </a>
+<a class="sourceLine" id="cb23-9" data-line-number="9">            }                                                           </a>
+<a class="sourceLine" id="cb23-10" data-line-number="10">                                                                        </a>
+<a class="sourceLine" id="cb23-11" data-line-number="11">            <span class="ex">.name</span> {                                                     </a>
+<a class="sourceLine" id="cb23-12" data-line-number="12">                <span class="ex">font-weight</span>: bold<span class="kw">;</span>                                      </a>
+<a class="sourceLine" id="cb23-13" data-line-number="13">                <span class="ex">color</span>: blue<span class="kw">;</span>                                            </a>
+<a class="sourceLine" id="cb23-14" data-line-number="14">            }                                                           </a>
+<a class="sourceLine" id="cb23-15" data-line-number="15">        <span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                                                        </a>
+<a class="sourceLine" id="cb23-16" data-line-number="16">    <span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                             </a>
+<a class="sourceLine" id="cb23-17" data-line-number="17">    <span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                              </a>
+<a class="sourceLine" id="cb23-18" data-line-number="18">        <span class="op">&lt;</span><span class="ex">div</span> id=<span class="st">&quot;top&quot;</span><span class="op">&gt;</span>                                                  </a>
+<a class="sourceLine" id="cb23-19" data-line-number="19">            <span class="ex">This</span> is the <span class="op">&lt;</span>span class=<span class="st">&quot;name&quot;</span><span class="op">&gt;</span>top<span class="op">&lt;</span>/span<span class="op">&gt;</span> of my web page.   </a>
+<a class="sourceLine" id="cb23-20" data-line-number="20">        <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>                                                          </a>
+<a class="sourceLine" id="cb23-21" data-line-number="21">    <span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                             </a>
+<a class="sourceLine" id="cb23-22" data-line-number="22"><span class="op">&lt;</span>/<span class="ex">html</span><span class="op">&gt;</span></a></code></pre></div>
 <p>Link styling can be done by adjusting colors and text decorations of links.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                             
-    <span class="ex">a</span>:link {                        
-      <span class="ex">color</span>: blue<span class="kw">;</span>                  
-      <span class="ex">background-color</span>: transparent<span class="kw">;</span>
-      <span class="ex">text-decoration</span>: none<span class="kw">;</span>        
-    }                               
-                                    
-    <span class="ex">a</span>:visited {                     
-      <span class="ex">color</span>: red<span class="kw">;</span>                   
-      <span class="ex">background-color</span>: transparent<span class="kw">;</span>
-      <span class="ex">text-decoration</span>: none<span class="kw">;</span>        
-    }                               
-                                    
-    <span class="ex">a</span>:hover {                       
-      <span class="ex">color</span>: pink<span class="kw">;</span>                  
-      <span class="ex">background-color</span>: transparent<span class="kw">;</span>
-      <span class="ex">text-decoration</span>: underline<span class="kw">;</span>   
-    }                               
-                                    
-    <span class="ex">a</span>:active {                      
-      <span class="ex">color</span>: orange<span class="kw">;</span>                
-      <span class="ex">background-color</span>: transparent<span class="kw">;</span>
-      <span class="ex">text-decoration</span>: underline<span class="kw">;</span>   
-    }                               
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                            </code></pre></div>
-<p>Fonts can be imported from locations like google’s hosted fonts and used directly to avoid problems with a browser not supporting them. The link to the fonts goes within the header portion of the html code.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="fu">link</span> href=<span class="st">&quot;https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre&amp;display=swap&quot;</span> rel=<span class="st">&quot;stylesheet&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>                             </a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">    <span class="ex">a</span>:link {                        </a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">      <span class="ex">color</span>: blue<span class="kw">;</span>                  </a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">      <span class="ex">background-color</span>: transparent<span class="kw">;</span></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5">      <span class="ex">text-decoration</span>: none<span class="kw">;</span>        </a>
+<a class="sourceLine" id="cb24-6" data-line-number="6">    }                               </a>
+<a class="sourceLine" id="cb24-7" data-line-number="7">                                    </a>
+<a class="sourceLine" id="cb24-8" data-line-number="8">    <span class="ex">a</span>:visited {                     </a>
+<a class="sourceLine" id="cb24-9" data-line-number="9">      <span class="ex">color</span>: red<span class="kw">;</span>                   </a>
+<a class="sourceLine" id="cb24-10" data-line-number="10">      <span class="ex">background-color</span>: transparent<span class="kw">;</span></a>
+<a class="sourceLine" id="cb24-11" data-line-number="11">      <span class="ex">text-decoration</span>: none<span class="kw">;</span>        </a>
+<a class="sourceLine" id="cb24-12" data-line-number="12">    }                               </a>
+<a class="sourceLine" id="cb24-13" data-line-number="13">                                    </a>
+<a class="sourceLine" id="cb24-14" data-line-number="14">    <span class="ex">a</span>:hover {                       </a>
+<a class="sourceLine" id="cb24-15" data-line-number="15">      <span class="ex">color</span>: pink<span class="kw">;</span>                  </a>
+<a class="sourceLine" id="cb24-16" data-line-number="16">      <span class="ex">background-color</span>: transparent<span class="kw">;</span></a>
+<a class="sourceLine" id="cb24-17" data-line-number="17">      <span class="ex">text-decoration</span>: underline<span class="kw">;</span>   </a>
+<a class="sourceLine" id="cb24-18" data-line-number="18">    }                               </a>
+<a class="sourceLine" id="cb24-19" data-line-number="19">                                    </a>
+<a class="sourceLine" id="cb24-20" data-line-number="20">    <span class="ex">a</span>:active {                      </a>
+<a class="sourceLine" id="cb24-21" data-line-number="21">      <span class="ex">color</span>: orange<span class="kw">;</span>                </a>
+<a class="sourceLine" id="cb24-22" data-line-number="22">      <span class="ex">background-color</span>: transparent<span class="kw">;</span></a>
+<a class="sourceLine" id="cb24-23" data-line-number="23">      <span class="ex">text-decoration</span>: underline<span class="kw">;</span>   </a>
+<a class="sourceLine" id="cb24-24" data-line-number="24">    }                               </a>
+<a class="sourceLine" id="cb24-25" data-line-number="25"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>                            </a></code></pre></div>
+<p>Fonts can be imported from locations like google’s hosted fonts and used directly to avoid problems with a browser not supporting them.
+The link to the fonts goes within the header portion of the html code.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">    <span class="op">&lt;</span><span class="fu">link</span> href=<span class="st">&quot;https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre&amp;display=swap&quot;</span> rel=<span class="st">&quot;stylesheet&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span></a></code></pre></div>
 <p>The imported font families can then be used within the CSS directly.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">body</span> {
-    <span class="ex">font-family</span>: Proza Libre, Cormorant Garamond
-}</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="ex">body</span> {</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">    <span class="ex">font-family</span>: Proza Libre, Cormorant Garamond</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">}</a></code></pre></div>
 <p>Nested elements can be styled in a grouped manner.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">ol</span> li {
-        <span class="ex">color</span>: red<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>list item<span class="op">&lt;</span>/li<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>second list item<span class="op">&lt;</span>/li<span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">ol</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">    <span class="ex">ol</span> li {</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">        <span class="ex">color</span>: red<span class="kw">;</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">    }</a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">    <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8">        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>list item<span class="op">&lt;</span>/li<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-9" data-line-number="9">        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>second list item<span class="op">&lt;</span>/li<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-10" data-line-number="10">    <span class="op">&lt;</span>/<span class="ex">ol</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb27-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p>A similar use is to style the immediately nested child elements and none other using the <code>&gt;</code> operator.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">ol</span> <span class="op">&gt;</span> li {
-        <span class="ex">color</span>: red<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>this will be colored<span class="op">&lt;</span>/li<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span>
-            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>this won<span class="st">&#39;t be colored&lt;/li&gt;</span>
-<span class="st">        &lt;/ul&gt;</span>
-<span class="st">        &lt;li&gt;this will also be colored&lt;/li&gt;</span>
-<span class="st">    &lt;/ol&gt;</span>
-<span class="st">&lt;/body&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">    <span class="ex">ol</span> <span class="op">&gt;</span> li {</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">        <span class="ex">color</span>: red<span class="kw">;</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4">    }</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb28-7" data-line-number="7">    <span class="op">&lt;</span><span class="ex">ol</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb28-8" data-line-number="8">        <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>this will be colored<span class="op">&lt;</span>/li<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb28-9" data-line-number="9">        <span class="op">&lt;</span><span class="ex">ul</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb28-10" data-line-number="10">            <span class="op">&lt;</span><span class="ex">li</span><span class="op">&gt;</span>this won<span class="st">&#39;t be colored&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb28-11" data-line-number="11"><span class="st">        &lt;/ul&gt;</span></a>
+<a class="sourceLine" id="cb28-12" data-line-number="12"><span class="st">        &lt;li&gt;this will also be colored&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb28-13" data-line-number="13"><span class="st">    &lt;/ol&gt;</span></a>
+<a class="sourceLine" id="cb28-14" data-line-number="14"><span class="st">&lt;/body&gt;</span></a></code></pre></div>
 <p>Fields of particular types can be styled based on their type. These are examples of a text field that allows letters and numbers and a number field that only allows numbers.<br />
 The fields can then be styled based on the type of field that they are.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">input</span>[type=text] {
-    <span class="ex">background-color</span>: red<span class="kw">;</span>
-}
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;First Name&quot;</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;number&quot;</span> placeholder=<span class="st">&quot;Age&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">    <span class="ex">input</span>[type=text] {</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">    <span class="ex">background-color</span>: red<span class="kw">;</span></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">    <span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;text&quot;</span> placeholder=<span class="st">&quot;First Name&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb29-9" data-line-number="9">    <span class="op">&lt;</span><span class="ex">input</span> name=<span class="st">&quot;name&quot;</span> type=<span class="st">&quot;number&quot;</span> placeholder=<span class="st">&quot;Age&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <div id="selectors" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Selectors</h3>
 <p>CSS Selectors allow specific classes or elements to be selected and styled individually.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">a</span>, b /* Multiple element selector */
-<span class="ex">a</span> b /* Descendant selector */
-<span class="ex">a</span> <span class="op">&gt;</span> b /* Child selector */
-<span class="ex">a</span> + b /* Adjacent sibling selector */
-[<span class="va">a=</span>b] <span class="ex">/*</span> Attribute selector */
-<span class="ex">a</span>:b /* Pseudoclass selector */
-<span class="ex">a</span>::b /* Pseudoelement selector */</code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="ex">a</span>, b /* Multiple element selector */</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="ex">a</span> b /* Descendant selector */</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="ex">a</span> <span class="op">&gt;</span> b /* Child selector */</a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="ex">a</span> + b /* Adjacent sibling selector */</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5">[<span class="va">a=</span>b] <span class="ex">/*</span> Attribute selector */</a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="ex">a</span>:b /* Pseudoclass selector */</a>
+<a class="sourceLine" id="cb30-7" data-line-number="7"><span class="ex">a</span>::b /* Pseudoelement selector */</a></code></pre></div>
 <p>Pseudo-classes allow for different styling effects depending on the state of the element.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">button</span> {
-        <span class="ex">background-color</span>: green<span class="kw">;</span>
-    }
-    <span class="ex">button</span>:hover {
-        <span class="ex">background-color</span>: orange<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click<span class="op">&lt;</span>/button<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">    <span class="ex">button</span> {</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">        <span class="ex">background-color</span>: green<span class="kw">;</span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">    }</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5">    <span class="ex">button</span>:hover {</a>
+<a class="sourceLine" id="cb31-6" data-line-number="6">        <span class="ex">background-color</span>: orange<span class="kw">;</span></a>
+<a class="sourceLine" id="cb31-7" data-line-number="7">    }</a>
+<a class="sourceLine" id="cb31-8" data-line-number="8"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb31-9" data-line-number="9"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb31-10" data-line-number="10">    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb31-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p>Pseudo-elements are similar but select elements also allow things to be styled by placing information at the beginning of an item.<br />
 What is happening here is that there is a link amd before the link it says “Click here:”, and to the left of that the <code>\21d12</code> specifies a unicode arrow.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">a</span>::before {
-        <span class="ex">content</span>: <span class="st">&quot;\21d2 Click here: &quot;</span><span class="kw">;</span>
-        <span class="ex">font-weight</span>: bold<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;#&quot;</span><span class="op">&gt;</span>A link<span class="op">&lt;</span>/a<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">    <span class="ex">a</span>::before {</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">        <span class="ex">content</span>: <span class="st">&quot;\21d2 Click here: &quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">        <span class="ex">font-weight</span>: bold<span class="kw">;</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5">    }</a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8">    <span class="op">&lt;</span><span class="ex">a</span> href=<span class="st">&quot;#&quot;</span><span class="op">&gt;</span>A link<span class="op">&lt;</span>/a<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p>Text highlighting can also be controlled with pseudo-elements. Here the text color turns red and the highlight is in yellow when the text is highlighted.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">p</span>::selection {
-        <span class="ex">color</span>: red<span class="kw">;</span>
-        <span class="ex">background-color</span>: yellow<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This is some text<span class="op">&lt;</span>/p<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">    <span class="ex">p</span>::selection {</a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">        <span class="ex">color</span>: red<span class="kw">;</span></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">        <span class="ex">background-color</span>: yellow<span class="kw">;</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">    }</a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb33-8" data-line-number="8">    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This is some text<span class="op">&lt;</span>/p<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 </div>
 <div id="responsive-design" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Responsive Design</h3>
 <p>Media queries are CSS rules that are only used if certain properties are true. A commonly used property is screen size to adjust page layouts fore mobile. It is generally a good idea to design for mobile first and adjust properties to fit desktop, as this will ensure mobile gets the fastest performace.</p>
 <p>Here the width of a column is being altered if the browser window is at least 768px in size. Altering the design in this way illustrates how development can be done “mobile-first”, as the property is altered if a desktop is used instead of mobile.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">@media</span> only screen and (min-width: 768px) <span class="kw">{</span>
-  <span class="ex">/*</span> For desktop: */
-  <span class="ex">.col-1</span> {width: 8.33%<span class="kw">;}</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="ex">@media</span> only screen and (min-width: 768px) <span class="kw">{</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">  <span class="ex">/*</span> For desktop: */</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">  <span class="ex">.col-1</span> {width: 8.33%<span class="kw">;}</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4">}</a></code></pre></div>
 <p>Media queries can also control content what content gets printed. Here both paragraphs get displayed on the page, but only the first paragraph appears when the page is printed.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">@media</span> print {
-        <span class="ex">.screen-only</span> {
-            <span class="ex">display</span>: none<span class="kw">;</span>
-        }
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This gets printed<span class="op">&lt;</span>/p<span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">p</span> class=<span class="st">&quot;screen-only&quot;</span><span class="op">&gt;</span>This does not get printed<span class="op">&lt;</span>/p<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">    <span class="ex">@media</span> print {</a>
+<a class="sourceLine" id="cb35-3" data-line-number="3">        <span class="ex">.screen-only</span> {</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4">            <span class="ex">display</span>: none<span class="kw">;</span></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5">        }</a>
+<a class="sourceLine" id="cb35-6" data-line-number="6">    }</a>
+<a class="sourceLine" id="cb35-7" data-line-number="7"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb35-9" data-line-number="9">    <span class="op">&lt;</span><span class="ex">p</span><span class="op">&gt;</span>This gets printed<span class="op">&lt;</span>/p<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb35-10" data-line-number="10">    <span class="op">&lt;</span><span class="ex">p</span> class=<span class="st">&quot;screen-only&quot;</span><span class="op">&gt;</span>This does not get printed<span class="op">&lt;</span>/p<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb35-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p>The content of the page can also be changed using media queries.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">@media</span> (min-width: 500px) <span class="kw">{</span>
-        <span class="ex">h1</span>::before {
-            <span class="ex">content</span>: <span class="st">&quot;Welcome to My Web Page!&quot;</span><span class="kw">;</span>
-        <span class="kw">}</span>
-    }
-
-    <span class="ex">@media</span> (max-width: 499px) <span class="kw">{</span>
-        <span class="ex">h1</span>::before {
-            <span class="ex">content</span>: <span class="st">&quot;Welcome!&quot;</span><span class="kw">;</span>
-        <span class="kw">}</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;&lt;</span>/h1<span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3">    <span class="ex">@media</span> (min-width: 500px) <span class="kw">{</span></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4">        <span class="ex">h1</span>::before {</a>
+<a class="sourceLine" id="cb36-5" data-line-number="5">            <span class="ex">content</span>: <span class="st">&quot;Welcome to My Web Page!&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb36-6" data-line-number="6">        <span class="kw">}</span></a>
+<a class="sourceLine" id="cb36-7" data-line-number="7">    }</a>
+<a class="sourceLine" id="cb36-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb36-9" data-line-number="9">    <span class="ex">@media</span> (max-width: 499px) <span class="kw">{</span></a>
+<a class="sourceLine" id="cb36-10" data-line-number="10">        <span class="ex">h1</span>::before {</a>
+<a class="sourceLine" id="cb36-11" data-line-number="11">            <span class="ex">content</span>: <span class="st">&quot;Welcome!&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb36-12" data-line-number="12">        <span class="kw">}</span></a>
+<a class="sourceLine" id="cb36-13" data-line-number="13">    }</a>
+<a class="sourceLine" id="cb36-14" data-line-number="14"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb36-15" data-line-number="15"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb36-16" data-line-number="16">    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;&lt;</span>/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb36-17" data-line-number="17"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 </div>
 <div id="flexbox" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Flexbox</h3>
 <p>Flexbox styling allows elements to be dynamically arranged to fit the screen. With a wide enough screen the div elements will all be in one row, but as the screen shrinks, they will move down into new rows.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">.container</span> {
-        <span class="ex">display</span>: flex<span class="kw">;</span>
-        <span class="ex">flex-wrap</span>: wrap<span class="kw">;</span>
-    }
-
-    <span class="ex">.container</span> <span class="op">&gt;</span> div {
-        <span class="ex">background-color</span>: springgreen<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3">    <span class="ex">.container</span> {</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4">        <span class="ex">display</span>: flex<span class="kw">;</span></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5">        <span class="ex">flex-wrap</span>: wrap<span class="kw">;</span></a>
+<a class="sourceLine" id="cb37-6" data-line-number="6">    }</a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb37-8" data-line-number="8">    <span class="ex">.container</span> <span class="op">&gt;</span> div {</a>
+<a class="sourceLine" id="cb37-9" data-line-number="9">        <span class="ex">background-color</span>: springgreen<span class="kw">;</span></a>
+<a class="sourceLine" id="cb37-10" data-line-number="10">    }</a>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-12" data-line-number="12"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-13" data-line-number="13">    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;container&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-14" data-line-number="14">        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-15" data-line-number="15">        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-16" data-line-number="16">        <span class="op">&lt;</span><span class="ex">div</span><span class="op">&gt;</span>Some stuff<span class="op">&lt;</span>/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-17" data-line-number="17">    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb37-18" data-line-number="18"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 </div>
 <div id="grid-styling" class="section level3">
 <h3><span class="header-section-number">2.2.4</span> Grid Styling</h3>
 <p>In the following example a grid system is being used for the items being displayed. the grid creates the first two colums as 200px and the last column is automatically sized to fill the rest of the remaining screen.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span>
-    <span class="ex">.grid</span> {
-        <span class="ex">background-color</span>: green<span class="kw">;</span>
-        <span class="ex">display</span>: grid<span class="kw">;</span>
-        <span class="ex">grid-column-gap</span>: 20px<span class="kw">;</span>
-        <span class="ex">gird-row-gap</span>: 10px<span class="kw">;</span>
-        <span class="ex">grid-template-columns</span>: 200px 200px auto<span class="kw">;</span>
-    }
-
-    <span class="ex">.grid-item</span> {
-        <span class="ex">background-color</span>: white<span class="kw">;</span>
-    }
-<span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span>
-<span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>
-    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid&quot;</span><span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;1&lt;</span>/div<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;2&lt;</span>/div<span class="op">&gt;</span>
-        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;3&lt;</span>/div<span class="op">&gt;</span>
-    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span>
-<span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">meta</span> name=<span class="st">&quot;viewport&quot;</span> content=<span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">    <span class="ex">.grid</span> {</a>
+<a class="sourceLine" id="cb38-4" data-line-number="4">        <span class="ex">background-color</span>: green<span class="kw">;</span></a>
+<a class="sourceLine" id="cb38-5" data-line-number="5">        <span class="ex">display</span>: grid<span class="kw">;</span></a>
+<a class="sourceLine" id="cb38-6" data-line-number="6">        <span class="ex">grid-column-gap</span>: 20px<span class="kw">;</span></a>
+<a class="sourceLine" id="cb38-7" data-line-number="7">        <span class="ex">gird-row-gap</span>: 10px<span class="kw">;</span></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8">        <span class="ex">grid-template-columns</span>: 200px 200px auto<span class="kw">;</span></a>
+<a class="sourceLine" id="cb38-9" data-line-number="9">    }</a>
+<a class="sourceLine" id="cb38-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb38-11" data-line-number="11">    <span class="ex">.grid-item</span> {</a>
+<a class="sourceLine" id="cb38-12" data-line-number="12">        <span class="ex">background-color</span>: white<span class="kw">;</span></a>
+<a class="sourceLine" id="cb38-13" data-line-number="13">    }</a>
+<a class="sourceLine" id="cb38-14" data-line-number="14"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-15" data-line-number="15"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-16" data-line-number="16">    <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-17" data-line-number="17">        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;1&lt;</span>/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-18" data-line-number="18">        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;2&lt;</span>/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-19" data-line-number="19">        <span class="op">&lt;</span><span class="ex">div</span> class=<span class="st">&quot;grid-item&quot;</span><span class="op">&gt;3&lt;</span>/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-20" data-line-number="20">    <span class="op">&lt;</span>/<span class="ex">div</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb38-21" data-line-number="21"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 
 </div>
 </div>
@@ -661,11 +702,13 @@ What is happening here is that there is a link amd before the link it says “Cl
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

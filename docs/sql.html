@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 SQL | Bootstrap and React for Web Development</title>
-  <meta name="description" content="These are just some things.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="These are just some things." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 SQL | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   <meta name="twitter:description" content="These are just some things." />
   
 
-<meta name="author" content="L A Liggett">
+<meta name="author" content="L A Liggett" />
 
 
-<meta name="date" content="2019-09-15">
+<meta name="date" content="2019-11-06" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="flask.html">
-<link rel="next" href="javascript.html">
+<link rel="prev" href="flask.html"/>
+<link rel="next" href="javascript.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -194,37 +221,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">6.2</span> Installation</h2>
 <p>The method I can easily get to work is by installing through <code>apt</code>.<br />
 It seems also that for some reason the install only works if the version number is specified.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install postgresql-9.6 postgresql-client libpq-dev</code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="fu">sudo</span> apt-get install postgresql-9.6 postgresql-client libpq-dev</a></code></pre></div>
 <p>conda install -c conda-forge psycopg2 flask-sqlalchemy flask-migrate</p>
 <p>Both the default database user and default database are called postgres, so switch to that user and start <code>psql</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> -u postgres psql</code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="fu">sudo</span> -u postgres psql</a></code></pre></div>
 <p>Then start a server.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">psql</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="ex">psql</span></a></code></pre></div>
 <p>I have not been able to get the installation working through a conda install but here is the reference to postgresql.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge postgresql</code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="ex">conda</span> install -c conda-forge postgresql</a></code></pre></div>
 <p>To quit <code>psql</code> run <code>\q</code>.</p>
 </div>
 <div id="starting-local-database" class="section level2">
 <h2><span class="header-section-number">6.3</span> Starting Local Database</h2>
 <p>First set a password for local use.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> -u postgres psql
-<span class="va">postgres=</span># \<span class="ex">password</span>
-<span class="ex">Enter</span> new password:
-<span class="ex">Enter</span> it again:
-<span class="va">postgres=</span># \<span class="ex">q</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="fu">sudo</span> -u postgres psql</a>
+<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="va">postgres=</span># \<span class="ex">password</span></a>
+<a class="sourceLine" id="cb72-3" data-line-number="3"><span class="ex">Enter</span> new password:</a>
+<a class="sourceLine" id="cb72-4" data-line-number="4"><span class="ex">Enter</span> it again:</a>
+<a class="sourceLine" id="cb72-5" data-line-number="5"><span class="va">postgres=</span># \<span class="ex">q</span></a></code></pre></div>
 <p>Initially work with localhost to create a database.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">psql</span> -U postgres -W  -h localhost
-<span class="ex">create</span> database airplanes<span class="kw">;</span>
-\<span class="ex">q</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="ex">psql</span> -U postgres -W  -h localhost</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="ex">create</span> database airplanes<span class="kw">;</span></a>
+<a class="sourceLine" id="cb73-3" data-line-number="3">\<span class="ex">q</span></a></code></pre></div>
 <p>Export the location to the newly created database and connect or connect directly.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">DATABASE_URL=</span><span class="st">&quot;postgresql://localhost/airplanes&quot;</span>;</code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="bu">export</span> <span class="va">DATABASE_URL=</span><span class="st">&quot;postgresql://localhost/airplanes&quot;</span>;</a></code></pre></div>
 <p>or</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">psql</span> -U postgres -W  -h localhost postgres://localhost/airplanes</code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="ex">psql</span> -U postgres -W  -h localhost postgres://localhost/airplanes</a></code></pre></div>
 </div>
 <div id="heroku" class="section level2">
 <h2><span class="header-section-number">6.4</span> Heroku</h2>
 <p>Install Heroku.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> snap install --classic heroku</code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="fu">sudo</span> snap install --classic heroku</a></code></pre></div>
 <p>Then running any command should prompt to login to Heroku but the <code>login</code> command is specific for this.</p>
 <pre><code>heroku login</code></pre>
 <p>A sample app from heroku can be cloned to test app deployment.</p>
@@ -291,9 +318,9 @@ git push heroku master</code></pre>
 <h2><span class="header-section-number">6.6</span> Creating a Database</h2>
 <p>Note that reserved words are all being capitalized below, but this is not required, but rather a stylistic choice.</p>
 <p>To create a new database, first run <code>psql</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">create</span> database airplanes<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="ex">create</span> database airplanes<span class="kw">;</span></a></code></pre></div>
 <p>Refer to that database.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">DATABASE_URL=</span><span class="st">&quot;postgresql://localhost/airplanes&quot;</span>;</code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="bu">export</span> <span class="va">DATABASE_URL=</span><span class="st">&quot;postgresql://localhost/airplanes&quot;</span>;</a></code></pre></div>
 <p>List current databases.</p>
 <pre><code>\list</code></pre>
 <p>Connect to a new database;</p>
@@ -304,56 +331,56 @@ or
 The <code>id</code> is being used in a manner similar to an index that will just number each of the items.<br />
 The next three lines are all different data, and are of types <code>VARCHAR</code> and <code>INTEGER</code>.<br />
 The <code>NOT NULL</code> aspect will cause the server to reject the entry if some data is added to the database but that value is not included.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">CREATE</span> TABLE flights (           
-    <span class="fu">id</span> SERIAL PRIMARY KEY,       
-    <span class="ex">origin</span> VARCHAR NOT NULL,     
-    <span class="ex">destination</span> VARCHAR NOT NULL,
-    <span class="ex">duration</span> INTEGER NOT NULL    
-);                               </code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="ex">CREATE</span> TABLE flights (           </a>
+<a class="sourceLine" id="cb99-2" data-line-number="2">    <span class="fu">id</span> SERIAL PRIMARY KEY,       </a>
+<a class="sourceLine" id="cb99-3" data-line-number="3">    <span class="ex">origin</span> VARCHAR NOT NULL,     </a>
+<a class="sourceLine" id="cb99-4" data-line-number="4">    <span class="ex">destination</span> VARCHAR NOT NULL,</a>
+<a class="sourceLine" id="cb99-5" data-line-number="5">    <span class="ex">duration</span> INTEGER NOT NULL    </a>
+<a class="sourceLine" id="cb99-6" data-line-number="6">);                               </a></code></pre></div>
 <p>Display the currently created databases.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">\<span class="ex">d</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb100-1" data-line-number="1">\<span class="ex">d</span></a></code></pre></div>
 <p>Insert data into the flights database.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">INSERT</span> INTO flights (origin, destination, duration) <span class="ex">VALUES</span> (<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;London&#39;</span>, 415);</code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="ex">INSERT</span> INTO flights (origin, destination, duration) <span class="ex">VALUES</span> (<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;London&#39;</span>, 415);</a></code></pre></div>
 <p>Select all the data from flights.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights<span class="kw">;</span></a></code></pre></div>
 <p>Select only the origin and destination columns from flights.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination FROM flights<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="ex">SELECT</span> origin, destination FROM flights<span class="kw">;</span></a></code></pre></div>
 <p>Select only the data in flights where the id is 3.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE id = 3<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights WHERE id = 3<span class="kw">;</span></a></code></pre></div>
 <p>Select only the data in flights that have an origin of New York.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE origin = <span class="st">&#39;New York&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights WHERE origin = <span class="st">&#39;New York&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>Boolean logic data selection from flights.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE destination = <span class="st">&#39;Paris&#39;</span> AND duration <span class="op">&gt;</span> 500<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights WHERE destination = <span class="st">&#39;Paris&#39;</span> AND duration <span class="op">&gt;</span> 500<span class="kw">;</span></a></code></pre></div>
 <p>Average a column of data.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> AVG(duration) <span class="ex">FROM</span> flights<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="ex">SELECT</span> AVG(duration) <span class="ex">FROM</span> flights<span class="kw">;</span></a></code></pre></div>
 <p>Combine boolean logic with calculations performed on the data.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> AVG(duration) <span class="ex">FROM</span> flights WHERE origin = <span class="st">&#39;New York&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="ex">SELECT</span> AVG(duration) <span class="ex">FROM</span> flights WHERE origin = <span class="st">&#39;New York&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>Count columns of matching data.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> COUNT(*) <span class="ex">FROM</span> flights<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="ex">SELECT</span> COUNT(*) <span class="ex">FROM</span> flights<span class="kw">;</span></a></code></pre></div>
 <p>Select matching data from a list.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE origin IN (<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Lima&#39;</span>);</code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights WHERE origin IN (<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Lima&#39;</span>);</a></code></pre></div>
 <p>Wildcards can be used to search for substrings.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights WHERE origin LIKE <span class="st">&#39;%a%&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights WHERE origin LIKE <span class="st">&#39;%a%&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>SQL uses <code>LIMIT</code> to function like <code>HEAD</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM flights LIMIT 2<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="ex">SELECT</span> * FROM flights LIMIT 2<span class="kw">;</span></a></code></pre></div>
 <p>Order data in ascending order <code>asc</code> is ascending and <code>desc</code> is for descending.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">*</span> from flights order by duration asc<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">select</span> <span class="ex">*</span> from flights order by duration asc<span class="kw">;</span></a></code></pre></div>
 <p>Data can be grouped together as in pandas.<br />
 The following code selects the origin column, counts the number of identical origin entries and then adds this count to a new count column.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">origin</span>, count(*) <span class="ex">from</span> flights group by origin<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="kw">select</span> <span class="ex">origin</span>, count(*) <span class="ex">from</span> flights group by origin<span class="kw">;</span></a></code></pre></div>
 <p>Grouped data counts can be immedately filtered when searching.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, COUNT(*) <span class="ex">FROM</span> flights GROUP BY origin HAVING COUNT(*) <span class="op">&gt;</span> <span class="ex">1</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="ex">SELECT</span> origin, COUNT(*) <span class="ex">FROM</span> flights GROUP BY origin HAVING COUNT(*) <span class="op">&gt;</span> <span class="ex">1</span><span class="kw">;</span></a></code></pre></div>
 </div>
 <div id="updating-data" class="section level2">
 <h2><span class="header-section-number">6.7</span> Updating Data</h2>
 <p>This will change the duration of the flight from New York to London to 430.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">UPDATE</span> flights
-<span class="ex">SET</span> duration = 430
-<span class="ex">WHERE</span> origin = <span class="st">&#39;New York&#39;</span>
-<span class="ex">AND</span> destination = <span class="st">&#39;London&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="ex">UPDATE</span> flights</a>
+<a class="sourceLine" id="cb116-2" data-line-number="2"><span class="ex">SET</span> duration = 430</a>
+<a class="sourceLine" id="cb116-3" data-line-number="3"><span class="ex">WHERE</span> origin = <span class="st">&#39;New York&#39;</span></a>
+<a class="sourceLine" id="cb116-4" data-line-number="4"><span class="ex">AND</span> destination = <span class="st">&#39;London&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>Delete a set of matching data from a database.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">DELETE</span> FROM flights
-<span class="ex">WHERE</span> destination = <span class="st">&#39;Tokyo&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="ex">DELETE</span> FROM flights</a>
+<a class="sourceLine" id="cb117-2" data-line-number="2"><span class="ex">WHERE</span> destination = <span class="st">&#39;Tokyo&#39;</span><span class="kw">;</span></a></code></pre></div>
 </div>
 <div id="joinmerge" class="section level2">
 <h2><span class="header-section-number">6.8</span> Join/Merge</h2>
@@ -361,40 +388,40 @@ The following code selects the origin column, counts the number of identical ori
 <p>Foreign keys can be used to reference the data within another table so that data does not need to be continually repeated. For instance if a number of flights are all heading to New York, the city id could be set as number 1 and then flight destination ids could be just set to 1.<br />
 As an example, the following table can be created that has passenger names, and in the <code>flight_id</code> column, the <code>flights</code> database is reference to get the actual flight locations.<br />
 When one database references another as in the following code, the referenced column is typically the <code>PRIMARY KEY</code>, thought this can be modified if necessary.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">CREATE</span> TABLE passengers(
-    <span class="fu">id</span> SERIAL PRIMARY KEY,
-    <span class="ex">name</span> VARCHAR NOT NULL,
-    <span class="ex">flight_id</span> INTEGER REFERENCES flights);</code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="ex">CREATE</span> TABLE passengers(</a>
+<a class="sourceLine" id="cb118-2" data-line-number="2">    <span class="fu">id</span> SERIAL PRIMARY KEY,</a>
+<a class="sourceLine" id="cb118-3" data-line-number="3">    <span class="ex">name</span> VARCHAR NOT NULL,</a>
+<a class="sourceLine" id="cb118-4" data-line-number="4">    <span class="ex">flight_id</span> INTEGER REFERENCES flights);</a></code></pre></div>
 <p>It might be helpful to add some data to the above database for testing, so here is some data.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Alice&#39;</span>, 1);  
-<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Bob&#39;</span>, 1);    
-<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Charlie&#39;</span>, 2);
-<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Dave&#39;</span>, 2);   
-<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Erin&#39;</span>, 4);   
-<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Frank&#39;</span>, 6);  
-<span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Grace&#39;</span>, 6);  </code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Alice&#39;</span>, 1);  </a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Bob&#39;</span>, 1);    </a>
+<a class="sourceLine" id="cb119-3" data-line-number="3"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Charlie&#39;</span>, 2);</a>
+<a class="sourceLine" id="cb119-4" data-line-number="4"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Dave&#39;</span>, 2);   </a>
+<a class="sourceLine" id="cb119-5" data-line-number="5"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Erin&#39;</span>, 4);   </a>
+<a class="sourceLine" id="cb119-6" data-line-number="6"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Frank&#39;</span>, 6);  </a>
+<a class="sourceLine" id="cb119-7" data-line-number="7"><span class="ex">INSERT</span> INTO passengers (name, flight_id) <span class="ex">VALUES</span> (<span class="st">&#39;Grace&#39;</span>, 6);  </a></code></pre></div>
 <p>In order to reference the id data from the <code>flights</code> database for instance and match that up with the data found in the <code>passengers</code> database, the databases should can be joined on the id columns that correspond with each other, in an analogous manner as is performed in pandas.<br />
 The following code selects the <code>origin</code> and <code>destination</code> columns from the <code>flights</code> database, and the <code>name</code> column from the <code>passengers</code> database, after the two databases have been joined on their respective flight id columns.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id<span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id<span class="kw">;</span></a></code></pre></div>
 <p>Data can be directly selected when merging two databases together like the following selection of on the data corresponding with the passenger named <code>Alice</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="ex">SELECT</span> origin, destination, name FROM flights JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>Left/right joining of databases can be performed that unlike inner join will include all of the data in the left or right database.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> origin, destination, name FROM flights left JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="ex">SELECT</span> origin, destination, name FROM flights left JOIN passengers ON passengers.flight_id = flights.id WHERE name = <span class="st">&#39;Alice&#39;</span><span class="kw">;</span></a></code></pre></div>
 </div>
 <div id="indexing" class="section level2">
 <h2><span class="header-section-number">6.9</span> Indexing</h2>
 <p>Indexing allows a subset of one database (sort of like a pandas series) to be used to select data from a database (analogous to a DataFrame).<br />
 In the following code, within the parentheses the <code>flight_id</code> column is being selected to create a “series”, and the ids are being grouped by <code>passengers</code>, and only those flights have more than one passenger are included within the “series”. This series of flight ids is then used to filter the original <code>flights</code> “DataFrame”.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">select</span> <span class="ex">*</span> from flights where id in (select flight_id from passengers group by flight_id having count(*) <span class="op">&gt;</span> <span class="ex">1</span>);</code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="kw">select</span> <span class="ex">*</span> from flights where id in (select flight_id from passengers group by flight_id having count(*) <span class="op">&gt;</span> <span class="ex">1</span>);</a></code></pre></div>
 </div>
 <div id="sql-injection" class="section level2">
 <h2><span class="header-section-number">6.10</span> SQL Injection</h2>
 <p>User input should be escaped or sanitized to prevent a user from inputting SQL code into input fields and have it be directly executed as SQL.<br />
 As an example if a username and password field are presented to the user, and the input is checked against a SQL database, it might look something like the following.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;12345&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;12345&#39;</span>)</a></code></pre></div>
 <p>The problem with the above code is that SQL code could theoretically be entered into the fields like the following.<br />
 If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL query would looks something like the following, which evaluates as True and may allow somebody access to the database.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;1&#39;</span>, OR <span class="st">&#39;1&#39;</span> = <span class="st">&#39;1&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="ex">SELECT</span> * FROM users WHERE (username = <span class="st">&#39;Bill&#39;</span>) <span class="ex">AND</span> (password = <span class="st">&#39;1&#39;</span>, OR <span class="st">&#39;1&#39;</span> = <span class="st">&#39;1&#39;</span>)</a></code></pre></div>
 </div>
 <div id="transactions-and-race-conditions" class="section level2">
 <h2><span class="header-section-number">6.11</span> Transactions and Race Conditions</h2>
@@ -404,7 +431,7 @@ If <code>1', OR '1' = '1'</code> is entered into the password field, now the SQL
 <h2><span class="header-section-number">6.12</span> SQLAlchemy</h2>
 <p>SQLAlchemy is a python library that can be used to interact with SQL data.<br />
 The library can be installed like this:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install -c conda-forge sqlalchemy sqlalchemy-utils</code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="ex">conda</span> install -c conda-forge sqlalchemy sqlalchemy-utils</a></code></pre></div>
 <p>SQLAlchemy can be used to interface with an SQL database.</p>
 <pre><code>from sqlalchemy import create_engine
 engine = create_engine(os.getenv(&quot;DATABASE_URL&quot;))</code></pre>
@@ -433,7 +460,12 @@ Hong Kong,Shanghai,130</code></pre>
                     {&quot;origin&quot;: origin, &quot;destination&quot;: destination, &quot;duration&quot;: duration})                          
         print(f&quot;Added flight from {origin} to {destination} lasting {duration} minutes.&quot;)                          
     db.commit()                                                                                                    </code></pre>
-<p>Here are some links that may be helpful in setting up an sql database and using it with SQLAlchemy. <a href="&#39;https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/&#39;">RealPython</a> <a href="&#39;https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database&#39;">Location of Postgresql Database</a> <a href="&#39;https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545&#39;">Location of Postgresql Database</a> <a href="&#39;https://docs.cs50.net/web/2018/x/projects/1/project1.html&#39;">CS50 Project1 Help</a> <a href="&#39;https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/&#39;">Reddit CS50 SQLAlchemy Help</a></p>
+<p>Here are some links that may be helpful in setting up an sql database and using it with SQLAlchemy.
+<a href="&#39;https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/&#39;">RealPython</a>
+<a href="&#39;https://stackoverflow.com/questions/1137060/where-does-postgresql-store-the-database&#39;">Location of Postgresql Database</a>
+<a href="&#39;https://stackoverflow.com/questions/26332319/finding-local-postgresql-database-url/51955545&#39;">Location of Postgresql Database</a>
+<a href="&#39;https://docs.cs50.net/web/2018/x/projects/1/project1.html&#39;">CS50 Project1 Help</a>
+<a href="&#39;https://www.reddit.com/r/cs50/comments/bxjafn/sqlalchemy_error_cs50w_lecture_3/&#39;">Reddit CS50 SQLAlchemy Help</a></p>
 </div>
 <div id="object-relational-mapping" class="section level2">
 <h2><span class="header-section-number">6.13</span> Object-Relational Mapping</h2>
@@ -443,68 +475,68 @@ Hong Kong,Shanghai,130</code></pre>
 <code>db.Model</code> defines some interactivity with SQLAlchemy and the SQL database.<br />
 <code>primary_key=True</code> indicates that this column is used as the primary way to identify the data.<br />
 <code>db.ForeignKey(&quot;flights.id&quot;)</code> references the <code>flights.id</code> column within the <code>Flight</code> class.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask_sqlalchemy import SQLAlchemy               
-                                                      
-<span class="ex">db</span> = SQLAlchemy()                                     
-                                                      
-<span class="ex">class</span> Flight(db.Model)<span class="bu">:</span>                               
-    <span class="ex">__tablename__</span> = <span class="st">&quot;flights&quot;</span>                         
-    <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)      
-    <span class="ex">origin</span> = db.Column(db.String, nullable=False)     
-    <span class="ex">destination</span> = db.Column(db.String, nullable=False)
-    <span class="ex">duration</span> = db.Column(db.Integer, nullable=False)  
-    <span class="ex">passengers</span> = db.relationship(<span class="st">&quot;Passenger&quot;</span>, backref=<span class="st">&quot;flight&quot;</span>, lazy=True)
-
-<span class="ex">class</span> Passenger(db.Model)<span class="bu">:</span>                                                        
-    <span class="ex">__tablename__</span> = <span class="st">&quot;passengers&quot;</span>                                                  
-    <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)                                  
-    <span class="ex">name</span> = db.Column(db.String, nullable=False)                                   
-    <span class="ex">flight_id</span> = db.Column(db.Integer, db.ForeignKey(<span class="st">&quot;flights.id&quot;</span>), <span class="va">nullable=</span>False)</code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb131-1" data-line-number="1"><span class="ex">from</span> flask_sqlalchemy import SQLAlchemy               </a>
+<a class="sourceLine" id="cb131-2" data-line-number="2">                                                      </a>
+<a class="sourceLine" id="cb131-3" data-line-number="3"><span class="ex">db</span> = SQLAlchemy()                                     </a>
+<a class="sourceLine" id="cb131-4" data-line-number="4">                                                      </a>
+<a class="sourceLine" id="cb131-5" data-line-number="5"><span class="ex">class</span> Flight(db.Model)<span class="bu">:</span>                               </a>
+<a class="sourceLine" id="cb131-6" data-line-number="6">    <span class="ex">__tablename__</span> = <span class="st">&quot;flights&quot;</span>                         </a>
+<a class="sourceLine" id="cb131-7" data-line-number="7">    <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)      </a>
+<a class="sourceLine" id="cb131-8" data-line-number="8">    <span class="ex">origin</span> = db.Column(db.String, nullable=False)     </a>
+<a class="sourceLine" id="cb131-9" data-line-number="9">    <span class="ex">destination</span> = db.Column(db.String, nullable=False)</a>
+<a class="sourceLine" id="cb131-10" data-line-number="10">    <span class="ex">duration</span> = db.Column(db.Integer, nullable=False)  </a>
+<a class="sourceLine" id="cb131-11" data-line-number="11">    <span class="ex">passengers</span> = db.relationship(<span class="st">&quot;Passenger&quot;</span>, backref=<span class="st">&quot;flight&quot;</span>, lazy=True)</a>
+<a class="sourceLine" id="cb131-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb131-13" data-line-number="13"><span class="ex">class</span> Passenger(db.Model)<span class="bu">:</span>                                                        </a>
+<a class="sourceLine" id="cb131-14" data-line-number="14">    <span class="ex">__tablename__</span> = <span class="st">&quot;passengers&quot;</span>                                                  </a>
+<a class="sourceLine" id="cb131-15" data-line-number="15">    <span class="fu">id</span> = db.Column(db.Integer, primary_key=True)                                  </a>
+<a class="sourceLine" id="cb131-16" data-line-number="16">    <span class="ex">name</span> = db.Column(db.String, nullable=False)                                   </a>
+<a class="sourceLine" id="cb131-17" data-line-number="17">    <span class="ex">flight_id</span> = db.Column(db.Integer, db.ForeignKey(<span class="st">&quot;flights.id&quot;</span>), <span class="va">nullable=</span>False)</a></code></pre></div>
 <p>Creating a class in the above manner will allow modification of an SQL database using just python with SQLAlchemy. This avoids the requirement of using SQL commands explicitly within the code.<br />
 The following is an example of adding flight data to a database using the Flight class.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">db.init_app</span>(app)
-<span class="ex">flight</span> = Flight(origin=origin, destination=destination, duration=duration)
-<span class="ex">db.session.add</span>(flight)                                                    
-<span class="ex">db.session.commit</span>()</code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="ex">db.init_app</span>(app)</a>
+<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="ex">flight</span> = Flight(origin=origin, destination=destination, duration=duration)</a>
+<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="ex">db.session.add</span>(flight)                                                    </a>
+<a class="sourceLine" id="cb132-4" data-line-number="4"><span class="ex">db.session.commit</span>()</a></code></pre></div>
 <p>A SQL database can also be queried with python instead of SQL commands.<br />
 The first command below is how a SQL database can be queried with SQL syntax and the second is with python using SQLAlchemy.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># using SQL</span>
-<span class="ex">flights</span> = db.execute(<span class="st">&quot;SELECT origin, destination, duration FROM flights&quot;</span>)<span class="ex">.fetchall</span>()
-
-<span class="co"># using SQLAlchemy</span>
-<span class="ex">flights</span> = Flight.query.all()</code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="co"># using SQL</span></a>
+<a class="sourceLine" id="cb133-2" data-line-number="2"><span class="ex">flights</span> = db.execute(<span class="st">&quot;SELECT origin, destination, duration FROM flights&quot;</span>)<span class="ex">.fetchall</span>()</a>
+<a class="sourceLine" id="cb133-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb133-4" data-line-number="4"><span class="co"># using SQLAlchemy</span></a>
+<a class="sourceLine" id="cb133-5" data-line-number="5"><span class="ex">flights</span> = Flight.query.all()</a></code></pre></div>
 <p>Filtering can also be done with similar code.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flights</span> = Flight.query.filter_by(origin=<span class="st">&quot;Paris&quot;</span>)<span class="ex">.first</span>()</code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="ex">flights</span> = Flight.query.filter_by(origin=<span class="st">&quot;Paris&quot;</span>)<span class="ex">.first</span>()</a></code></pre></div>
 <p>Results can be counted.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flights</span> = Flight.query.filter_by(origin=<span class="st">&quot;Paris&quot;</span>)<span class="ex">.count</span>()</code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="ex">flights</span> = Flight.query.filter_by(origin=<span class="st">&quot;Paris&quot;</span>)<span class="ex">.count</span>()</a></code></pre></div>
 <p>Data can be retrieved by its ID, where the below code gets the row with ID 28.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.get</span>(28)</code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="ex">Flight.query.get</span>(28)</a></code></pre></div>
 <p>Data within a table can be modified.<br />
 The following code gets the row with an ID of 6 then updates its duration to 280.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flight</span> = Flight.query.get(6)
-<span class="ex">flight.duration</span> = 280</code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="ex">flight</span> = Flight.query.get(6)</a>
+<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="ex">flight.duration</span> = 280</a></code></pre></div>
 <p>Data can be deleted from a table.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">flight</span> = Flight.query.get(6)
-<span class="ex">db.session.delete</span>(flight)</code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="ex">flight</span> = Flight.query.get(6)</a>
+<a class="sourceLine" id="cb138-2" data-line-number="2"><span class="ex">db.session.delete</span>(flight)</a></code></pre></div>
 <p>Data from a table can be retrieved and ordered.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.order_by</span>(Flight.origin.desc())<span class="ex">.all</span>()</code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="ex">Flight.query.order_by</span>(Flight.origin.desc())<span class="ex">.all</span>()</a></code></pre></div>
 <p>Table data can be retrieved when it does not match a boolean expression.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
-    <span class="ex">Flight.origin</span> != <span class="st">&quot;Paris&quot;</span>)<span class="ex">.all</span>()</code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb140-1" data-line-number="1"><span class="ex">Flight.query.filter</span>(</a>
+<a class="sourceLine" id="cb140-2" data-line-number="2">    <span class="ex">Flight.origin</span> != <span class="st">&quot;Paris&quot;</span>)<span class="ex">.all</span>()</a></code></pre></div>
 <p>SQL substring querying can be performed with SQLAlchemy.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
-    <span class="ex">Flight.origin.like</span>(<span class="st">&quot;%a%&quot;</span>))<span class="ex">.all</span>()</code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="ex">Flight.query.filter</span>(</a>
+<a class="sourceLine" id="cb141-2" data-line-number="2">    <span class="ex">Flight.origin.like</span>(<span class="st">&quot;%a%&quot;</span>))<span class="ex">.all</span>()</a></code></pre></div>
 <p>SQL search can be performed using a list of values.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
-    <span class="ex">Flight.origin.in_</span>(
-        [<span class="st">&quot;Tokyo&quot;</span>, <span class="st">&quot;Paris&quot;</span>]))<span class="ex">.all</span>()</code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="ex">Flight.query.filter</span>(</a>
+<a class="sourceLine" id="cb142-2" data-line-number="2">    <span class="ex">Flight.origin.in_</span>(</a>
+<a class="sourceLine" id="cb142-3" data-line-number="3">        [<span class="st">&quot;Tokyo&quot;</span>, <span class="st">&quot;Paris&quot;</span>]))<span class="ex">.all</span>()</a></code></pre></div>
 <p>Boolean expressions can be used.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Flight.query.filter</span>(
-    <span class="ex">or_</span>(Flight.origin == <span class="st">&quot;Paris&quot;</span>,
-        <span class="ex">Flight.duration</span> <span class="op">&gt;</span> 500))<span class="ex">.all</span>()</code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb143-1" data-line-number="1"><span class="ex">Flight.query.filter</span>(</a>
+<a class="sourceLine" id="cb143-2" data-line-number="2">    <span class="ex">or_</span>(Flight.origin == <span class="st">&quot;Paris&quot;</span>,</a>
+<a class="sourceLine" id="cb143-3" data-line-number="3">        <span class="ex">Flight.duration</span> <span class="op">&gt;</span> 500))<span class="ex">.all</span>()</a></code></pre></div>
 <p>Tables can be joined together.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">db.session.query</span>(Flight, Passenger)<span class="ex">.filter</span>(
-    <span class="ex">Flight.id</span> == Passenger.flight_id)<span class="ex">.all</span>()</code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="ex">db.session.query</span>(Flight, Passenger)<span class="ex">.filter</span>(</a>
+<a class="sourceLine" id="cb144-2" data-line-number="2">    <span class="ex">Flight.id</span> == Passenger.flight_id)<span class="ex">.all</span>()</a></code></pre></div>
 </div>
 <div id="apis" class="section level2">
 <h2><span class="header-section-number">6.14</span> APIs</h2>
@@ -517,9 +549,9 @@ PUT: replace a resource<br />
 PATCH: update a resource<br />
 DELETE: delete a resource</p>
 <p>The python library <code>requests</code> enables requesting from python. Below is a get request which grabs the html code from google.com.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">import</span> requests
-<span class="ex">res</span> = requests.get(<span class="st">&quot;https://www.google.com/&quot;</span>)
-<span class="ex">print</span>(res.text)                              </code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="ex">import</span> requests</a>
+<a class="sourceLine" id="cb145-2" data-line-number="2"><span class="ex">res</span> = requests.get(<span class="st">&quot;https://www.google.com/&quot;</span>)</a>
+<a class="sourceLine" id="cb145-3" data-line-number="3"><span class="ex">print</span>(res.text)                              </a></code></pre></div>
 <p>API calls should return status codes that classify the status of the request.<br />
 Status codes are as follows:<br />
 200: OK<br />
@@ -529,35 +561,35 @@ Status codes are as follows:<br />
 404: Not Found<br />
 405: Method Not Allowed<br />
 422 Unprocessable Entity</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">res</span> = requests.get(<span class="st">&quot;https://api.fixer.io/latest?base=USD&amp;symbols=EUR&quot;</span>)
-<span class="kw">if</span> <span class="ex">res.status_code</span> != 200:                                            
-    <span class="ex">raise</span> Exception(<span class="st">&quot;ERROR: API request unsuccessful.&quot;</span>)               
-    <span class="ex">data</span> = res.json()                                                     
-    <span class="ex">print</span>(data)                                                           </code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="ex">res</span> = requests.get(<span class="st">&quot;https://api.fixer.io/latest?base=USD&amp;symbols=EUR&quot;</span>)</a>
+<a class="sourceLine" id="cb146-2" data-line-number="2"><span class="kw">if</span> <span class="ex">res.status_code</span> != 200:                                            </a>
+<a class="sourceLine" id="cb146-3" data-line-number="3">    <span class="ex">raise</span> Exception(<span class="st">&quot;ERROR: API request unsuccessful.&quot;</span>)               </a>
+<a class="sourceLine" id="cb146-4" data-line-number="4">    <span class="ex">data</span> = res.json()                                                     </a>
+<a class="sourceLine" id="cb146-5" data-line-number="5">    <span class="ex">print</span>(data)                                                           </a></code></pre></div>
 <p>An API can be designed to return a JSON object that contains some of the information from the site.<br />
 In flask the <code>application.py</code> can use the following code to accomplish this.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">from</span> flask import jsonify
-
-<span class="ex">@app.route</span>(<span class="st">&quot;/api/flights/&lt;int:flight_id&gt;&quot;</span>)                 
-<span class="ex">def</span> flight_api(flight_id)<span class="bu">:</span>                                 
-    <span class="st">&quot;&quot;&quot;Return details about a single flight.&quot;&quot;&quot;</span>            
-                                                           
-    <span class="co"># Make sure flight exists.                             </span>
-    <span class="ex">flight</span> = Flight.query.get(flight_id)                   
-    <span class="kw">if</span> <span class="ex">flight</span> is None:                                     
-        <span class="bu">return</span> jsonify({<span class="st">&quot;error&quot;</span>: <span class="st">&quot;Invalid flight_id&quot;</span>}), <span class="ex">422</span>
-                                                           
-    <span class="co"># Get all passengers.                                  </span>
-    <span class="ex">passengers</span> = flight.passengers                         
-    <span class="ex">names</span> = []                                             
-    <span class="kw">for</span> <span class="ex">passenger</span> in passengers:                           
-        <span class="ex">names.append</span>(passenger.name)                       
-    <span class="bu">return</span> jsonify({                                       
-            <span class="st">&quot;origin&quot;</span>: <span class="ex">flight.origin</span>,                       
-            <span class="st">&quot;destination&quot;</span>: <span class="ex">flight.destination</span>,             
-            <span class="st">&quot;duration&quot;</span>: <span class="ex">flight.duration</span>,                   
-            <span class="st">&quot;passengers&quot;</span>: <span class="ex">names</span>                            
-        })                                                 </code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="ex">from</span> flask import jsonify</a>
+<a class="sourceLine" id="cb147-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb147-3" data-line-number="3"><span class="ex">@app.route</span>(<span class="st">&quot;/api/flights/&lt;int:flight_id&gt;&quot;</span>)                 </a>
+<a class="sourceLine" id="cb147-4" data-line-number="4"><span class="ex">def</span> flight_api(flight_id)<span class="bu">:</span>                                 </a>
+<a class="sourceLine" id="cb147-5" data-line-number="5">    <span class="st">&quot;&quot;&quot;Return details about a single flight.&quot;&quot;&quot;</span>            </a>
+<a class="sourceLine" id="cb147-6" data-line-number="6">                                                           </a>
+<a class="sourceLine" id="cb147-7" data-line-number="7">    <span class="co"># Make sure flight exists.                             </span></a>
+<a class="sourceLine" id="cb147-8" data-line-number="8">    <span class="ex">flight</span> = Flight.query.get(flight_id)                   </a>
+<a class="sourceLine" id="cb147-9" data-line-number="9">    <span class="kw">if</span> <span class="ex">flight</span> is None:                                     </a>
+<a class="sourceLine" id="cb147-10" data-line-number="10">        <span class="bu">return</span> jsonify({<span class="st">&quot;error&quot;</span>: <span class="st">&quot;Invalid flight_id&quot;</span>}), <span class="ex">422</span></a>
+<a class="sourceLine" id="cb147-11" data-line-number="11">                                                           </a>
+<a class="sourceLine" id="cb147-12" data-line-number="12">    <span class="co"># Get all passengers.                                  </span></a>
+<a class="sourceLine" id="cb147-13" data-line-number="13">    <span class="ex">passengers</span> = flight.passengers                         </a>
+<a class="sourceLine" id="cb147-14" data-line-number="14">    <span class="ex">names</span> = []                                             </a>
+<a class="sourceLine" id="cb147-15" data-line-number="15">    <span class="kw">for</span> <span class="ex">passenger</span> in passengers:                           </a>
+<a class="sourceLine" id="cb147-16" data-line-number="16">        <span class="ex">names.append</span>(passenger.name)                       </a>
+<a class="sourceLine" id="cb147-17" data-line-number="17">    <span class="bu">return</span> jsonify({                                       </a>
+<a class="sourceLine" id="cb147-18" data-line-number="18">            <span class="st">&quot;origin&quot;</span>: <span class="ex">flight.origin</span>,                       </a>
+<a class="sourceLine" id="cb147-19" data-line-number="19">            <span class="st">&quot;destination&quot;</span>: <span class="ex">flight.destination</span>,             </a>
+<a class="sourceLine" id="cb147-20" data-line-number="20">            <span class="st">&quot;duration&quot;</span>: <span class="ex">flight.duration</span>,                   </a>
+<a class="sourceLine" id="cb147-21" data-line-number="21">            <span class="st">&quot;passengers&quot;</span>: <span class="ex">names</span>                            </a>
+<a class="sourceLine" id="cb147-22" data-line-number="22">        })                                                 </a></code></pre></div>
 
 </div>
 </div>
@@ -572,11 +604,13 @@ In flask the <code>application.py</code> can use the following code to accomplis
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
