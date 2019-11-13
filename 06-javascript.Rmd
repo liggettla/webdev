@@ -220,7 +220,20 @@ Below is an example of the above code re-written to use arrow functions.
 </script>                                                                           
 ```
 
-## Adding to the DOM
+## Local Storage
+Local storage allows variables to be stored within the browser of a user and recurrently accessed by javascript even between sessions.  
+In the following example, the value for counter is being retrieved if it can be, or if not it is set to zero when the page is first loaded.  
+Then if the `counter` variable is ever modified, the new value will be stored.
+```{bash eval=FALSE}
+<script>
+    // Set starting value of counter to 0  
+    if (!localStorage.getItem('counter'))  
+        localStorage.setItem('counter', 0);
+
+    document.querySelector('#counter').innerHTML = counter;
+    localStorage.setItem('counter', counter);
+<script>
+```
 
 
 

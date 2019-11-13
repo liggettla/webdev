@@ -24,7 +24,7 @@
 <meta name="author" content="L A Liggett" />
 
 
-<meta name="date" content="2019-11-06" />
+<meta name="date" content="2019-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,7 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="javascript.html"><a href="javascript.html#event-listeners"><i class="fa fa-check"></i><b>7.4</b> Event Listeners</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="javascript.html"><a href="javascript.html#arrow-functions"><i class="fa fa-check"></i><b>7.4.1</b> Arrow Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="javascript.html"><a href="javascript.html#adding-to-the-dom"><i class="fa fa-check"></i><b>7.5</b> Adding to the DOM</a></li>
+<li class="chapter" data-level="7.5" data-path="javascript.html"><a href="javascript.html#local-storage"><i class="fa fa-check"></i><b>7.5</b> Local Storage</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="hackernews.html"><a href="hackernews.html"><i class="fa fa-check"></i><b>8</b> Hackernews</a><ul>
 <li class="chapter" data-level="8.1" data-path="hackernews.html"><a href="hackernews.html#setup-1"><i class="fa fa-check"></i><b>8.1</b> Setup</a></li>
@@ -393,8 +393,19 @@ Below a function is created that creates the Hellow World alert.</p>
 <a class="sourceLine" id="cb163-12" data-line-number="12"><span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           </a></code></pre></div>
 </div>
 </div>
-<div id="adding-to-the-dom" class="section level2">
-<h2><span class="header-section-number">7.5</span> Adding to the DOM</h2>
+<div id="local-storage" class="section level2">
+<h2><span class="header-section-number">7.5</span> Local Storage</h2>
+<p>Local storage allows variables to be stored within the browser of a user and recurrently accessed by javascript even between sessions.<br />
+In the following example, the value for counter is being retrieved if it can be, or if not it is set to zero when the page is first loaded.<br />
+Then if the <code>counter</code> variable is ever modified, the new value will be stored.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb164-2" data-line-number="2">    <span class="ex">//</span> Set starting value of counter to 0  </a>
+<a class="sourceLine" id="cb164-3" data-line-number="3">    <span class="kw">if</span> <span class="kw">(</span>!<span class="ex">localStorage.getItem</span>(<span class="st">&#39;counter&#39;</span><span class="kw">)</span>)  </a>
+<a class="sourceLine" id="cb164-4" data-line-number="4">        <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, 0);</a>
+<a class="sourceLine" id="cb164-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb164-6" data-line-number="6">    <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
+<a class="sourceLine" id="cb164-7" data-line-number="7">    <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, counter);</a>
+<a class="sourceLine" id="cb164-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a></code></pre></div>
 
 </div>
 </div>

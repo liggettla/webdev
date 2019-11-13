@@ -124,7 +124,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-11-06}
+    \date{2019-11-13}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -2355,8 +2355,25 @@ Below is an example of the above code re-written to use arrow functions.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{adding-to-the-dom}{%
-\section{Adding to the DOM}\label{adding-to-the-dom}}
+\hypertarget{local-storage}{%
+\section{Local Storage}\label{local-storage}}
+
+Local storage allows variables to be stored within the browser of a user and recurrently accessed by javascript even between sessions.\\
+In the following example, the value for counter is being retrieved if it can be, or if not it is set to zero when the page is first loaded.\\
+Then if the \texttt{counter} variable is ever modified, the new value will be stored.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+    \ExtensionTok{//}\NormalTok{ Set starting value of counter to 0  }
+    \KeywordTok{if} \KeywordTok{(}\NormalTok{!}\ExtensionTok{localStorage.getItem}\NormalTok{(}\StringTok{'counter'}\KeywordTok{)}\NormalTok{)  }
+        \ExtensionTok{localStorage.setItem}\NormalTok{(}\StringTok{'counter'}\NormalTok{, 0);}
+
+    \ExtensionTok{document.querySelector}\NormalTok{(}\StringTok{'#counter'}\NormalTok{)}\ExtensionTok{.innerHTML}\NormalTok{ = counter}\KeywordTok{;}
+    \ExtensionTok{localStorage.setItem}\NormalTok{(}\StringTok{'counter'}\NormalTok{, counter);}
+\OperatorTok{<}\ExtensionTok{script}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{hackernews}{%
 \chapter{Hackernews}\label{hackernews}}
