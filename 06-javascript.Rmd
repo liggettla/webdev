@@ -87,12 +87,17 @@ if (counter % 10 === 0) {
 
 ### External javascript
 The necessary javascript can be separated out of a page and included in a `something.js` file and then referenced within an html file.  
-It appears that flask's handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a `static` directory existing within the root directory.  
 ```{bash eval=FALSE}
 <head>                                 
     <script src="something.js"></script>
 </head>                                
 ```
+
+It appears that flask's handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a `static` directory existing within the root directory. The following will reference the `layout.js` file located within the `static` directory.  
+```{bash eval=FALSE}
+<script src = "{{ url_for('static', filename = 'layout.js') }}"></script>
+```
+
 
 
 ## Variables

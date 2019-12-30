@@ -2194,14 +2194,21 @@ Template literals allow variables to be used within a string.
 \hypertarget{external-javascript}{%
 \subsection{External javascript}\label{external-javascript}}
 
-The necessary javascript can be separated out of a page and included in a \texttt{something.js} file and then referenced within an html file.\\
-It appears that flask's handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a \texttt{static} directory existing within the root directory.
+The necessary javascript can be separated out of a page and included in a \texttt{something.js} file and then referenced within an html file.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \OperatorTok{<}\FunctionTok{head}\OperatorTok{>}                                 
     \OperatorTok{<}\ExtensionTok{script}\NormalTok{ src=}\StringTok{"something.js"}\OperatorTok{><}\NormalTok{/script}\OperatorTok{>}
 \OperatorTok{<}\NormalTok{/}\ExtensionTok{head}\OperatorTok{>}                                
+\end{Highlighting}
+\end{Shaded}
+
+It appears that flask's handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a \texttt{static} directory existing within the root directory. The following will reference the \texttt{layout.js} file located within the \texttt{static} directory.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{script}\NormalTok{ src = }\StringTok{"\{\{ url_for('static', filename = 'layout.js') \}\}"}\OperatorTok{><}\NormalTok{/script}\OperatorTok{>}
 \end{Highlighting}
 \end{Shaded}
 
