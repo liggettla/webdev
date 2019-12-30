@@ -85,12 +85,15 @@ if (counter % 10 === 0) {
 }                                      
 ```
 
+### External javascript
 The necessary javascript can be separated out of a page and included in a `something.js` file and then referenced within an html file.  
+It appears that flask's handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a `static` directory existing within the root directory.  
 ```{bash eval=FALSE}
 <head>                                 
     <script src="something.js"></script>
 </head>                                
 ```
+
 
 ## Variables
 `const` can not be redefined.  
@@ -233,6 +236,11 @@ Then if the `counter` variable is ever modified, the new value will be stored.
     document.querySelector('#counter').innerHTML = counter;
     localStorage.setItem('counter', counter);
 <script>
+```
+
+All variables stored in local storage can be cleared at once.
+```{bash eval=FALSE}
+localStorage.clear()
 ```
 
 

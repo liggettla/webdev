@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Javascript | Bootstrap and React for Web Development</title>
   <meta name="description" content="These are just some things." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Javascript | Bootstrap and React for Web Development" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="L A Liggett" />
 
 
-<meta name="date" content="2019-11-14" />
+<meta name="date" content="2019-12-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -180,7 +180,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>7</b> Javascript</a><ul>
 <li class="chapter" data-level="7.1" data-path="javascript.html"><a href="javascript.html#intro-3"><i class="fa fa-check"></i><b>7.1</b> Intro</a></li>
-<li class="chapter" data-level="7.2" data-path="javascript.html"><a href="javascript.html#event-handling"><i class="fa fa-check"></i><b>7.2</b> Event Handling</a></li>
+<li class="chapter" data-level="7.2" data-path="javascript.html"><a href="javascript.html#event-handling"><i class="fa fa-check"></i><b>7.2</b> Event Handling</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="javascript.html"><a href="javascript.html#external-javascript"><i class="fa fa-check"></i><b>7.2.1</b> External javascript</a></li>
+</ul></li>
 <li class="chapter" data-level="7.3" data-path="javascript.html"><a href="javascript.html#variables"><i class="fa fa-check"></i><b>7.3</b> Variables</a></li>
 <li class="chapter" data-level="7.4" data-path="javascript.html"><a href="javascript.html#event-listeners"><i class="fa fa-check"></i><b>7.4</b> Event Listeners</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="javascript.html"><a href="javascript.html#arrow-functions"><i class="fa fa-check"></i><b>7.4.1</b> Arrow Functions</a></li>
@@ -279,10 +281,14 @@ In the following code, the <code>querySelector</code> searches for the first <co
 <div class="sourceCode" id="cb154"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>              </a>
 <a class="sourceLine" id="cb154-2" data-line-number="2">    <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);</a>
 <a class="sourceLine" id="cb154-3" data-line-number="3"><span class="kw">}</span>                                      </a></code></pre></div>
-<p>The necessary javascript can be separated out of a page and included in a <code>something.js</code> file and then referenced within an html file.</p>
+<div id="external-javascript" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> External javascript</h3>
+<p>The necessary javascript can be separated out of a page and included in a <code>something.js</code> file and then referenced within an html file.<br />
+It appears that flask’s handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a <code>static</code> directory existing within the root directory.</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb155-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                 </a>
 <a class="sourceLine" id="cb155-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span> src=<span class="st">&quot;something.js&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb155-3" data-line-number="3"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                </a></code></pre></div>
+</div>
 </div>
 <div id="variables" class="section level2">
 <h2><span class="header-section-number">7.3</span> Variables</h2>
@@ -406,6 +412,8 @@ Then if the <code>counter</code> variable is ever modified, the new value will b
 <a class="sourceLine" id="cb164-6" data-line-number="6">    <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
 <a class="sourceLine" id="cb164-7" data-line-number="7">    <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, counter);</a>
 <a class="sourceLine" id="cb164-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a></code></pre></div>
+<p>All variables stored in local storage can be cleared at once.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="ex">localStorage.clear</span>()</a></code></pre></div>
 
 </div>
 </div>
@@ -431,15 +439,13 @@ Then if the <code>counter</code> variable is ever modified, the new value will b
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "night",
