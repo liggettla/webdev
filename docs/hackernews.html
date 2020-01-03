@@ -24,7 +24,7 @@
 <meta name="author" content="L A Liggett" />
 
 
-<meta name="date" content="2019-12-29" />
+<meta name="date" content="2020-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -218,89 +218,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="setup-1" class="section level2">
 <h2><span class="header-section-number">8.1</span> Setup</h2>
 <p>First make sure create react app is installed. The project here follows <a href="https://www.youtube.com/watch?v=oGB_VPrld0U&amp;list=PLTTC1K14KAxHj6AftnRUD28SQaoVauvl3">this</a> tutorial. There are lots of other good looking tutorials like <a href="https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/">The React Handbook</a>, and others at <a href="https://gitconnected.com/learn/react">gitconnected</a>.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="ex">npm</span> i -g create-react-app</a></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb168-1" data-line-number="1"><span class="ex">npm</span> i -g create-react-app</a></code></pre></div>
 <p>Then create a new directory for the app.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb168-1" data-line-number="1"><span class="ex">create-react-app</span> hacker-news-clone</a></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="ex">create-react-app</span> hacker-news-clone</a></code></pre></div>
 <p>Change into the newly created directory and then create a file to handle environmental variables.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="bu">cd</span> hacker-news-clone</a>
-<a class="sourceLine" id="cb169-2" data-line-number="2"><span class="fu">touch</span> .env</a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb170-1" data-line-number="1"><span class="bu">cd</span> hacker-news-clone</a>
+<a class="sourceLine" id="cb170-2" data-line-number="2"><span class="fu">touch</span> .env</a></code></pre></div>
 <p>Within the <code>.env</code> file refer to the <code>src</code> folder. This will allow dependencies to be more easily imported.
 Add the following to the <code>.env</code> file.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb170-1" data-line-number="1"><span class="va">NODE_PATH=</span>src</a></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb171-1" data-line-number="1"><span class="va">NODE_PATH=</span>src</a></code></pre></div>
 <p>Make a components directory within <code>src</code> to hold all of the components for the project.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb171-1" data-line-number="1"><span class="fu">mkdir</span> -p src/components/App</a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="fu">mkdir</span> -p src/components/App</a></code></pre></div>
 <p>Make a services directory within <code>src</code> to add additional functionality to the app and reference other site APIs.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="fu">mkdir</span> src/services</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="fu">mkdir</span> src/services</a></code></pre></div>
 <p>Make a styles directory within <code>src</code> to add styles that can be used across the app.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="fu">mkdir</span> -p src/styles</a></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="fu">mkdir</span> -p src/styles</a></code></pre></div>
 <p>Make a store directory within <code>src</code> to add styles that will add Redux function.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="fu">mkdir</span> -p src/store</a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb175-1" data-line-number="1"><span class="fu">mkdir</span> -p src/store</a></code></pre></div>
 <p>Make a utils directory within <code>src</code> for shared functions across the app.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb175-1" data-line-number="1"><span class="fu">mkdir</span> -p src/utils</a></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="fu">mkdir</span> -p src/utils</a></code></pre></div>
 <p>Now move <code>App.js</code> to components just to keep the components bundled together.
 Rename <code>App.js</code> to index so that it can be imported from the mycomponents app.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="fu">mv</span> src/App*js src/components/App/</a>
-<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="fu">mv</span> src/components/App/App.js src/components/App/index.js</a>
-<a class="sourceLine" id="cb176-3" data-line-number="3"><span class="fu">mv</span> src/logo.svg src/components/App/</a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="fu">mv</span> src/App*js src/components/App/</a>
+<a class="sourceLine" id="cb177-2" data-line-number="2"><span class="fu">mv</span> src/components/App/App.js src/components/App/index.js</a>
+<a class="sourceLine" id="cb177-3" data-line-number="3"><span class="fu">mv</span> src/logo.svg src/components/App/</a></code></pre></div>
 <p>Delete the css files because style components will be used instead.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="fu">rm</span> src/*css</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="fu">rm</span> src/*css</a></code></pre></div>
 <p>Remove the imports of the css files in <code>src/components/App/index.js</code>.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="ex">import</span> <span class="st">&#39;./App.css&#39;</span><span class="kw">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb179-1" data-line-number="1"><span class="ex">import</span> <span class="st">&#39;./App.css&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>And remove the import within <code>src/index.js</code>.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb179-1" data-line-number="1"><span class="ex">import</span> <span class="st">&#39;./index.css&#39;</span><span class="kw">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="ex">import</span> <span class="st">&#39;./index.css&#39;</span><span class="kw">;</span></a></code></pre></div>
 <p>Now create some styles to be used throughout the app.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="fu">mkdir</span> src/styles</a>
-<a class="sourceLine" id="cb180-2" data-line-number="2"><span class="fu">touch</span> src/styles/globals.js</a>
-<a class="sourceLine" id="cb180-3" data-line-number="3"><span class="fu">touch</span> src/styles/palette.js</a></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb181-1" data-line-number="1"><span class="fu">mkdir</span> src/styles</a>
+<a class="sourceLine" id="cb181-2" data-line-number="2"><span class="fu">touch</span> src/styles/globals.js</a>
+<a class="sourceLine" id="cb181-3" data-line-number="3"><span class="fu">touch</span> src/styles/palette.js</a></code></pre></div>
 <p>The js files above contain routine code that can be copied from the author’s <a href="https://github.com/treyhuffine/hn-clone">github page</a>.
 Alternatively, here is the code for <code>global.js</code>.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb181-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb181-2" data-line-number="2"><span class="ex">import</span> { injectGlobal } <span class="ex">from</span> <span class="st">&#39;styled-components&#39;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-3" data-line-number="3"><span class="ex">import</span> { colorsDark } <span class="ex">from</span> <span class="st">&#39;./palette&#39;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb181-5" data-line-number="5"><span class="ex">const</span> setGlobalStyles = () =<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb181-6" data-line-number="6">  <span class="ex">injectGlobal</span><span class="kw">`</span></a>
-<a class="sourceLine" id="cb181-7" data-line-number="7">    <span class="ex">*</span> {</a>
-<a class="sourceLine" id="cb181-8" data-line-number="8">      <span class="ex">box-sizing</span>: border-box<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-9" data-line-number="9">    }</a>
-<a class="sourceLine" id="cb181-10" data-line-number="10">    <span class="ex">html</span>, body {</a>
-<a class="sourceLine" id="cb181-11" data-line-number="11">      <span class="ex">font-family</span>: Lato,Helvetica-Neue,Helvetica,Arial,sans-serif<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-12" data-line-number="12">      <span class="ex">width</span>: 100vw<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-13" data-line-number="13">      <span class="ex">overflow-x</span>: hidden<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-14" data-line-number="14">      <span class="ex">margin</span>: 0<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-15" data-line-number="15">      <span class="ex">padding</span>: 0<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-16" data-line-number="16">      <span class="ex">min-height</span>: 100vh<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-17" data-line-number="17">      <span class="ex">background-color</span>: <span class="va">${colorsDark</span><span class="er">.background</span><span class="va">}</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-18" data-line-number="18">    }</a>
-<a class="sourceLine" id="cb181-19" data-line-number="19">    <span class="ex">ul</span> {</a>
-<a class="sourceLine" id="cb181-20" data-line-number="20">      <span class="ex">list-style</span>: none<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-21" data-line-number="21">      <span class="ex">padding</span>: 0<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-22" data-line-number="22">    }</a>
-<a class="sourceLine" id="cb181-23" data-line-number="23">    <span class="ex">a</span> {</a>
-<a class="sourceLine" id="cb181-24" data-line-number="24">      <span class="ex">text-decoration</span>: none<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-25" data-line-number="25">      <span class="kw">&amp;</span>:<span class="ex">visited</span> {</a>
-<a class="sourceLine" id="cb181-26" data-line-number="26">        <span class="ex">color</span>: inherit<span class="kw">;</span></a>
-<a class="sourceLine" id="cb181-27" data-line-number="27">      }</a>
-<a class="sourceLine" id="cb181-28" data-line-number="28">    }</a>
-<a class="sourceLine" id="cb181-29" data-line-number="29">  <span class="kw">`;</span></a>
-<a class="sourceLine" id="cb181-30" data-line-number="30"></a>
-<a class="sourceLine" id="cb181-31" data-line-number="31"><span class="bu">export</span> <span class="va">default</span> <span class="va">setGlobalStyles</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb182-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb182-2" data-line-number="2"><span class="ex">import</span> { injectGlobal } <span class="ex">from</span> <span class="st">&#39;styled-components&#39;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-3" data-line-number="3"><span class="ex">import</span> { colorsDark } <span class="ex">from</span> <span class="st">&#39;./palette&#39;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb182-5" data-line-number="5"><span class="ex">const</span> setGlobalStyles = () =<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb182-6" data-line-number="6">  <span class="ex">injectGlobal</span><span class="kw">`</span></a>
+<a class="sourceLine" id="cb182-7" data-line-number="7">    <span class="ex">*</span> {</a>
+<a class="sourceLine" id="cb182-8" data-line-number="8">      <span class="ex">box-sizing</span>: border-box<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-9" data-line-number="9">    }</a>
+<a class="sourceLine" id="cb182-10" data-line-number="10">    <span class="ex">html</span>, body {</a>
+<a class="sourceLine" id="cb182-11" data-line-number="11">      <span class="ex">font-family</span>: Lato,Helvetica-Neue,Helvetica,Arial,sans-serif<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-12" data-line-number="12">      <span class="ex">width</span>: 100vw<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-13" data-line-number="13">      <span class="ex">overflow-x</span>: hidden<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-14" data-line-number="14">      <span class="ex">margin</span>: 0<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-15" data-line-number="15">      <span class="ex">padding</span>: 0<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-16" data-line-number="16">      <span class="ex">min-height</span>: 100vh<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-17" data-line-number="17">      <span class="ex">background-color</span>: <span class="va">${colorsDark</span><span class="er">.background</span><span class="va">}</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-18" data-line-number="18">    }</a>
+<a class="sourceLine" id="cb182-19" data-line-number="19">    <span class="ex">ul</span> {</a>
+<a class="sourceLine" id="cb182-20" data-line-number="20">      <span class="ex">list-style</span>: none<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-21" data-line-number="21">      <span class="ex">padding</span>: 0<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-22" data-line-number="22">    }</a>
+<a class="sourceLine" id="cb182-23" data-line-number="23">    <span class="ex">a</span> {</a>
+<a class="sourceLine" id="cb182-24" data-line-number="24">      <span class="ex">text-decoration</span>: none<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-25" data-line-number="25">      <span class="kw">&amp;</span>:<span class="ex">visited</span> {</a>
+<a class="sourceLine" id="cb182-26" data-line-number="26">        <span class="ex">color</span>: inherit<span class="kw">;</span></a>
+<a class="sourceLine" id="cb182-27" data-line-number="27">      }</a>
+<a class="sourceLine" id="cb182-28" data-line-number="28">    }</a>
+<a class="sourceLine" id="cb182-29" data-line-number="29">  <span class="kw">`;</span></a>
+<a class="sourceLine" id="cb182-30" data-line-number="30"></a>
+<a class="sourceLine" id="cb182-31" data-line-number="31"><span class="bu">export</span> <span class="va">default</span> <span class="va">setGlobalStyles</span>;</a></code></pre></div>
 <p>And here is the code for <code>palette.js</code>.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb182-1" data-line-number="1"><span class="bu">export</span> <span class="va">const</span> <span class="va">colorsDark</span> <span class="va">=</span> {</a>
-<a class="sourceLine" id="cb182-2" data-line-number="2">  <span class="ex">background</span>: <span class="st">&#39;#272727&#39;</span>,</a>
-<a class="sourceLine" id="cb182-3" data-line-number="3">  <span class="ex">backgroundSecondary</span>: <span class="st">&#39;#393C3E&#39;</span>,</a>
-<a class="sourceLine" id="cb182-4" data-line-number="4">  <span class="ex">text</span>: <span class="st">&#39;#bfbebe&#39;</span>,</a>
-<a class="sourceLine" id="cb182-5" data-line-number="5">  <span class="ex">textSecondary</span>: <span class="st">&#39;#848886&#39;</span>,</a>
-<a class="sourceLine" id="cb182-6" data-line-number="6">  <span class="ex">border</span>: <span class="st">&#39;#272727&#39;</span>,</a>
-<a class="sourceLine" id="cb182-7" data-line-number="7">};</a>
-<a class="sourceLine" id="cb182-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb182-9" data-line-number="9"><span class="bu">export</span> <span class="va">const</span> <span class="va">colorsLight</span> <span class="va">=</span> {</a>
-<a class="sourceLine" id="cb182-10" data-line-number="10">  <span class="ex">background</span>: <span class="st">&#39;#EAEAEA&#39;</span>,</a>
-<a class="sourceLine" id="cb182-11" data-line-number="11">  <span class="ex">backgroundSecondary</span>: <span class="st">&#39;#F8F8F8&#39;</span>,</a>
-<a class="sourceLine" id="cb182-12" data-line-number="12">  <span class="ex">text</span>: <span class="st">&#39;#848886&#39;</span>,</a>
-<a class="sourceLine" id="cb182-13" data-line-number="13">  <span class="ex">textSecondary</span>: <span class="st">&#39;#aaaaaa&#39;</span>,</a>
-<a class="sourceLine" id="cb182-14" data-line-number="14">  <span class="ex">border</span>: <span class="st">&#39;#EAEAEA&#39;</span>,</a>
-<a class="sourceLine" id="cb182-15" data-line-number="15">};</a></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb183-1" data-line-number="1"><span class="bu">export</span> <span class="va">const</span> <span class="va">colorsDark</span> <span class="va">=</span> {</a>
+<a class="sourceLine" id="cb183-2" data-line-number="2">  <span class="ex">background</span>: <span class="st">&#39;#272727&#39;</span>,</a>
+<a class="sourceLine" id="cb183-3" data-line-number="3">  <span class="ex">backgroundSecondary</span>: <span class="st">&#39;#393C3E&#39;</span>,</a>
+<a class="sourceLine" id="cb183-4" data-line-number="4">  <span class="ex">text</span>: <span class="st">&#39;#bfbebe&#39;</span>,</a>
+<a class="sourceLine" id="cb183-5" data-line-number="5">  <span class="ex">textSecondary</span>: <span class="st">&#39;#848886&#39;</span>,</a>
+<a class="sourceLine" id="cb183-6" data-line-number="6">  <span class="ex">border</span>: <span class="st">&#39;#272727&#39;</span>,</a>
+<a class="sourceLine" id="cb183-7" data-line-number="7">};</a>
+<a class="sourceLine" id="cb183-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb183-9" data-line-number="9"><span class="bu">export</span> <span class="va">const</span> <span class="va">colorsLight</span> <span class="va">=</span> {</a>
+<a class="sourceLine" id="cb183-10" data-line-number="10">  <span class="ex">background</span>: <span class="st">&#39;#EAEAEA&#39;</span>,</a>
+<a class="sourceLine" id="cb183-11" data-line-number="11">  <span class="ex">backgroundSecondary</span>: <span class="st">&#39;#F8F8F8&#39;</span>,</a>
+<a class="sourceLine" id="cb183-12" data-line-number="12">  <span class="ex">text</span>: <span class="st">&#39;#848886&#39;</span>,</a>
+<a class="sourceLine" id="cb183-13" data-line-number="13">  <span class="ex">textSecondary</span>: <span class="st">&#39;#aaaaaa&#39;</span>,</a>
+<a class="sourceLine" id="cb183-14" data-line-number="14">  <span class="ex">border</span>: <span class="st">&#39;#EAEAEA&#39;</span>,</a>
+<a class="sourceLine" id="cb183-15" data-line-number="15">};</a></code></pre></div>
 
 </div>
 </div>

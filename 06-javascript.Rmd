@@ -37,6 +37,12 @@ The following code creates a button that runs the `hello()` function only when t
 </body>
 ```
 
+When forms are submitted it appears that by default they will resubmit the page. This functionality can simply be suppressed, or a function can be run when the form is submitted.
+```{bash eval=FALSE}
+<form onsubmit="return false">
+<form onsubmit="return getUsername()">
+```
+
 Javascript can be used to change the contents of the html within a page.  
 In the following code, the `querySelector` searches for the first `h1` tag on the page, and then uses the `innerHTML` method to modify the contents within that tag.
 ```{bash eval=FALSE}
@@ -97,8 +103,6 @@ It appears that flask's handling of static external javascript files is a bit nu
 ```{bash eval=FALSE}
 <script src = "{{ url_for('static', filename = 'layout.js') }}"></script>
 ```
-
-
 
 ## Variables
 `const` can not be redefined.  

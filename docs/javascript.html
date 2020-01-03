@@ -24,7 +24,7 @@
 <meta name="author" content="L A Liggett" />
 
 
-<meta name="date" content="2019-12-29" />
+<meta name="date" content="2020-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -245,50 +245,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb150-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb150-9" data-line-number="9">    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;hello()&quot;</span><span class="op">&gt;</span>Click Here<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb150-10" data-line-number="10"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
+<p>When forms are submitted it appears that by default they will resubmit the page. This functionality can simply be suppressed, or a function can be run when the form is submitted.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">form</span> onsubmit=<span class="st">&quot;return false&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb151-2" data-line-number="2"><span class="op">&lt;</span><span class="ex">form</span> onsubmit=<span class="st">&quot;return getUsername()&quot;</span><span class="op">&gt;</span></a></code></pre></div>
 <p>Javascript can be used to change the contents of the html within a page.<br />
 In the following code, the <code>querySelector</code> searches for the first <code>h1</code> tag on the page, and then uses the <code>innerHTML</code> method to modify the contents within that tag.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb151-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb151-3" data-line-number="3">        <span class="kw">function</span><span class="fu"> hello()</span> <span class="kw">{</span>                                      </a>
-<a class="sourceLine" id="cb151-4" data-line-number="4">            <span class="ex">document.querySelector</span>(<span class="st">&#39;h1&#39;</span>)<span class="ex">.innerHTML</span> = <span class="st">&#39;Goodbye!&#39;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb151-5" data-line-number="5">            <span class="kw">}</span>                                                       </a>
-<a class="sourceLine" id="cb151-6" data-line-number="6">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb151-7" data-line-number="7"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb151-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb151-9" data-line-number="9">    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>                             </a>
-<a class="sourceLine" id="cb151-10" data-line-number="10">    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;hello()&quot;</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb151-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb152-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb152-3" data-line-number="3">        <span class="kw">function</span><span class="fu"> hello()</span> <span class="kw">{</span>                                      </a>
+<a class="sourceLine" id="cb152-4" data-line-number="4">            <span class="ex">document.querySelector</span>(<span class="st">&#39;h1&#39;</span>)<span class="ex">.innerHTML</span> = <span class="st">&#39;Goodbye!&#39;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb152-5" data-line-number="5">            <span class="kw">}</span>                                                       </a>
+<a class="sourceLine" id="cb152-6" data-line-number="6">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb152-7" data-line-number="7"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb152-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb152-9" data-line-number="9">    <span class="op">&lt;</span><span class="ex">h1</span><span class="op">&gt;</span>Welcome!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>                             </a>
+<a class="sourceLine" id="cb152-10" data-line-number="10">    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;hello()&quot;</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb152-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p><code>querySelector</code> can also select by id or class.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="ex">document.querySelector</span>(<span class="st">&#39;tag&#39;</span>)</a>
-<a class="sourceLine" id="cb152-2" data-line-number="2"><span class="ex">document.querySelector</span>(<span class="st">&#39;#id&#39;</span>)</a>
-<a class="sourceLine" id="cb152-3" data-line-number="3"><span class="ex">document.querySelector</span>(<span class="st">&#39;.class&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="ex">document.querySelector</span>(<span class="st">&#39;tag&#39;</span>)</a>
+<a class="sourceLine" id="cb153-2" data-line-number="2"><span class="ex">document.querySelector</span>(<span class="st">&#39;#id&#39;</span>)</a>
+<a class="sourceLine" id="cb153-3" data-line-number="3"><span class="ex">document.querySelector</span>(<span class="st">&#39;.class&#39;</span>)</a></code></pre></div>
 <p>Here is an example that uses the <code>id</code> to control its contents.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb153-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb153-3" data-line-number="3">        <span class="ex">counter</span> = 0<span class="kw">;</span>                                               </a>
-<a class="sourceLine" id="cb153-4" data-line-number="4">                                                                   </a>
-<a class="sourceLine" id="cb153-5" data-line-number="5">        <span class="kw">function</span><span class="fu"> count()</span> <span class="kw">{</span>                                         </a>
-<a class="sourceLine" id="cb153-6" data-line-number="6">            <span class="ex">counter++</span><span class="kw">;</span>                                             </a>
-<a class="sourceLine" id="cb153-7" data-line-number="7">            <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
-<a class="sourceLine" id="cb153-8" data-line-number="8">        <span class="kw">}</span>                                                          </a>
-<a class="sourceLine" id="cb153-9" data-line-number="9">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb153-10" data-line-number="10"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb153-11" data-line-number="11"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb153-12" data-line-number="12">    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>                       </a>
-<a class="sourceLine" id="cb153-13" data-line-number="13">    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;count()&quot;</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb153-14" data-line-number="14"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb154-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb154-3" data-line-number="3">        <span class="ex">counter</span> = 0<span class="kw">;</span>                                               </a>
+<a class="sourceLine" id="cb154-4" data-line-number="4">                                                                   </a>
+<a class="sourceLine" id="cb154-5" data-line-number="5">        <span class="kw">function</span><span class="fu"> count()</span> <span class="kw">{</span>                                         </a>
+<a class="sourceLine" id="cb154-6" data-line-number="6">            <span class="ex">counter++</span><span class="kw">;</span>                                             </a>
+<a class="sourceLine" id="cb154-7" data-line-number="7">            <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
+<a class="sourceLine" id="cb154-8" data-line-number="8">        <span class="kw">}</span>                                                          </a>
+<a class="sourceLine" id="cb154-9" data-line-number="9">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb154-10" data-line-number="10"><span class="op">&lt;</span>/<span class="ex">style</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb154-11" data-line-number="11"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb154-12" data-line-number="12">    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>                       </a>
+<a class="sourceLine" id="cb154-13" data-line-number="13">    <span class="op">&lt;</span><span class="ex">button</span> onclick=<span class="st">&quot;count()&quot;</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb154-14" data-line-number="14"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p>Template literals allow variables to be used within a string.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>              </a>
-<a class="sourceLine" id="cb154-2" data-line-number="2">    <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);</a>
-<a class="sourceLine" id="cb154-3" data-line-number="3"><span class="kw">}</span>                                      </a></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb155-1" data-line-number="1"><span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>              </a>
+<a class="sourceLine" id="cb155-2" data-line-number="2">    <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);</a>
+<a class="sourceLine" id="cb155-3" data-line-number="3"><span class="kw">}</span>                                      </a></code></pre></div>
 <div id="external-javascript" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> External javascript</h3>
 <p>The necessary javascript can be separated out of a page and included in a <code>something.js</code> file and then referenced within an html file.</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb155-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                 </a>
-<a class="sourceLine" id="cb155-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span> src=<span class="st">&quot;something.js&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb155-3" data-line-number="3"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                </a></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                 </a>
+<a class="sourceLine" id="cb156-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span> src=<span class="st">&quot;something.js&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb156-3" data-line-number="3"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                </a></code></pre></div>
 <p>It appears that flask’s handling of static external javascript files is a bit nuanced. At least when running locally, flask will serve static javascript files within a <code>static</code> directory existing within the root directory. The following will reference the <code>layout.js</code> file located within the <code>static</code> directory.</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span> src = <span class="st">&quot;{{ url_for(&#39;static&#39;, filename = &#39;layout.js&#39;) }}&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span> src = <span class="st">&quot;{{ url_for(&#39;static&#39;, filename = &#39;layout.js&#39;) }}&quot;</span><span class="op">&gt;&lt;</span>/script<span class="op">&gt;</span></a></code></pre></div>
 </div>
 </div>
 <div id="variables" class="section level2">
@@ -302,102 +305,102 @@ In the following code, the <code>querySelector</code> searches for the first <co
 <p>Event listeners can be run only when the DOM is loaded, and can listen for events within the html document. This can be a helpful way of offloading some of the work from the html onto javascript.<br />
 Below is an example of using javascript to control the function of a button using a callback function.<br />
 In the following code, the <code>addEventListener</code> takes two input variables, the first is <code>DOMContentLoaded</code> which triggers the listener to start processing after the page has loaded. For the second parameter, whatever should be triggered is passed. Below, the second parameter is an entire function being passed in, and it selects the first button, and runs the count method on a click event.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb157-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb157-3" data-line-number="3">        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span> </a>
-<a class="sourceLine" id="cb157-4" data-line-number="4">            <span class="ex">document.querySelector</span>(<span class="st">&#39;button&#39;</span>)<span class="ex">.onclick</span> = count<span class="kw">;</span>      </a>
-<a class="sourceLine" id="cb157-5" data-line-number="5">        <span class="kw">}</span>);                                                        </a>
-<a class="sourceLine" id="cb157-6" data-line-number="6">                                                                   </a>
-<a class="sourceLine" id="cb157-7" data-line-number="7">        <span class="bu">let</span> counter = 0<span class="kw">;</span>                                           </a>
-<a class="sourceLine" id="cb157-8" data-line-number="8">                                                                   </a>
-<a class="sourceLine" id="cb157-9" data-line-number="9">        <span class="kw">function</span><span class="fu"> count()</span> <span class="kw">{</span>                                         </a>
-<a class="sourceLine" id="cb157-10" data-line-number="10">            <span class="ex">counter++</span><span class="kw">;</span>                                             </a>
-<a class="sourceLine" id="cb157-11" data-line-number="11">            <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
-<a class="sourceLine" id="cb157-12" data-line-number="12">                                                                   </a>
-<a class="sourceLine" id="cb157-13" data-line-number="13">            <span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>                              </a>
-<a class="sourceLine" id="cb157-14" data-line-number="14">                <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);                </a>
-<a class="sourceLine" id="cb157-15" data-line-number="15">            <span class="kw">}</span>                                                      </a>
-<a class="sourceLine" id="cb157-16" data-line-number="16">        <span class="kw">}</span>                                                          </a>
-<a class="sourceLine" id="cb157-17" data-line-number="17">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb157-18" data-line-number="18"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb157-19" data-line-number="19"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb157-20" data-line-number="20">    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>     </a>
-<a class="sourceLine" id="cb157-21" data-line-number="21">    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb157-22" data-line-number="22"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb158-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb158-3" data-line-number="3">        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span> </a>
+<a class="sourceLine" id="cb158-4" data-line-number="4">            <span class="ex">document.querySelector</span>(<span class="st">&#39;button&#39;</span>)<span class="ex">.onclick</span> = count<span class="kw">;</span>      </a>
+<a class="sourceLine" id="cb158-5" data-line-number="5">        <span class="kw">}</span>);                                                        </a>
+<a class="sourceLine" id="cb158-6" data-line-number="6">                                                                   </a>
+<a class="sourceLine" id="cb158-7" data-line-number="7">        <span class="bu">let</span> counter = 0<span class="kw">;</span>                                           </a>
+<a class="sourceLine" id="cb158-8" data-line-number="8">                                                                   </a>
+<a class="sourceLine" id="cb158-9" data-line-number="9">        <span class="kw">function</span><span class="fu"> count()</span> <span class="kw">{</span>                                         </a>
+<a class="sourceLine" id="cb158-10" data-line-number="10">            <span class="ex">counter++</span><span class="kw">;</span>                                             </a>
+<a class="sourceLine" id="cb158-11" data-line-number="11">            <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
+<a class="sourceLine" id="cb158-12" data-line-number="12">                                                                   </a>
+<a class="sourceLine" id="cb158-13" data-line-number="13">            <span class="kw">if</span> <span class="kw">(</span><span class="ex">counter</span> % 10 === 0<span class="kw">)</span> <span class="kw">{</span>                              </a>
+<a class="sourceLine" id="cb158-14" data-line-number="14">                <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Counter</span> is at <span class="va">${counter}</span>!<span class="kw">`</span>);                </a>
+<a class="sourceLine" id="cb158-15" data-line-number="15">            <span class="kw">}</span>                                                      </a>
+<a class="sourceLine" id="cb158-16" data-line-number="16">        <span class="kw">}</span>                                                          </a>
+<a class="sourceLine" id="cb158-17" data-line-number="17">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb158-18" data-line-number="18"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb158-19" data-line-number="19"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb158-20" data-line-number="20">    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;counter&quot;</span><span class="op">&gt;0&lt;</span>/h1<span class="op">&gt;</span>     </a>
+<a class="sourceLine" id="cb158-21" data-line-number="21">    <span class="op">&lt;</span><span class="ex">button</span><span class="op">&gt;</span>Click Here!<span class="op">&lt;</span>/button<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb158-22" data-line-number="22"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span></a></code></pre></div>
 <p>An event listener can be used to pull the contents of a field when a button is pressed.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                                               </a>
-<a class="sourceLine" id="cb158-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                         </a>
-<a class="sourceLine" id="cb158-3" data-line-number="3">        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span>                   </a>
-<a class="sourceLine" id="cb158-4" data-line-number="4">            <span class="ex">document.querySelector</span>(<span class="st">&#39;#form&#39;</span>)<span class="ex">.onsubmit</span> = function() <span class="kw">{</span>                  </a>
-<a class="sourceLine" id="cb158-5" data-line-number="5">                <span class="ex">const</span> name = document.querySelector(<span class="st">&#39;#name&#39;</span>)<span class="ex">.value</span><span class="kw">;</span>                  </a>
-<a class="sourceLine" id="cb158-6" data-line-number="6">                <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Hello</span> <span class="va">${name}</span>!<span class="kw">`</span>);                                             </a>
-<a class="sourceLine" id="cb158-7" data-line-number="7">            <span class="kw">}</span>;                                                                       </a>
-<a class="sourceLine" id="cb158-8" data-line-number="8">        <span class="kw">}</span>);                                                                          </a>
-<a class="sourceLine" id="cb158-9" data-line-number="9">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                        </a>
-<a class="sourceLine" id="cb158-10" data-line-number="10">    <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Website<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                                        </a>
-<a class="sourceLine" id="cb158-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                                              </a>
-<a class="sourceLine" id="cb158-12" data-line-number="12"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                                               </a>
-<a class="sourceLine" id="cb158-13" data-line-number="13">    <span class="op">&lt;</span><span class="ex">form</span> id=<span class="st">&quot;form&quot;</span><span class="op">&gt;</span>                                                                 </a>
-<a class="sourceLine" id="cb158-14" data-line-number="14">        <span class="op">&lt;</span><span class="ex">input</span> id=<span class="st">&quot;name&quot;</span> autocomplete=<span class="st">&quot;off&quot;</span> autofocus placeholder=<span class="st">&quot;Name&quot;</span> type=<span class="st">&quot;text&quot;</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb158-15" data-line-number="15">        <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;submit&quot;</span><span class="op">&gt;</span>                                                        </a>
-<a class="sourceLine" id="cb158-16" data-line-number="16">    <span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                                          </a>
-<a class="sourceLine" id="cb158-17" data-line-number="17"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                                              </a></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                                               </a>
+<a class="sourceLine" id="cb159-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                         </a>
+<a class="sourceLine" id="cb159-3" data-line-number="3">        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span>                   </a>
+<a class="sourceLine" id="cb159-4" data-line-number="4">            <span class="ex">document.querySelector</span>(<span class="st">&#39;#form&#39;</span>)<span class="ex">.onsubmit</span> = function() <span class="kw">{</span>                  </a>
+<a class="sourceLine" id="cb159-5" data-line-number="5">                <span class="ex">const</span> name = document.querySelector(<span class="st">&#39;#name&#39;</span>)<span class="ex">.value</span><span class="kw">;</span>                  </a>
+<a class="sourceLine" id="cb159-6" data-line-number="6">                <span class="ex">alert</span>(<span class="kw">`</span><span class="ex">Hello</span> <span class="va">${name}</span>!<span class="kw">`</span>);                                             </a>
+<a class="sourceLine" id="cb159-7" data-line-number="7">            <span class="kw">}</span>;                                                                       </a>
+<a class="sourceLine" id="cb159-8" data-line-number="8">        <span class="kw">}</span>);                                                                          </a>
+<a class="sourceLine" id="cb159-9" data-line-number="9">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                        </a>
+<a class="sourceLine" id="cb159-10" data-line-number="10">    <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Website<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                                        </a>
+<a class="sourceLine" id="cb159-11" data-line-number="11"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                                              </a>
+<a class="sourceLine" id="cb159-12" data-line-number="12"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                                               </a>
+<a class="sourceLine" id="cb159-13" data-line-number="13">    <span class="op">&lt;</span><span class="ex">form</span> id=<span class="st">&quot;form&quot;</span><span class="op">&gt;</span>                                                                 </a>
+<a class="sourceLine" id="cb159-14" data-line-number="14">        <span class="op">&lt;</span><span class="ex">input</span> id=<span class="st">&quot;name&quot;</span> autocomplete=<span class="st">&quot;off&quot;</span> autofocus placeholder=<span class="st">&quot;Name&quot;</span> type=<span class="st">&quot;text&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb159-15" data-line-number="15">        <span class="op">&lt;</span><span class="ex">input</span> type=<span class="st">&quot;submit&quot;</span><span class="op">&gt;</span>                                                        </a>
+<a class="sourceLine" id="cb159-16" data-line-number="16">    <span class="op">&lt;</span>/<span class="ex">form</span><span class="op">&gt;</span>                                                                          </a>
+<a class="sourceLine" id="cb159-17" data-line-number="17"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                                              </a></code></pre></div>
 <p>CSS styling can be changed using javascript event listeners.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="ex">document.querySelector</span>(<span class="st">&#39;#red&#39;</span>)<span class="ex">.onclick</span> = function() <span class="kw">{</span>    </a>
-<a class="sourceLine" id="cb159-2" data-line-number="2">    <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = <span class="st">&#39;red&#39;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb159-3" data-line-number="3"><span class="kw">}</span>;                                                       </a></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="ex">document.querySelector</span>(<span class="st">&#39;#red&#39;</span>)<span class="ex">.onclick</span> = function() <span class="kw">{</span>    </a>
+<a class="sourceLine" id="cb160-2" data-line-number="2">    <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = <span class="st">&#39;red&#39;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb160-3" data-line-number="3"><span class="kw">}</span>;                                                       </a></code></pre></div>
 <p>Event listeners can be generalized and used for multiple elements using the <code>dataset</code> property.<br />
 In the following code, <code>document.querySelectorAll('.color-change')</code> selects all of the buttons that belong ot hte <code>color-change</code> class.<br />
 The <code>forEach</code> method loops through the array of all of the buttons.<br />
 Then the onclick method uses <code>button.dataset.color</code> to reference the <code>data-color=&quot;red&quot;</code> part of each button to set the color of the text defined by <code>id=&quot;hello&quot;</code>.<br />
 The <code>data-color=&quot;red&quot;</code> of each button can be set to anything else that follows the pattern <code>data-*</code> and then can be referenced with <code>button.dataset.*</code>.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                                                  </a>
-<a class="sourceLine" id="cb160-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                            </a>
-<a class="sourceLine" id="cb160-3" data-line-number="3">        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span>                      </a>
-<a class="sourceLine" id="cb160-4" data-line-number="4">                                                                                        </a>
-<a class="sourceLine" id="cb160-5" data-line-number="5">            <span class="ex">//</span> Have each button change the color of the heading                         </a>
-<a class="sourceLine" id="cb160-6" data-line-number="6">            <span class="ex">document.querySelectorAll</span>(<span class="st">&#39;.color-change&#39;</span>)<span class="ex">.forEach</span>(function(button) <span class="kw">{</span>       </a>
-<a class="sourceLine" id="cb160-7" data-line-number="7">                <span class="ex">button.onclick</span> = function() <span class="kw">{</span>                                           </a>
-<a class="sourceLine" id="cb160-8" data-line-number="8">                    <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = button.dataset.color<span class="kw">;</span></a>
-<a class="sourceLine" id="cb160-9" data-line-number="9">                <span class="kw">}</span>;                                                                      </a>
-<a class="sourceLine" id="cb160-10" data-line-number="10">            <span class="kw">}</span>);                                                                         </a>
-<a class="sourceLine" id="cb160-11" data-line-number="11">                                                                                        </a>
-<a class="sourceLine" id="cb160-12" data-line-number="12">        <span class="kw">}</span>);                                                                             </a>
-<a class="sourceLine" id="cb160-13" data-line-number="13">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           </a>
-<a class="sourceLine" id="cb160-14" data-line-number="14">    <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Website<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                                           </a>
-<a class="sourceLine" id="cb160-15" data-line-number="15"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                                                 </a>
-<a class="sourceLine" id="cb160-16" data-line-number="16"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                                                  </a>
-<a class="sourceLine" id="cb160-17" data-line-number="17">    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;hello&quot;</span><span class="op">&gt;</span>Hello!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>                                                          </a>
-<a class="sourceLine" id="cb160-18" data-line-number="18">    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;red&quot;</span><span class="op">&gt;</span>Red<span class="op">&lt;</span>/button<span class="op">&gt;</span>                          </a>
-<a class="sourceLine" id="cb160-19" data-line-number="19">    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;blue&quot;</span><span class="op">&gt;</span>Blue<span class="op">&lt;</span>/button<span class="op">&gt;</span>                        </a>
-<a class="sourceLine" id="cb160-20" data-line-number="20">    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;green&quot;</span><span class="op">&gt;</span>Green<span class="op">&lt;</span>/button<span class="op">&gt;</span>                      </a>
-<a class="sourceLine" id="cb160-21" data-line-number="21"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                                                 </a></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb161-1" data-line-number="1"><span class="op">&lt;</span><span class="fu">head</span><span class="op">&gt;</span>                                                                                  </a>
+<a class="sourceLine" id="cb161-2" data-line-number="2">    <span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                            </a>
+<a class="sourceLine" id="cb161-3" data-line-number="3">        <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, function() <span class="kw">{</span>                      </a>
+<a class="sourceLine" id="cb161-4" data-line-number="4">                                                                                        </a>
+<a class="sourceLine" id="cb161-5" data-line-number="5">            <span class="ex">//</span> Have each button change the color of the heading                         </a>
+<a class="sourceLine" id="cb161-6" data-line-number="6">            <span class="ex">document.querySelectorAll</span>(<span class="st">&#39;.color-change&#39;</span>)<span class="ex">.forEach</span>(function(button) <span class="kw">{</span>       </a>
+<a class="sourceLine" id="cb161-7" data-line-number="7">                <span class="ex">button.onclick</span> = function() <span class="kw">{</span>                                           </a>
+<a class="sourceLine" id="cb161-8" data-line-number="8">                    <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = button.dataset.color<span class="kw">;</span></a>
+<a class="sourceLine" id="cb161-9" data-line-number="9">                <span class="kw">}</span>;                                                                      </a>
+<a class="sourceLine" id="cb161-10" data-line-number="10">            <span class="kw">}</span>);                                                                         </a>
+<a class="sourceLine" id="cb161-11" data-line-number="11">                                                                                        </a>
+<a class="sourceLine" id="cb161-12" data-line-number="12">        <span class="kw">}</span>);                                                                             </a>
+<a class="sourceLine" id="cb161-13" data-line-number="13">    <span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           </a>
+<a class="sourceLine" id="cb161-14" data-line-number="14">    <span class="op">&lt;</span><span class="ex">title</span><span class="op">&gt;</span>My Website<span class="op">&lt;</span>/title<span class="op">&gt;</span>                                                           </a>
+<a class="sourceLine" id="cb161-15" data-line-number="15"><span class="op">&lt;</span>/<span class="ex">head</span><span class="op">&gt;</span>                                                                                 </a>
+<a class="sourceLine" id="cb161-16" data-line-number="16"><span class="op">&lt;</span><span class="ex">body</span><span class="op">&gt;</span>                                                                                  </a>
+<a class="sourceLine" id="cb161-17" data-line-number="17">    <span class="op">&lt;</span><span class="ex">h1</span> id=<span class="st">&quot;hello&quot;</span><span class="op">&gt;</span>Hello!<span class="op">&lt;</span>/h1<span class="op">&gt;</span>                                                          </a>
+<a class="sourceLine" id="cb161-18" data-line-number="18">    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;red&quot;</span><span class="op">&gt;</span>Red<span class="op">&lt;</span>/button<span class="op">&gt;</span>                          </a>
+<a class="sourceLine" id="cb161-19" data-line-number="19">    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;blue&quot;</span><span class="op">&gt;</span>Blue<span class="op">&lt;</span>/button<span class="op">&gt;</span>                        </a>
+<a class="sourceLine" id="cb161-20" data-line-number="20">    <span class="op">&lt;</span><span class="ex">button</span> class=<span class="st">&quot;color-change&quot;</span> data-color=<span class="st">&quot;green&quot;</span><span class="op">&gt;</span>Green<span class="op">&lt;</span>/button<span class="op">&gt;</span>                      </a>
+<a class="sourceLine" id="cb161-21" data-line-number="21"><span class="op">&lt;</span>/<span class="ex">body</span><span class="op">&gt;</span>                                                                                 </a></code></pre></div>
 <div id="arrow-functions" class="section level3">
 <h3><span class="header-section-number">7.4.1</span> Arrow Functions</h3>
 <p>Arrow functions are new to ES6 and abbreviate the manner in which functions are created.<br />
 Below a function is created that creates the Hellow World alert.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb161-1" data-line-number="1"><span class="kw">()</span> =<span class="op">&gt;</span> <span class="kw">{</span></a>
-<a class="sourceLine" id="cb161-2" data-line-number="2">    <span class="ex">alert</span>(<span class="st">&#39;Hello world!&#39;</span>);</a>
-<a class="sourceLine" id="cb161-3" data-line-number="3"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb162-1" data-line-number="1"><span class="kw">()</span> =<span class="op">&gt;</span> <span class="kw">{</span></a>
+<a class="sourceLine" id="cb162-2" data-line-number="2">    <span class="ex">alert</span>(<span class="st">&#39;Hello world!&#39;</span>);</a>
+<a class="sourceLine" id="cb162-3" data-line-number="3"><span class="kw">}</span></a></code></pre></div>
 <p>Below is a function that takes as input the variable <code>x</code>.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb162-1" data-line-number="1"><span class="ex">x</span> =<span class="op">&gt;</span> {</a>
-<a class="sourceLine" id="cb162-2" data-line-number="2">    <span class="ex">alert</span>(x);</a>
-<a class="sourceLine" id="cb162-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="ex">x</span> =<span class="op">&gt;</span> {</a>
+<a class="sourceLine" id="cb163-2" data-line-number="2">    <span class="ex">alert</span>(x);</a>
+<a class="sourceLine" id="cb163-3" data-line-number="3">}</a></code></pre></div>
 <p>An even more succinct manner of writing a function is below.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="ex">x</span> =<span class="op">&gt;</span> x * 2<span class="kw">;</span></a></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="ex">x</span> =<span class="op">&gt;</span> x * 2<span class="kw">;</span></a></code></pre></div>
 <p>Below is an example of the above code re-written to use arrow functions.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                            </a>
-<a class="sourceLine" id="cb164-2" data-line-number="2">    <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, () =<span class="op">&gt;</span> <span class="kw">{</span>                           </a>
-<a class="sourceLine" id="cb164-3" data-line-number="3">                                                                                    </a>
-<a class="sourceLine" id="cb164-4" data-line-number="4">        <span class="ex">//</span> Have each button change the color of the heading                         </a>
-<a class="sourceLine" id="cb164-5" data-line-number="5">        <span class="ex">document.querySelectorAll</span>(<span class="st">&#39;.color-change&#39;</span>)<span class="ex">.forEach</span>(button =<span class="op">&gt;</span> {              </a>
-<a class="sourceLine" id="cb164-6" data-line-number="6">            <span class="ex">button.onclick</span> = () =<span class="op">&gt;</span> <span class="kw">{</span>                                                </a>
-<a class="sourceLine" id="cb164-7" data-line-number="7">                <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = button.dataset.color<span class="kw">;</span></a>
-<a class="sourceLine" id="cb164-8" data-line-number="8">            <span class="kw">}</span>;                                                                      </a>
-<a class="sourceLine" id="cb164-9" data-line-number="9">        <span class="kw">}</span>);                                                                         </a>
-<a class="sourceLine" id="cb164-10" data-line-number="10">                                                                                    </a>
-<a class="sourceLine" id="cb164-11" data-line-number="11">    });                                                                             </a>
-<a class="sourceLine" id="cb164-12" data-line-number="12"><span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           </a></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span>                                                                            </a>
+<a class="sourceLine" id="cb165-2" data-line-number="2">    <span class="ex">document.addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span>, () =<span class="op">&gt;</span> <span class="kw">{</span>                           </a>
+<a class="sourceLine" id="cb165-3" data-line-number="3">                                                                                    </a>
+<a class="sourceLine" id="cb165-4" data-line-number="4">        <span class="ex">//</span> Have each button change the color of the heading                         </a>
+<a class="sourceLine" id="cb165-5" data-line-number="5">        <span class="ex">document.querySelectorAll</span>(<span class="st">&#39;.color-change&#39;</span>)<span class="ex">.forEach</span>(button =<span class="op">&gt;</span> {              </a>
+<a class="sourceLine" id="cb165-6" data-line-number="6">            <span class="ex">button.onclick</span> = () =<span class="op">&gt;</span> <span class="kw">{</span>                                                </a>
+<a class="sourceLine" id="cb165-7" data-line-number="7">                <span class="ex">document.querySelector</span>(<span class="st">&#39;#hello&#39;</span>)<span class="ex">.style.color</span> = button.dataset.color<span class="kw">;</span></a>
+<a class="sourceLine" id="cb165-8" data-line-number="8">            <span class="kw">}</span>;                                                                      </a>
+<a class="sourceLine" id="cb165-9" data-line-number="9">        <span class="kw">}</span>);                                                                         </a>
+<a class="sourceLine" id="cb165-10" data-line-number="10">                                                                                    </a>
+<a class="sourceLine" id="cb165-11" data-line-number="11">    });                                                                             </a>
+<a class="sourceLine" id="cb165-12" data-line-number="12"><span class="op">&lt;</span>/<span class="ex">script</span><span class="op">&gt;</span>                                                                           </a></code></pre></div>
 </div>
 </div>
 <div id="local-storage" class="section level2">
@@ -405,16 +408,16 @@ Below a function is created that creates the Hellow World alert.</p>
 <p>Local storage allows variables to be stored within the browser of a user and recurrently accessed by javascript even between sessions.<br />
 In the following example, the value for counter is being retrieved if it can be, or if not it is set to zero when the page is first loaded.<br />
 Then if the <code>counter</code> variable is ever modified, the new value will be stored.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb165-2" data-line-number="2">    <span class="ex">//</span> Set starting value of counter to 0  </a>
-<a class="sourceLine" id="cb165-3" data-line-number="3">    <span class="kw">if</span> <span class="kw">(</span>!<span class="ex">localStorage.getItem</span>(<span class="st">&#39;counter&#39;</span><span class="kw">)</span>)  </a>
-<a class="sourceLine" id="cb165-4" data-line-number="4">        <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, 0);</a>
-<a class="sourceLine" id="cb165-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb165-6" data-line-number="6">    <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
-<a class="sourceLine" id="cb165-7" data-line-number="7">    <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, counter);</a>
-<a class="sourceLine" id="cb165-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb166-2" data-line-number="2">    <span class="ex">//</span> Set starting value of counter to 0  </a>
+<a class="sourceLine" id="cb166-3" data-line-number="3">    <span class="kw">if</span> <span class="kw">(</span>!<span class="ex">localStorage.getItem</span>(<span class="st">&#39;counter&#39;</span><span class="kw">)</span>)  </a>
+<a class="sourceLine" id="cb166-4" data-line-number="4">        <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, 0);</a>
+<a class="sourceLine" id="cb166-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb166-6" data-line-number="6">    <span class="ex">document.querySelector</span>(<span class="st">&#39;#counter&#39;</span>)<span class="ex">.innerHTML</span> = counter<span class="kw">;</span></a>
+<a class="sourceLine" id="cb166-7" data-line-number="7">    <span class="ex">localStorage.setItem</span>(<span class="st">&#39;counter&#39;</span>, counter);</a>
+<a class="sourceLine" id="cb166-8" data-line-number="8"><span class="op">&lt;</span><span class="ex">script</span><span class="op">&gt;</span></a></code></pre></div>
 <p>All variables stored in local storage can be cleared at once.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="ex">localStorage.clear</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="ex">localStorage.clear</span>()</a></code></pre></div>
 
 </div>
 </div>

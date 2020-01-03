@@ -128,7 +128,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-12-29}
+    \date{2020-01-02}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -2128,6 +2128,15 @@ The following code creates a button that runs the \texttt{hello()} function only
 \OperatorTok{<}\ExtensionTok{body}\OperatorTok{>}
     \OperatorTok{<}\ExtensionTok{button}\NormalTok{ onclick=}\StringTok{"hello()"}\OperatorTok{>}\NormalTok{Click Here}\OperatorTok{<}\NormalTok{/button}\OperatorTok{>}
 \OperatorTok{<}\NormalTok{/}\ExtensionTok{body}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+When forms are submitted it appears that by default they will resubmit the page. This functionality can simply be suppressed, or a function can be run when the form is submitted.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\ExtensionTok{form}\NormalTok{ onsubmit=}\StringTok{"return false"}\OperatorTok{>}
+\OperatorTok{<}\ExtensionTok{form}\NormalTok{ onsubmit=}\StringTok{"return getUsername()"}\OperatorTok{>}
 \end{Highlighting}
 \end{Shaded}
 
